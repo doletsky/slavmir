@@ -1,0 +1,21 @@
+#player-wrap.hidden{
+	display: none;
+}
+
+.prev_song.hidden,.next_song.hidden{
+	display: none;
+}
+.all_time{
+	/*display: none;*/
+	display: inline-block;
+	margin-left: 2px;
+}
+#music_bar .music_left_bar{
+	min-width: 535px;
+}
+#music_bar .music_right_bar .music_right_bar_list{
+	min-width: 425px;
+}
+#music_bar .music_name{
+	font-size: 18px;
+}

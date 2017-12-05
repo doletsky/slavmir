@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Плейлисты";
+$arDirProperties = Array(
+
+);
+?>

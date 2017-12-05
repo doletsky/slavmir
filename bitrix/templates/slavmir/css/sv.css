@@ -1,0 +1,430 @@
+body,html{
+	font-family: 'PT Sans';
+}
+.dn{
+	visibility: hidden !important;
+}
+a:hover,html body a:hover{
+	color: #ffcb94;
+}
+.index_video_efir{
+	
+}
+#music_bar .container .left_bar{
+	min-height: 90px;
+}
+#music_bar .playlist_played > img{
+	width: 44px;
+}
+#music_bar .music_left_bar .music_left_bar_list{
+	justify-content: flex-end;
+}
+.mus_wrap .mus_info .mus_bar .list_img,.mus_wrap .mus_info .mus_bar .likes,.likes_mus_info .likes_list,.likes_mus_info .likes_like{
+	visibility: hidden;
+}
+.mus_wrap .mus_info .mus_time{
+	min-width: 85px;
+}
+.mus_wrap .mus_info .mus_group{
+	max-width: 32%;
+}
+.pl-audio-play,.pl-playlist-play{
+	cursor: pointer;
+}
+#m-video-container{
+	height: 100%;
+	width: 100%;
+}
+#music_bar.opened_video .container .container,#music_bar #tv-container .container{
+	padding: 0;
+	height: 100%;
+}
+html #music_bar_mobile .efir_mobile:after,html #music_bar_mobile .video_mobile:after{
+	display: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.auth-registr-form{
+	cursor: pointer;
+}
+.reg_licence{
+	margin-top: 10px;
+}
+#music_bar .music_group{
+	font-size: 13px;
+}
+#music_bar .music_name{
+	font-size: 15px;
+}
+#music_bar .music_bg{
+	width: 125px;
+	height: 125px;
+	overflow: hidden;
+	background-size: contain;
+}
+#music_bar_mobile .music_bg{
+	background-size: cover;
+	border-radius: 50%;
+}
+.music_right_bar_list .music_right_bar_item_wrap{
+	width: 49%;
+}
+#music_bar .music_left_bar .music_left_bar_list .music_left_bar_item.gradient{
+	min-height: 90px;
+}
+.header_top_menu ul>li.selected>a{
+	/*color: rgba(255, 255, 255, 0.58);*/
+}
+#prog_item_top .breadcrumbs ul li .vert_line:after{
+	background-color: #d1cfcb;
+}
+#releases .container .rel_right .rel_all_prog a{
+	text-decoration: none;
+	display: block;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+#releases .container .rel_right .rel_all_prog a:not(:last-child){
+	border-bottom: 2px solid #efefee;
+}
+#releases .container .rel_right .rel_all_prog a.prog_item img{
+	width: 110px;
+	float: left;
+}
+#releases .container .rel_right .rel_all_prog a .rel_all_desc{
+	display: block;
+	padding-left: 120px;
+	min-height: 82px;
+}
+#releases .container .rel_right .rel_all_prog a .rel_all_desc h6{
+	font-size: 20px;
+	color: #000;
+	font-family: 'PT Sans';
+	font-weight: 600;
+	line-height: 1.2;
+}
+#releases .container .rel_right .rel_all_prog a .rel_all_desc p{
+	font-size: 17px;
+	color: #000;
+	font-family: 'PT Sans';
+	line-height: 1.2;
+}
+#releases .container .item{
+	text-decoration: none;
+}
+#audio_page_top .tab_container ul{
+	width: 100%;
+}
+#audio_kompoz .right_audio_komp .ispolniteli_list{
+	max-height: 337px;
+	overflow-y: scroll;
+}
+#audio_kompoz .right_audio_komp .ispolniteli_list .item{
+	text-decoration: none;
+}
+#audio_kompoz .right_audio_komp .ispolniteli_list .item > img{
+	max-width: 42px;
+	max-height: 42px;
+}
+#new_articles .new_article .new_article_text article{
+	font-family: 'PT Sans';
+	font-size: 15px;
+	color: #000;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+#new_articles .new_article .new_article_text  a.read_art{
+	margin-left: 5px;
+	color: #fff;
+	background-color: #E94422;
+	padding: 1px 5px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+#audio_item_text .container .left_col .tab_container p{
+	margin-bottom: 20px;
+}
+#audio_item_text .container .left_col .tab_container p strong,#audio_item_text .container .left_col .tab_container p b{
+	font-weight: bold;
+}
+#audio_item_text .container .left_col .tab_container p em,#audio_item_text .container .left_col .tab_container p i{
+	font-style: italic;
+}
+/*.news_page_list .news_page_item .news_img img,#new_articles .new_article .new_article_img img,.index_news_list .index_news_item .index_news_img img,.index_articles_list .index_articles_item .article_img img{
+	border-radius: 50%;
+}*/
+.index_music_container .item .music_img {
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	float: left;
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+}
+.index_music_container .item:hover .play_btn {
+	position: absolute;
+	width: 20px;
+	height: 26px;
+	left: 55%;
+	top: 50%;
+	background-image: url(../images/play_small_btn.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.opened_video_bar_main .opened_video_bar_main_img.video-strem{
+	height: auto;
+	border: 1px solid #fff;
+}
+.video_page_list .video_page_item{
+	max-width: 305px;
+}
+.ajax-list{
+	-webkit-transition: height 10s ease;
+	transition: height 10s ease;
+}
+.ajax-list .more{
+	color: #fff;
+	background-color: #F47B22;
+	border: none;
+	cursor: pointer;
+	font-family: 'PT Sans';
+	font-size: 15px;
+	padding: 6px 57px;
+	text-transform: uppercase;
+	margin-top: 15px;
+	display: inline-block;
+}
+#opros_page .opros_form input[type='submit'] {
+    margin-left: 65px;
+    border: none;
+    color: #fff;
+    background-color: #f17d1f;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 25px 39px;
+    font-size: 18px;
+    font-family: 'PT Sans';
+    font-weight: bold;
+    cursor: pointer;
+}
+#lk_section .main_lk_form{
+    float: left;
+    max-width: 515px;
+    margin: 0 auto;
+}
+#lk_section .data_info {
+    width: 100%;
+}
+#lk_section .no_photo{
+	display: block;
+}
+#lk_section .no_photo input{
+	visibility: hidden;
+	width: 100px;
+	height: 20px;
+	margin: 0 0 -20px 0;
+}
+#lk_section .no_photo .add-photo{
+	display: block;
+	margin-top: -20px;
+}
+form.data_info input[type='checkbox']{
+	width: auto;
+	margin: 0;
+}
+#lk_section .photo_exist .lk_user_photo img{
+	border-radius: 50%;
+}
+#header_bar .reg .user_img img{
+	width: 34px;
+}
+html body .button{
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    max-width: 146px;
+    padding: 10px 0px 13px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'PT Serif';
+    background-color: #F38C1E;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.register_popup_container .data_info{
+	margin-top: 10px;
+}
+.news_page_list .news_page_item .news_text article{
+	font-family: 'PT Sans';
+	color: #000;
+	font-size: 18px;
+	line-height: 1.2;
+}
+.news_page_list .news_page_item .news_text a.read_more{
+	color: #fff;
+	background-color: #E94422;
+	vertical-align: middle;
+	padding: 1px 5px;
+	text-decoration: none;
+	font-size: 14px;
+}
+.news_slider_box .related_art_box .rel_art_item h4{
+	font-weight: bold;
+	font-family: 'PT Sans';
+	font-size: 22px;
+	color: #000;
+	margin-bottom: 30px;
+	padding-left: 45px;
+}
+.news_slider_box .news_box .news_item .name{
+	font-size: 22px;
+}
+.news_slider_box .related_art_box .rel_art_item p.item_date{
+	font-family: 'PT Sans';
+	font-size: 13.8px;
+	color: #b6b8ba;
+	margin-bottom: 13px;
+	padding-left: 45px;
+}
+.news_slider_box .related_art_box .rel_art_item {
+	padding-top: 30px;
+	padding-right: 70px;
+	max-width: 400px;
+}
+.related_art_box .rel_art_item article{
+	padding: 0 45px;
+	font-size: 15px;
+	font-family: 'PT Sans';
+	line-height: 1.2;
+	color: #000;
+}
+.related_art_box .rel_art_item p{
+	padding: 0;
+}
+.index_music_container .item{
+	display: block;
+}
+.about_text .about_top_text img{
+	margin-bottom: 80px;
+	max-width: 100%;
+}
+.about_text h4{
+	margin-bottom: 20px;
+}
+.about_text blockquote{
+	margin-bottom: 75px;
+	position: relative;
+	font-family: 'PT Serif';
+	color: #000;
+	font-size: 27px;
+	line-height: 1.2;
+}
+.about_text blockquote:before {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: -47px;
+	width: 100%;
+	background-image: url(../images/about_after2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	height: 27px;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.about_text blockquote:after {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: -47px;
+	width: 100%;
+	background-image: url(../images/about_after2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	height: 27px;
+}
+#our_prog_slider_box .our_prog_slider .our_prog_slide .prog_slide_text .vipusk .vipusk_img{
+	width: 70px;
+	height: 70px;
+}
+#our_prog_slider_box .our_prog_slider .prog_slide_text .vipusk img{
+	border-radius: 30px;
+	max-width: 60px;
+	max-height: 60px;
+}
+.social-menu-link {
+  width: 38px;
+  height: 38px;
+  display: none;
+  cursor: pointer;
+  vertical-align: top;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 1;
+  background-repeat: no-repeat !important;
+  background-size: 56% !important;
+  background-position: 50% 49% !important;
+  transition: all 200ms;
+  background-color: #868686;
+  border: none; }
+  /* line 17, _social.scss */
+.social-menu-link:hover {
+    background-color: #f78e1e; }
+
+/* line 21, _social.scss */
+.social-menu-link.is-vk {
+  background-image: url("../images/social/vk.svg");
+  display: inline-block; }
+
+/* line 25, _social.scss */
+.social-menu-link.is-facebook {
+  background-image: url("../images/social/facebook.svg");
+  display: inline-block; }
+
+/* line 29, _social.scss */
+.social-menu-link.is-youtube {
+  background-image: url("../images/social/youtube.svg");
+  display: inline-block; }
+
+/* line 33, _social.scss */
+.social-menu-link.is-instagram {
+  background-image: url("../images/social/instagram.svg");
+  display: inline-block; }
+
+/* line 37, _social.scss */
+.social-menu-link.is-twitter {
+  background-image: url("../images/social/twitter.svg");
+  display: inline-block; }
+
+/* line 41, _social.scss */
+.social-menu-link.is-t_me {
+  background-image: url("../images/social/t_me.svg");
+  display: inline-block; }
+
+/* line 45, _social.scss */
+.social-menu-link.is-odnoklassniki {
+  background-image: url("../images/social/ok-social.svg");
+  display: inline-block; }
+
+/* line 49, _social.scss */
+.social-menu-link.is-google-plus {
+  background-image: url("../images/social/google-plus.svg");
+  display: inline-block; }
