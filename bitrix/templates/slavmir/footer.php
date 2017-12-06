@@ -133,7 +133,30 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		</div>
 	</div>
 </div>
+<?if($USER->IsAuthorized()):?>
+<div class="paylk_popup_container">
+    <div class="paylk_container">
+        <div class="close_popup"></div>
+        <?$APPLICATION->IncludeComponent("bitrix:sale.account.pay",
+            "",
+            Array(
+                "ELIMINATED_PAY_SYSTEMS" => array("1"),
+                "PATH_TO_BASKET" => "/personal/cart",
+                "PATH_TO_PAYMENT" => "/personal/order/payment",
+                "PERSON_TYPE" => "1",
+                "REFRESHED_COMPONENT_MODE" => "Y",
+                "SELL_CURRENCY" => "RUB",
+                "SELL_SHOW_FIXED_VALUES" => "Y",
+                "SELL_TOTAL" => array("100","200","500","1000","5000",""),
+                "SELL_USER_INPUT" => "Y",
+                "SELL_VALUES_FROM_VAR" => "N",
+                "SET_TITLE" => "N"
+            )
+        );?>
 
+    </div>
+</div>
+<?endif;?>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-2.2.3.min.js"></script>
 <!--<script src="https://content.jwplatform.com/libraries/abYwhQ0o.js"></script>-->
 <!--<script data-version="7" src="https://content.jwplatform.com/libraries/PLYp0Up4.js"></script>-->

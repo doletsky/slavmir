@@ -50,13 +50,14 @@ $APPLICATION->SetTitle("Личный кабинет");
 			<a href="#" class="change_tarif">Сменить тариф</a>
 			<a href="#" class="tarif">Тарифы и условия</a>
 		</div>
+        <?*/?>
 		<div class="own_balance_box">
 			<p>Ваш баланс</p>
 			<span class="balance_num">2 ₽</span>
 			<a href="#" class="add_balance">Доплатить</a>
 			<a href="#" class="pay_history">История платежей</a>
 		</div>
-		<?*/?>
+
 	<div class="clear"></div>
 	</div>
 </section>

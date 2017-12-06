@@ -302,8 +302,13 @@ $(document).on('ready', function(){
 	});
 
 	$('.close_popup, .close_tnx_popup').on('click', function(){
-		$('.register_popup_container, .tnx_popup_container, .subs_popup_container').fadeOut(200);
+		$('.register_popup_container, .tnx_popup_container, .subs_popup_container, .paylk_popup_container').fadeOut(200);
 	});
+
+    $('.add_balance').on('click', function(){
+        $('.paylk_popup_container').fadeIn(200);
+        return false;
+    });
 
 	$('#music_bar .more_info .actives_list .bar_img.bar_like').on('click', function(){
 		$(this).toggleClass('active');
