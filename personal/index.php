@@ -53,7 +53,7 @@ $APPLICATION->SetTitle("Личный кабинет");
         <?*/?>
 		<div class="own_balance_box">
 			<p>Ваш баланс</p>
-			<span class="balance_num">2 ₽</span>
+			<span class="balance_num"><?$ar = CSaleUserAccount::GetByUserID($USER->GetID(), "RUB"); echo intval($ar["CURRENT_BUDGET"]);?> ₽</span>
 			<a href="#" class="add_balance">Доплатить</a>
 			<a href="#" class="pay_history">История платежей</a>
 		</div>
