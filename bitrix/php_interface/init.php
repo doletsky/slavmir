@@ -289,7 +289,7 @@ function MakeImage($src, $params = false) {
 		}
 	}
 	return false;
-} 
+}
 
 
 AddEventHandler("sale", "OnSalePayOrder", Array("addEventClass", "accountPay"));

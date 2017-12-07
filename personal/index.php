@@ -51,7 +51,6 @@ $APPLICATION->SetTitle("Личный кабинет");
 			<a href="#" class="tarif">Тарифы и условия</a>
 		</div>
         <?*/?>
-        <!-- <?print_r($_REQUEST)?> -->
 		<div class="own_balance_box">
 			<p>Ваш баланс</p>
 			<span class="balance_num"><?$ar = CSaleUserAccount::GetByUserID($USER->GetID(), "RUB"); echo intval($ar["CURRENT_BUDGET"]);?> ₽</span>
