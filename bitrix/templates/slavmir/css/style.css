@@ -4311,7 +4311,7 @@ h1.page_name{
     display: none;
 }
 
-/*** SUBSCRIBE POPUP ***/
+/*** PAY LK POPUP ***/
 .paylk_popup_container{
     display: none;
     position: fixed;
@@ -4342,6 +4342,82 @@ h1.page_name{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
+}
+.paylk_container:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    border-radius: 10px;
+    background-image: url(../images/reg_bg.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    z-index: -1;
+}
+.paylk_container  h3 {
+    font-family: 'PT Sans';
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.paylk_container input.sale-acountpay-input{
+    width: 100%;
+    border: none;
+    color: #000;
+    border-bottom: 2px solid #E9E9E8;
+    background-color: transparent;
+    font-family: 'PT Serif';
+    font-size: 23.6px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.paylk_container .sum_pay {
+    max-width: 200px;
+    left: 50%;
+    position: relative;
+    margin-left: -100px;
+}
+.paylk_container .btn.sale-account-pay-button {
+    display: block;
+    font-family: 'PT Serif';
+    color: #fff;
+    font-size: 19.32px;
+    background-color: #F38C1E;
+    width: 188px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 21px 0;
+    margin-left: -94px;
+    margin-bottom: 13px;
+    position: relative;
+    left: 50%;
+}
+.paylk_container font.tablebodytext {
+    font-family: 'PT Sans';
+    font-size: 18.31px;
+    line-height: 22px;
+    margin-bottom: 45px;
+}
+
+.paylk_container font.tablebodytext input[type="submit"]{
+    font-family: 'PT Serif';
+    color: #fff;
+    font-size: 19.32px;
+    background-color: #F38C1E;
+    width: 188px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 21px 0;
+    border: 0;
+    margin-top: 10px;
 }
 
 /*** SUBSCRIBE POPUP ***/

@@ -57,7 +57,7 @@ else
 					<div class="row">
 						<div class="col-xs-12 sale-acountpay-block form-horizontal">
 							<h3 class="sale-acountpay-title"><?=Loc::getMessage("SAP_SUM")?></h3>
-							<div class="" style="max-width: 200px;">
+							<div class="sum_pay">
 								<div class="form-group" style="margin-bottom: 0;">
 									<?
 									$inputElement = "
@@ -103,7 +103,7 @@ else
 				}
 				?>
 				<div class="row">
-					<div class="col-xs-12 sale-acountpay-block">
+					<div class="col-xs-12 sale-acountpay-block" style="display: none">
 						<h3 class="sale-acountpay-title"><?=Loc::getMessage("SAP_TYPE_PAYMENT_TITLE")?></h3>
 						<div>
 							<div class="sale-acountpay-pp row">
@@ -111,6 +111,7 @@ else
 									<?
 									foreach ($arResult['PAYSYSTEMS_LIST'] as $key => $paySystem)
 									{
+                                        if($paySystem['ID']==2){ // robokassa
 										?>
 										<div class="sale-acountpay-pp-company col-lg-3 col-sm-4 col-xs-6 <?= ($key == 0) ? 'bx-selected' :""?>">
 											<div class="sale-acountpay-pp-company-graf-container">
@@ -118,7 +119,7 @@ else
 														class="sale-acountpay-pp-company-checkbox"
 														name="PAY_SYSTEM_ID"
 														value="<?=$paySystem['ID']?>"
-														<?= ($key == 0) ? "checked='checked'" :""?>
+														checked='checked'
 												>
 												<?
 												if (isset($paySystem['LOGOTIP']))
@@ -138,6 +139,7 @@ else
 											</div>
 										</div>
 										<?
+                                        }
 									}
 									?>
 								</div>
