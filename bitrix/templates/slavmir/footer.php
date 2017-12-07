@@ -156,6 +156,15 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 
     </div>
 </div>
+    <?if($_REQUEST['failPay']==1):?>
+        <div class="failpay_popup_container" style="display: block;">
+            <div class="failpay_container">
+                <div class="close_popup"></div>
+                <h3>Ошибка платежа</h3>
+                <p class="main_text">При оплате произошла ошибка. Баланс не пополнен!</p>
+            </div>
+        </div>
+    <?endif?>
 <?endif;?>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-2.2.3.min.js"></script>
 <!--<script src="https://content.jwplatform.com/libraries/abYwhQ0o.js"></script>-->

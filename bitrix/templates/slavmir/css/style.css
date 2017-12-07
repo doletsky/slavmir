@@ -4420,6 +4420,70 @@ h1.page_name{
     margin-top: 10px;
 }
 
+/*** Fail pay message popup ***/
+/*** SUBSCRIBE POPUP ***/
+.failpay_popup_container{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+.failpay_container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 100%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.15);
+    max-width: 930px;
+    background-color: #fff;
+    padding: 40px 80px 20px 85px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+.failpay_container:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    border-radius: 10px;
+    background-image: url(../images/reg_bg.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    z-index: -1;
+}
+.failpay_container h3{
+    font-family: 'PT Sans';
+    font-size: 39px;
+    color: #000;
+    margin-bottom: 25px;
+}
+.failpay_container p.main_text{
+    font-family: 'PT Sans';
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 12px;
+}
+
 /*** SUBSCRIBE POPUP ***/
 .subs_popup_container{
     display: none;
