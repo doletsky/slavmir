@@ -2736,9 +2736,9 @@ footer .roskom p{
 }
 /*** VIDEO PAGE ***/
 #video_page{
-    padding-top: 45px;
+    padding-top: 30px;
     background-color: #FAFAFA;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 #video_page .container{
     position: relative;
@@ -2751,13 +2751,14 @@ footer .roskom p{
     margin-bottom: 15px;
 }
 .daily_video_container{
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 .daily_video_container h2{
-    padding-left: 70px;
-    font-family:'PT Serif';
-    font-size: 44.55px;
-    color: #000;
+    font-family: 'PT Serif';
+    font-size: 44px;
+    font-weight: bold;
+    color: #e94422;
+    text-align: center;
 }
 .daily_video_slider{
     height: 255px;

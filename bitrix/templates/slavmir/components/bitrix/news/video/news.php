@@ -25,7 +25,6 @@ $this->setFrameMode(true);
 				false
 			);?>
 		</div>
-		<h1 class="page_name"><?$APPLICATION->ShowTitle();?></h1>
 		<div class="daily_video_container">
 			<h2>Видео дня</h2>
 		</div><!-- daily_video_container -->
