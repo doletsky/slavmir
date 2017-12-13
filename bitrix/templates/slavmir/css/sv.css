@@ -1,9 +1,9 @@
 body,html{
 	font-family: 'PT Sans';
 }
-.dn{
-	visibility: hidden !important;
-}
+/*.dn{*/
+	/*visibility: hidden !important;*/
+/*}*/
 a:hover,html body a:hover{
 	color: #ffcb94;
 }
