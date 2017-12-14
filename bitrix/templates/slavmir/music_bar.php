@@ -207,6 +207,166 @@
 			</div>
 			<div class="likes_list">
 				<ul>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+                            <div class="play_btn"></div>
+                        </div>
+                        <div class="likes_mus_info">
+                            <div class="likes_mus_name">Вербовой</div>
+                            <div class="likes_mus_group">Русская доблесть</div>
+                            <div class="likes_mus_bar">
+                                <a href="#"><span class="likes_list_img likes_list_img"></span></a>
+                                <a href="#"><span class="likes_list_img likes_like"></span></a>
+                                <a href="#"><span class="likes_list_img likes_download"></span></a>
+                            </div>
+                            <div class="likes_mus_time">4:30</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
 				</ul>
 			</div>
 			<div class="music_left_bar">

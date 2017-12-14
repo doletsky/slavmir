@@ -700,6 +700,7 @@ header .header_top_menu .burger.active img.active{
     width: 19px;
     height: 17px;
     opacity: 0.53;
+    visibility: inherit;
 }
 .likes_list ul li .likes_mus_info .likes_mus_bar .likes_list_img.likes_download{
     width: 19px;
