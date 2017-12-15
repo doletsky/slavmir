@@ -169,8 +169,8 @@
 					</div><!-- music_right_bar -->
 					<div class="music_right_settings">
 						<div class="music_right_settings_list">
-							<div class="right_settings_img cross_music dn"></div>
-							<div class="right_settings_img loop_music dn"></div>
+							<div class="right_settings_img cross_music"></div>
+							<div class="right_settings_img loop_music"></div>
 							<div class="loudness_music_wrap">
 								<div class="loudness_bar">
 									<div class="slider-vertical" id="slider-vertical"></div>
@@ -515,8 +515,8 @@
 					</div><!-- music_right_bar -->
 					<div class="music_right_settings">
 						<div class="music_right_settings_list">
-							<div class="right_settings_img cross_music dn"></div>
-							<div class="right_settings_img loop_music dn"></div>
+							<div class="right_settings_img cross_music"></div>
+							<div class="right_settings_img loop_music"></div>
 							<div class="loudness_music_wrap">
 								<div class="loudness_bar">
 									<div class="slider-vertical" id="slider-vertical-1"></div>
@@ -587,8 +587,8 @@
 			</div><!-- music_right_bar -->
 			<div class="music_right_settings">
 				<div class="music_right_settings_list">
-					<div class="right_settings_img cross_music dn"></div>
-					<div class="right_settings_img loop_music dn"></div>
+					<div class="right_settings_img cross_music"></div>
+					<div class="right_settings_img loop_music"></div>
 					<div class="loudness_music_wrap">
 						<div class="loudness_bar">
 							<div class="slider-vertical" id="slider-vertical-2"></div>
@@ -645,8 +645,8 @@
 			</ul>
 		</div><!-- music_type_list -->
 		<div class="music_right_settings_list">
-			<div class="right_settings_img cross_music dn"></div>
-			<div class="right_settings_img loop_music dn"></div>
+			<div class="right_settings_img cross_music"></div>
+			<div class="right_settings_img loop_music"></div>
 			<div class="loudness_music_wrap">
 				<div class="loudness_bar">
 					<div class="slider-vertical"></div>
