@@ -35,7 +35,6 @@ $APPLICATION->SetTitle("Личный кабинет");
 </section>
 <section class="current_subs">
 	<div class="container">
-		<?/*?>
 		<div class="sub_info">
 			<h5>Текущая подписка</h5>
 			<div class="sub_name">Мир-300</div>
@@ -47,10 +46,9 @@ $APPLICATION->SetTitle("Личный кабинет");
 			</div>
 		</div>
 		<div class="sub_tarifs">
-			<a href="#" class="change_tarif">Сменить тариф</a>
-			<a href="#" class="tarif">Тарифы и условия</a>
+			<a href="/rates/" class="change_tarif">Сменить тариф</a>
+			<a href="/rates/" class="tarif">Тарифы и условия</a>
 		</div>
-        <?*/?>
 		<div class="own_balance_box">
 			<p>Ваш баланс</p>
 			<span class="balance_num"><?$ar = CSaleUserAccount::GetByUserID($USER->GetID(), "RUB"); echo intval($ar["CURRENT_BUDGET"]);?> ₽</span>
@@ -61,4 +59,52 @@ $APPLICATION->SetTitle("Личный кабинет");
 	<div class="clear"></div>
 	</div>
 </section>
+    <section class="pay_history_box">
+        <div class="container">
+            <h3>История платежей</h3>
+            <?$APPLICATION->IncludeComponent("bitrix:sale.personal.order.list","",Array(
+                    "STATUS_COLOR_N" => "green",
+                    "STATUS_COLOR_P" => "yellow",
+                    "STATUS_COLOR_F" => "gray",
+                    "STATUS_COLOR_PSEUDO_CANCELLED" => "red",
+                    "PATH_TO_DETAIL" => "order_detail.php?ID=#ID#",
+                    "PATH_TO_COPY" => "basket.php",
+                    "PATH_TO_CANCEL" => "order_cancel.php?ID=#ID#",
+                    "PATH_TO_BASKET" => "basket.php",
+                    "PATH_TO_PAYMENT" => "payment.php",
+                    "ORDERS_PER_PAGE" => 20,
+                    "ID" => $ID,
+                    "SET_TITLE" => "Y",
+                    "SAVE_IN_SESSION" => "Y",
+                    "NAV_TEMPLATE" => "",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "3600",
+                    "CACHE_GROUPS" => "Y",
+                    "HISTORIC_STATUSES" => "F",
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y"
+                )
+            );?>
+<!--            <div class="history_list">-->
+<!--                <div class="item">-->
+<!--                    <div class="date">28.06.2017</div>-->
+<!--                    <div class="time">15:40</div>-->
+<!--                    <div class="price">1500 ₽</div>-->
+<!--                    <div class="pay_sys">Электронный платеж Яндекс</div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="date">28.06.2017</div>-->
+<!--                    <div class="time">15:40</div>-->
+<!--                    <div class="price">1500 ₽</div>-->
+<!--                    <div class="pay_sys">Электронный платеж Яндекс</div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="date">28.06.2017</div>-->
+<!--                    <div class="time">15:40</div>-->
+<!--                    <div class="price">1500 ₽</div>-->
+<!--                    <div class="pay_sys">Электронный платеж Яндекс</div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+
+    </section>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

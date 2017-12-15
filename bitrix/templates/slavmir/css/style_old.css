@@ -23,7 +23,7 @@ body.fixed_header header{
     left: 0;
     width: 100%;
     z-index: 9999;
-    animation: headerWidth 0.4s linear forwards;
+    animation: headerWidth 0.5s linear forwards;
 }
 @keyframes headerWidth{
     0%{
@@ -41,7 +41,7 @@ body.fixed_header header .logo{
 }
 body.fixed_header header.log_opened{
     height: 178px;
-    animation: headerLogOpened;
+    animation: none;
 }
 @keyframes headerLogOpened{
     0%{
@@ -81,20 +81,20 @@ body.fixed_header #music_bar{
     top: 60px;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 999;
     background-color: #fff;
 }
 body.fixed_header .logo_mobile{
     display: block;
-    animation: logoMobileShow 0.4s linear forwards;
+    animation: logoMobileShow 0.8s linear forwards;
 }
 .logo_desktop{
     display: block;
-    animation: logoMobileShow 0.4s linear forwards;
+    animation: logoMobileShow 0.8s linear forwards;
 }
 body.fixed_header .logo_desktop{
     display: none;
-    animation: logoMobileHide 0.4s linear forwards;
+    animation: logoMobileHide 0.8s linear forwards;
 }
 body.fixed_header #header_bar .unreg{
     padding-top: 15px;
@@ -181,13 +181,10 @@ body.fixed_header.pay_notice header{
     top: 0px;
 }
 body.pay_notice.fixed_header #music_bar{
-    animation: moveFixedBar 0.4s linear forwards;
+    animation: moveFixedBar 0.5s linear forwards;
 }
 body.fixed_header #music_bar{
-    animation: moveFixedBar 0.4s linear forwards;
-}
-body.fixed_header #music_bar.settings_active{
-    z-index: 999;
+    animation: moveFixedBar 0.5s linear forwards;
 }
 @keyframes moveFixedBar{
     0%{
@@ -206,15 +203,7 @@ body.pay_notice #music_bar{
     animation: movePayNBar 0.4s linear forwards; 
 }
 body #music_bar{
-    animation: movePayBar 0.4s linear forwards; 
-}
-@keyframes movePayBar{
-    0%{
-        top: 143px;
-    }
-    100%{
-        top: 178px;
-    }
+    animation: movePayNBar 0.4s linear forwards; 
 }
 @keyframes movePayNBar{
     0%{
@@ -273,7 +262,7 @@ body.short_header header .logo_desktop{
 }
 body.short_header header .logo_mobile{
     display: block;
-    animation: logoMobileShow 0.4s linear forwards;
+    animation: logoMobileShow 0.8s linear forwards;
 }
 @keyframes logoMobileShow{
     0%{
@@ -305,7 +294,7 @@ header .logo{
 }
 header .logo_mobile{
     display: none;
-    animation: logoMobileHide 0.4s linear forwards;
+    animation: logoMobileHide 0.8s linear forwards;
 }
 @keyframes logoMobileHide{
     0%{
@@ -579,7 +568,7 @@ header .header_top_menu .burger.active img.active{
     color: #fff;
     font-family:'PT Sans';
     font-size: 9px;
-    padding-bottom: 0px;
+    padding-bottom: 3px;
 }
 #header_bar .likes span{
     display: none;
@@ -711,6 +700,7 @@ header .header_top_menu .burger.active img.active{
     width: 19px;
     height: 17px;
     opacity: 0.53;
+    visibility: inherit;
 }
 .likes_list ul li .likes_mus_info .likes_mus_bar .likes_list_img.likes_download{
     width: 19px;
@@ -1012,14 +1002,13 @@ body.fixed_header header.log_opened .logo{
     padding: 0 85px 0 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 #music_bar .container .left_bar{
     position: relative;
     float: left;
     display: flex;
     align-items: center;
-    flex-grow: 1;
 }
 .left_bar .index_music_container{
     position: absolute;
@@ -1036,7 +1025,6 @@ body.fixed_header header.log_opened .logo{
     float: right;
     display: flex;
     align-items: center;
-    flex-grow: 1;
 }
 .music_menu{
     position: relative;
@@ -1061,11 +1049,11 @@ body.fixed_header header.log_opened .logo{
 }
 #music_bar .music_played{
     position: relative;
-    -webkit-transform: translateY(-25%);
-    -moz-transform: translateY(-25%);
-    -ms-transform: translateY(-25%);
-    -o-transform: translateY(-25%);
-    transform: translateY(-25%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     z-index: 99;
     border-radius: 50%;
     width: 145px;
@@ -1277,7 +1265,7 @@ body.short_header #music_bar .music_played .played_info{
 #music_bar .music_left_bar{
     float: left;
     width: 100%;
-    max-width: 635px;
+    max-width: 535px;
 }
 #music_bar .music_left_bar .music_left_bar_item_wrap{
     position: relative;
@@ -1344,11 +1332,11 @@ body.short_header #music_bar .music_played .played_info{
 .music_name{
     font-family:'PT Sans';
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     color: #000;
 }
 .music_group{
-    font-size: 13px;
+    font-size: 15px;
     font-family:'PT Sans';
     color: #000;
     line-height: 15px;
@@ -1604,7 +1592,6 @@ body.short_header #music_bar .music_played .played_info{
 #music_bar .playlist_played .playlist_played_text{
     float: left;
     margin-left: 10px;
-    width: calc(100% - 56px);
 }
 #music_bar .playlist_played .playlist_played_text > p{
     font-family:'PT Sans';
@@ -1683,9 +1670,6 @@ body.short_header #music_bar .music_played .played_info{
     padding: 20px 20px 13px;
     display: block;
 }
-#music_bar.opened_video .bit_r{
-    display: none;
-}
 #music_bar.opened_video .video_bar_list{
     display: block;
 }
@@ -1699,9 +1683,6 @@ body.short_header #music_bar .music_played .played_info{
     display: none;
 }
 #music_bar.efir_bar_active .right_bar{
-    display: none;
-}
-#music_bar.efir_bar_active .bit_r{
     display: none;
 }
 #music_bar.efir_bar_active .efir_bar .right_bar{
@@ -1804,6 +1785,7 @@ body.short_header #music_bar .music_played .played_info{
 }
 .index_music_container ul li,.index_music_container .item{
     margin-bottom: 5px;
+    overflow: hidden;
     width: 100%;
 }
 .index_music_container ul li img.music_img,.index_music_container .item img.music_img{
@@ -2476,7 +2458,7 @@ footer .roskom p{
     position: relative;
 }
 .page_top_bg h1{
-    font-size: 44px;
+    font-size: 75px;
     font-family:'PT Serif';
     font-weight: 600;
     color: #fff;
@@ -2484,8 +2466,7 @@ footer .roskom p{
 .breadcrumbs{
     position: absolute;
     left: 75px;
-    top: 0px;
-    z-index: 99;
+    top: -55px;
     text-align: left;
 }
 .breadcrumbs ul li{
@@ -2562,6 +2543,9 @@ footer .roskom p{
 #article_item .breadcrumbs ul li .vert_line:after{
     background-color: #d1cfcb;
 }
+#news_item .breadcrumbs{
+    top: -40px;
+}
 #news_item .breadcrumbs ul li a{
     color: #7d7c79;
 }
@@ -2580,24 +2564,22 @@ footer .roskom p{
 #audio_playlist .breadcrumbs ul li .vert_line:after{
     background-color: #d1cfcb;
 }
+#audio_playlist .breadcrumbs{
+    top: -55px;
+}
 /*** ABOUT PAGE ***/
 
 #about_page_top{
-    padding-top: 30px;
-    padding-bottom: 60px;
+    padding-top: 90px;
+    padding-bottom: 90px;
     background-image: url(../images/about_page_bg.png);
     position: relative;
-    height: 305px;
-}
-#about_page_top h1{
-    font-size: 74px;
-    padding-top: 40px;
 }
 #about_page_top:after{
     position: absolute;
     content: '';
     left: 0;
-    top: 15px;
+    top: 69px;
     height: 136px;
     width: 100%;
     background: -moz-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.3) 50%, rgba(255,255,255,0) 100%);
@@ -2608,7 +2590,7 @@ footer .roskom p{
     z-index: 99;
 }
 #about_page_top .container .breadcrumbs{
-    top: 0px;
+    top: -45px;
 }
 .about_text{
     padding: 0px 0 80px;
@@ -2638,12 +2620,11 @@ footer .roskom p{
     background-position: center top;
     text-align: center;
     padding-top: 45px;
-    padding-bottom: 40px;
 }
 .interview p{
     font-family: 'PT Sans';
     font-size: 17.24px;
-    margin-bottom: 180px;
+    margin-bottom: 220px;
 }
 .interview a.opros_interview{
     color: #fff;
@@ -2718,13 +2699,7 @@ footer .roskom p{
 .about_text .klad_mudr h4{
     margin-bottom: 20px;
 }
-.about_text .klad_mudr .about_img{
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 205px;
-    display: block;
-    background-size: cover;
+.about_text .klad_mudr .klad_mudr_img{
     margin-bottom: 80px;
 }
 .about_text .klad_mudr h5{
@@ -2776,16 +2751,19 @@ footer .roskom p{
 #video_page h1.page_name{
     margin-bottom: 15px;
 }
+.daily_video_container{
+    /*padding-top: 30px;*/
+}
 .daily_video_container h2{
-    font-family:'PT Serif';
+    font-family: 'PT Serif';
     font-size: 44px;
     font-weight: bold;
     color: #e94422;
     text-align: center;
 }
 .daily_video_slider{
-    height: 370px;
-    margin-bottom: 30px;
+    height: 255px;
+    margin-bottom: 60px;
 }
 .daily_video_slider .slick-list{
     height: 100%;
@@ -2795,9 +2773,10 @@ footer .roskom p{
 }
 .daily_video_slider ul.slick-dots{
     width: 100%;
+    padding: 0 40px 0 60px;
     position: absolute;
     left: 0;
-    bottom: -16px;
+    bottom: -25px;
 }
 .daily_video_slider ul.slick-dots li{
     float: left;
@@ -3013,7 +2992,7 @@ footer .roskom p{
 
 #audio_page_top{
     position: relative;
-    padding: 30px 0 70px;
+    padding: 45px 0 100px;
     background: url(../images/audio_page_bg.png);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
@@ -3041,7 +3020,8 @@ footer .roskom p{
 }
 #audio_page_top h1{
     color: #f17d1f;
-    margin-bottom: 30px;
+    margin-bottom: 90px;
+    padding-top: 55px;
 }
 #audio_page_top .audio_page_header{
     text-align: inherit;
@@ -3050,14 +3030,13 @@ footer .roskom p{
     float: left;
 }
 #audio_page_top .audio_page_header .tabs ul li{
-    font-size: 1.550vw;
+    font-size: 28px;
 }
 #audio_page_top .audio_page_header .tabs ul li.active{
     color: #fff;
 }
 #audio_page_top .audio_page_header .radio_efir{
     float: right;
-    margin-right: 15px;
 }
 #audio_page_top .audio_page_header .radio_efir a{
     background-color: #f17d1f;
@@ -3085,8 +3064,7 @@ footer .roskom p{
 #audio_page_top .tab_container ul li{
     display: inline-block;
     vertical-align: text-top;
-    width: calc(100% / 6);
-    margin-right: 35px;
+    width: calc((100% / 6) - 35px);
 }
 #audio_page_top .tab_container ul li .audioP_top_img{
     display: block;
@@ -3095,7 +3073,7 @@ footer .roskom p{
 }
 #audio_page_top .tab_container ul li .audioP_name{
     color: #fff;
-    font-size: 1.113vw;
+    font-size: 21px;
     font-family:'PT Sans';
     font-weight: 600;
     margin-bottom: 5px;
@@ -3110,7 +3088,7 @@ footer .roskom p{
 }
 #audio_page_top .tab_container ul li .audioP_descr{
     color: #fff;
-    font-size: 0.738vw;
+    font-size: 15px;
     font-family:'PT Sans';
     line-height: 1.2;
     display: block;
@@ -3241,9 +3219,6 @@ footer .roskom p{
     margin-bottom: 20px;
     margin-right: 30px;
 }
-#audio_kompoz .left_audio_komp_box:hover .overlay_gradient{
-    display: none;
-}
 #audio_kompoz .left_audio_komp_box .index_music_container ul li .index_mus_info,#audio_kompoz .left_audio_komp_box .index_music_container .item .index_mus_info{
     padding: 0;
 }
@@ -3365,7 +3340,7 @@ footer .roskom p{
 header .mobile_menu{
     display: none;
     position: fixed;
-    top: 60px;
+    top: 84px;
     left: 0;
     width: 100%;
     height: auto;
@@ -3396,7 +3371,7 @@ body.pay_notice header .mobile_menu{
 
 /**** OUR PROGRAMMS PAGE ****/
 #our_prog_top{
-    padding-top: 30px;
+    padding-top: 90px;
     padding-bottom: 25px;
     background-color: #f2f2f2;
 }
@@ -3404,14 +3379,13 @@ body.pay_notice header .mobile_menu{
     position: relative;
 }
 #our_prog_top .breadcrumbs{
-    top: 0px;
+    top: -45px;
     left: 75px;
 }
 #our_prog_top h1{
     margin-bottom: 0;
 }
 #our_prog_slider_box .our_prog_slider .our_prog_slide{
-    height: 370px;
     padding: 30px 0px 50px 80px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3458,7 +3432,7 @@ body.pay_notice header .mobile_menu{
     color: #fff;
     font-weight: 600;
     font-family: 'PT Serif';
-    font-size: 3.675vw;
+    font-size: 70px;
     line-height: 1.1;
     margin-bottom: 25px;
 }
@@ -3466,7 +3440,7 @@ body.pay_notice header .mobile_menu{
     color: #fff;
     font-weight: 600;
     font-family: 'PT Sans';
-    font-size: 1.250vw;
+    font-size: 24px;
     line-height: 1.2;
     margin-bottom: 30px;
 }
@@ -3491,8 +3465,9 @@ body.pay_notice header .mobile_menu{
     font-family: 'PT Serif';
     padding: 6px 11px;
 }
+
 #our_prog_list_box{
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 20px;
 }
 #our_prog_list_box #our_prog_list{
@@ -3583,7 +3558,7 @@ body.pay_notice header .mobile_menu{
 }
 #lk_section{
     position: relative;
-    padding: 30px 0 120px;
+    padding: 100px 0 120px;
     background-color: #F2F2F2;
 }
 #lk_section:after{
@@ -3603,7 +3578,7 @@ body.pay_notice header .mobile_menu{
 }
 #lk_section .container .breadcrumbs{
     left: 75px;
-    top: 0px;
+    top: -55px;
 }
 #lk_section form.main_lk_form{
     float: left;
@@ -3619,7 +3594,7 @@ h1.page_name{
     font-family: 'PT Serif';
     font-weight: bold;
     color: #e94422;
-    font-size: 44px;
+    font-size: 44.55px;
     margin-bottom: 55px;
 }
 #lk_section .lk_img_container{
@@ -3875,14 +3850,14 @@ h1.page_name{
 }
 /**** PROGRAMM INNER PAGE ****/
 #prog_item_top{
-    padding: 0px 0 55px;
+    padding: 50px 0 55px;
     background-color: #f2f2f2;
 }
 #prog_item_top .container{
     position: relative;
 }
 #prog_item_top .breadcrumbs{
-    top: 30px;
+    top: -5px;
 }
 #prog_item_info{
     position: relative;
@@ -3913,7 +3888,7 @@ h1.page_name{
     content: '';
     left: 0;
     top: 80px;
-    height: 140px;
+    height: 280px;
     width: 100%;
     z-index: -1;
     background: -moz-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.6) 50%, rgba(255,255,255,0) 100%);
@@ -3931,7 +3906,7 @@ h1.page_name{
     margin-bottom: 30px;
 }
 #prog_item_info .container h1{
-    font-size: 44px;
+    font-size: 75px;
     color: #fff;
     font-family: 'PT Serif';
     font-weight: 600;
@@ -3956,25 +3931,16 @@ h1.page_name{
     position: fixed;
     z-index: 9999;
     right: 0;
-    top: 40%;
-    -webkit-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -ms-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -o-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
+    top: 45%;
 }
 .right_soc ul a{
     text-decoration: none;
 }
 .right_soc ul li{
     border: 1px solid #797979;
-    border-bottom: none;
     padding: 30px 15px;
     text-align: center;
     background-color: #fff;
-}
-.right_soc ul a:last-child li{
-    border-bottom: 1px solid #797979;
 }
 .right_soc ul li .soc_img{
     display: block;
@@ -3996,14 +3962,14 @@ h1.page_name{
 #releases .container .rel_left{
     float: left;
     width: calc(100% - 300px);
-    padding-top: 20px;
+    padding-top: 75px;
 }
 #releases .container .rel_left h3{
     text-align: center;
     color: #000;
     font-size: 44px;
     font-family: 'PT Serif';
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 #releases .container .rel_left .rel_list{
     display: flex;
@@ -4457,7 +4423,7 @@ h1.page_name{
 }
 
 /*** Fail pay message popup ***/
-
+/*** SUBSCRIBE POPUP ***/
 .failpay_popup_container{
     display: none;
     position: fixed;
@@ -4762,29 +4728,13 @@ form.data_info .log_input_wrap p{
     padding: 20px 0 22px;
     border-radius: 25px;
     font-family: 'PT Serif';
-    font-size: 20px;
+    font-size: 24.31px;
     line-height: 1.2;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
-}
-.bit_r{
-    float: right;
-    padding: 2px;
-    border-radius: 2px;
-    margin-left: 20px;
-    color: #f47b22;
-    font-family: 'PT Serif';
-    font-size: 14px;
-    width: 73px;
-    text-align: center;
-    background-color: #f0f0f0;
-}
-.bit_r sup{
-    vertical-align: super;
-    font-size: 10px;
 }
 .reg_btn button:hover{
     animation-name: bg_slide;
@@ -4867,7 +4817,7 @@ form.data_info .log_input_wrap p{
 /**** TARIFS PAGE ****/
 #tarifs{
     position: relative;
-    padding: 30px 0 80px;
+    padding: 100px 0 120px;
     background: url(../images/audio_page_bg.png);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
@@ -4878,7 +4828,7 @@ form.data_info .log_input_wrap p{
     position: absolute;
     content: '';
     left: 0;
-    top: 0px;
+    top: 69px;
     height: 136px;
     width: 100%;
     background: -moz-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.3) 50%, rgba(255,255,255,0) 100%);
@@ -4902,21 +4852,10 @@ form.data_info .log_input_wrap p{
 }
 #tarifs h1{
     color: #fff;
-    margin-bottom: 30px;
-}
-#tarifs h2{
-    width: 100%;
-    color: #fff;
-    line-height: 1.2;
-    font-family: 'PT Serif';
-    font-size: 39px;
-    text-align: center;
-    margin: 0 auto 25px;
-    max-width: 900px;
-    padding: 0 50px;
+    margin-bottom: 70px;
 }
 .tarif_top_list{
-    max-width: 1000px;
+    max-width: 980px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -4925,8 +4864,8 @@ form.data_info .log_input_wrap p{
 }
 .tarif_top_list .tarif_top_item{
     position: relative;
-    width: 220px;
-    height: auto;
+    width: 294px;
+    height: 282px;
     border-radius: 15px;
     background-color: #F38C1E;
     text-align: center;
@@ -4937,45 +4876,12 @@ form.data_info .log_input_wrap p{
     background-position: center;
     background-repeat: no-repeat;
     padding-top: 35px;
-    padding-bottom: 20px;
-    margin-top: 7px;
-}
-.tarif_top_list .tarif_top_item.small_mb{
-    padding-top: 15px;
-}
-.tarif_top_list .tarif_top_item.small_mb h3.tarif_srok{
-    margin-bottom: 25px;
-}
-.tarif_top_list .tarif_top_item.akcia{
-    overflow: hidden;
-}
-.tarif_top_list .tarif_top_item.akcia.border{
-    border: 7px solid #fff;
-    margin-top: 0;
-}
-.akcia_proc{
-    position: absolute;
-    top: 0;
-    right: -43px;
-    background-color: #fff;
-    color: #e94422;
-    font-size: 16.64px;
-    font-weight: bold;
-    font-family: 'PT Serif';
-    width: 150px;
-    padding: 6px 33px 6px 61px;
-    -webkit-transform: rotate(42deg);
-    -moz-transform: rotate(42deg);
-    -ms-transform: rotate(42deg);
-    -o-transform: rotate(42deg);
-    transform: rotate(42deg);
 }
 .tarif_top_list .tarif_top_item h3.tarif_srok{
-    font-size: 33px;
+    font-size: 42px;
     font-family: 'PT Serif';
     color: #fff;
     margin-bottom: 45px;
-    line-height: 1.2;
 }
 .tarif_top_list .tarif_top_item .tarif_price{
     font-size: 54.21px;
@@ -4983,65 +4889,32 @@ form.data_info .log_input_wrap p{
     font-weight: bold;
     margin-bottom: 10px;
 }
-.tarif_top_list .tarif_top_item .tarif_price.new{
-    margin-bottom: 0;
-    display: block;
-}
-.other_tarifs .tarif_top_list .tarif_top_item .tarif_price.before{
-    color: #F38C1E;
-    opacity: 0.56;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-.tarif_top_list .tarif_top_item .tarif_price.before{
-    color: rgba(255,255,255,.56);
-    position: relative;
-    display: inline-block;
-}
-.tarif_top_list .tarif_top_item .tarif_price.before:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 50%;
-    width: 100%;
-    height: 2px;
-    background-color: #d90000;
-    -webkit-transform: rotate(-20deg);
-    -moz-transform: rotate(-20deg);
-    -ms-transform: rotate(-20deg);
-    -o-transform: rotate(-20deg);
-    transform: rotate(-20deg);
-}
 .tarif_top_list .tarif_top_item p{
     color: #fff;
     font-family: 'PT Serif';
     font-size: 16.64px;
 }
 .tarif_top_list .tarif_top_item a{
-    display: block;
-    width: 144px;
-    margin: 30px auto 0;
+    display: inline-block;
     color: #f38c1e;
     font-size: 15.45px;
     text-decoration: none;
     background-color: #fff;
     font-family: 'PT Serif';
     font-weight: bold;
+    margin-top: 20px;
     border-radius: 5px;
-    padding: 13px 5px;
-}
-.other_tarifs .tarif_top_item{
-    width: 290px;
-    background-color: #E6E6E6;
-    color: #000;
-    margin: 0 27px;
+    padding: 13px 46px;
 }
 .other_tarifs{
     padding: 20px 0 50px;
 }
 .other_tarifs .tarif_top_list{
     margin-bottom: 25px;
-    justify-content: center;
+}
+.other_tarifs .tarif_top_item{
+    background-color: #E6E6E6;
+    color: #000;
 }
 .other_tarifs .tarif_top_item h3.tarif_srok{
     color: #000;
@@ -5059,7 +4932,6 @@ form.data_info .log_input_wrap p{
 .other_tarifs .tarif_top_item a{
     color: #fff;
     background-color: #f38c1e;
-    margin-top: 20px;
 }
 .sub_benefit{
     max-width: 980px;
@@ -5073,24 +4945,27 @@ form.data_info .log_input_wrap p{
     font-size: 22px;
     line-height: 28px;
     color: #000;
-    margin-bottom: 15px;
+
 }
 
 /*** CONTACTS PAGE ***/
 .contacts_top{
-    padding: 30px 0 30px;
+    padding: 40px 0 10px;
     background-image: url(../images/audio_page_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     position: relative;
 }
+.contacts_top .breadcrumbs{
+    top: 5px;
+}
 .contacts_top:after{
     position: absolute;
     content: '';
     left: 0;
-    top: 0px;
-    height: 124px;
+    top: 96px;
+    height: 144px;
     width: 100%;
     background: -moz-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 50%, rgba(255,255,255,0) 100%);
     background: -webkit-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 50%, rgba(255,255,255,0) 100%);
@@ -5105,11 +4980,11 @@ form.data_info .log_input_wrap p{
     width: 100%;
     max-width: 570px;
     margin: 0 auto;
-    font-size: 44px;
-    line-height: 1.1;
+    font-size: 75px;
+    line-height: 1.2;
 }
 #contacts .left_col{
-    padding-top: 60px;
+    padding-top: 110px;
     padding-right: 25px;
 }
 #contacts .container{
@@ -5226,14 +5101,14 @@ form.data_info .log_input_wrap p{
 
 /*** ARTICLES PAGE ***/
 #articles{
-    padding-top: 30px;
+    padding-top: 100px;
 }
 #articles .container{
     position: relative;
     z-index: 99;
 }
 #articles h1{
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 .articles_slider_box{
     position: relative;
@@ -5244,39 +5119,14 @@ form.data_info .log_input_wrap p{
 .articles_slider ul.slick-dots{
     width: 100%;
     position: absolute;
+    max-width: 1440px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: -16px;
-}
-.daily_video_slider .slick-prev,.our_prog_slider .slick-prev,.articles_slider .slick-prev{
-    left: 15px;
-    background-image: url(../images/arrow_left.png);
-}
-.daily_video_slider .slick-arrow,.our_prog_slider .slick-arrow,.articles_slider .slick-arrow{
-    position: absolute;
-    width: 27px;
-    height: 49px;
-    top: 50%;
-    color: transparent;
-    border: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    z-index: 99;
-    cursor: pointer;
-}
-.daily_video_slider .slick-next,.our_prog_slider .slick-next,.articles_slider .slick-next{
-    right: 65px;
-    background-image: url(../images/arrow_right.png);
+    bottom: -20px;
 }
 .articles_slider ul.slick-dots li{
     float: left;
@@ -5299,15 +5149,12 @@ form.data_info .log_input_wrap p{
     background-color: #f47b22;
 }
 .articles_slider .article_slide{
-    padding-top: 15px;
+    padding-top: 45px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-bottom: 50px;
-}
-.news_slider_box .article_slide{
-    padding-bottom: 14px;
+    padding-bottom: 60px;
 }
 .articles_slider .article_slide .container{
     z-index: 99;
@@ -5318,19 +5165,21 @@ form.data_info .log_input_wrap p{
     color: #fff;
     text-align: center;
     font-style: italic;
-    margin-bottom: 25px;
+    margin-bottom: 65px;
 }
 .articles_slider .article_slide .related_art_box{
-    display: block;
-    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-left: 78px;
 }
 .articles_slider .article_slide .news_box{
-    display: block;
-    max-width: 1350px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -5339,7 +5188,6 @@ form.data_info .log_input_wrap p{
 .related_art_box .rel_art_item{
     position: relative;
     width: 100%;
-    float: left;
     display: inline-block;
     max-width: 450px;
     margin-right: 54px;
@@ -5400,20 +5248,9 @@ form.data_info .log_input_wrap p{
     line-height: 1.2;
     color: #000;
     padding-right: 45px;
-    max-height: 92px;
-    overflow: hidden;
-    position: relative;
 }
-.related_art_box .rel_art_item .text:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 40px;
-    width: 100%;
-    background: -moz-linear-gradient(top, rgba(255,255,255,.0) 0%, rgba(255,255,255,.8) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,.0) 0%, rgba(255,255,255,.8) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,.0) 0%, rgba(255,255,255,.8) 100%);
+.related_art_box .rel_art_item{
+
 }
 .related_art_box .rel_art_item a{
     text-decoration: none;
@@ -5470,8 +5307,8 @@ form.data_info .log_input_wrap p{
 }
 .related_art_box .art_descr{
     display: inline-block;
-    float: right;
-    max-width: 210px;
+    max-width: 233px;
+    padding-top: 17px;
 }
 .related_art_box .art_descr p{
     color: #fff;
@@ -5481,7 +5318,7 @@ form.data_info .log_input_wrap p{
     line-height: 1.2;
 }
 #new_articles{
-    padding: 30px 0 90px;
+    padding: 40px 0 90px;
 }
 #new_articles .container{
     padding: 0 15px 0 120px;
@@ -5725,7 +5562,7 @@ form.data_info .log_input_wrap p{
 .popular_list .pop_item .pop_info{
     float: left;
     width: 100%;
-    max-width: calc(100% - 121px);
+    max-width: 175px;
 }
 .popular_list .pop_item .pop_info span{
     display: block;
@@ -5748,8 +5585,7 @@ form.data_info .log_input_wrap p{
 .news_slider_box .news_box .news_item{
     padding-top: 30px;
     padding-right: 70px;
-    max-width: 450px;
-    margin-right: 53px;
+    max-width: 400px;
 }
 .news_slider_box .news_box .news_item a{
     text-decoration: none;
@@ -5777,20 +5613,6 @@ form.data_info .log_input_wrap p{
     font-family: 'PT Sans';
     line-height: 1.2;
     color: #000;
-    max-height: 92px;
-    overflow: hidden;
-    position: relative;
-}
-.news_box .news_item .text:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 40px;
-    width: 100%;
-    background: -moz-linear-gradient(top,  rgba(255,255,255,.0) 0%,  rgba(255,255,255,.8) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,.0) 0%, rgba(255,255,255,.8) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(255,255,255,.0) 0%, rgba(255,255,255,.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .news_box .news_item{
     margin-bottom: 50px;
@@ -5807,8 +5629,8 @@ form.data_info .log_input_wrap p{
     font-size: 15px;
 }
 .news_slider_box .news_box .art_descr{
+    margin-left: 50px;
     display: inline-block;
-    float: right;
     max-width: 260px;
 }
 .news_box .art_descr p{
@@ -5886,11 +5708,8 @@ form.data_info .log_input_wrap p{
 
 /*** ARTICLES ITEM ***/
 #article_item{
-    padding-top: 55px;
+    padding-top: 100px;
     position: relative;
-}
-#article_item .breadcrumbs{
-    top: -25px;
 }
 #article_item .container{
     position: relative;
@@ -6016,13 +5835,6 @@ form.data_info .log_input_wrap p{
     line-height: 1.2;
     margin-bottom: 25px;
 }
-.news_item_info .news_text p{
-    font-family: 'PT Sans';
-    font-size: 18px;
-    color: #000;
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
 .article_item_info .left_col .art_item_top{
     position: relative;
     font-family: 'PT Serif';
@@ -6055,14 +5867,12 @@ form.data_info .log_input_wrap p{
     font-size: 13.8px;
     font-family: 'PT Sans';
 }
-.article_img_text{
+.article_item_info .left_col .article_img_text{
     float: left;
-    width: calc(100% - 230px);
+    width: 100%;
+    max-width: 595px;
 }
-.news_text{
-    padding-right: 50px;
-}
-.article_img_text p{
+.article_item_info .left_col .article_img_text p{
     font-family: 'PT Sans';
     font-style: italic;
     font-size: 18px;
@@ -6073,50 +5883,6 @@ form.data_info .log_input_wrap p{
     font-weight: bold;
     font-size: 33.79px;
     margin-bottom: 25px;
-}
-.news_item_info .news_text h4{
-    font-family: 'PT Sans';
-    font-weight: bold;
-    font-size: 33.79px;
-    margin-bottom: 25px;
-}
-.news_item_info .news_text h5.art_item_bottom{
-    position: relative;
-    margin-top: 75px;
-    color: #000;
-    font-family: 'PT Serif';
-    font-size: 27px;
-    line-height: 1.3;
-    margin-bottom: 75px;
-}
-.news_item_info .news_text h5.art_item_bottom:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: -47px;
-    width: 100%;
-    background-image: url(../images/about_after2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    height: 38px;
-}
-.news_item_info .news_text h5.art_item_bottom:before{
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: -47px;
-    width: 100%;
-    background-image: url(../images/about_after2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    height: 38px;
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
 }
 .article_item_info .left_col h5.art_item_bottom{
     position: relative;
@@ -6137,7 +5903,7 @@ form.data_info .log_input_wrap p{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 38px;
+    height: 27px;
 }
 .article_item_info .left_col h5.art_item_bottom:before{
     position: absolute;
@@ -6149,7 +5915,7 @@ form.data_info .log_input_wrap p{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 38px;
+    height: 27px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -6159,7 +5925,7 @@ form.data_info .log_input_wrap p{
 
 /*** NEWS ITEM ***/
 #news_item{
-    padding-top: 30px;
+    padding-top: 85px;
     background-color: #F2F2F2;
     position: relative;
 }
@@ -6175,9 +5941,6 @@ form.data_info .log_input_wrap p{
 }
 .news_item_info .article_item_info{
     background-color: #fff;
-}
-.news_item_info .left_col{
-    padding-bottom: 0;
 }
 #news_item .news_name{
     font-family: 'PT Serif';
@@ -6196,203 +5959,15 @@ form.data_info .log_input_wrap p{
     max-width: 950px;
     margin: 0 auto;
 }
-.news_item_info .head p.news_item_date{
+.news_item_info .article_item_info .left_col p.news_item_date{
     color: #b6b8ba;
     font-size: 19.74px;
-    float: left;
 }
-.news_item_info .head .info{
-    float: right;
-    font-size: 17px;
-    font-family: 'PT Sans';
-    color: #fff;
-}
-.head .comments{
-    position: relative;
-    display: inline-block;
-    z-index: 99;
-    margin-right: 20px;
-}
-.head .comments:after{
-    position: absolute;
-    content: '';
-    width: 46px;
-    height: 35px;
-    top: 8px;
-    left: 16px;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-image: url(../images/comments.png);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-}
-.head .likes{
-    position: relative;
-    display: inline-block;
-    z-index: 99;
-}
-.head .likes:after{
-    position: absolute;
-    content: '';
-    width: 45px;
-    height: 38px;
-    left: 13px;
-    top: 10px;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-image: url(../images/video_like.png);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-}
-.discuss{
-    padding-top: 20px;
-    padding-bottom: 65px;
-    background-color: #f6f6f6;
-}
-.discuss .container{
-    padding-left: 105px;
-}
-.discuss .head{
-    max-width: 755px;
-    margin-bottom: 40px;
-}
-.discuss h3{
-    font-family: 'PT Sans';
-    font-size: 32px;
-    float: left;
-}
-.discuss .head .comments{
-    float: right;
-    color: #fff;
-    margin-top: 10px;
-}
-.discuss .head .comments:after{
-    background-image: url(../images/comments_grey.png);
-}
-.comments_body{
-    max-width: 755px;
-}
-.comments_body .my_answer{
-    margin-bottom: 20px;
-    background-color: #e6e6e6;
-    padding: 15px 20px 10px;
-    display: flex;
-    align-items: center;
-}
-.comments_body .my_answer .my_img{
-    display: inline-block;
-    margin-right: 10px;
-    width: 45px;
-    height: 45px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.comments_body .my_answer .my_comment{
-    display: flex;
-    width: 100%;
-    max-width: calc(100% - 60px);
-}
-.comments_body .my_answer .my_comment input{
-    width: calc(100% - 117px);
-    margin-right: 10px;
-    font-size: 22px;
-    padding-left: 20px;
-    border: none;
-    background: #fff;
-    padding: 6px 0 7px 20px;
-}
-.comments_body .my_answer .my_comment button{
-    background-color: #f47b22;
-    border: none;
-    color: #fff;
-    font-size: 14px;
-    font-family: 'PT Sans';
-    font-weight: 100;
-    border-radius: 10px;
-    line-height: 41px;
-    cursor: pointer;
-    padding: 0 19px;
-}
-.comments_body .answer{
-    margin-bottom: 20px;
-}
-.comments_body .answer .img_box{
-    float: left;
-}
-.comments_body .answer .img_box .name{
-    font-family: 'PT Sans';
-    font-size: 14px;
-    padding-left: 2px;
-    margin-bottom: 7px;
-}
-.comments_body .answer .img_box .user_img{
-    display: inline-block;
-    margin-right: 15px;
-    width: 45px;
-    height: 45px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.comments_body .answer .answer_text{
-    position: relative;
-    margin-top: 5px;
-    background: #fff;
-    float: left;
-    width: calc(100% - 60px);
-    padding: 10px 15px 10px 10px;
-    font-family: 'PT Sans';
-    line-height: 1.2;
-    font-size: 16px;
-}
-.comments_body .answer .answer_text:before{
-    content: '';
-    position: absolute;
-    left: -9px;
-    top: 50%;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #fff transparent transparent;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-.comments_body .answer .answer_text p{
-    margin-bottom: 5px;
-}
-.comments_body .answer .answer_text a{
-    font-size: 14px;
-}
-.comments_body .answer .answer_text .date_box{
-    font-size: 12px;
-    color: #8a8a8a;
-}
-.comments_body .answer.sub{
-    padding-left: 60px;
-}
+
 /*** OPROS PAGE ***/
 #opros_page{
     background-image: url(../images/opros_bg.png);
-    padding-top: 30px;
+    padding-top: 100px;
     padding-bottom: 70px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -6405,7 +5980,7 @@ form.data_info .log_input_wrap p{
     color: #7d7c79;
 }
 #opros_page h1{
-    margin-bottom: 40px;
+    margin-bottom: 83px;
 }
 #opros_page .opros_form{
     max-width: 905px;
@@ -6576,12 +6151,12 @@ form.data_info .log_input_wrap p{
 
 /*** AUDIO ITEM PAGE ***/
 #audio_item{
-    padding: 30px 0 70px;
+    padding: 100px 0 70px;
     background-color: #f2f2f2;
 }
 #audio_item .container{
     position: relative;
-    padding: 0 65px 0 65px;
+    padding: 0 95px 0 65px;
 }
 .right_soc.dark ul li{
     border: 1px solid #6b6b6b;
@@ -6593,8 +6168,8 @@ form.data_info .log_input_wrap p{
     color: #000;
     font-family: 'PT Serif';
     font-style: italic;
-    margin-bottom: 30px;
-    font-weight: bold;
+    margin-bottom: 85px;
+    font-weight: normal;
 }
 #audio_item .audio_item_top .left_box{
     float: left;
@@ -6949,27 +6524,36 @@ form.data_info .log_input_wrap p{
 
 /*** AUDIO PLAYLIST ***/
 #audio_playlist{
-    padding: 30px 0 75px;
+    padding: 100px 0 75px;
     background-color: #f2f2f2;
     background-image: url(../images/bottom_bg_triangles.png);
     background-size: 100% 114px;
     background-repeat: no-repeat;
     background-position: center calc(100% + 64px);
 }
+/* #audio_playlist:after{
+    position: absolute;
+    content: '';
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    
+} */
 #audio_playlist .container{
     position: relative;
 }
 #audio_playlist h1{
     font-family: 'PT Serif';
     color: #000;
-    font-size: 44px;
-    margin-bottom: 30px;
+    font-size: 44.55px;
+    margin-bottom: 82px;
     font-style: italic;
 }
 #audio_playlist .audio_item_top{
     overflow: hidden;
     width: 100%;
-    max-width: 760px;
+    max-width: 780px;
     margin: 0 auto;
 }
 #audio_playlist .playlist_top_name{
@@ -7533,11 +7117,6 @@ form.data_info .log_input_wrap p{
     flex-wrap: wrap;
     padding: 0 20px 20px 30px;
 }
-.mobile_menu .logged_bar a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
 .mobile_menu .logged_bar .user_img{
     display: inline-block;
     width: 29px;
@@ -7752,14 +7331,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     width: calc(100% - 50px);
     height: 46px;
 }
-.mus_wrap .mus_info:after{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    bottom: -3px;
-}
 .mus_wrap:not(:last-child){
     margin: 2px 0 4px;
 }
@@ -7966,100 +7537,27 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     background: -webkit-linear-gradient(top,  rgba(255,255,255,.5) 0%,rgba(255,255,255,.0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  rgba(255,255,255,.5) 0%,rgba(255,255,255,.0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
-.pay_history_box{
-    padding: 40px 0 100px;
-    background-color: #f2f2f2;
-}
-.pay_history_box .container{
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-}
-.pay_history_box h3{
-    font-size: 44px;
-    font-family: 'PT Serif';
-    margin-bottom: 45px;
-}
-.history_list .item{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 23px;
-    font-family: 'PT Serif';
-    padding-bottom: 15px;
-    border-bottom: 2px solid #dfdfdf;
-    padding-top: 20px;
-}
-.history_list .item .price{
-    font-weight: bold;
-}
-.pay_sys{
-    font-size: 22px;
-    font-family: 'PT Sans';
-    color: #858585;
-}
-.change_pass.mobile{
-    display: none;
-}
+
+
+
+
+
 
 
 /***** ADAPTIVE *****/
-@media screen and (max-width: 1500px){
-    .right_soc ul li{
-        padding: 25px 10px;
+@media (max-height: 768px) and (max-width: 1024px){
+    #audio_page_top h1{
+        margin-bottom: 40px;
     }
 }
 @media (max-height: 800px) and (max-width: 1024px){
     #audio_page_top h1{
         margin-bottom: 40px;
     }
-    .register_popup{
-        top: 10px;
-        transform: translate(-50%, 0);
-    }
-}
-@media (max-height: 768px) and (max-width: 1024px){
-    #audio_page_top h1{
-        margin-bottom: 40px;
-    }
-    .right_soc ul li{
-        padding: 15px 10px;
-    }
-    
-}
-@media (max-height: 570px) and (max-width: 1024px){
-    .right_soc ul li{
-        padding: 10px;
-    }
-    .right_soc{
-        top: inherit!important;
-        bottom: 0!important;
-    }
-    .right_soc ul{
-        bottom: 83px;
-        top: inherit;
-    }
 }
 @media (max-height: 800px) and (min-width: 1025px){
-    .register_popup{
-        top: 10px;
-        transform: translate(-50%, 0);
-    }
-    .opened_video_list{
-        height: 295px!important;
-    }
-    .efir_bar .opened_video_list{
-        height: 145px!important;
-    }
-    .opened_video_bar_main .opened_video_bar_main_img{
-        height: 295px!important;
-    }
-    .right_soc ul li{
-        padding: 15px 10px;
-    }
     #tarifs{
-        padding-top: 30px;
+        padding-top: 70px;
     }
     .daily_video_slider{
         height: 255px;
@@ -8068,7 +7566,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         font-size: 26px;
     }
     #about_page_top{
-        padding-bottom: 60px;
+        padding-bottom: 90px;
     }
     #releases{
         padding-bottom: 55px;
@@ -8083,22 +7581,22 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         padding-bottom: 100px;
     }
     #prog_item_info .container .title{
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
     #prog_item_top{
-        padding-top: 0px;
+        padding-top: 20px;
     }
     #our_prog_slider_box .our_prog_slider .our_prog_slide{
         padding: 30px 0px 40px 80px;
     }
     #our_prog_top{
-        padding-top: 30px;
+        padding-top: 60px;
     }
     h1.page_name{
         margin-bottom: 25px;
     }
     #lk_section{
-        padding-top: 30px;
+        padding-top: 70px;
     }
     .articles_slider .article_slide{
         padding-top: 25px;
@@ -8107,13 +7605,14 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         margin-bottom: 25px;
     }
     #audio_page_top h1{
-        margin-bottom: 10px;
+        margin-bottom: 40px;
+        padding-top: 25px;
     }
     #audio_page_top{
-        padding-top: 30px;
+        padding-top: 15px;
     }
     #articles{
-        padding-top: 30px;
+        padding-top: 70px;
     }
     body.pay_notice{
         padding-top: 320px;
@@ -8125,10 +7624,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         top: 52px;
     }
     body.pay_notice #music_bar{
-        animation: movePayNBar 0.4s linear forwards;
+        animation: movePayNBar 0.5s linear forwards;
     }
     body #music_bar{
-        animation: moveNBar 0.4s linear forwards;
+        animation: moveNBar 0.5s linear forwards;
     }
     @keyframes moveNBar{
         0%{
@@ -8165,9 +7664,12 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     #index_content{
         padding-top: 30px;
     }
+    .right_soc ul li{
+        padding: 20px 15px;
+    }
     .right_soc ul{
         top: inherit;
-        bottom: 90px;
+        bottom: 30px;
     }
     body.fixed_header .right_soc ul{
         top: 50%;
@@ -8178,47 +7680,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         transform: translateY(-50%);
     }
 }
-@media (max-height: 710px) and (min-width: 1025px){
-    .opened_video_bar_main .opened_video_bar_main_img{
-        height: 220px!important;
-    }
-    .efir_bar .opened_video_list{
-        height: 65px!important;
-    }
-    .opened_video_bar_main .opened_video_bar_main_img .play_btn{
-        height: 70px;
-        width: 70px;
-    }
-}
-@media (max-height: 650px) and (min-width: 1025px){
-    .right_soc ul li{
-        padding: 10px;
-    }
-}
-@media (max-height: 600px) and (min-width: 1025px){
-    .right_soc ul{
-        bottom: 83px;
-    }
-}
 @media screen and (max-width: 1439px){
-    .video_page_list{
-        justify-content: center;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text p{
-        font-size: 18px;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text h2{
-        font-size: 52px;
-    }
-    #audio_page_top .tab_container ul li .audioP_descr{
-        font-size: 12px;
-    }
-    #audio_page_top .tab_container ul li .audioP_name{
-        font-size: 16px;
-    }
-    #audio_page_top .audio_page_header .tabs ul li{
-        font-size: 22px;
-    }
     #audio_item_text .container .left_col{
         max-width: calc(100% - 455px);
         padding-right: 20px;
@@ -8254,33 +7716,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         max-width: 320px;
     }
 }
-@media screen and (max-width: 1366px){
-    .sub_benefit p{
-        font-size: 18px;
-        line-height: 1.3;
-    }
-}
 @media screen and (max-width: 1365px){
     .news_slider_box .news_box .art_descr{
-        float: none;
-    }
-    #lk_section .container{
-        padding: 0 50px;
-    }
-    .articles_slider .article_slide .news_box{
-        padding: 0 50px;
-        max-width: 1115px;
-        margin: 0 auto;
-    }
-    .articles_slider .article_slide .related_art_box{
-        padding: 0 50px;
-        max-width: 1110px;
-        margin: 0 auto;
-    }
-    .news_slider_box .news_box .art_descr{
         max-width: 100%;
-        padding-right: 50px;
-        margin-bottom: 30px;
     }
     .opened_video_list{
         height: 460px;
@@ -8314,9 +7752,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         padding-bottom: 0;
     }
     .related_art_box .art_descr{
-        float: none;
-        margin-bottom: 30px;
-        max-width: 100%;
+        max-width: 80%;
     }
     .related_art_box .rel_art_item{
         margin-bottom: 50px;
@@ -8414,6 +7850,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 1279px){
+
     #index_content .index_music{
         padding-left: 40px;
     }
@@ -8426,14 +7863,14 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     #contacts .container{
         padding: 0 25px 0 55px;
     }
+    #lk_section .container{
+        padding: 0 15px;
+    }
     .current_subs{
         padding: 25px 80px 25px 190px;
     }
 }
 @media screen and (max-width: 1245px){
-    .mus_wrap .mus_info .mus_name{
-        width: 35%;
-    }
     .index_music .mus_wrap .mus_info .mus_name{
         width: 28%;
     }
@@ -8457,9 +7894,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 1200px){
-    .mus_wrap .mus_info .mus_name{
-        width: 30%;
-    }
     footer .container{
         padding: 0 95px 0 60px;
     }
@@ -8484,21 +7918,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 1140px){
-    .news_slider_box .news_box .news_item{
-        max-width: 400px;
-    }
-    .articles_slider .article_slide .news_box{
-        max-width: 1015px;
-    }
-    .articles_slider .article_slide .related_art_box{
-        max-width: 1010px;
-    }
-    .mus_wrap .mus_info .mus_name{
-        width: 28%;
-    }
-    .mus_subs_img{
-        width: 5%;
-    }
     .count_text p{
         font-size: 26px;
     }
@@ -8596,258 +8015,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 1024px){
-    #new_articles.news .popular_box .popular_list_wrap .popular_list{
-        height: auto;
-    }
-    #new_articles.news .popular_box{
-        max-width: 650px;
-    }
-    .bit_r{
-        width: auto;
-    }
-    .discuss .container{
-        padding-left: 20px;
-    }
-    .articles_slider .article_slide .news_box{
-        max-width: 745px;
-    }
-    .articles_slider .article_slide .related_art_box{
-        max-width: 740px;
-    }
-    .sub_benefit p{
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    .news_slider_box .news_box .news_item a{
-        font-size: 10px;
-    }
-    .news_box .news_item .text{
-        padding-left: 30px;
-        font-size: 10px;
-        padding-right: 0;
-    }
-    .news_slider_box .news_box .news_item .name{
-        padding-left: 30px;
-    }
-    .news_slider_box .news_box .news_item .item_date{
-        padding-left: 30px;
-    }
-    .news_box .art_descr p{
-        font-size: 18px;
-    }
-    .news_slider_box .news_box .news_item .name{
-        font-size: 21px;
-    }
-    .news_slider_box .news_box .news_item{
-        max-width: 300px;
-        padding-right: 45px;
-        margin-right: 20px;
-    }
-    #lk_section:after{
-        bottom: 100px;
-    }
-    #lk_section .container{
-        margin-bottom: 100px;
-    }
-    #lk_section.alert .subs_ends_container{
-        background-color: #f38c1e;
-        padding: 25px 55px 0px;
-    }
-    .change_pass.mobile{
-        display: block;
-    }
-    .change_pass{
-        display: none;
-    }
-    .popular_box .popular_list{
-        display: block;
-    }
-    .popular_box .popular_list .pop_item{
-        width: 100%;
-        float: left;
-        height: 90px;
-    }
-    .news_item_info .article_item_info .right_col{
-        max-width: 100%; 
-    }
-    .news_item_info .article_item_info .right_col .popular_box{
-        max-width: 100%;
-        margin-bottom: 0;
-    }
-    #new_articles.news .right_col .popular_box .popular_list .pop_item{
-        width: 42%;
-        margin-right: 8%;
-        overflow: hidden;
-    }
-    #new_articles.news .right_col{
-        width: 100%;
-        margin: 0 auto;
-        max-width: 650px;
-    }
-    #new_articles .right_col{
-        width: 100%;
-        margin: 0 auto;
-        max-width: 670px;
-    }
-    .our_prog_slider .slick-arrow{
-        top: 90px;
-    }
-    .articles_slider .slick-arrow{
-        top: 37px;
-    }
-    .articles_slider .article_slide h2{
-        font-size: 40px;
-    }
-    .related_art_box .art_descr p{
-        font-size: 18px;
-    }
-    .articles_slider .article_slide{
-        padding-bottom: 10px;
-    }
-    .related_art_box .rel_art_item .rel_art_name{
-        height: 75px;
-    }
-    .related_art_box .rel_art_item .name{
-        font-size: 21px;
-    }
-    .rel_art_item a.read_article{
-        font-size: 10px;
-    }
-    .related_art_box .rel_art_item .name{
-        left: 30px;
-    }
-    .related_art_box .rel_art_item .text{
-        font-size: 10px;
-        padding-left: 30px;
-    }
-    .rel_art_item .rel_art_author span{
-        font-size: 9px;
-    }
-    .rel_art_item .rel_art_author{
-        left: 25px;
-    }
-    .rel_art_item .rel_art_author .art_author_img{
-        width: 50px;
-        height: 50px;
-    }
-    .related_art_box .rel_art_item{
-        max-width: 300px;
-        margin-right: 20px;
-    }
-    #contacts .right_col .interview{
-        margin-bottom: 25px;
-    }
-    #contacts .write_us{
-        padding-bottom: 90px;
-    }
-    #about_page_top{
-        height: 290px;
-    }
-    .about_text .klad_mudr .about_img{
-        height: 268px;
-    }
-    .right_col .interview p{
-        margin-bottom: 170px;
-    }
-    .about_text .right_col{
-        padding-top: 25px;
-    }
-    .interview_menu{
-        padding-top: 0;
-    }
-    .interview{
-        float: left;
-        width: 100%;
-        max-width: 395px;
-        margin-right: 45px;
-        padding-bottom: 35px;
-    }
-    .about_text .left_col{
-        padding-top: 20px;
-        padding-right: 50px;
-    }
-    .other_tarifs .tarif_top_list{
-        max-width: 760px;
-    }
-    .tarif_top_list{
-        max-width: 520px;
-        flex-wrap: wrap;
-    }
-    .other_tarifs .tarif_top_list .tarif_top_item{
-        padding: 20px 10px 15px;
-        height: auto;
-        margin-bottom: 20px;
-    }
-    #releases .container .rel_left{
-        padding-top: 35px;
-    }
-    .rel_auth p{
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-    .rel_auth img{
-        width: 40px;
-        height: 40px;
-        margin-right: 5px;
-        margin-bottom: 2px;
-    }
-    .mus_wrap .mus_info .mus_bar .likes{
-        margin-right: 5px;
-    }
-    .mus_wrap .mus_info .mus_bar .list_img{
-        margin-right: 5px;
-    }
-    .mus_wrap .mus_info .mus_group{
-        width: 25%;
-    }
-    .mus_wrap .mus_info .mus_name{
-        width: 25%;
-    }
-    .breadcrumbs{
-        top: -45px!important;
-        left: 20px!important;
-    }
-    .tarif_top_list .tarif_top_item .tarif_price{
-        font-size: 44px;
-    }
-    .tarif_top_list .tarif_top_item h3.tarif_srok{
-        font-size: 32px;
-    }
-    .tarif_top_list{
-        padding: 0 40px 0 15px;
-    }
-    #opros_page{
-        padding-top: 80px;
-    }
-    #article_item .breadcrumbs{
-        width: 100%;
-        max-width: 300px;
-        z-index: 99;
-        top: -25px!important;
-    }
-    #prog_item_top .breadcrumbs{
-        max-width: 300px;
-        width: 100%;
-        z-index: 99;
-        left: 20px;
-        top: 30px!important;
-    }
-    .contacts_top h1.page_name{
-        font-size: 32px;
-    }
-    #contacts .left_col{
-        padding-top: 30px;
-    }
-    #tarifs .breadcrumbs{
-        top: -45px;
-        left: 20px;
-    }
-    #our_prog_list_box #our_prog_list{
-        padding-left: 30px;
-    }
-    #audio_page_top{
-        padding-top: 80px;
-    }
     .count_text p{
         font-size: 18px;
         padding-top: 25px;
@@ -8862,12 +8029,14 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         font-size: 52px;
     }
     #about_page_top{
-        padding-top: 80px;
+        padding-top: 120px;
         padding-bottom: 85px;
+    }
+    .page_top_bg h1{
+        font-size: 50px;
     }
     .news_slider_box .news_box .art_descr{
         margin-left: 0;
-        margin-bottom: 30px;
     }
     .article_types_box{
         display: none;
@@ -8875,10 +8044,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .article_types_box.mobile{
         display: block;
         margin-bottom: 0;
-        width: 100%;
-        max-width: 325px;
-        float: left;
-        margin-right: 30px;
     }
     .subs_container .license{
         font-size: 14px;
@@ -8926,43 +8091,60 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         max-width: inherit;
         padding-top: 0;
     }
+    #news_item .breadcrumbs{
+        top: -45px;
+    }
+    #audio_playlist .breadcrumbs{
+        top: -25px;
+    }
     #audio_playlist{
-        padding-top: 80px;
+        padding-top: 100px;
     }
     #audio_item{
-        padding-top: 80px;
+        padding-top: 120px;
     }
     #news_item{
-        padding-top: 80px;
+        padding-top: 120px;
     }
     #article_item{
-        padding-top: 60px;
+        padding-top: 120px;
     }
     .contacts_top{
-        padding-top: 80px;
+        padding-top: 70px;
         padding-bottom: 61px;
     }
     #articles{
-        padding-top: 80px;
+        padding-top: 120px;
     }
     #tarifs{
-        padding-top: 80px;
+        padding-top: 120px;
+    }
+    #video_page .breadcrumbs{
+        left: 20px;
+        top: -25px;
     }
     #video_page{
-        padding-top: 80px;
+        padding-top: 100px;
+    }
+    #audio_page_top .breadcrumbs{
+        left: 20px;
+        top: 30px;
+    }
+    #lk_section .container .breadcrumbs{
+        left: 20px;
     }
     #our_prog_top .breadcrumbs{
         top: -45px;
         left: 20px;
     }
     #our_prog_top{
-        padding-top: 80px;
+        padding-top: 120px;
     }
     #lk_section{
-        padding: 80px 0 120px;
+        padding: 130px 0 120px;
     }
     #prog_item_top{
-        padding: 5px 0 55px;
+        padding: 80px 0 55px;
     }
     #music_bar .music_type_list ul li{
         width: 70px;
@@ -8971,7 +8153,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         font-size: 10px;
     }
     #music_bar .playlist_played .playlist_played_text .play_list_name{
-        font-size: 14px;
+        font-size: 16px;
     }
     #music_bar .playlist_played{
         left: 45px;
@@ -9150,7 +8332,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         left: 20px;
     }
     .breadcrumbs{
-        top: 0;
+        left: 20px;
+        top: -45px;
     }
     .pop_playlists_box h3{
         padding: 0;
@@ -9185,20 +8368,32 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         max-width: 100%;
         padding-bottom: 0;
         padding-top: 65px;
-        padding-right: 50px;
+    }
+    .article_item_info .left_col .art_item_top{
+        margin-right: 55px;
     }
     .article_item_info .right_col{
         padding-top: 30px;
         margin: 0 auto;
         padding-bottom: 50px;
-        max-width: 655px;
     }
     .sub_benefit{
-        padding: 0 55px 0 15px;
+        padding: 0 15px;
         max-width: 100%;
+    }
+    .tarif_top_list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tarif_top_list .tarif_top_item{
+        margin-bottom: 50px;
     }
     .about_text .klad_mudr .klad_mudr_img{
         max-width: 100%;
+    }
+    .about_text .right_col{
+        display: none;
     }
     #releases .container .rel_left{
         width: 100%;
@@ -9229,11 +8424,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         justify-content: center;
     }
     #lk_section .subs_add_pay{
-        position: relative;
-        left: inherit;
-        right: inherit;
-        top: inherit;
-        bottom: inherit;
+        right: 15px;
     }
     #lk_section form.main_lk_form{
         max-width: 320px;
@@ -9241,10 +8432,12 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     #lk_section .subs_ends_container p{
         margin: initial;
         text-align: left;
-        margin-bottom: 40px;
     }
     .current_subs{
-        padding: 25px 55px;
+        padding: 25px 15px;
+    }
+    #lk_section .subs_ends_container{
+        padding: 0 15px;
     }
     #our_prog_list_box .container{
         padding: 0 20px;
@@ -9258,14 +8451,17 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .article_types_box .art_type_list ul li .sub_type ul li{
         padding-left: 0;
     }
+    #prog_item_top .breadcrumbs{
+        left: 20px;
+    }
     .rel_auth{
         top: initial;
         bottom: 0;
-        -webkit-transform: translateY(35px);
-        -moz-transform: translateY(35px);
-        -ms-transform: translateY(35px);
-        -o-transform: translateY(35px);
-        transform: translateY(35px);
+        -webkit-transform: translateY(60px);
+        -moz-transform: translateY(60px);
+        -ms-transform: translateY(60px);
+        -o-transform: translateY(60px);
+        transform: translateY(60px);
     }
     #new_articles .container{
         padding: 0 30px;
@@ -9280,11 +8476,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         padding: 40px 0 50px;
     }
     .popular_box{
-        padding: 0;
-        width: 100%;
-        float: right;
-        max-width: 300px;
+        max-width: 100%;
         margin: 0 auto 20px;
+        padding: 0;
     }
     #new_articles .new_article .new_article_text{
         max-width: calc(100% - 222px);
@@ -9310,17 +8504,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     body #music_bar{
         animation: moveFixedBarTablet 0.6s linear forwards;
-    }
-    body #music_bar.login_opened{
-        animation: moveFixedBarTabletL 0.6s linear forwards;
-    }
-    @keyframes moveFixedBarTabletL{
-        0%{
-            top: 60px;
-        }
-        100%{
-            top: 178px;
-        }
     }
     @keyframes moveFixedBarTablet{
         0%{
@@ -9353,7 +8536,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
             top: 60px;
         }
         100%{
-            top: 60px;
+            top: 105px;
         }
     }
     body.pay_notice header{
@@ -9365,6 +8548,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #contacts .container{
         padding: 0 25px;
+    }
+    #contacts .right_col{
+        display: none;
     }
     #audioP_about .container{
         padding: 0 65px;
@@ -9383,17 +8569,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     .remember_toPay p{
         font-size: 15px;
-    }
-    body.fixed_header #music_bar{
-        animation: moveFixedBar 0.5s linear forwards;
-    }
-    @keyframes moveFixedBar{
-        0%{
-            top: 60px;
-        }
-        100%{
-            top: 60px;
-        }
     }
     body.fixed_header #music_bar .music_played{
         animation: progressBarMobile 0.25s linear forwards;
@@ -9429,7 +8604,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     header .logo_mobile{
         display: block;
-        animation: logoMobileShow 0.4s linear forwards;
+        animation: logoMobileShow 0.8s linear forwards;
     }
     header{
         height: 60px;
@@ -9462,7 +8637,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         cursor: pointer;
     }
     #index_content{
-        padding-top: 30px;
+        padding-top: 110px;
     }
     #index_content .index_video h2{
         margin-bottom: 25px;
@@ -9591,23 +8766,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     footer .footer_left_col .footer_nav_left{
         margin-right: 35px;
     }
-    #audio_kompoz .container{
-        padding: 0 20px;
-    }
-    .mus_subs_img{
-        width: 30px;
-    }
 }
 @media screen and (max-width: 875px){
-    .comments_body .my_answer .my_comment input{
-        width: calc(100% - 60px);
-    }
-    .comments_body{
-        max-width: 455px;
-    }
-    .discuss .head{
-        max-width: 455px;
-    }
     .index_music .mus_wrap .mus_info .mus_group{
         width: 36%;
     }
@@ -9654,6 +8814,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .playlist_items{
         padding: 0 20px;
     }
+    #audio_kompoz .container{
+        padding: 0 20px;
+    }
     #audio_kompoz .right_audio_komp{
         max-width: 320px;
     }
@@ -9662,29 +8825,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 800px){
-    .pay_history_box .container{
-        padding: 0 45px;
-    }
-    .sub_info{
-        margin-right: 40px;
-    }
-    .mus_wrap .mus_info .mus_group{
-        width: 35%;
-    }
-    .mus_wrap .mus_info .mus_name{
-        width: 30%;
-    }
-    #audio_kompoz .right_audio_komp{
-        float: none;
-        max-width: 420px;
-        margin: 0 auto 50px;
-    }
-    #audio_kompoz .left_audio_komp_box{
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-    }
     #music_bar .music_type_list{
         right: 0;
     }
@@ -9734,174 +8874,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     } 
 }
 @media screen and (max-width: 767px){
-    .tarif_top_list{
-        padding-right: 15px;
-    }
-    #tarifs h2{
-        padding: 0 15px;
-        font-size: 32px;
-    }
-    #new_articles.news .right_col .popular_box .popular_list .pop_item{
-        overflow: initial;
-        width: 100%;
-        margin-right: 0;
-    }
-    .news_text{
-        padding-right: 0;
-    }
-    .discuss .container{
-        padding: 0 20px;
-    }
-    .comments_body{
-        max-width: 100%;
-    }
-    .discuss .head{
-        max-width: 100%;
-    }
-    .about_text .left_col{
-        padding-right: 15px;
-    }
-    .articles_slider .article_slide .news_box{
-        padding-left: 25px;
-        padding-right: 25px;
-        display: block;
-    }
-    .daily_video_slider .slick-next{
-        right: 15px;
-    }
-    .right_soc ul li{
-        border-bottom: 1px solid #797979;
-        border-right: none;
-    }
-    .right_soc ul a:last-child li{
-        border-right: 1px solid #797979;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text .vipusk .vipusk_desc{
-        font-size: 15px;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text p{
-        text-align: center;
-    }
-    #our_prog_slider_box .our_prog_slider .our_prog_slide .prog_slide_text{
-        margin: 0 auto;
-    }
-    .our_prog_slider .slick-next{
-        right: 15px;
-    }
-    form.data_info input{
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-    .pay_sys{
-        font-size: 16px;
-    }
-    .history_list .item{
-        font-size: 16px;
-    }
-    #lk_section .subs_ends_container p{
-        margin-bottom: 18px;
-    }
-    #lk_section.alert .subs_ends_container{
-        padding-top: 10px;
-        padding-bottom: 20px;
-    }
-    .popular_box .popular_list{
-        display: flex;
-    }
-    .popular_box .popular_list .pop_item{
-        width: 100%;
-        float: none;
-        height: inherit;
-        margin-right: 0;
-    }
-    .news_slider_box .articles_slider .slick-arrow{
-        top: 35px;
-    }
-    .other_tarifs .tarif_top_list{
-        padding: 0 15px;
-    }
-    .article_types_box .art_type_list ul li:not(:last-child):after{
-        left: 20px;
-        right: 20px;
-        width: calc(100% - 40px)
-    }
-    .articles_slider .slick-arrow{
-        width: 20px;
-        height: 36px;
-        top: 35px;
-    }
-    .articles_slider .slick-prev{
-        left: 15px;
-    }
-    .articles_slider .slick-next{
-        right: 15px;
-    }
-    .popular_box{
-        float: none;
-    }
-    .article_types_box.mobile{
-        max-width: 100%;
-        margin-right: 0;
-        float: none;
-    }
-    #contacts .cont_phone{
-        margin-bottom: 28px;
-    }
-    .interview p{
-        font-size: 14px;
-    }
-    #contacts .interview_menu{
-        margin-bottom: 25px;
-    }
-    #about_page_top{
-        height: 140px;
-    }
-    .about_text .klad_mudr .about_img{
-        height: 120px;
-    }
-    .about_text{
-        padding-bottom: 25px;
-    }
-    .interview_menu{
-        max-width: 395px;
-        margin: 0 auto;
-    }
-    .interview{
-        float: none;
-        margin: 0 auto 25px;
-    }
-    .tarif_top_list .tarif_top_item{
-        margin-bottom: 20px;
-    }
-    .flip-clock-wrapper{
-        float: left;
-    }
-    .breadcrumbs{
-        left: 0!important;
-        width: 100%!important;
-        text-align: center!important;
-        top: -30px!important;
-        max-width: 100%!important;
-    }
-    #audio_playlist h1{
-        font-size: 32px;
-        padding: 10px 0 0 0;
-    }
-    #article_item .breadcrumbs{
-        top: -30px!important;
-    }
-    .contacts_top .breadcrumbs{
-        top: 0!important;
-    }
-    #about_page_top .container .breadcrumbs{
-        top: -20px!important;
-    }
-    #audio_page_top h1{
-        font-size: 32px;
-    }
-    #audio_page_top{
-        padding-top: 40px;
-    }
     .count_text p b{
         display: block;
     }
@@ -9909,18 +8881,15 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         text-align: left;
         font-size: 13px;
     }
+    .article_item_auth span{
+        padding-bottom: 24px;
+    }
     .article_item_auth{
-        padding-right: 0;
-        bottom: 10px;
-        left: 30px;
         -webkit-transform: translateY(0);
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
         transform: translateY(0);
-    }
-    .article_item_auth img{
-        margin-right: 0;
     }
     .index_music .mus_wrap .mus_info .mus_group{
         width: 30%;
@@ -9931,19 +8900,25 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     body.fixed_header.mobile_bar_scroll #music_bar_mobile{
         display: block;
     }
+    .contacts_top:after{
+        top: 35px;
+    }
     .contacts_top h1.page_name{
-        padding-top: 30px;
-        font-size: 32px;
+        padding-top: 20px;
+        font-size: 48px;
         max-width: 400px;
         margin-bottom: 0;
     }
     #about_page_top{
-        padding-bottom: 40px;
+        padding-bottom: 87px;
     }
     #about_page_top h1{
-        padding-top: 0px;
-        font-size: 32px;
+        padding-top: 50px;
         padding-bottom: 20px;
+    }
+    #lk_section.alert .subs_ends_container{
+        background-color: #f38c1e;
+        padding: 25px 25px 25px;
     }
     .news_item_info .article_item_info .left_col p.news_item_date{
         font-size: 14px;
@@ -9951,10 +8926,21 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #news_item h1{
         font-size: 24px;
-        padding: 0 25px;
+    }
+    .news_box .art_descr p{
+        display: none;
+    }
+    .news_slider_box .news_box .news_item:not(:first-child){
+        display: none;
     }
     .articles_slider .article_slide{
         padding-bottom: 10px;
+    }
+    .related_art_box .art_descr p{
+        display: none;
+    }
+    .related_art_box .rel_art_item:not(:first-child){
+        display: none;
     }
     .related_art_box .art_descr{
         max-width: 100%;
@@ -9965,16 +8951,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         display: block;
     }
     .related_art_box .rel_art_item{
-        max-width: 285px;
-        margin: 0 auto 35px;
-        display: block;
-        float: none;
+        max-width: 100%;
     }
     .news_slider_box .news_box .news_item{
-        max-width: 285px;
-        margin: 0 auto 35px;
-        display: block;
-        float: none;
+        max-width: 100%;
     }
     .video_page_list_container h3{
         font-size: 32px;
@@ -9982,11 +8962,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .daily_video_slider .daily_video_item .only_subs img{
         width: 30px;
     }
-    .daily_video_slider .daily_video_item .only_subs{
-        right: 20px;
-    }
     .daily_video_slider .daily_video_item .only_subs span{
-        font-size: 10px;
+        font-size: 16px;
     }
     .daily_video_slider .daily_video_item .play_video_btn{
         width: 100px;
@@ -10015,10 +8992,16 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         overflow: hidden;
     }
     #prog_item_top .breadcrumbs{
-        top: 20px!important;
+        left: 0;
+    }
+    #audio_page_top .breadcrumbs{
+        left: 0;
     }
     #video_page .breadcrumbs{
-        top: -20px!important;
+        left: 0;
+    }
+    #our_prog_top .breadcrumbs{
+        left: 0;
     }
     #our_prog_list ul li:not(:last-child){
         margin-right: 5px;
@@ -10040,25 +9023,28 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .right_soc ul li{
         padding: 5px 10px;
     }
-    body .right_soc{
+    body.fixed_header .right_soc{
         display: block;
         right: inherit;
         top: inherit;
-        bottom: 49px;
+        bottom: 0;
         left: 0;
         width: 100%;
     }
-    body .right_soc ul{
+    body.fixed_header .right_soc ul{
         right: inherit;
         top: inherit;
         left: 0;
         bottom: 0;
         width: 100%;
     }
-    body .right_soc ul a{
+    body.fixed_header .right_soc ul a{
         width: 25%;
         display: inline-block;
         float: left;
+    }
+    .right_soc{
+        display: none;
     }
     body.pay_notice #music_bar_mobile_scroll{
         top: 60px;
@@ -10100,19 +9086,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         display: none!important;
     }
     #audio_playlist{
-        padding-top: 40px;
-    }
-    #audio_playlist .breadcrumbs{
-        top: -20px!important;
+        padding-top: 50px;
     }
     #audio_item{
-        padding-top: 40px;
-    }
-    #audio_item .breadcrumbs{
-        top: -20px!important;
-    }
-    #audio_item h1{
-        padding: 10px 0 0 0;
+        padding-top: 50px;
     }
     #opros_page{
         padding-top: 50px;
@@ -10121,33 +9098,27 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         padding-top: 50px;
     }
     .contacts_top{
-        padding-top: 20px;
+        padding-top: 50px;
         padding-bottom: 71px;
     }
     #tarifs{
-        padding-top: 40px;
-    }
-    #tarifs .breadcrumbs{
-        top: -20px!important;
-    }
-    #tarifs h1{
-        padding: 10px 0;
+        padding-top: 50px;
     }
     #video_page{
-        padding-top: 40px;
+        padding-top: 50px;
         padding-bottom: 15px;
     }
     #about_page_top{
-        padding-top: 40px;
+        padding-top: 50px;
     }
     #prog_item_top{
-        padding-top: 0px;
+        padding-top: 20px;
     }
     #our_prog_top{
         padding-top: 50px;
     }
     #audio_page_top .breadcrumbs{
-        top: -20px!important;
+        top: -25px!important;
     }
     #audio_page_top h1{
         padding-top: 0;
@@ -10166,13 +9137,11 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         top: 45px;
     }
     .article_item_auth span{
-        font-size: 13px;
-        margin-left: 10px;
-        padding-bottom: 20px;
+        font-size: 14px;
     }
     .article_item_auth img{
-        width: 52px;
-        height: 52px;
+        width: 60px;
+        height: 60px;
     }
     #music_bar_mobile .mus_wrap:hover .mus_info .mus_bar .list_img{
         margin-right: 7px;
@@ -10396,21 +9365,13 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         display: none;
     }
     #articles{
-        padding-top: 40px;
-    }
-    #articles .breadcrumbs{
-        top: -20px!important;
-    }
-    #articles h1{
-        padding: 10px 0 0;
+        padding-top: 50px;
     }
     .article_item_info .right_col{
         padding-top: 20px;
-        padding-bottom: 20px;
     }
     .article_item_info .left_col{
         padding-top: 20px;
-        padding-right: 20px;
     }
     #article_item .article_item_bg .article_item_auth span{
         font-size: 12px;
@@ -10429,6 +9390,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .article_item_info .left_col h4{
         font-size: 24px;
         margin-bottom: 15px;
+    }
+    .article_item_info .left_col .article_img_text{
+        max-width: calc(100% - 165px);
     }
     .article_item_info .left_col .article_item_img_box img{
         max-width: 100%;
@@ -10453,8 +9417,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .article_types_box .art_type_list ul li{
         font-size: 18px;
         padding-bottom: 6px;
-        padding-left: 20px;
-        padding-right: 20px;
     }
     #new_articles .new_article .new_article_text .article_text{
         font-size: 14px;
@@ -10497,11 +9459,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .popular_box h5{
         text-align: center;
     }
-    .sub_benefit{
-        padding: 0 10px 0 20px;
-    }
     .sub_benefit p{
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.2;
     }
     h1.page_name{
@@ -10526,6 +9485,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     .about_text .about_top_text h5{
         font-size: 18px;
+    }
+    #prog_item_top .breadcrumbs{
+        top: 0!important;
     }
     footer .roskom:after{
         left: -60px;
@@ -10600,6 +9562,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         top: 6px;
         z-index: 0;
     }
+    .page_top_bg h1{
+        font-size: 48px;
+    }
     #prog_item_info .container h1{
         font-size: 48px;
         padding: 0 55px;
@@ -10611,12 +9576,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         text-align: center;
     }
     #our_prog_slider_box .our_prog_slider .prog_slide_text h2{
-        font-size: 31px;
-        text-align: center;
-        margin-bottom: 12px;
+        font-size: 42px;
     }
     #our_prog_slider_box .our_prog_slider .prog_slide_text p{
-        font-size: 11px;
+        font-size: 20px;
     }
     .sub_info{
         float: none;
@@ -10644,12 +9607,11 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #lk_section.alert:after{
         height: 150px;
-        bottom: 30px;
+        bottom: 80px;
         background-size: initial;
     }
     #lk_section .container{
-        margin-bottom: 25px;
-        padding: 0 15px;
+        margin-bottom: 60px;
     }
     #lk_section .subs_ends_container p{
         float: none;
@@ -10699,13 +9661,13 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         margin-bottom: 30px;
     }
     #our_prog_slider_box .our_prog_slider .our_prog_slide{
-        padding: 60px 55px 50px 55px;
+        padding: 60px 0px 50px 30px;
     }
     body.pay_notice{
         padding-top: 247px;
     }
     #contacts .left_col{
-        padding-top: 10px;
+        padding-top: 40px;
         padding-right: 0;
     }
     #audio_page_top .tab_container ul li:nth-child(4){
@@ -10714,14 +9676,28 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     #audio_page_top .tab_container ul li{
         width: calc(25% - 16px);
     }
+    #audio_kompoz .right_audio_komp{
+        float: none;
+        max-width: 420px;
+        margin: 0 auto 50px;
+    }
+    #audio_kompoz .left_audio_komp_box{
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
     .daily_video_container h2{
         text-align: center;
-        padding: 10px 0;
+        padding: 0;
     }
     body.pay_notice .breadcrumbs{
         top: -30px!important;
         width: 100%;
         text-align: center;
+    }
+    .breadcrumbs{
+        top: -30px!important;
     }
     body.pay_notice .breadcrumbs{
         top: -30px!important;
@@ -10963,18 +9939,18 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         font-size: 22px;
         margin-top: 20px;
     }
-    /* #audio_page_top .audio_page_header .tabs ul li{
+    #audio_page_top .audio_page_header .tabs ul li{
         font-size: 22px;
-    } */
+    }
     #audio_page_top .container{
         padding: 0 25px;
     }
     #audio_page_top .tab_container ul{
         flex-wrap: wrap;
     }
-    /* #audio_page_top .tab_container ul li .audioP_descr{
+    #audio_page_top .tab_container ul li .audioP_descr{
         font-size: 13px;
-    } */
+    }
     #audio_page_top .tab_container ul li .audioP_name{
         font-size: 18px;
     }
@@ -10988,14 +9964,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 590px){
-    .tarif_top_list{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .mus_wrap .mus_info .mus_group{
-        width: 30%;
-    }
     .index_music .mus_wrap .mus_info .mus_name{
         width: 27%;
     }
@@ -11110,7 +10078,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .article_item_info .left_col .article_item_img_box p{
         margin-bottom: 15px;
     }
-    .article_img_text{
+    .article_item_info .left_col .article_img_text{
         float: none;
         max-width: 100%;
     }
@@ -11280,7 +10248,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         float: none;
     }
     #new_articles .new_article .new_article_img{
-        display: none;
+        display: block;
+        float: none;
+        margin: 20px auto 0;
     }
     .articles_slider .article_slide .related_art_box{
         padding-left: 25px;
@@ -11350,136 +10320,16 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 515px){
-    .comments_body .answer.sub{
-        padding-left: 20px;
-    }
-    .comments_body .answer .answer_text:before{
-        left: 11px;
-        top: -7px;
-        border-style: solid;
-        border-width: 0 10px 10px 11px;
-        border-color: transparent transparent #fff transparent;
-        transform: translateY(0);
-    }
-    .comments_body .answer .answer_text{
-        width: 100%;
-    }
-    .comments_body .answer .img_box{
-        float: none;
-    }
-    .comments_body .my_answer .my_comment input{
-        max-width: 100%;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .comments_body .my_answer .my_img{
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .comments_body .my_answer .my_comment{
-        max-width: 100%;
-        flex-direction: column;
-    }
-    .comments_body .my_answer{
-        flex-direction: column;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text h2{
-        padding: 0 25px;
-    }
-    .pay_history_box .container{
-        padding: 0 15px;
-    }
     .mus_subs_img{
         display: none;
     }
+    /* .mus_wrap.subs:after{
+        display: none;
+    } */
 }
 @media screen and (max-width: 480px){
-    #our_prog_list_box .our_prog_list_container .prog_item{
-        margin-bottom: 25px;
-    }
-    #our_prog_list_box #our_prog_list{
-        margin-bottom: 15px;
-    }
-    .our_prog_slider .slick-arrow{
-        top: 55px;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text .vipusk .vipusk_desc{
-        margin-right: 10px;
-    }
-    #our_prog_slider_box .our_prog_slider .prog_slide_text .vipusk a{
-        display: block;
-        width: 135px;
-        margin: 35px auto 0;
-    }
-    #our_prog_slider_box .our_prog_slider .our_prog_slide{
-        padding: 20px 25px 50px 25px;
-    }
-    #lk_section .change_pass a{
-        font-size: 14px;
-    }
-    .pay_history_box{
-        padding: 20px 0 40px;
-    }
-    .pay_sys{
-        font-size: 11px;
-    }
-    .history_list .item{
-        font-size: 11px;
-    }
-    .own_balance_box .add_balance{
-        margin: 0;
-        margin-bottom: 13px;
-    }
-    .own_balance_box{
-        text-align: left;
-    }
-    .sub_tarifs .change_tarif{
-        margin: 0;
-        margin-bottom: 15px;
-    }
-    .sub_tarifs{
-        text-align: left;
-    }
-    .sub_info{
-        margin: 0;
-        text-align: left;
-    }
-    .pay_history_box h3{
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    .current_subs{
-        padding: 25px 15px;
-    }
-    #lk_section.alert .subs_ends_container{
-        padding: 25px 25px 15px;
-    }
-    #lk_section .subs_ends_container p{
-        max-width: 255px;
-    }
-    #lk_section.alert:after{
-        bottom: 50px;
-    }
-    .news_item_info .article_item_info .right_col{
-        padding-bottom: 10px;
-    }
-    .interview_menu{
-        padding-left: 40px;
-    }
-    .interview_menu ul li:not(:last-child){
-        margin-bottom: 30px;
-    }
-    .interview_menu ul li a{
-        font-size: 19px;
-    }
-    .count_text{
-        display: flex;
-    }
     .count_text p{
         margin-right: 5px;
-        padding-top: 10px;
-        margin-right: 2px;
     }
     .flip-clock-divider.minutes .flip-clock-label{
         right: -34px;
@@ -11493,6 +10343,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .flip-clock-divider .flip-clock-label{
         top: 30px;
     }
+    .count_text p{
+        padding-top: 11px;
+    }
     .count_down_box{
         height: 49px;
     }
@@ -11503,7 +10356,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         font-size: 10px;
     }
     .flip-clock-divider{
-        width: 5px;
+        width: 10px;
     }
     .flip-clock-wrapper ul li{
         line-height: 28px;
@@ -11542,6 +10395,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         padding-bottom: 100px;
     }
     .popular_box .popular_list .pop_item{
+        max-width: 280px;
         margin: 0 auto 14px;
     }
     .popular_list .pop_item .pop_info .pop_text{
@@ -11607,6 +10461,17 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     #audio_kompoz .right_audio_komp{
         padding: 25px 20px 15px 20px;
     }
+    .popular_box .popular_list .pop_item{
+        text-align: center;
+    }
+    .popular_box .popular_list .pop_item .pop_img{
+        float: none;
+    }
+    .popular_list .pop_item .pop_info{
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
     .popular_box{
         padding: 0;
     }
@@ -11659,25 +10524,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 420px){
-
-    #music_bar_mobile .music_info{
-        padding-left: 40px;
-        width: 130px;
-    }
-    .news_slider_box .articles_slider .slick-arrow{
-        top: 55px;
-    }
-    .articles_slider .article_slide h2{
-        padding: 0 40px;
-    }
-    .mus_wrap .mus_info .mus_group{
-        width: 25%;
-    }
-    .mus_wrap .mus_img{
-        margin-right: 5px;
-    }
     .count_text p{
-        font-size: 9px;
+        font-size: 11px;
         padding-top: 14px;
     }
     .index_music .mus_wrap .mus_info .mus_name{
@@ -11759,25 +10607,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 360px){
-    #contacts .right_col .interview p{
-        margin-bottom: 140px;
-    }
-    .right_col .interview p{
-        margin-bottom: 140px;
-    }
-    .interview{
-        max-width: 270px;
-    }
-    .interview_menu{
-        max-width: 270px;
-        padding-left: 0px;
-    }
-    .mus_wrap .mus_info .mus_group{
-        font-size: 11px;
-    }
-    .mus_wrap .mus_info .mus_name{
-        font-size: 13px;
-    }
     .playlist_box .pl_box_text.subs:after{
         top: -7px;
         width: 26px;
@@ -11841,18 +10670,6 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 320px){
-    #tarifs h2{
-        font-size: 24px;
-    }
-    .other_tarifs{
-        padding-bottom: 20px;
-    }
-    .sub_benefit{
-        padding: 0 10px;
-    }
-    .sub_benefit p{
-        font-size: 14px;
-    }
     #about_page_top h1{
         font-size: 32px;
         padding-bottom: 36px;
@@ -11874,6 +10691,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #music_bar_mobile .music_group{
         line-height: 12px;
+    }
+    #music_bar_mobile .music_info{
+        padding-left: 40px;
+        width: 130px;
     }
     .article_item_info .left_col{
         padding-top: 50px;
