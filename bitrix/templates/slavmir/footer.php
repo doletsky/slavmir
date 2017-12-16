@@ -82,7 +82,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 <div class="count_down_box">
 	<div class="container">
 		<div class="count_text">
-			<p><b>Телеканал «Славянскiй Мiръ»</b> начнет вещание через</p>
+			<p><b>Телеканал «Славянскiй Мiръ»</b> начнёт вещание через</p>
 			<div class="clock"></div>
 		</div>
 	</div>
