@@ -5065,7 +5065,7 @@ form.data_info .log_input_wrap p{
     max-width: 980px;
     width: 100%;
     margin: 0 auto;
-    padding-right: 140px;
+    /*padding-right: 140px;*/
 }
 .sub_benefit p{
     font-family: 'PT Sans';
