@@ -33,6 +33,7 @@ $this->setFrameMode(true);
 		<div class="tab_container index_music_container active" data-attr="all" data-id="left_audio_komp_tabs">
 			<h4>Все</h4>
 			<div class="list audio_list scrolled">
+                <ul>
 				<?foreach( $arResult["ITEMS"] as $arItem ){
 					$artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
 					$artistName = '';
@@ -56,6 +57,7 @@ $this->setFrameMode(true);
 						$arItem["PROPERTIES"]["PATH"]["VALUE"] = '';
 					}
 					?>
+                    <li>
 					<div class="item mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
 						<div class="mus_img pl-audio-play <?if($needBlock){?>block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
 							<div class="play_btn"></div>
@@ -69,15 +71,19 @@ $this->setFrameMode(true);
 								<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
 							</div>
 							<div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
+                            <div class="mus_subs_img"></div>
 						</div>
 					</div>
+                    </li>
 				<?}?>
+                </ul>
 			</div>
 		</div><!-- index_music_container -->
 		<?foreach( $arResult["GENRE"] as $genreID => $arGItem ){?>
 			<div class="tab_container index_music_container" data-attr="<?=$genreID?>" data-id="left_audio_komp_tabs">
 				<h4><?=$arGItem["NAME"]?></h4>
 				<div class="audio_list scrolled list clearfix">
+                    <ul>
 					<?foreach( $arResult["ITEMS"] as $arItem ){
 						if( !in_array( $genreID, $arItem["PROPERTIES"]["GENRE"]["VALUE_ENUM_ID"] ) ) continue;
 						$artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
@@ -101,6 +107,25 @@ $this->setFrameMode(true);
 							$arItem["PROPERTIES"]["PATH"]["VALUE"] = '';
 						}
 						?>
+                        <li>
+                            <div class="mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
+                                <div class="mus_img" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
+                                    <div class="play_btn"></div>
+                                </div>
+                                <div class="mus_info">
+                                    <a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
+                                    <div class="mus_group"><?=$artistName?></div>
+                                    <div class="mus_bar">
+                                        <div class="list_img"></div>
+                                        <div class="likes"></div>
+                                        <?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
+                                    </div>
+                                    <div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
+                                    <div class="mus_subs_img"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <?if(0):?>
 						<div class="item mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
 							<div class="mus_img pl-audio-play <?if($needBlock){?>block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
 								<div class="play_btn"></div>
@@ -116,7 +141,9 @@ $this->setFrameMode(true);
 								<div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
 							</div>
 						</div>
+                        <?endif?>
 					<?}?>
+                    </ul>
 				</div>
 			</div><!-- index_music_container -->
 		<?}?>
