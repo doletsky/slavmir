@@ -2,6 +2,16 @@
 ?>
 <section id="opros_page">
 	<div class="container">
+        <div class="breadcrumbs dark">
+            <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree", Array(
+                    "COMPONENT_TEMPLATE" => ".default",
+                    "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+                    "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                    "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                ),
+                false
+            );?>
+        </div>
 		<?
 		if (!empty($arResult["ERROR_MESSAGE"])): 
 		?>
