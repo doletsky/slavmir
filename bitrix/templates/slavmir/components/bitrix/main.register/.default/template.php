@@ -241,6 +241,9 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 			</div>
 		</div>
 	</div>
+    <div class="reg_licence">
+        <input type="checkbox" style="float:left; position:relative;"> <p>я соглашаюсь с <a href="/include/politice.pdf" target="_blank">политикой конфиденциальности</a> и <a href="/include/users.pdf" target="_blank">условиями использования</a> интернет-сайтом</p>
+    </div>
 	<div class="reg_licence">
 		<p>Данное предложение не является публичной офертой. Лицензия СМИ 12278172</p>
 	</div>
