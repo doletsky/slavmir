@@ -227,7 +227,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 
 	<div class="reg_btns_wrap">
 		<div class="reg_btn reg_free">
-			<button><b>Зарегистрироваться</b><br>бесплатно</button>
+			<button><b>Получить бесплатно</b><br>месяц тестового периода</button>
 			<input type="hidden" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" />
 			<div class="reg_limited">
 				<p>Ограниченный доступ <br> к порталу.</p>
