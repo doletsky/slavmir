@@ -71,7 +71,6 @@ $this->setFrameMode(true);
 								<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
 							</div>
 							<div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
-                            <div class="mus_subs_img"></div>
 						</div>
 					</div>
                     </li>
