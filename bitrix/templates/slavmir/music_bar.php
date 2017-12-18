@@ -599,6 +599,9 @@
 				</div>
 			</div>
 		</div><!-- right_bar -->
+<!--        <div class="bit_r">-->
+<!--            <span>128 </span><sup>бит/с</sup>-->
+<!--        </div>-->
 		<div class="music_type_list">
 			<ul>
 				<li class="active type_radio" data-id='type_radio'>Радио</li>
