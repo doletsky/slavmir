@@ -196,6 +196,7 @@
 					?>href="<?=$arResult["URL"]["RESULT"]?>"><?=GetMessage("VOTE_RESULTS")?></a>
 			</span><?*/?>
 		</div>
+            <input type="text" id="for_bots" hidden="">
 		</form>
 		</div>
 	</div>
