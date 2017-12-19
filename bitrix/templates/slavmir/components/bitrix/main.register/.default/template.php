@@ -224,26 +224,32 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
+<div class="reg_privacy">
+    <input type="checkbox" required="required">
+    <p>Я принимаю условия <a href="/include/users.pdf" target="_blank">Пользовательского соглашения</a> (о порядке пользования интернет-сайтом «Славянский мир») и даю своё согласие ООО «Славянский мир» на обработку моей персональной информации на условиях, определенных <a href="/include/politice.pdf" target="_blank">Политикой&nbsp;конфиденциальности</a>.</p>
+</div>
 
 	<div class="reg_btns_wrap">
 		<div class="reg_btn reg_free">
 			<button><b>Получить бесплатно</b><br>месяц тестового периода</button>
 			<input type="hidden" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" />
+            <?/*?>
 			<div class="reg_limited">
 				<p>Ограниченный доступ <br> к порталу.</p>
 			</div>
+            <?*/?>
 		</div>
-		<div class="reg_btn reg_pay">
+		<?/*?>
+        <div class="reg_btn reg_pay">
 			<button><b>Оформить <br> платную подписку</b></button>
 			<div class="reg_tarifs">
 				<a href="/rates/" target="_blank">Тарифы и условия</a>
 				<p>Всего за 99 ₽ в месяц вы получите полный доступ ко всем <br> материалам сайта, включая <br> ТВ-канал, музыку и видео.</p>
 			</div>
 		</div>
+        <?*/?>
 	</div>
-    <div class="reg_licence">
-        <input type="checkbox" required="required" style="float:left; position:relative;"> <p>я соглашаюсь с <a href="/include/politice.pdf" target="_blank">политикой конфиденциальности</a> и <a href="/include/users.pdf" target="_blank">условиями использования</a> интернет-сайтом</p>
-    </div>
+
 	<div class="reg_licence">
 		<p>Данное предложение не является публичной офертой. Лицензия СМИ 12278172</p>
 	</div>

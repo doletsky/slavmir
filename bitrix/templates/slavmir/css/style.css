@@ -4747,10 +4747,12 @@ form.data_info .log_input_wrap p{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    padding-left: 50%;
 }
 .reg_btn{
     width: 100%;
     max-width: 294px;
+    margin-left: -50%;
 }
 .reg_btn button{
     width: 100%;
@@ -4769,6 +4771,17 @@ form.data_info .log_input_wrap p{
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
+}
+.reg_privacy{
+    color: #000000;
+    font-family: 'PT Sans';
+    font-size: 15px;
+    padding-top: 20px;
+}
+.reg_privacy input{
+    float:left;
+    position:relative;
+    margin: 0 15px 40px 0 !important;
 }
 .bit_r{
     float: right;
