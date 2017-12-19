@@ -12,7 +12,16 @@ $(document).on('ready', function(){
 		}
 	});
 
-	$('.clock').FlipClock(3600 * 24 * 25,{
+	$('.own_balance_box .pay_history').on('click', function(){
+		$('.pay_history_box').slideDown(400);
+	});
+
+   var currentDate = new Date();
+   var futureDate = new Date(2017,11,31,24,00,00); // (yyyy,m,d) //
+   var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+
+	$('.clock').FlipClock(diff,{
 		clockFace: 'DailyCounter',
 		countdown: true,
 		showSeconds: false
@@ -273,7 +282,7 @@ $(document).on('ready', function(){
 		$('.music_right_settings').toggleClass('loudness_music_active');
 	});
 
-	/*$('#music_bar .music_left_bar .music_left_bar_list .music_left_bar_item').on('click', function(){
+	$('#music_bar .music_left_bar .music_left_bar_list .music_left_bar_item').on('click', function(){
 		if($(this).parent().hasClass('active') == true){
 			$(this).parent().removeClass('active');
 			$('#music_bar').removeClass('bar_song_active');
@@ -295,7 +304,7 @@ $(document).on('ready', function(){
 			$(this).parent().addClass('active');
 			$('#music_bar').addClass('bar_song_active');
 		}
-	});*/
+	});
 
 	$('.unreg_link').on('click', function(){
 		$('.register_popup_container').fadeIn(200);

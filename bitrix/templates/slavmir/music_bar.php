@@ -131,10 +131,10 @@
 									<p>1998</p>
 									<p>4:30</p>
 									<div class="actives_list">
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_like"></span></a>
 										</div>
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_plus"></span></a>
 										</div>
 										<div class="activity_item">
@@ -153,10 +153,10 @@
 									<p>1998</p>
 									<p>4:30</p>
 									<div class="actives_list">
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_like"></span></a>
 										</div>
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_plus"></span></a>
 										</div>
 										<div class="activity_item">
@@ -169,8 +169,8 @@
 					</div><!-- music_right_bar -->
 					<div class="music_right_settings">
 						<div class="music_right_settings_list">
-							<div class="right_settings_img cross_music"></div>
-							<div class="right_settings_img loop_music"></div>
+							<div class="right_settings_img cross_music dn"></div>
+							<div class="right_settings_img loop_music dn"></div>
 							<div class="loudness_music_wrap">
 								<div class="loudness_bar">
 									<div class="slider-vertical" id="slider-vertical"></div>
@@ -455,10 +455,10 @@
 									<p>1998</p>
 									<p>4:30</p>
 									<div class="actives_list">
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_like"></span></a>
 										</div>
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_plus"></span></a>
 										</div>
 										<div class="activity_item">
@@ -477,10 +477,10 @@
 									<p>1998</p>
 									<p>4:30</p>
 									<div class="actives_list">
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_like"></span></a>
 										</div>
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_plus"></span></a>
 										</div>
 										<div class="activity_item">
@@ -499,10 +499,10 @@
 									<p>1998</p>
 									<p>4:30</p>
 									<div class="actives_list">
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_like"></span></a>
 										</div>
-										<div class="activity_item">
+										<div class="activity_item dn">
 											<a href="#"><span class="bar_img bar_plus"></span></a>
 										</div>
 										<div class="activity_item">
@@ -515,8 +515,8 @@
 					</div><!-- music_right_bar -->
 					<div class="music_right_settings">
 						<div class="music_right_settings_list">
-							<div class="right_settings_img cross_music"></div>
-							<div class="right_settings_img loop_music"></div>
+							<div class="right_settings_img cross_music dn"></div>
+							<div class="right_settings_img loop_music dn"></div>
 							<div class="loudness_music_wrap">
 								<div class="loudness_bar">
 									<div class="slider-vertical" id="slider-vertical-1"></div>
@@ -555,7 +555,7 @@
 			<!-- <img src="<?=SITE_TEMPLATE_PATH?>/images/music_played.png" alt="music_played" class="music_played_desktop"> -->
 			<img src="<?=SITE_TEMPLATE_PATH?>/images/music_played_mobile.png" alt="music_played_mobile.png" class="music_played_mobile">
 		</div>
-		<div class="right_bar">
+		<div id="rb" class="right_bar">
 			<div class="music_right_bar">
 				<div class="music_right_bar_list">
 					<div class="music_right_bar_item_wrap played_item" id="jw-current-play">
@@ -571,10 +571,10 @@
 							<p>1998</p>
 							<p>4:30</p>
 							<div class="actives_list">
-								<div class="activity_item">
+								<div class="activity_item dn">
 									<a href="#"><span class="bar_img bar_like"></span></a>
 								</div>
-								<div class="activity_item">
+								<div class="activity_item dn">
 									<a href="#"><span class="bar_img bar_plus"></span></a>
 								</div>
 								<div class="activity_item">
@@ -583,12 +583,64 @@
 							</div>
 						</div>
 					</div>
+                    <?if($APPLICATION->GetCurDir()=="/"):?>
+                    <div class="music_right_bar_item_wrap dn" id="">
+                        <div class="music_right_bar_item no-info">
+                            <div class="music_name"><?=GetConfig("radio_current_name")?></div>
+                            <div class="music_group"><?=GetConfig("radio_current_artist")?></div>
+                            <div class="played_item_time">
+                                <span class="has_played"></span><span class="all_time"></span>
+                            </div>
+                        </div>
+                        <div class="more_info">
+                            <p>АЛЬБОМ: Станичники</p>
+                            <p>1998</p>
+                            <p>4:30</p>
+                            <div class="actives_list">
+                                <div class="activity_item dn">
+                                    <a href="#"><span class="bar_img bar_like"></span></a>
+                                </div>
+                                <div class="activity_item dn">
+                                    <a href="#"><span class="bar_img bar_plus"></span></a>
+                                </div>
+                                <div class="activity_item">
+                                    <a href="#"><span class="bar_img bar_download"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music_right_bar_item_wrap dn" id="">
+                        <div class="music_right_bar_item no-info">
+                            <div class="music_name"><?=GetConfig("radio_current_name")?></div>
+                            <div class="music_group"><?=GetConfig("radio_current_artist")?></div>
+                            <div class="played_item_time">
+                                <span class="has_played"></span><span class="all_time"></span>
+                            </div>
+                        </div>
+                        <div class="more_info">
+                            <p>АЛЬБОМ: Станичники</p>
+                            <p>1998</p>
+                            <p>4:30</p>
+                            <div class="actives_list">
+                                <div class="activity_item dn">
+                                    <a href="#"><span class="bar_img bar_like"></span></a>
+                                </div>
+                                <div class="activity_item dn">
+                                    <a href="#"><span class="bar_img bar_plus"></span></a>
+                                </div>
+                                <div class="activity_item">
+                                    <a href="#"><span class="bar_img bar_download"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?endif?>
 				</div><!-- music_right_bar_list -->
 			</div><!-- music_right_bar -->
 			<div class="music_right_settings">
 				<div class="music_right_settings_list">
-					<div class="right_settings_img cross_music"></div>
-					<div class="right_settings_img loop_music"></div>
+					<div class="right_settings_img cross_music dn"></div>
+					<div class="right_settings_img loop_music dn"></div>
 					<div class="loudness_music_wrap">
 						<div class="loudness_bar">
 							<div class="slider-vertical" id="slider-vertical-2"></div>
@@ -599,9 +651,9 @@
 				</div>
 			</div>
 		</div><!-- right_bar -->
-<!--        <div class="bit_r">-->
-<!--            <span>128 </span><sup>бит/с</sup>-->
-<!--        </div>-->
+        <div class="bit_r dn">
+            <span>128 </span><sup>бит/с</sup>
+        </div>
 		<div class="music_type_list">
 			<ul>
 				<li class="active type_radio" data-id='type_radio'>Радио</li>
@@ -648,8 +700,8 @@
 			</ul>
 		</div><!-- music_type_list -->
 		<div class="music_right_settings_list">
-			<div class="right_settings_img cross_music"></div>
-			<div class="right_settings_img loop_music"></div>
+			<div class="right_settings_img cross_music dn"></div>
+			<div class="right_settings_img loop_music dn"></div>
 			<div class="loudness_music_wrap">
 				<div class="loudness_bar">
 					<div class="slider-vertical"></div>
