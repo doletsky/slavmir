@@ -3,7 +3,7 @@ define("NEED_AUTH", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Личный кабинет");
 ?>
-<section id="lk_section" class="<?/*?>alert<?*/?>">
+<section id="lk_section" class="alert">
 	<div class="container">
 		<div class="breadcrumbs dark">
 			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree", Array(
