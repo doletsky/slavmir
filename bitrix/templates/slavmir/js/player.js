@@ -289,6 +289,7 @@ $(document).on("click",".pl-playlist-play",function(){
 		url: '/ajax/get-playlist.php?id='+$this.attr("data-pl-id"),
 		method: 'post',
 		success: function(data){
+            console.log("pl="+data);
 			window.playlist = data.playlist;
 
 			setPlayerIsPlaylist( true );
@@ -311,7 +312,10 @@ $(document).on("click",".pl-playlist-play",function(){
 			}).on('playlistItem',function( obj ){
 				playlistUpdate( obj );
 			});
-		}
+		},
+        error: function(dat, stat){
+            console.log("er="+dat, "stat="+stat);
+        }
 	});
 	return false;
 });
@@ -590,10 +594,10 @@ function setPlayerIsPlaylist( status ){
 	}
 }
 function playlistUpdate( obj ){
-	//console.log(obj);
+	console.log(obj);
 	var params = {},
 			playlist = window.playlist;
-	$(".music_left_bar_list").html('<div class="music_left_bar_item_wrap dn r1" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div><div class="music_left_bar_item_wrap dn r2" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div><div class="music_left_bar_item_wrap dn r3" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div>');
+	$(".music_left_bar_list").html('');//<div class="music_left_bar_item_wrap dn r1" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div><div class="music_left_bar_item_wrap dn r2" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div><div class="music_left_bar_item_wrap dn r3" id=""><div class="music_left_bar_item no-info gradient"><div class="music_name">Русская дорога</div></div></div>');
 	$(".music_right_bar_list .music_right_bar_item_wrap.not-main").remove();
 	$(".likes_list ul").html('');
 	for( i in playlist ){
@@ -601,22 +605,22 @@ function playlistUpdate( obj ){
 			params.n = playlist[i].title;
 			params.a = playlist[i].description;
 			$('#music_left_bar_item_wrap_Tmpl').tmpl(params).appendTo(".music_left_bar_list");
-            $(".music_left_bar_item_wrap:eq(0)").remove();
+//            $(".music_left_bar_item_wrap:eq(0)").remove();
 		}
 		if( i > obj.index && i <= obj.index+2 ){
 			params.n = playlist[i].title;
 			params.a = playlist[i].description;
 			$('#music_right_bar_item_wrap_Tmpl').tmpl(params).appendTo(".music_right_bar_list");
-            $(".music_right_bar_item_wrap:eq(3)").remove();
+//            $(".music_right_bar_item_wrap:eq(3)").remove();
 		}
 		$('#likes_list_item_Tmpl').tmpl(playlist[i]).appendTo(".likes_list ul");
 	}
-    console.log($("#rb .music_right_bar_list .music_right_bar_item_wrap").length);
-    if($("#rb .music_right_bar_item_wrap").length<3){
-        for(var c=$("#rb .music_right_bar_item_wrap").length;c<3;c++){
-            $('<div class="music_right_bar_item_wrap not-main dn" id=""><div class="music_right_bar_item no-info"><div class="music_name">Конопатое Чудо</div></div></div>').appendTo("#rb .music_right_bar_list");
-        }
-    }
+//    console.log($("#rb .music_right_bar_list .music_right_bar_item_wrap").length);
+//    if($("#rb .music_right_bar_item_wrap").length<3){
+//        for(var c=$("#rb .music_right_bar_item_wrap").length;c<3;c++){
+//            $('<div class="music_right_bar_item_wrap not-main dn" id=""><div class="music_right_bar_item no-info"><div class="music_name">Конопатое Чудо</div></div></div>').appendTo("#rb .music_right_bar_list");
+//        }
+//    }
 	setPlayerName( obj.item.title, obj.item.description );
 	setMobileName( obj.item.title, obj.item.description );
 	setPlayerPicture( obj.item.bigpic );
