@@ -10387,8 +10387,12 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         display: none;
     }
     body #music_bar_mobile_scroll.menu{
+         display: flex;
+         top: 415px;
+     }
+    body #music_bar_mobile_scroll.menu.noauth{
         display: flex;
-        top: 415px;
+        top: 356px;
     }
     body.fixed_header #music_bar_mobile_scroll{
         display: flex;

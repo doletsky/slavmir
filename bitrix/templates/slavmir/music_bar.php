@@ -773,7 +773,7 @@
 		</div>
 	</div>
 </div>
-<div id="music_bar_mobile_scroll">
+<div id="music_bar_mobile_scroll" <?if (!$USER->IsAuthorized()) echo 'class="noauth"';?>>
 	<div class="container">
 		<div class="mobile_bar_name">
 			<p>
