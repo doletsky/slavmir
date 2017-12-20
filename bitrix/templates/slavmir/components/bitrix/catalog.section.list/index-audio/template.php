@@ -25,9 +25,9 @@ global $USER;
 				<?
 				$i=0;
 				foreach( $arResult["CATEGORY"] as $ID => $arCategory ){
-					?>
+					if($ID!=36)://не показывать Трек дня?>
 					<li <?if($i==0){?>class="active"<?}?> data-id="<?=$ID?>"><?=$arCategory["NAME"]?></li>
-					<?
+					<?endif;
 					$i++;
 					?>
 				<?}?>
