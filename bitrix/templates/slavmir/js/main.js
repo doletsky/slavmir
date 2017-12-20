@@ -136,29 +136,35 @@ $(document).on('ready', function(){
 	  	]
 	});
 
-	/*$('#video_bar_tabs ul li').on('click', function(){
+	$('#video_bar_tabs ul li').on('click', function(){
 		$('.video_bar_slider').slick('refresh');
 	});
 
 	$('.video_bar_slider .video_bar_item').on('click', function(){
 		$('#music_bar').removeClass('video_bar_active');
 		$('#music_bar').addClass('opened_video');
-	});*/
+	});
 
-	$('.index_video_slider, #our_prog_slider_box .our_prog_slider').slick({
+	$('#our_prog_slider_box .our_prog_slider').slick({
+		arrows: true,
+		dots: true,
+		autoplay: false
+	});
+
+	$('.index_video_slider').slick({
 		arrows: false,
 		dots: true,
 		autoplay: false
 	});
 
 	$('.articles_slider').slick({
-		arrows: false,
+		arrows: true,
 		dots: true,
 		autoplay: true
 	});
 
 	$('.daily_video_slider').slick({
-		arrows: false,
+		arrows: true,
 		dots: true,
 		autoplay: false
 	});
@@ -357,7 +363,7 @@ $(document).on('ready', function(){
 	  swipe: true
 	});
 
-	/*$('.music_type_list ul li.type_tv').on('click', function(){
+	$('.music_type_list ul li.type_tv').on('click', function(){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar').addClass('efir_bar_active');
@@ -388,7 +394,9 @@ $(document).on('ready', function(){
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar').addClass('radio_bar_active');
 		$('#music_bar_mobile').removeClass();
-	});*/
+		/*$('.slider-nav .slick-slide').eq(0).addClass('slick-active');*/
+		/*$('#music_bar').removeClass('playlist_active');*/
+	});
 
 	$('.only_subs').on('click', function(){
 		$('.subs_popup_container').fadeIn(200);
