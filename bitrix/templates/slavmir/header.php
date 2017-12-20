@@ -345,32 +345,31 @@ use Bitrix\Main\Page\Asset;
 
 
 <? include( dirname(__FILE__).'/music_bar.php' );?>
-<?/*?>
-<div class="right_soc">
-	<ul>
-		<a href="#">
-			<li>
-				<img src="images/ok_r_dark.png" alt="ok"><span>6</span>
-			</li>
-		</a>
-		<a href="#">
-			<li>
-				<img src="images/twit_r_dark.png" alt="twit"><span>3</span>
-			</li>
-		</a>
-		<a href="#">
-			<li>
-				<img src="images/fb_r_dark.png" alt="fb"><span>136</span>
-			</li>
-		</a>
-		<a href="#">
-			<li>
-				<img src="images/vk_r_dark.png" alt="vk"><span>41</span>
-			</li>
-		</a>
-	</ul>
-</div><!-- right_soc -->
-<?*/?>
+    <div class="right_soc">
+        <ul>
+            <a href="https://ok.ru/group/53435314405595">
+                <li>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/ok_r_dark.png);"></span><span class="numb">6</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/twit_r_dark.png);"></span><span class="numb">3</span>
+                </li>
+            </a>
+            <a href="https://ru-ru.facebook.com/slavmir.tv">
+                <li>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/fb_r_dark.png);"></span><span class="numb">136</span>
+                </li>
+            </a>
+            <a href="https://vk.com/slavmirtv">
+                <li>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/vk_r_dark.png);"></span><span class="numb">41</span>
+                </li>
+            </a>
+        </ul>
+    </div>
+    <!-- right_soc -->
 
 <?if( $APPLICATION->GetCurPage() != '/' ){
 	$bg = $APPLICATION->GetPageProperty("header_bg");
