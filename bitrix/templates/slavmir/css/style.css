@@ -1020,6 +1020,8 @@ body.fixed_header header.log_opened .logo{
     display: flex;
     align-items: center;
     flex-grow: 1;
+    width: 50%;
+    padding-right: 72px;
 }
 .left_bar .index_music_container{
     position: absolute;
@@ -1037,6 +1039,9 @@ body.fixed_header header.log_opened .logo{
     display: flex;
     align-items: center;
     flex-grow: 1;
+    position: relative;
+    width: 38%;
+    padding-left: 72px;
 }
 .music_menu{
     position: relative;
@@ -1060,7 +1065,10 @@ body.fixed_header header.log_opened .logo{
     top: calc(100% + 2px);
 }
 #music_bar .music_played{
-    position: relative;
+    position: absolute;
+    left: 50%;
+    margin-left: -72px;
+    margin-top: -30px;
     -webkit-transform: translateY(-25%);
     -moz-transform: translateY(-25%);
     -ms-transform: translateY(-25%);
@@ -1356,6 +1364,8 @@ body.short_header #music_bar .music_played .played_info{
 #music_bar .music_right_settings{
     float: right;
     margin-left: 15px;
+    position: absolute;
+    right: 0;
 }
 .music_right_settings_list{
     display: flex;
@@ -1450,6 +1460,8 @@ body.short_header #music_bar .music_played .played_info{
 }
 #music_bar .music_right_bar{
     float: right;
+    width: 100%;
+    padding-right: 110px;
 }
 .music_right_bar_list{
     display: flex;
@@ -9384,6 +9396,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #music_bar .music_right_bar .music_right_bar_list .music_right_bar_item_wrap{
         width: 100%;
+        display: none;
     }
     #music_bar .container .left_bar{
         flex-grow: 1;

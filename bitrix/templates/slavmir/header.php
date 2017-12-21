@@ -28,7 +28,7 @@ use Bitrix\Main\Page\Asset;
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/sv.css">
 </head>
 <body class="<?/*?>pay_notice<?*/?>">
-<?$APPLICATION->ShowPanel();?>
+<?//$APPLICATION->ShowPanel();?>
 <div id="player-wrap" class="hidden"><div id="player-container"></div></div>
 <div class="remember_toPay">
 	<p>Вот незадача! До конца оплаченного периода осталось всего 15 дней. <a href="#">Продли подписку</a> на особых условиях.</p>
