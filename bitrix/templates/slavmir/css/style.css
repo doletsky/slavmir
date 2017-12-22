@@ -9398,8 +9398,12 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         width: 100%;
         display: none;
     }
+    #music_bar .music_right_bar .music_right_bar_list .music_right_bar_item_wrap:nth-child(2){
+        display: block;
+    }
     #music_bar .container .left_bar{
         flex-grow: 1;
+        width: 25%;
     }
     #music_bar .container .right_bar{
         flex-grow: 1;
@@ -9476,6 +9480,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
     #music_bar .music_played{
         animation: progressBarMobile 0.25s linear forwards;
+        margin-left: -180px;
     }
     body.short_header #music_bar .music_played{
         top: 100%;
@@ -9637,9 +9642,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     .index_music .mus_wrap .mus_info .mus_group{
         width: 36%;
     }
-    #music_bar.playlist_active .container .right_bar{
-        flex-grow: 0;
-    }
+    /*#music_bar.playlist_active .container .right_bar{*/
+        /*flex-grow: 0;*/
+    /*}*/
     .opened_video_list{
         height: 260px;
     }
