@@ -341,6 +341,8 @@ $(document).on('ready', function(){
       	nextArrow: $('.next_song'),
 	    dots: false,
 	});
+    $('.prev_song').attr('style','');
+    $('.next_song').attr('style','');
 
 	$('.slider-for').slick({
 	  slidesToShow: 1,

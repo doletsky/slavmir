@@ -543,7 +543,13 @@
 					<div class="p-active" style="transform: rotate(20deg);transition: all 400ms 260ms;"></div>
 				</div>
 			</figure> -->
-			<div class="music_bg" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/music_bg.png)"></div>
+			<div class="music_bg">
+                <div id="pleer_bg_slider" class="pleer_bg_slider slick-slider">
+                    <div><img src="<?=SITE_TEMPLATE_PATH?>/images/music_bg.png"></div>
+                    <div><img src="<?=SITE_TEMPLATE_PATH?>/images/music_bg.png"></div>
+                    <div><img src="<?=SITE_TEMPLATE_PATH?>/images/music_bg.png"></div>
+                </div>
+			</div>
 			<div class="music_control">
 				<img src="<?=SITE_TEMPLATE_PATH?>/images/prev_song.png" alt="prev_song" class="prev_song hidden">
 				<div class="music_status">
