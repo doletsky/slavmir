@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div id="news_item">
+<section id="news_item">
 	<div class="container">
 		<div class="breadcrumbs dark">
 			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree", Array(
