@@ -166,7 +166,8 @@ $(document).on('ready', function(){
 	$('.daily_video_slider').slick({
 		arrows: true,
 		dots: true,
-		autoplay: false
+		autoplay: true,
+        autoplaySpeed: 4000
 	});
 
 	$('#music_bar .music_type_list ul li').on('click', function(){

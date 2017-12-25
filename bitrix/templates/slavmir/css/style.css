@@ -4794,6 +4794,7 @@ form.data_info .log_input_wrap p{
     float:left;
     position:relative;
     margin: 0 15px 40px 0 !important;
+    -webkit-appearance: checkbox !important;
 }
 .bit_r{
     float: right;
