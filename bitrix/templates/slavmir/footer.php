@@ -87,7 +87,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		</div>
 	</div>
 </div>
-<div class="register_popup_container" <?if(count($_POST) && isset($_POST["register_submit_button"])){?>style="display:block;"<?}?> >
+<div class="register_popup_container" >
 	<div class="register_popup">
 		<div class="register_popup_scroll">
 			<div class="close_popup"></div>
@@ -111,7 +111,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		<p class="license">Данное предложение не является публичной офертой. Лицензия СМИ 12278172</p>
 	</div>
 </div>
-<div class="tnx_popup_container reg">
+<div class="tnx_popup_container reg" <?if(count($_POST) && isset($_POST["register_submit_button"])){?>style="display:block;"<?}?> >
 	<div class="tnx_container">
 		<div class="close_popup"></div>
 		<div class="popup_bg"></div>
