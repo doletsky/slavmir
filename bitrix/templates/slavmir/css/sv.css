@@ -23,7 +23,7 @@ a:hover,html body a:hover{
 	visibility: hidden;
 }
 .mus_wrap .mus_info .mus_time{
-	min-width: 85px;
+	/*min-width: 85px;*/
 }
 .mus_wrap .mus_info .mus_group{
 	max-width: 32%;
