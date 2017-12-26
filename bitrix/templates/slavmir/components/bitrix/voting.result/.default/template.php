@@ -10,10 +10,11 @@ endif;
 
 if (!empty($arResult["OK_MESSAGE"])): 
 ?>
+    <?/*?>
 <div class="vote-note-box vote-note-note">
 	<div class="vote-note-box-text"><?=ShowNote($arResult["OK_MESSAGE"])?></div>
 </div>
-<?
+<?*/
 endif;
 
 if (empty($arResult["VOTE"]) || empty($arResult["QUESTIONS"]) ):
@@ -21,7 +22,7 @@ if (empty($arResult["VOTE"]) || empty($arResult["QUESTIONS"]) ):
 endif;
 
 ?>
-<ol class="vote-items-list vote-question-list voting-result-box">
+<ol class="vote-items-list vote-question-list voting-result-box" <?if (!empty($arResult["OK_MESSAGE"])):?>data-result="1"<?endif?>>
 
 <?
 $iCount = 0;
