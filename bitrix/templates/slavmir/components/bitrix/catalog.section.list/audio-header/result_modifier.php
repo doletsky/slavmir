@@ -24,7 +24,8 @@ while($enum_fields = $property_enums->GetNext()){
 	$arResult["CATEGORY"][$enum_fields["ID"]]=array( "NAME" => $enum_fields["VALUE"] );
 
 	$arFilter = Array( "IBLOCK_ID"=>$arParams["IBLOCK_ID"], 'ACTIVE'=>'Y', "PROPERTY_CATEGORY"=>$enum_fields["ID"] );
-	$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, array("nTopCount"=>5), array("IBLOCK_ID","ID","NAME","PREVIEW_PICTURE","PROPERTY_ARTIST","PROPERTY_DURATION","DETAIL_PAGE_URL"));
+    //-------замена для демонстрации-----"PROPERTY_DT"=>"desc"----------------------
+	$dbList = CIBlockElement::GetList(array("id"=>"desc"), $arFilter, false, array("nTopCount"=>5), array("IBLOCK_ID","ID","NAME","PREVIEW_PICTURE","PROPERTY_ARTIST","PROPERTY_DURATION","DETAIL_PAGE_URL"));
 	while($arItem = $dbList->GetNext()){
 		$arResult["CATEGORY"][$enum_fields["ID"]]["ITEMS"][]=$arItem;
 		$artistIDs[] = $arItem["PROPERTY_ARTIST_VALUE"];
