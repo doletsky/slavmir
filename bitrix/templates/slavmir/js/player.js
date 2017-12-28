@@ -24,7 +24,7 @@ var TV_PLAYER_ID = 'tv-container',
 
 $(document).on('ready', function(){
 
-	if( $("html").hasClass("bx-touch") || $(window).width() <= 768 ){
+    if( $(window).width() <= 768 ){//if( $("html").hasClass("bx-touch") || $(window).width() <= 768 ){
 		console.log('mobile');
 		TV_PLAYER_ID = 'm-tv-container';
 		VIDEO_PLAYER_ID = 'm-video-container';
@@ -438,8 +438,8 @@ function initVideoStream(){
 		jwVS = jwplayer(TV_PLAYER_ID).setup({
 			"file": TV_URL,
 			"controls": false,
-			"width": '100%',
-			"height": '560'
+			"width": 'auto',
+			"height": $('.opened_video_bar_main_img').height()//'560'
 		}).on('volume',function(obj){
 			jwVSVolume = obj.volume;
 			$( "#slider-vertical-1" ).slider("value",jwVSVolume);
@@ -453,6 +453,7 @@ function initVideoStream(){
 			setVSPlayerPosition( obj );
 		});
 	}
+
 	console.log('tv: init');
 }
 function startVideoStream(){
@@ -496,7 +497,7 @@ function playVideoFile(file){
 		$("#"+VIDEO_PLAYER_ID).html('');
 		jwV = new Clappr.Player({
 			width: '100%',
-			height: '560',
+			height: $('.opened_video_bar_main_img').height(),//'560',
 			source: file, 
 			parentId: "#"+VIDEO_PLAYER_ID,
 			youtubeShowRelated: true,

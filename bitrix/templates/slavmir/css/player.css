@@ -19,3 +19,10 @@
 #music_bar .music_name{
 	font-size: 18px;
 }
+.jwplayer video{
+    width: auto !important;
+    height: 100% !important;
+}
+#m-tv-container{
+    height: 100% !important;
+}

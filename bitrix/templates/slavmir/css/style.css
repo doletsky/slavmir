@@ -7246,7 +7246,7 @@ form.data_info .log_input_wrap p{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 95%;
+    max-width: 92%;
 }
 .opened_video_bar_info .left .time{
     display: inline-block;
