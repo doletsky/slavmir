@@ -417,7 +417,8 @@ html body .button{
 /* line 41, _social.scss */
 .social-menu-link.is-t_me {
   background-image: url("../images/social/t_me.svg");
-  display: inline-block; }
+  display: inline-block;
+  background-position: 44% 50% !important;}
 
 /* line 45, _social.scss */
 .social-menu-link.is-odnoklassniki {

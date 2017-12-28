@@ -60,6 +60,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 				<li><a target="blank" title="Вk" href="https://vk.com/slavmirtv" class="social-menu-link is-vk"></a></li>
 				<li><a target="blank" title="Instagram" href="https://www.instagram.com/slavmir.tv/" class="social-menu-link is-instagram"></a></li>
 				<li><a target="blank" title="Ok" href="https://ok.ru/group/53435314405595" class="social-menu-link is-odnoklassniki"></a></li>
+                <li><a target="blank" title="Telegram" href="#" class="social-menu-link is-t_me"></a></li>
 			</ul>
 			<p>Помогите нам стать лучше:</p>
 			<div class="opros">
