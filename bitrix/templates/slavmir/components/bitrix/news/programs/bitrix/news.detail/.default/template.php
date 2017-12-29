@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+//file_put_contents($_SERVER["DOCUMENT_ROOT"]."/upload/arResult_programm.txt", print_r($arResult,true));
 ?>
 <section id="prog_item_info" <?if($arResult["DETAIL_PICTURE"]["SRC"]){?>style="background-image:url(<?=$arResult["DETAIL_PICTURE"]["SRC"]?>)"<?}?>  >
 	<div class="container">
@@ -89,7 +90,7 @@ $this->setFrameMode(true);
 						$artistID = $arItem["PROPERTY_ARTIST_VALUE"];
 						$artistName = $arResult["AV_ARTISTS"][$artistID]["NAME"];
 						?>
-						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item rel_item audio">
+						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item rel_item audio pl-audio-play" data-name="<?=$arItem["NAME"]?>"  data-url="<?=$arItem["PROPERTY_PATH_VALUE"]?>" onclick="return false;">
 							<div class="rel_item_img" style="background-image: url(<?=$image?>);">
 								<span class="rel_time">
 									<img src="<?=SITE_TEMPLATE_PATH?>/images/rel_play.png" alt="rel_play"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><span><?=duration($arItem["PROPERTY_DURATION_VALUE"])?></span><?}?>
@@ -109,8 +110,8 @@ $this->setFrameMode(true);
 								<?*/?>
 								<div class="play"></div>
 							</div>
-							<span class="rel_title"><?=$artistName?></span>
-							<span class="rel_name"><?=$arItem["NAME"]?></span>
+							<span class="rel_title"><?=$arResult["NAME"]?></span>
+                            <span class="rel_name" onclick="location.href='<?=$arItem["DETAIL_PAGE_URL"]?>'"><?=$arItem["NAME"]?></span>
 							<span class="rel_desc"><?=$arItem["PREVIEW_TEXT"]?></span>
 						</a>
 					<?
@@ -149,7 +150,7 @@ $this->setFrameMode(true);
 								<?*/?>
 								<div class="play"></div>
 							</div>
-							<span class="rel_title"><?=$artistName?></span>
+							<span class="rel_title"><?=$arResult["NAME"]?></span>
 							<span class="rel_name"><?=$arItem["NAME"]?></span>
 							<span class="rel_desc"><?=$arItem["PREVIEW_TEXT"]?></span>
 						</a>

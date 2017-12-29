@@ -21,7 +21,7 @@ $arResult["AV_ARTISTS"] = array();
 $arResult["AUDIO"]=array();
 $audioArtistIDs=array();
 $arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "PROPERTY_PROGRAM"=>$arResult["ID"] );
-$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PREVIEW_TEXT","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST"));
+$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PREVIEW_TEXT","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PATH"));
 while($arItem = $dbList->GetNext()){
 	$arResult["AUDIO"][]=$arItem;
 	$audioArtistIDs[]=$arItem["PROPERTY_ARTIST_VALUE"];
