@@ -129,8 +129,9 @@ $this->setFrameMode(true);
 						}
 						$artistID = $arItem["PROPERTY_ARTIST_VALUE"];
 						$artistName = $arResult["AV_ARTISTS"][$artistID]["NAME"];
+                        $url=str_replace("https://www.youtube.com/watch?v=", "", $arItem["PROPERTY_PATH_VALUE"]);
 						?>
-						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item">
+						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item pl-video-play" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artistName?>" data-url="<?=$url?>" data-picture="<?=$image?>" onclick="return false">
 							<div class="rel_item_img" style="background-image: url(<?=$image?>);">
 								<span class="rel_time">
 									<img src="<?=SITE_TEMPLATE_PATH?>/images/rel_play.png" alt="rel_play"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><span><?=$arItem["PROPERTY_DURATION_VALUE"]?></span><?}?>
