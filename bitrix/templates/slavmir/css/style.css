@@ -1837,9 +1837,10 @@ body.short_header #music_bar .music_played .played_info{
     font-size: 15px;
     color: #000;
     font-family:'PT Sans';
-    line-height: 42px;
+    /*line-height: 42px;*/
     float: left;
     width: 50%;
+    padding-top: 10px;
 }
 .index_mus_info .index_music_group,.index_music_container .item .index_mus_info .index_music_group{
     padding-top: 10px;
