@@ -145,7 +145,7 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 		<div class="left_col">
 			<div class="tabs index_music_tabs" id="audio_item_text_tabs">
 				<ul>
-					<li class="active" data-id="text">Текст песни</li>
+					<li class="active" data-id="text">Текст</li>
 					<?/*?><li data-id="accord">Аккорды</li><?*/?>
 				</ul>
 			</div>
