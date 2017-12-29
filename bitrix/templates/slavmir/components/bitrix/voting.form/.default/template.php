@@ -15,7 +15,7 @@
 		<?
 		if (!empty($arResult["ERROR_MESSAGE"])): 
 		?>
-		<div class="vote-note-box vote-note-error">
+		<div class="vote-note-box vote-note-error" style="position: absolute;left: 23%;top: 10%;">
 			<div class="vote-note-box-text"><?=ShowError($arResult["ERROR_MESSAGE"])?></div>
 		</div>
 		<?

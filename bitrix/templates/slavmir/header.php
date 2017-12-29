@@ -352,7 +352,7 @@ use Bitrix\Main\Page\Asset;
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/ok_r_dark.png);"></span><span class="numb">6</span>
                 </li>
             </a>
-            <a href="#">
+            <a href="#" style="display: none">
                 <li>
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/twit_r_dark.png);"></span><span class="numb">3</span>
                 </li>
