@@ -26,3 +26,17 @@
 #m-tv-container{
     height: 100% !important;
 }
+#m-video-container{
+    height: 100% !important;
+    position: relative;
+}
+#m-video-container .play_video_btn{
+    position: relative;
+    width: 100%;
+    top: 34%;
+}
+#m-video-container .play_video_btn img{
+    width: 15%;
+    position: absolute;
+    left: 43%;
+}
