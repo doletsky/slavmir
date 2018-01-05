@@ -11,7 +11,7 @@ var RADIO_URL = 'http://83.217.203.197/stream/2/',
 		jwVolume = 100,
 
 		jwVS = null,
-		jwVSVolume = 100,
+		jwVSVolume = 0,
 
 		jwV = null,
 		jwVVolume = 100,
@@ -127,7 +127,7 @@ $(document).on('ready', function(){
 		range: "min",
 		min: 0,
 		max: 100,
-		value: 100,
+		value: 0,
 		slide: function( event, ui ) {
 			//$( "#amount" ).val( ui.value );
 			jwVSVolume = ui.value;
@@ -453,8 +453,9 @@ function initVideoStream(){
 			setVSPlayerPosition( obj );
 		});
 	}
-
+    jwVS.setVolume( jwVSVolume );
 	console.log('tv: init');
+    console.log('tv_volume: '+jwVSVolume);
 }
 function startVideoStream(){
 	stopRadio();
@@ -462,6 +463,7 @@ function startVideoStream(){
 	jwVS.setVolume( jwVSVolume );
 	jwVS.play();
 	console.log('tv: play');
+
 }
 function stopVideoStream(){
 	jwVS.stop();
