@@ -8,6 +8,11 @@ use Bitrix\Main\Page\Asset;
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desciption" content="<?if(strlen($APPLICATION->ShowProperty("description"))>0)echo $APPLICATION->ShowProperty("description");else echo 'Портал Славянскiй Мiръ - это всё богатство традиций славянского мира на одном сайте.';?>">
+    <meta property="og:title" content="<?=$APPLICATION->ShowTitle();?>"/>
+    <meta property="og:description" content="<?if(strlen($APPLICATION->ShowProperty("description"))>0)echo $APPLICATION->ShowProperty("description");else echo 'Портал Славянскiй Мiръ - это всё богатство традиций славянского мира на одном сайте.';?>"/>
+    <meta property="og:image" content="http://<?=$_SERVER['HTTP_HOST']?>/favicon_og.png"/>
+    <meta property="og:site_name" content="http://<?=$_SERVER['HTTP_HOST']?>"/>
 	<title><?$APPLICATION->ShowTitle()?></title>
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i&subset=cyrillic" rel="stylesheet">
@@ -347,7 +352,7 @@ use Bitrix\Main\Page\Asset;
 <? include( dirname(__FILE__).'/music_bar.php' );?>
     <div class="right_soc">
         <ul>
-            <a href="https://ok.ru/group/53435314405595">
+            <a target="_blank" href="https://connect.ok.ru/offer?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
                 <li>
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/ok_r_dark.png);"></span><span class="numb">6</span>
                 </li>
@@ -357,12 +362,12 @@ use Bitrix\Main\Page\Asset;
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/twit_r_dark.png);"></span><span class="numb">3</span>
                 </li>
             </a>
-            <a href="https://ru-ru.facebook.com/slavmir.tv">
+            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
                 <li>
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/fb_r_dark.png);"></span><span class="numb">136</span>
                 </li>
             </a>
-            <a href="https://vk.com/slavmirtv">
+            <a target="_blank" href="https://vk.com/share.php?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
                 <li>
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/vk_r_dark.png);"></span><span class="numb">41</span>
                 </li>

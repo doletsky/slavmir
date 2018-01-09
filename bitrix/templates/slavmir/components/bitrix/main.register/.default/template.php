@@ -250,8 +250,5 @@ if ($arResult["USE_CAPTCHA"] == "Y")
         <?*/?>
 	</div>
 
-	<div class="reg_licence">
-		<p>Данное предложение не является публичной офертой. Лицензия СМИ 12278172</p>
-	</div>
 </form>
 <?endif?>
