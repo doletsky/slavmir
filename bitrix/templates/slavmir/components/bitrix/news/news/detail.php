@@ -24,6 +24,7 @@ $this->setFrameMode(true);
 				false
 			);?>
 		</div>
+    </div>
 		<?$ElementID = $APPLICATION->IncludeComponent(
 			"bitrix:news.detail",
 			"",
@@ -80,7 +81,7 @@ $this->setFrameMode(true);
 			),
 			$component
 		);?>
-	</div>
+
 </section>
 
 
