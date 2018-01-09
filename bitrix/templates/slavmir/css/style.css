@@ -10077,7 +10077,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         display: block;
         right: inherit;
         top: inherit;
-        bottom: 49px;
+        bottom: 75px;
         left: 0;
         width: 100%;
     }
@@ -11432,6 +11432,9 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     }
 }
 @media screen and (max-width: 480px){
+    body .right_soc {
+        bottom: 49px;
+    }
     #our_prog_list_box .our_prog_list_container .prog_item{
         margin-bottom: 25px;
     }
