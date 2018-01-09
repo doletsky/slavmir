@@ -11,9 +11,10 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 ?>
-<div class="search-page">
-<form action="" method="get">
-	<input type="text" name="q" value="<?=$arResult["REQUEST"]["QUERY"]?>" size="40" data-attr="qwest" />
+<section id="new_articles">
+    <div class="container">
+<form action="" method="get" class="data_info">
+	<input type="text" name="q" value="<?=$arResult["REQUEST"]["QUERY"]?>" size="40" placeholder="Введите строку поиска" />
 	&nbsp;<input type="submit" value="<?=GetMessage("SEARCH_GO")?>" />
 	<input type="hidden" name="how" value="<?echo $arResult["REQUEST"]["HOW"]=="d"? "d": "r"?>" />
 </form><br />
@@ -105,3 +106,4 @@ endif;?>
 	<?ShowNote(GetMessage("SEARCH_NOTHING_TO_FOUND"));?>
 <?endif;?>
 </div>
+    </section>
