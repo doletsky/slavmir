@@ -17,7 +17,7 @@ $(document).on('ready', function(){
 	});
 
    var currentDate = new Date();
-   var futureDate = new Date(2017,11,31,24,00,00); // (yyyy,m,d) //
+   var futureDate = new Date(2018,00,29,24,00,00); // (yyyy,m,d) //
    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
 
 
