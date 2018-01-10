@@ -16,7 +16,7 @@ $url = str_replace( "https://www.youtube.com/watch?v=", "", $url );
 ?>
 <div class="main_img pl-video-play" style="background-image: url(<?=$image?>)" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artist?>" data-picture="<?=$image?>" data-url="<?=$url?>">
     <div id="m-video-container">
-        <div class="play_video_btn""><img src="/bitrix/templates/slavmir/images/play_btn_large.png" alt="<?=$arItem["NAME"]?>"></div>
+        <div class="play_video_btn"><img src="/bitrix/templates/slavmir/images/play_btn_large.png" alt="<?=$arItem["NAME"]?>"></div>
     </div>
     <?/*?><div class="time">4:30</div><?*/?>
 </div>

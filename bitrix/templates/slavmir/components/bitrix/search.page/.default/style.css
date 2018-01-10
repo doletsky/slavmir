@@ -1,8 +1,14 @@
-a.search-page-params {
-	border-bottom: 1px dashed blue;
-	text-decoration: none;
+#search_form input {
+    width: auto;
+    float: left;
 }
-div.search-page-params {
-	margin-top: 6px;
+#search_form button {
+    border: 0;
+    background-color: #f47b22;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 25px;
+    font-size: 25px;
+    margin-left: 35px;
+    cursor: pointer;
 }
-.search-item-rate {font-size: 11px;}
