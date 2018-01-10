@@ -16,17 +16,17 @@ $this->setFrameMode(true);
 	<div class="container">
 		<div class="tabs" id="our_prog_list">
 			<ul>
-				<li data-id="all">Все</li>
+				<li data-id="all" class="active">Все</li>
 				<?
 				$i=0;
 				foreach( $arResult["CATEGORY"] as $ID => $arCategory ){?>
-					<li <?if($i==0){?>class="active"<?}?> data-id="<?=$ID?>"><?=$arCategory["NAME"]?></li>
+					<li data-id="<?=$ID?>"><?=$arCategory["NAME"]?></li>
 					<?$i++;?>
 				<?}?>
 			</ul>
 		</div>
 		<?#pre($arResult["ITEMS"])?>
-		<div class="tab_container our_prog_list_container" data-attr="all" data-id="our_prog_list">
+		<div class="tab_container our_prog_list_container active" data-attr="all" data-id="our_prog_list">
 			<?foreach( $arResult["ITEMS"] as $arItem ){
 				if( isset($arItem["PREVIEW_PICTURE"]["SRC"]) && $arItem["PREVIEW_PICTURE"]["SRC"] ){
 					$image = MakeImage( $arItem["PREVIEW_PICTURE"]["SRC"], array("w"=>303,"h"=>225,"zc"=>1) );
@@ -59,7 +59,7 @@ $this->setFrameMode(true);
 		<?
 		$i=0;
 		foreach( $arResult["CATEGORY"] as $ID => $arCategory ){?>
-		<div class="tab_container our_prog_list_container <?if($i==0){?>active<?}?>" data-attr="<?=$ID?>" data-id="our_prog_list">
+		<div class="tab_container our_prog_list_container" data-attr="<?=$ID?>" data-id="our_prog_list">
 			<?foreach( $arResult["ITEMS"] as $arItem ){
 				if( in_array( $ID, $arItem["PROPERTIES"]["CATEGORY"]["VALUE_ENUM_ID"] ) ){
 					if( isset($arItem["PREVIEW_PICTURE"]["SRC"]) && $arItem["PREVIEW_PICTURE"]["SRC"] ){
