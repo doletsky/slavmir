@@ -309,7 +309,7 @@ use Bitrix\Main\Page\Asset;
 					),
 					false
 				);?>
-				<form action="/search/" method="get" class="mobile_search">
+				<form action="/search/" method="get" class="mobile_search<?if( !$isAuthorized )echo ' auth'?>">
 					<input type="text" name="q" required>
 					<button></button>
 				</form>
@@ -321,7 +321,10 @@ use Bitrix\Main\Page\Asset;
 					<a class="settings" href="/personal/"></a>
 					<span class="clear"></span>
 				</div>
-				<?}?>
+				<?}else{?>
+                    <a href="javascript:void(0);" class="unreg_link mob_reg_btn">Регистрация</a>
+                    <a href="/personal/" class="mob_reg_btn">Войти</a>
+                <?}?>
 			</div>
 			<nav>
 				<?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(

@@ -201,7 +201,7 @@ $(document).on('ready', function(){
         if($(e.target).closest('#header_bar .search').length == 0) {
            $('#header_bar').removeClass('search_active');
         }
-        if($(e.target).closest('#header_bar .unreg_link,.register_popup').length == 0) {
+        if($(e.target).closest('#header_bar .unreg_link,.unreg_link.mob_reg_btn,.register_popup').length == 0) {
            $('.register_popup_container').fadeOut(200);
         }
     });
@@ -319,6 +319,7 @@ $(document).on('ready', function(){
 
 	$('.close_popup, .close_tnx_popup').on('click', function(){
 		$('.register_popup_container, .tnx_popup_container, .subs_popup_container, .paylk_popup_container, .failpay_popup_container').fadeOut(200);
+        console.log($(this).attr('class'));
 	});
 
     $('.add_balance').on('click', function(){

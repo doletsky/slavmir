@@ -7541,6 +7541,14 @@ form.data_info .log_input_wrap p{
     padding-left: 30px;
     margin-bottom: 10px;
 }
+.mobile_search.auth{
+    margin-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
 .mobile_search input{
     background-color: #f2f2f2;
     border: none;
@@ -7560,6 +7568,16 @@ form.data_info .log_input_wrap p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+.mob_reg_btn{
+    border: 1px solid #f47b22;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-left: 9px;
+    font-size: 14px;
+    position: relative;
+    top: 16px;
 }
 .mobile_menu .logged_bar{
     display: flex;
