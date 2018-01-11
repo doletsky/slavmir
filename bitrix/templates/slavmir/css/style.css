@@ -11903,7 +11903,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
         margin-right: 6px;
     }
     .mobile_search input{
-        width: calc(100% - 53px);
+        /*width: calc(100% - 53px);*/
     }
 }
 @media screen and (max-width: 320px){
