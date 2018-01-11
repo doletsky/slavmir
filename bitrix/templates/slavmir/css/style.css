@@ -7557,6 +7557,7 @@ form.data_info .log_input_wrap p{
     font-size: 18px;
     padding: 5px 6px;
     margin-right: 10px;
+    width: 140px;
 }
 .mobile_search button{
     cursor: pointer;
