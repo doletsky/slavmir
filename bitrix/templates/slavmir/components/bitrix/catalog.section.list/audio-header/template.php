@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <?
-#pre($arResult);
+#if($USER->GetID()==8) pre($arResult["CATEGORY"][37]);
 #pre($arResult["CATEGORY"]);
 ?>
 <div class="audio_page_header">
