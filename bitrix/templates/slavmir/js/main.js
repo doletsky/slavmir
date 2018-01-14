@@ -201,7 +201,7 @@ $(document).on('ready', function(){
         if($(e.target).closest('#header_bar .search').length == 0) {
            $('#header_bar').removeClass('search_active');
         }
-        if($(e.target).closest('#header_bar .unreg_link,.unreg_link.mob_reg_btn,.register_popup').length == 0) {
+        if($(e.target).closest('.unreg_link,.unreg_link.mob_reg_btn,.register_popup').length == 0) {
            $('.register_popup_container').fadeOut(200);
         }
     });
