@@ -27,7 +27,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
             <a href="#">Купить</a>
             <div class="akcia_proc">67%</div>
         </div>
-        <div class="tarif_top_item akcia border small_mb" style="background-image: url(images/tarif_bg2.png);">
+        <div class="tarif_top_item akcia small_mb" style="background-image: url(images/tarif_bg2.png);">
             <h3 class="tarif_srok">Три <br> месяця</h3>
             <p class="tarif_price new">269 ₽</p>
             <p class="tarif_price before">815 ₽</p>
