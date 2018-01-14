@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <section id="news_item">
 	<div class="container">
 		<div class="breadcrumbs dark">
-			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree", Array(
+			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree_truncate", Array(
 					"COMPONENT_TEMPLATE" => ".default",
 					"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
 					"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)

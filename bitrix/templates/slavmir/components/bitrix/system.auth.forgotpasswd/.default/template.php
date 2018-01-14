@@ -29,7 +29,6 @@
 				<?ShowMessage($arParams["~AUTH_RESULT"]);?><br>
 				<p><?=GetMessage("AUTH_FORGOT_PASSWORD_1")?></p>
 				<p>&nbsp;</p>
-				<p><b><?=GetMessage("AUTH_GET_CHECK_STRING")?></b></p>
 				<input type="text" name="USER_LOGIN" maxlength="50" value="<?=$arResult["LAST_LOGIN"]?>" placeholder="логин" />
 				<input type="text" name="USER_EMAIL" maxlength="255" placeholder="e-mail" />
 				<input type="submit" name="send_account_info" value="Отправить" class="button">
