@@ -162,6 +162,7 @@ $(document).on('ready', function(){
 	});
 	$('.music_type_list ul li.type_tv').on('click', function(){
         jwVSVolume=50;
+        $( "#slider-vertical-1" ).slider({value: jwVSVolume});
 		setSwitch( 'type_tv' );
 	});
 
