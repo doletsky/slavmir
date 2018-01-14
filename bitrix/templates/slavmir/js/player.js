@@ -8,13 +8,13 @@ var RADIO_URL = 'http://83.217.203.197/stream/2/',
 		tm = null, // timer for radio
 
 		jw = null,
-		jwVolume = 100,
+		jwVolume = 50,
 
 		jwVS = null,
 		jwVSVolume = 0,
 
 		jwV = null,
-		jwVVolume = 100,
+		jwVVolume = 50,
 
 		jwIVS;
 
@@ -112,7 +112,7 @@ $(document).on('ready', function(){
 		range: "min",
 		min: 0,
 		max: 100,
-		value: 100,
+		value: jwVolume,
 		slide: function( event, ui ) {
 			//$( "#amount" ).val( ui.value );
 			jwVolume = ui.value;
@@ -127,7 +127,7 @@ $(document).on('ready', function(){
 		range: "min",
 		min: 0,
 		max: 100,
-		value: 0,
+		value: jwVSVolume,
 		slide: function( event, ui ) {
 			//$( "#amount" ).val( ui.value );
 			jwVSVolume = ui.value;
@@ -141,7 +141,7 @@ $(document).on('ready', function(){
 		range: "min",
 		min: 0,
 		max: 100,
-		value: 100,
+		value: jwVVolume,
 		slide: function( event, ui ) {
 			//$( "#amount" ).val( ui.value );
 			jwVVolume = ui.value;
@@ -161,6 +161,7 @@ $(document).on('ready', function(){
 		setSwitch( 'type_radio' );
 	});
 	$('.music_type_list ul li.type_tv').on('click', function(){
+        jwVSVolume=50;
 		setSwitch( 'type_tv' );
 	});
 
@@ -198,7 +199,8 @@ $(document).on('ready', function(){
 			"controls": true,
 			"aspectratio": '16:8.1',
 			"width": '100%',
-			"height": '265'
+			"height": '265',
+            "volume": jwVSVolume
 		}).play();
 
 		/*on('volume',function(obj){
