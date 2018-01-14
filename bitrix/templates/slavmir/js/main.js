@@ -238,6 +238,7 @@ $(document).on('ready', function(){
 		$('#header_bar').toggleClass('settings_active');
 		$('#header_bar').removeClass('search_active');
 		$('#header_bar').removeClass('likes_active');
+        $('#music_bar').toggleClass('settings_active');
 	});
 
 	$('#header_bar .likes').on('click', function(){
