@@ -198,7 +198,7 @@ $(document).on('ready', function(){
 		jwIVS = jwplayer(INDEX_TV_PLAYER_ID).setup({
 			"file": TV_URL,
 			"controls": true,
-			"aspectratio": '16:8.1',
+			"aspectratio": '16:9',
 			"width": '100%',
 			"height": '265',
             "volume": jwVSVolume
