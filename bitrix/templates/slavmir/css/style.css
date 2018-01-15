@@ -1570,7 +1570,7 @@ body.short_header #music_bar .music_played .played_info{
     margin-bottom: 5px;
 }
 #music_bar .more_info .actives_list{
-    display: flex;
+    display: none; /*flex;*/
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
