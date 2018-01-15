@@ -8,7 +8,8 @@
 			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="index_news_item">
 				<div class="index_news_date"><?=small_russian_date("j F",MakeTimeStamp($arItem["ACTIVE_FROM"],"DD.MM.YYYY"))?></div>
 				<div class="index_news_desc">
-					<p><?=$arItem["NAME"]?></p>
+					<h2><?=$arItem["NAME"]?></h2>
+                    <p><?=TruncateText($arItem["PREVIEW_TEXT"], 150)?> <span class="read_more">Подробнее</span> </p>
 				</div>
 				<div class="index_news_img">
 					<img src="<?=$image?>" alt="<?=$arItem["NAME"]?>">

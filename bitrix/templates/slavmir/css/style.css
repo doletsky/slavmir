@@ -2145,6 +2145,11 @@ body.short_header #music_bar .music_played .played_info{
 }
 #index_content .index_news h2{
     margin-bottom: 10px;
+    font-size: 22px;
+}
+#index_content .index_news p{
+    font-size: 15px;
+    line-height: 19px;
 }
 .index_news_list .index_news_item{
     width: 100%;
@@ -2228,7 +2233,8 @@ body.short_header #music_bar .music_played .played_info{
     font-family:'PT Sans';
     line-height: 18px;
 }
-.index_articles_list .index_articles_item .article_text article a.read{
+.index_articles_list .index_articles_item .article_text article a.read,
+#index_content .index_news p span.read_more {
     background-color: #e94422;
     color: #fff;
     padding: 0px 4px 2px;
