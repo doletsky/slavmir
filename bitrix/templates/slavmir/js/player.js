@@ -504,11 +504,11 @@ function playVideoFile(file){
 			width: '100%',
 			height: $('.opened_video_bar_main_img').height(),//'560',
 			source: file, 
-			parentId: "#"+VIDEO_PLAYER_ID,
-			youtubeShowRelated: true,
-			plugins: {
-				playback: [YoutubePlugin]
-			}
+//			parentId: "#"+VIDEO_PLAYER_ID,
+//			youtubeShowRelated: true,
+//			plugins: {
+//				playback: [YoutubePlugin]
+//			}
 		});
 		jwV.on(Clappr.Events.PLAYER_TIMEUPDATE,function(obj){
 			setVPlayerPosition(obj);
