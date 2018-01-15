@@ -6,7 +6,7 @@ $APPLICATION->SetPageProperty("keywords", "наша команда, славян
 $APPLICATION->SetPageProperty("description", "Славянский Мир - народное славянское радио в прямом эфире. Ежедневно слушать онлайн радио эфиры на официальном сайте. Радио, Видео, Статьи о славянском народе.");
 $APPLICATION->SetPageProperty("header_bg", "/upload/medialibrary/c40/c40c35d400fbc6f27f0ecab415a8503a.jpg");
 $APPLICATION->SetPageProperty("title", "Контактная информация");
-$APPLICATION->SetTitle("Контактная информация");
+$APPLICATION->SetTitle("О нас");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
 ?>
 <section id="contacts">

@@ -15,6 +15,14 @@ global $APPLICATION;
         );
         unset($_SESSION['PROG_NAME']);
         $arResult=$arResultNew;
+    }elseif(substr_count($arResult[0]['LINK'], '/about/')==1){
+        $arResult=array(
+            array(
+                'TITLE'=> 'О нас',
+                'LINK' => ''
+            )
+
+        );
     }
 
 //delayed function must return a string
