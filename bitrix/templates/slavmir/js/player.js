@@ -176,14 +176,14 @@ $(document).on('ready', function(){
 		$('#music_bar').toggleClass('bar_song_active');
 	});
 
-	$('#music_bar .music_right_bar .music_right_bar_item').on('click', function(){
-		$('.music_right_bar_item_wrap').removeClass('active');
-		$('.music_left_bar_item_wrap').removeClass('active');
-		if( !$(this).hasClass("no-info") ){
-			$(this).parent().addClass('active');
-		}
-		$('#music_bar').toggleClass('bar_song_active');
-	});
+//	$('#music_bar .music_right_bar .music_right_bar_item').on('click', function(){
+//		$('.music_right_bar_item_wrap').removeClass('active');
+//		$('.music_left_bar_item_wrap').removeClass('active');
+//		if( !$(this).hasClass("no-info") ){
+//			$(this).parent().addClass('active');
+//		}
+//		$('#music_bar').toggleClass('bar_song_active');
+//	});
 
 	
 
