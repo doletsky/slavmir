@@ -3,6 +3,8 @@
 if ($arParams["SHOW_RESULTS"] == "Y")
 {
 	$this->IncludeLangFile("result.php");
+}else{
+    LocalRedirect("/?result=1");
 }
 ?>
 <section id="opros_page">
