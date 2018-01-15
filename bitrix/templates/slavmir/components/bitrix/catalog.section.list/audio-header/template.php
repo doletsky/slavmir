@@ -53,7 +53,7 @@ foreach( $arResult["CATEGORY"] as $ID => $arCategory ){
 				?>
 				<li>
 					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img src="<?=$image?>" alt="<?=$arItem["NAME"]?> - <?=$artistName?>" class="audioP_top_img"></a>
-					<span class="audioP_name"><?=$arItem["NAME"]?></span>
+                    <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" style="text-decoration: none"><span class="audioP_name"><?=$arItem["NAME"]?></span></a>
 					<span class="audioP_descr"><?=$artistName?></span>
 				</li>
 			<?}?>
