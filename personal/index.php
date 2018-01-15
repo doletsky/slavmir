@@ -27,12 +27,16 @@ $APPLICATION->SetTitle("Личный кабинет");
 			false
 		);?>
 	</div>
+    <?/*?>
+<?//"забор" в style.css:3602 #lk_section:after?>
 	<div class="subs_ends_container">
 		<p>Внимание! Подписка заканчивается через <span>3 дня.</span> Рекомендуем оплатить <span>300 ₽</span></p>
 		<a class="subs_add_pay" href="#">Доплатить</a>
 		<div class="clear"></div>
 	</div>
+    <?*/?>
 </section>
+<?/*?>
 <section class="current_subs">
 	<div class="container">
 		<div class="sub_info">
@@ -107,4 +111,5 @@ $APPLICATION->SetTitle("Личный кабинет");
         </div>
 
     </section>
+<?*/?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
