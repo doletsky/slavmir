@@ -786,8 +786,11 @@ function setSwitch( typeCode ){
 		//$('.efir_bar .slider-for').slick('refresh');
 		$('#music_bar_mobile').removeClass();
 		$('#music_bar_mobile').addClass('efir_bar_active');
+        stopVideo();
+        stopAudio();
 		initVideoStream();
-		if( isMobile ) startVideoStream();
+//		if( isMobile )
+            startVideoStream();
 		className = 'type_tv';
 		$("#music_bar_mobile_scroll .mobile_bar_name .song_type").text('ТВ-эфир');
 		setMobileName( 'ТВ-эфир', '' );
