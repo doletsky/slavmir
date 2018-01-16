@@ -220,32 +220,44 @@ $(document).on('ready', function(){
 });
 
 $(document).on("click",".pl-audio-play",function(){
-	var $this = $(this),
-			$name = '',
-			$artist = '',
-			$picture = '';
-	if( $this.hasClass("block") ){
-		$(".subs_popup_container").show();
-		return false;
-	}
-	setSwitch('type_audio');
-	if( $this.attr("data-name") ){
-		$name = $this.attr("data-name");
-	}
-	else{
-		$name = $this.parent().find(".mus_name").text();
-	}
-	if( $this.attr("data-artist") ){
-		$artist = $this.attr("data-artist");
-	}
-	else{
-		$artist = $this.parent().find(".mus_group").text();
-	}
-	$picture = $this.attr("data-picture");
-	setPlayerName( $name, $artist );
-	setMobileName( $name, $artist );
-	setPlayerPicture( $picture );
-	playAudioFile( $(this).attr("data-url") );
+    if($(this).data('name')===$('#jw-current-play .music_right_bar_item .music_name').text()){
+        if( $(".music_status").hasClass("played") && $(".type_audio").hasClass("active")){
+            pauseAudio();
+        }else{
+            playAudio();
+        }
+
+            }else{
+                var $this = $(this),
+                    $name = '',
+                    $artist = '',
+                    $picture = '';
+                if( $this.hasClass("block") ){
+                    $(".subs_popup_container").show();
+                    return false;
+                }
+                setSwitch('type_audio');
+                if( $this.attr("data-name") ){
+                    $name = $this.attr("data-name");
+                }
+                else{
+                    $name = $this.parent().find(".mus_name").text();
+                }
+                if( $this.attr("data-artist") ){
+                    $artist = $this.attr("data-artist");
+                }
+                else{
+                    $artist = $this.parent().find(".mus_group").text();
+                }
+                $picture = $this.attr("data-picture");
+                setPlayerName( $name, $artist );
+                setMobileName( $name, $artist );
+                setPlayerPicture( $picture );
+                playAudioFile( $(this).attr("data-url") );
+            }
+
+
+
 });
 
 $(document).on("click",".pl-video-play",function(){
