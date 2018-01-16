@@ -320,6 +320,7 @@ $(document).on('ready', function(){
 
 	$('.close_popup, .close_tnx_popup').on('click', function(){
 		$('.register_popup_container, .tnx_popup_container, .subs_popup_container, .paylk_popup_container, .failpay_popup_container').fadeOut(200);
+        $('form.opros_form').submit();
         console.log($(this).attr('class'));
 	});
 

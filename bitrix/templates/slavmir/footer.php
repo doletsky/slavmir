@@ -123,7 +123,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		</div>
 	</div>
 </div>
-<div class="tnx_popup_container opros" <?if($_GET['result']==1)echo "style='display:block'"?>>
+<div class="tnx_popup_container opros">
 	<div class="tnx_container">
 		<div class="close_popup"></div>
 		<div class="popup_bg"></div>
