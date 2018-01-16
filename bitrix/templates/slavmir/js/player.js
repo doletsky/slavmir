@@ -21,7 +21,7 @@ var RADIO_URL = 'http://83.217.203.197/stream/2/',
 var TV_PLAYER_ID = 'tv-container',
 		VIDEO_PLAYER_ID = 'video-container',
 		INDEX_TV_PLAYER_ID = 'index-tv-container';
-
+var tmScrl=1;
 $(document).on('ready', function(){
 
     if( $(window).width() <= 768 ){//if( $("html").hasClass("bx-touch") || $(window).width() <= 768 ){
@@ -249,6 +249,7 @@ $(document).on("click",".pl-audio-play",function(){
 });
 
 $(document).on("click",".pl-video-play",function(){
+    if(tmScrl==1){
 	var $this = $(this),
 			$name = '',
 			$artist = '',
@@ -275,6 +276,8 @@ $(document).on("click",".pl-video-play",function(){
 	setMobileName( $name, $artist );
 	setVPlayerPicture( $picture );
 	playVideoFile( $(this).attr("data-url") );
+    }
+
 	return false;
 });
 
@@ -504,11 +507,11 @@ function playVideoFile(file){
 			width: '100%',
 			height: $('.opened_video_bar_main_img').height(),//'560',
 			source: file, 
-//			parentId: "#"+VIDEO_PLAYER_ID,
-//			youtubeShowRelated: true,
-//			plugins: {
-//				playback: [YoutubePlugin]
-//			}
+			parentId: "#"+VIDEO_PLAYER_ID,
+			youtubeShowRelated: true,
+            plugins: {
+                playback: [YoutubePlugin]
+            }
 		});
 		jwV.on(Clappr.Events.PLAYER_TIMEUPDATE,function(obj){
 			setVPlayerPosition(obj);

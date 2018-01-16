@@ -1,5 +1,13 @@
 $(document).on('ready', function(){
 
+    $('.video_bar_item.pl-video-play').mousedown(function(){
+            if(tmScrl==1){
+                setTimeout(function(){tmScrl=0;}, 300);
+            }
+    });
+    $('.video_bar_item.pl-video-play').mouseup(function(){
+        setTimeout(function(){tmScrl=1;}, 100)});
+
 	$('.article_types_box .art_type_list ul li').on('click', function(){
 		if($(this).hasClass('active') == true){
 			$(this).find('.sub_type').slideUp(300);
@@ -141,8 +149,11 @@ $(document).on('ready', function(){
 	});
 
 	$('.video_bar_slider .video_bar_item').on('click', function(){
+        if(tmScrl==1){
 		$('#music_bar').removeClass('video_bar_active');
 		$('#music_bar').addClass('opened_video');
+        }
+
 	});
 
 	$('#our_prog_slider_box .our_prog_slider').slick({
