@@ -115,10 +115,11 @@ $(document).on('ready', function(){
 	$('input[type="tel"]').mask("+7(999)999-99-99"); //phone mask
 
 	$('.video_bar_slider').slick({
+        infinite: true,
 		arrows: false,
 		dots: false,
 		slidesToShow: 6,
-		slidesToScroll: 6,
+		slidesToScroll: 2,
 		responsive: [
 	    {
 	      breakpoint: 1280,
@@ -354,7 +355,7 @@ $(document).on('ready', function(){
 	    slidesToScroll: 1,
 	    prevArrow: $('.prev_song'),
       	nextArrow: $('.next_song'),
-	    dots: false,
+	    dots: false
 	});
     $('.prev_song').attr('style','');
     $('.next_song').attr('style','');
