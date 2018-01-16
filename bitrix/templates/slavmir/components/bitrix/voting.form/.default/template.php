@@ -116,11 +116,15 @@
 									<?
 								break;
 								case 1://checkbox?>
-									<span class="vote-answer-item vote-answer-item-checkbox">
-										<input <?=$value?> type="checkbox" name="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>[]" value="<?=$arAnswer["ID"]?>" <?
-											?> id="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>_<?=$arAnswer["ID"]?>" <?=$arAnswer["~FIELD_PARAM"]?> />
-										<label for="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>_<?=$arAnswer["ID"]?>"><?=$arAnswer["MESSAGE"]?></label>
-									</span>
+<!--									<span class="vote-answer-item vote-answer-item-checkbox">-->
+
+										<label class="checkbox" for="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>_<?=$arAnswer["ID"]?>">
+                                            <input <?=$value?> type="checkbox" name="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>[]" value="<?=$arAnswer["ID"]?>" <?
+                                            ?> id="vote_checkbox_<?=$arAnswer["QUESTION_ID"]?>_<?=$arAnswer["ID"]?>" <?=$arAnswer["~FIELD_PARAM"]?> />
+                                            <span></span>
+                                            <span><?=$arAnswer["MESSAGE"]?></span>
+                                        </label>
+<!--									</span>-->
 								<?break?>
 
 								<?case 2://dropdown?>
