@@ -407,7 +407,7 @@ $(document).on('ready', function(){
 		$('.subs_popup_container').fadeIn(200);
 	});
 
-	$('.opros_form').on('submit', function(e){
+	$('.opros_form,.data_info').on('submit', function(e){
 		var hid_in_val = $('#for_bots').val();
 		if(hid_in_val == ''){
 

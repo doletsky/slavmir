@@ -225,7 +225,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
 <div class="reg_privacy">
-    <input type="checkbox" required="required" title="Для продолжения вы должны принять условия Пользовательского соглашения">
+    <input onload="this.setCustomValidity('Для продолжения вы должны принять условия Пользовательского соглашения');" type="checkbox" required="required" title="Для продолжения вы должны принять условия Пользовательского соглашения">
     <p>Я принимаю условия <a href="/include/users.pdf" target="_blank">Пользовательского соглашения</a> (о порядке пользования интернет-сайтом «Славянский мир») и даю своё согласие ООО «Славянский мир» на обработку моей персональной информации на условиях, определенных <a href="/include/politice.pdf" target="_blank">Политикой&nbsp;конфиденциальности</a>.</p>
 </div>
 
@@ -233,6 +233,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 		<div class="reg_btn reg_free">
 			<button><b>Получить бесплатно</b><br>месяц тестового периода</button>
 			<input type="hidden" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" />
+            <input type="text" id="for_bots" hidden="">
             <?/*?>
 			<div class="reg_limited">
 				<p>Ограниченный доступ <br> к порталу.</p>
