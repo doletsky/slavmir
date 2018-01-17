@@ -8069,7 +8069,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
 form[name="form_auth"]{
     width: 100%;
     max-width: 610px;
-    margin: 50px auto 0;
+    margin: 50px auto;
+    text-align: center;
 }
 form[name="form_auth"] input{
     width: 100%;
@@ -8081,6 +8082,52 @@ form[name="form_auth"] input{
     font-size: 23.6px;
     margin-bottom: 35px;
     padding-bottom: 5px;
+}
+form[name="form_auth"] .remember_box{
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+form[name="form_auth"] .remember_box input{
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid #696969;
+    margin-bottom: 0;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+form[name="form_auth"] .remember_box input:checked{
+    background-image: url(../images/remember_ok.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center;
+}
+form[name="form_auth"] .login_btn{
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    border: none;
+    background-color: #f47b22;
+    color: #fff;
+    font-family: 'PT Sans';
+    font-size: 19px;
+    border-radius: 15px;
+    padding: 3px 20px;
+    cursor: pointer;
+    margin: 0 auto 20px;
+}
+form[name="form_auth"] .unreg{
+    margin-bottom: 15px;
+}
+a:hover, html body a:hover{
+    color: #f47b22!important;
+    opacity: 0.8;
 }
 
 /***** ADAPTIVE *****/
