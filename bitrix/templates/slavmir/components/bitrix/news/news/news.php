@@ -184,7 +184,7 @@ if(!isset($_REQUEST["AJAX"]) || $_REQUEST["AJAX"]!="Y"){
 <?if(!isset($_REQUEST["AJAX"]) || $_REQUEST["AJAX"]!="Y"){?>
 		</div>
 		<div class="right_col">
-			
+			<?/*?>
 			<div class="popular_box">
 				<h5>Популярное</h5>
 				<?$GLOBALS["popularFilter"]=array("PROPERTY_IS_POPULAR"=>51);?>
@@ -251,7 +251,7 @@ if(!isset($_REQUEST["AJAX"]) || $_REQUEST["AJAX"]!="Y"){
 					false
 				);?>
 			</div><!-- popular_box -->
-			
+			<?*/?>
 		</div>
 		<div class="clear"></div>
 	</div>
