@@ -6,16 +6,24 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
  */
 
 global $APPLICATION;
-    $prevPath=explode($_SERVER['HTTP_HOST'],$_SERVER['HTTP_REFERER']);
+$prevPath=explode($_SERVER['HTTP_HOST'],$_SERVER['HTTP_REFERER']);
     if(array_key_exists($prevPath[1],$_SESSION['PROG_NAME']) && substr_count($arResult[0]['LINK'], '/audio/')==1){
         $arResultNew=array(
-            array( 'TITLE' => 'Наши программы', 'LINK' => '/programs/' ),
+            array( 'TITLE' => 'Наши программы', 'LINK' => '/programmy/' ),
             array( 'TITLE' => $_SESSION['PROG_NAME'][$prevPath[1]], 'LINK' => $prevPath[1] ),
             $arResult[1]
         );
         unset($_SESSION['PROG_NAME']);
         $arResult=$arResultNew;
-    }elseif(substr_count($arResult[0]['LINK'], '/about/')==1){
+    }elseif(substr_count($arResult[0]['LINK'], '/o-nas/')==1){
+        $arResult=array(
+            array(
+                'TITLE'=> 'О нас',
+                'LINK' => ''
+            )
+
+        );
+    }elseif(substr_count($_SERVER['SCRIPT_URL'], '/kontakty/')==1){
         $arResult=array(
             array(
                 'TITLE'=> 'О нас',

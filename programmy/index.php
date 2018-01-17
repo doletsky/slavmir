@@ -1,16 +1,12 @@
 <?
-if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y"){
-	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-}
-else{
-	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-	$APPLICATION->SetTitle("Статьи");
-}
-?><?$APPLICATION->IncludeComponent("bitrix:news", "articles", Array(
-	"COMPONENT_TEMPLATE" => "audio",
-		"IBLOCK_TYPE" => "news",	// Тип инфоблока
-		"IBLOCK_ID" => "11",	// Инфоблок
-		"NEWS_COUNT" => "10",	// Количество новостей на странице
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("header_id", "our_prog_top");
+$APPLICATION->SetTitle("Программы");
+?><?$APPLICATION->IncludeComponent("bitrix:news", "programs", Array(
+	"COMPONENT_TEMPLATE" => "programs",
+		"IBLOCK_TYPE" => "program",	// Тип инфоблока
+		"IBLOCK_ID" => "5",	// Инфоблок
+		"NEWS_COUNT" => "999",	// Количество новостей на странице
 		"USE_SEARCH" => "N",	// Разрешить поиск
 		"USE_RSS" => "N",	// Разрешить RSS
 		"USE_RATING" => "N",	// Разрешить голосование
@@ -19,11 +15,11 @@ else{
 		"USE_FILTER" => "N",	// Показывать фильтр
 		"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
 		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
-		"SORT_BY2" => "ID",	// Поле для второй сортировки новостей
-		"SORT_ORDER2" => "DESC",	// Направление для второй сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
 		"SEF_MODE" => "Y",	// Включить поддержку ЧПУ
-		"SEF_FOLDER" => "/articles/",	// Каталог ЧПУ (относительно корня сайта)
+		"SEF_FOLDER" => "/programmy/",	// Каталог ЧПУ (относительно корня сайта)
 		"AJAX_MODE" => "N",	// Включить режим AJAX
 		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
 		"AJAX_OPTION_STYLE" => "N",	// Включить подгрузку стилей
@@ -32,7 +28,7 @@ else{
 		"CACHE_TYPE" => "A",	// Тип кеширования
 		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
 		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-		"CACHE_GROUPS" => "N",	// Учитывать права доступа
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
 		"SET_LAST_MODIFIED" => "Y",	// Устанавливать в заголовках ответа время модификации страницы
 		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
@@ -51,10 +47,9 @@ else{
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(	// Свойства
-			0 => "",
-			1 => "ARTIST",
-			2 => "IS_BLACK",
-			3 => "",
+			0 => "ARTIST",
+			1 => "IS_BLACK",
+			2 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
 		"DISPLAY_NAME" => "Y",	// Выводить название элемента
@@ -68,9 +63,8 @@ else{
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(	// Свойства
-			0 => "",
-			1 => "ARTIST",
-			2 => "",
+			0 => "ARTIST",
+			1 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
@@ -91,15 +85,9 @@ else{
 		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"section" => "#SECTION_CODE#/",
-			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
+			"section" => "",
+			"detail" => "#ELEMENT_CODE#/",
 		)
 	),
 	false
-);?><?
-if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y"){
-	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
-}
-else{
-	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
-}
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

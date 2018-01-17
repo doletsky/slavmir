@@ -384,14 +384,14 @@ use Bitrix\Main\Page\Asset;
 	if($bg) $APPLICATION->SetPageProperty("bg_dop",' style="background-image:url('.$bg.')" ');
 
 	$class = "page_name";
-	if( CSite::inDir("/about/") ) $class = "";
+	if( CSite::inDir("/o-nas/") ) $class = "";
 	if( CSite::inDir("/audio-playlist/") ) $class = "";
 
 	// section
 	$showSection = true;
 	if( CSite::inDir('/audio/') ) $showSection = false;
-	if( CSite::inDir("/articles/") && $APPLICATION->GetCurPage()!='/articles/' ) $showSection=false;
-	if( CSite::inDir("/news/") && $APPLICATION->GetCurPage()!='/news/' ) $showSection=false;
+	if( CSite::inDir("/stati/") && $APPLICATION->GetCurPage()!='/stati/' ) $showSection=false;
+	if( CSite::inDir("/novosti/") && $APPLICATION->GetCurPage()!='/novosti/' ) $showSection=false;
 	if( CSite::inDir("/video/") ) $showSection=false;
 	if( CSite::inDir("/polls/") ) $showSection=false;
 	if( CSite::inDir("/rates/") ) $showSection=false;

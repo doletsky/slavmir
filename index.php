@@ -262,7 +262,7 @@ $APPLICATION->SetTitle("Славянский Мир");
 			));?>
 			<div class="clear"></div>
 			<div class="about_btn">
-				<a href="/about/project/">О нас</a>
+				<a href="/o-nas/project/">О нас</a>
 			</div>
 		</div>
 	</div><!-- index_about -->

@@ -7,17 +7,17 @@ $arUrlRewrite = array(
 		"PATH" => "/audio-playlist/index.php",
 	),
 	array(
-		"CONDITION" => "#^/programs/#",
+		"CONDITION" => "#^/programmy/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/programs/index.php",
+		"PATH" => "/programmy/index.php",
 		"SORT" => "100",
 	),
 	array(
-		"CONDITION" => "#^/articles/#",
+		"CONDITION" => "#^/stati/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/articles/index.php",
+		"PATH" => "/stati/index.php",
 		"SORT" => "100",
 	),
 	array(
@@ -34,11 +34,17 @@ $arUrlRewrite = array(
 		"PATH" => "/video/index.php",
 	),
 	array(
-		"CONDITION" => "#^/news/#",
+		"CONDITION" => "#^/novosti/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"PATH" => "/novosti/index.php",
 	),
+    array(
+        "CONDITION" => "#^/kontakty/#",
+        "RULE" => "",
+        "ID" => "",
+        "PATH" => "/o-nas/contacts/index.php",
+    )
 );
 
 ?>
