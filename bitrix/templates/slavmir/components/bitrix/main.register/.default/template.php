@@ -18,18 +18,35 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 ?>
-<h5>Регистрация в Славянском Мире</h5>
+
 
 <?if($USER->IsAuthorized()):?>
+    <div class="tnx_popup_container reg" <?if(count($_POST) && isset($_POST["register_submit_button"])){?>style="display:block;"<?}?>>
+    <div class="tnx_container">
+    <div class="tnx_container">
+        <div class="close_popup" onclick="location.href='<?=$APPLICATION->GetCurDir()?>'"></div>
+        <div class="popup_bg"></div>
+        <h4>Ваша регистрация прошла успешно!</h4>
+        <p>Мы вышлем подтверждение регистрации на указанный адрес почты.</p>
+        <div class="close_tnx_popup" onclick="location.href='<?=$APPLICATION->GetCurDir()?>'">
+            <img src="<?=SITE_TEMPLATE_PATH?>/images/close_popup.png" alt="close_popup"><span>Закрыть</span>
+        </div>
+    </div>
+    </div>
+    </div>
 
-<p><?echo GetMessage("MAIN_REGISTER_AUTH")?></p>
-<p>&nbsp;</p>
-<div class="have_reg">
-	<p>Пожалуйста, переходите в свой <a href="/personal/">личный кабинет</a></p>
-</div>
+
+<!--<p>--><?//echo GetMessage("MAIN_REGISTER_AUTH")?><!--</p>-->
+<!--<p>&nbsp;</p>-->
+<!--<div class="have_reg">-->
+<!--	<p>Пожалуйста, переходите в свой <a href="/personal/">личный кабинет</a></p>-->
+<!--</div>-->
 
 <?else:?>
-	
+    <div class="register_popup_container" <?if(count($_POST) && isset($_POST["register_submit_button"])){?>style="display:block;"<?}?>>
+<div class="register_popup">
+<div class="register_popup_scroll">
+<h5>Регистрация в Славянском Мире</h5>
 	<div class="have_reg">
 		<p>У меня уже есть регистрация. <a href="" class="register-enter">Войти</a></p>
 	</div>
@@ -252,4 +269,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 	</div>
 
 </form>
+</div>
+</div>
+    </div>
 <?endif?>

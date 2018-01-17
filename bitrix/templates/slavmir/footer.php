@@ -88,19 +88,14 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		</div>
 	</div>
 </div>
-<div class="register_popup_container" >
-	<div class="register_popup">
-		<div class="register_popup_scroll">
-			<div class="close_popup"></div>
+
+
 				<?$APPLICATION->IncludeComponent("bitrix:main.register","",array(
 						"SHOW_FIELDS" => Array("NAME", "PERSONAL_MOBILE"),
 						"AUTH" => "Y",
 						"SET_TITLE" => "N"
 					),
 				false);?>
-		</div>
-	</div>
-</div>
 <div class="subs_popup_container">
 	<div class="subs_container">
 		<div class="close_popup"></div>
@@ -112,17 +107,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 		<p class="license">Данное предложение не является публичной офертой. Лицензия СМИ 12278172</p>
 	</div>
 </div>
-<div class="tnx_popup_container reg" <?if(count($_POST) && isset($_POST["register_submit_button"])){?>style="display:block;"<?}?> >
-	<div class="tnx_container">
-		<div class="close_popup"></div>
-		<div class="popup_bg"></div>
-		<h4>Ваша регистрация прошла успешно!</h4>
-		<p>Мы вышлем подтверждение регистрации на указанный адрес почты.</p>
-		<div class="close_tnx_popup">
-			<img src="<?=SITE_TEMPLATE_PATH?>/images/close_popup.png" alt="close_popup"><span>Закрыть</span>
-		</div>
-	</div>
-</div>
+
 <div class="tnx_popup_container opros">
 	<div class="tnx_container">
 		<div class="close_popup"></div>
