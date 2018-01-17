@@ -24,10 +24,11 @@ while($enum_fields = $property_enums->GetNext()){
 	$arResult["CATEGORY"][$enum_fields["ID"]]=array( "NAME" => $enum_fields["VALUE"] );
 
 	$arFilter = Array( "IBLOCK_ID"=>$arParams["IBLOCK_ID"], 'ACTIVE'=>'Y', "PROPERTY_CATEGORY"=>$enum_fields["ID"] );
-	$dbList = CIBlockElement::GetList(array("sort"=>"desc"), $arFilter, false, array("nTopCount"=>5), array("IBLOCK_ID","ID","NAME","PREVIEW_PICTURE","PROPERTY_ARTIST","PROPERTY_DURATION","PROPERTY_IS_NO_AUTH","DETAIL_PAGE_URL","PROPERTY_PATH"));
+	$dbList = CIBlockElement::GetList(array("sort"=>"desc"), $arFilter, false, array("nTopCount"=>5), array("IBLOCK_ID","ID","NAME","PREVIEW_PICTURE","PROPERTY_ARTIST", "PROPERTY_PROGRAM","PROPERTY_DURATION","PROPERTY_IS_NO_AUTH","DETAIL_PAGE_URL","PROPERTY_PATH"));
 	while($arItem = $dbList->GetNext()){
 		$arResult["CATEGORY"][$enum_fields["ID"]]["ITEMS"][]=$arItem;
 		$artistIDs[] = $arItem["PROPERTY_ARTIST_VALUE"];
+        $programIDs[] = $arItem["PROPERTY_PROGRAM_VALUE"];
 	}
 }
 
@@ -40,3 +41,11 @@ while($arItem = $dbList->GetNext()){
 }
 $arResult["ARTISTS"] = $artists;
 #pre($artists);
+
+$programs=array();
+$arFilter = Array( "IBLOCK_ID"=>5, 'ACTIVE'=>'Y', "ID"=>$programIDs );
+$dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("ID","NAME"));
+while($arItem = $dbList->GetNext()){
+    $programs[$arItem["ID"]] = $arItem;
+}
+$arResult["PROGRAM"] = $programs;

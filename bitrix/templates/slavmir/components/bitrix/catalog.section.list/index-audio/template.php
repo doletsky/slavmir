@@ -13,10 +13,11 @@
 $this->setFrameMode(true);
 global $USER;
 ?>
-<?
-#pre($arResult);
-#pre($arResult["CATEGORY"]);
-?>
+    <?
+    #pre($arResult["PROGRAM"]);
+    #pre($arResult["ARTISTS"]);
+    ?>
+
 <div class="index_music">
 	<div class="index_music_header">
 		<h2>Музыка</h2>
@@ -49,6 +50,11 @@ global $USER;
 					if(isset($arResult["ARTISTS"][$artistID])){
 						$artistName = $arResult["ARTISTS"][$artistID]["NAME"];
 					}
+                    $programID = $arItem["PROPERTY_PROGRAM_VALUE"];
+                    $programName = '';
+                    if(isset($arResult["PROGRAM"][$programID])){
+                        $programName = $arResult["PROGRAM"][$programID]["NAME"];
+                    }
 					$image = GetConfig("audio_default_image");
 					$playerImage = $image;
 					if($arItem["PREVIEW_PICTURE"]){
@@ -73,7 +79,7 @@ global $USER;
 							</div>
 							<div class="mus_info">
 								<a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
-								<div class="mus_group"><?=$artistName?></div>
+								<div class="mus_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></div>
 								<div class="mus_bar">
 									<div class="list_img"></div>
 									<div class="likes"></div>
