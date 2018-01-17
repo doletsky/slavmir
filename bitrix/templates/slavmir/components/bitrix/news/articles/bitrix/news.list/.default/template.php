@@ -34,7 +34,7 @@ $this->setFrameMode(true);
 	</ul>
 </div>
 <?}?>
-    <div class="tab_container new_articles_list active" data-attr="new" data-id="new_art_tabs">
+    <div class="tab_container new_articles_list<?if( !isset( $arResult["SECTION"]["PATH"] ) ):?> active<?endif?>" data-attr="new" data-id="new_art_tabs">
         <?
         foreach( $arResult["ITEMS_NEW"] as $arItem ){
                 $sectionID = $arItem["IBLOCK_SECTION_ID"];
@@ -73,7 +73,7 @@ $this->setFrameMode(true);
             <?
         }?>
     </div>
-<div class="tab_container new_articles_list" data-attr="all" data-id="new_art_tabs">
+<div class="tab_container new_articles_list<?if( isset( $arResult["SECTION"]["PATH"] ) ):?> active<?endif?>" data-attr="all" data-id="new_art_tabs">
 	<div class="ajax-list">
 		<?if( !count( $arResult["ITEMS"] ) ){?>
 		В данном разделе нет статей
