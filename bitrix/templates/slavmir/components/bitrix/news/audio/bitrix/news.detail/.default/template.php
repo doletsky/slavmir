@@ -94,6 +94,11 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 						if(isset($arResult["ARTISTS"][$artistID])){
 							$artistName = $arResult["ARTISTS"][$artistID]["NAME"];
 						}
+                        $programID = $arItem["PROPERTY_PROGRAM_VALUE"];
+                        $programName = '';
+                        if(isset($arResult["PROGRAM"][$programID])){
+                            $programName = $arResult["PROGRAM"][$programID]["NAME"];
+                        }
 						$image = GetConfig("audio_default_image");
 						if($arItem["PREVIEW_PICTURE"]) $image = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>42,"h"=>42,"zc"=>1));
 						?>
@@ -101,7 +106,7 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 							<img src="<?=$image?>" alt="<?=$arItem["NAME"]?> - <?=$artistName?>" class="music_img">
 							<div class="index_mus_info">
 								<span class="index_music_name"><?=$arItem["NAME"]?></span>
-								<span class="index_music_group"><?=$artistName?></span>
+								<span class="index_music_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></span>
 								<span class="index_music_duration"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><?=duration($arItem["PROPERTY_DURATION_VALUE"])?><?}?></span>
 								<?/*?><span class="audio_komp_plus"><img src="images/audio_plus.png" alt="audio_plus.png"></span><?*/?>
 							</div>

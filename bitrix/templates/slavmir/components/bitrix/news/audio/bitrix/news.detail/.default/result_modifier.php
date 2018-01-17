@@ -13,10 +13,11 @@ $artistIDs[]=$arResult["PROPERTIES"]["ARTIST"]["VALUE"];
 $arResult["SAME"]=array();
 if( $arResult["PROPERTIES"]["SAME"]["VALUE"] ){
 	$arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "ID"=>$arResult["PROPERTIES"]["SAME"]["VALUE"] );
-	$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST"));
+	$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PROGRAM"));
 	while($arItem = $dbList->GetNext()){
 		$arResult["SAME"][]=$arItem;
 		$artistIDs[]=$arItem["PROPERTY_ARTIST_VALUE"];
+        $programIDs[]=$arItem["PROPERTY_PROGRAM_VALUE"];
 	}
 }
 
@@ -35,6 +36,16 @@ if( count( $artistIDs ) ){
 $arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "PROPERTY_ARTIST"=>$arResult["PROPERTIES"]["ARTIST"]["VALUE"] );
 $dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("IBLOCK_ID","ID"));
 $arResult["ARTIST_COUNT"] = $dbList->SelectedRowsCount();
+
+//PROGRAMM
+$arResult["PROGRAM"] = array();
+if( count( $artistIDs ) ){
+    $arFilter = Array( "IBLOCK_ID"=>PROGRAM_IBLOCK_ID, 'ACTIVE'=>'Y', "ID"=>$programIDs );
+    $dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("IBLOCK_ID","ID","NAME"));
+    while($arItem = $dbList->GetNext()){
+        $arResult["PROGRAM"][$arItem["ID"]]=$arItem;
+    }
+}
 
 
 // IN PLAYLIST
