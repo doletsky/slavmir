@@ -26,4 +26,10 @@ $dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("IBLOC
 while($arItem = $dbList->GetNext()){
 	$arResult["ARTISTS"][$arItem["ID"]]=$arItem;
 }
+$programs=array();
+$arFilter = Array( "IBLOCK_ID"=>5, 'ACTIVE'=>'Y');
+$dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("ID","NAME"));
+while($arItem = $dbList->GetNext()){
+    $arResult["PROGRAM"][$arItem["ID"]] = $arItem;
+}
 ?>

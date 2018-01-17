@@ -24,6 +24,11 @@ $this->setFrameMode(true);
 				if( $artistID ){
 					$artist = $arResult["ARTISTS"][$artistID];
 				}
+                $programID = $arItem["PROPERTY_PROGRAM_VALUE"];
+                $program = '';
+                if($programID){
+                    $programs = $arResult["PROGRAM"][$programID];
+                }
 				$image = GetConfig("audio_default_image");
 				$playerImage = $image;
 				if($arItem["PREVIEW_PICTURE"]){
@@ -47,13 +52,14 @@ $this->setFrameMode(true);
 						</div>
 						<div class="mus_info">
 							<a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
-							<div class="mus_group"><?if( $artistID ){?><?=$artist["NAME"]?><?}?></div>
+							<div class="mus_group"><?if(strlen($programID)>0)echo $program["NAME"];elseif(strlen($artistID)>0) echo $artist["NAME"];?></div>
 							<div class="mus_bar">
 								<div class="list_img"></div>
 								<div class="likes"></div>
 								<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTY_PATH_VALUE"]?>" download><span class="download"></span></a><?}?>
 							</div>
 							<div class="mus_time"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><?=duration($arItem["PROPERTY_DURATION_VALUE"])?><?}?></div>
+                            <?if(!$isNoAuth){?><div class="mus_subs_img"></div><?}?>
 						</div>
 					</div>
 				</li>

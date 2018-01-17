@@ -35,11 +35,17 @@ $this->setFrameMode(true);
 			<div class="list audio_list scrolled">
                 <ul>
 				<?foreach( $arResult["ITEMS"] as $arItem ){
+                    if(strlen($arItem["PROPERTIES"]["PATH"]["VALUE"])<=0) continue;
 					$artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
 					$artistName = '';
 					if(isset($arResult["ARTISTS"][$artistID])){
 						$artistName = $arResult["ARTISTS"][$artistID]["NAME"];
 					}
+                    $programID = $arItem["PROPERTIES"]["PROGRAM"]["VALUE"];
+                    $programName = '';
+                    if(isset($arResult["PROGRAM"][$programID])){
+                        $programName = $arResult["PROGRAM"][$programID]["NAME"];
+                    }
 					$image = GetConfig("audio_default_image");
 					$playerImage = $image;
 					if($arItem["PREVIEW_PICTURE"]["SRC"]){
@@ -64,13 +70,14 @@ $this->setFrameMode(true);
 						</div>
 						<div class="mus_info">
 							<a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
-							<div class="mus_group"><?=$artistName?></div>
+							<div class="mus_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></div>
 							<div class="mus_bar">
 								<div class="list_img"></div>
 								<div class="likes"></div>
 								<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
 							</div>
 							<div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
+    <?if(!$isNoAuth){?><div class="mus_subs_img"></div><?}?>
 						</div>
 					</div>
                     </li>
@@ -84,12 +91,17 @@ $this->setFrameMode(true);
 				<div class="audio_list scrolled list clearfix">
                     <ul>
 					<?foreach( $arResult["ITEMS"] as $arItem ){
-						if( !in_array( $genreID, $arItem["PROPERTIES"]["GENRE"]["VALUE_ENUM_ID"] ) ) continue;
+						if( !in_array( $genreID, $arItem["PROPERTIES"]["GENRE"]["VALUE_ENUM_ID"] ) || strlen($arItem["PROPERTIES"]["PATH"]["VALUE"])<=0) continue;
 						$artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
 						$artistName = '';
 						if(isset($arResult["ARTISTS"][$artistID])){
 							$artistName = $arResult["ARTISTS"][$artistID]["NAME"];
 						}
+                        $programID = $arItem["PROPERTIES"]["PROGRAM"]["VALUE"];
+                        $programName = '';
+                        if(isset($arResult["PROGRAM"][$programID])){
+                            $programName = $arResult["PROGRAM"][$programID]["NAME"];
+                        }
 						$image = GetConfig("audio_default_image");
 						$playerImage = $image;
 						if($arItem["PREVIEW_PICTURE"]["SRC"]){
@@ -113,14 +125,14 @@ $this->setFrameMode(true);
                                 </div>
                                 <div class="mus_info">
                                     <a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
-                                    <div class="mus_group"><?=$artistName?></div>
+                                    <div class="mus_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></div>
                                     <div class="mus_bar">
                                         <div class="list_img"></div>
                                         <div class="likes"></div>
                                         <?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
                                     </div>
                                     <div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
-                                    <div class="mus_subs_img"></div>
+                                    <?if(!$isNoAuth){?><div class="mus_subs_img"></div><?}?>
                                 </div>
                             </div>
                         </li>
