@@ -302,7 +302,7 @@ $(document).on('ready', function(){
 		$('.music_right_settings').toggleClass('loudness_music_active');
 	});
 
-	$('#music_bar .music_left_bar .music_left_bar_list .music_left_bar_item').on('click', function(){
+	$('#music_bar .music_left_bar .music_left_bar_list').on('click','.music_left_bar_item', function(){
 		if($(this).parent().hasClass('active') == true){
 			$(this).parent().removeClass('active');
 			$('#music_bar').removeClass('bar_song_active');
@@ -314,7 +314,7 @@ $(document).on('ready', function(){
 		}
 	});
 
-	$('#music_bar .music_right_bar .music_right_bar_list .music_right_bar_item').on('click', function(){
+	$('#music_bar .music_right_bar .music_right_bar_list').on('click','.music_right_bar_item', function(){
 		if($(this).parent().hasClass('active') == true){
 			$(this).parent().removeClass('active');
 			$('#music_bar').removeClass('bar_song_active');
