@@ -228,5 +228,3 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 				</div>
 			</div>
 			<?*/?>
-		</div>
-		<div class="clear"></div>

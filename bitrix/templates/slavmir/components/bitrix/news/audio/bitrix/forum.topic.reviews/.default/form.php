@@ -29,6 +29,18 @@ if (!empty($arResult["ERROR_MESSAGE"])):
 <?
 endif;
 ?>
+    <form name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="index" value="<?=htmlspecialcharsbx($arParams["form_index"])?>" />
+        <input type="hidden" name="back_page" value="<?=$arResult["CURRENT_PAGE"]?>" />
+        <input type="hidden" name="ELEMENT_ID" value="<?=$arParams["ELEMENT_ID"]?>" />
+        <input type="hidden" name="SECTION_ID" value="<?=$arResult["ELEMENT_REAL"]["IBLOCK_SECTION_ID"]?>" />
+        <input type="hidden" name="save_product_review" value="Y" />
+        <input type="hidden" name="preview_comment" value="N" />
+        <input type="hidden" name="AJAX_POST" value="<?=$arParams["AJAX_POST"]?>" />
+        <?=bitrix_sessid_post()?>
+        <input type="text" placeholder="Что вы думаете?"><br>
+<!--        <input name="send_button" type="submit" value="--><?//=GetMessage("OPINIONS_SEND")?><!--" tabindex="" onclick="this.form.preview_comment.value = 'N';" />-->
+    </form>
 <div class="reviews-reply-form" <?=(($arParams['SHOW_MINIMIZED'] == "Y") ? 'style="display:none;"' : '' )?>>
 <form name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform"<?
 ?> method="POST" enctype="multipart/form-data" class="reviews-form">
