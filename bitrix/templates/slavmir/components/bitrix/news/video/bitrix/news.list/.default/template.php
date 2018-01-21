@@ -29,7 +29,16 @@ $this->setFrameMode(true);
 	<?#pre($arResult["ITEMS"])?>
 	<div class="tab_container our_prog_list_container" data-attr="all" data-id="video_page_tabs">
 		<div class="video_page_list">
+            <?$countItem=0;$countPagen=0;$pagen=20;$curPage=0;$navStr='';?>
 			<?foreach( $arResult["ITEMS"] as $arItem ){
+                $countPagen=intval($countItem/$pagen);
+                if($curPage<$countPagen){
+                    $navStr.="<span ";
+                    if($curPage>0) $navStr.="class='pagen_".$curPage."' style='display: none'";
+                    $navStr.="onclick=\"$('.pagen_".$countPagen."').css('display','block');$(this).css('display','none');\">Загрузить еще</span><br>";
+                }
+                $curPage=$countPagen;
+                $countItem++;
 				if( isset($arItem["PREVIEW_PICTURE"]["SRC"]) && $arItem["PREVIEW_PICTURE"]["SRC"] ){
 					$image = MakeImage( $arItem["PREVIEW_PICTURE"]["SRC"], array("w"=>305,"h"=>225,"zc"=>1) );
 				}
@@ -53,7 +62,7 @@ $this->setFrameMode(true);
 				$url = $arItem["PROPERTIES"]["PATH"]["VALUE"];
 				$url = str_replace( "https://www.youtube.com/watch?v=", "", $url );
 				?>
-				<div class="video_page_item <?if(!$isNoAuth){?>top<?}?>">
+				<div class="video_page_item <?if(!$isNoAuth){?>top<?}?> pagen_<?=$curPage?>" <?if($curPage>0) echo 'style="display:none"'?>>
 					<a href="" class="pl-video-play <?if($needBlock){?>block<?}?>" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artist?>" data-picture="<?=$image?>" data-url="<?=$url?>">
 						<span class="item_img" style="background-image: url(<?=$image?>);">
 							<span class="video_time"><img src="<?=SITE_TEMPLATE_PATH?>/images/play_btn_small.png" alt="<?=$arItem["NAME"]?>"><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?></span>
@@ -70,6 +79,7 @@ $this->setFrameMode(true);
 					<?/*?><p class="video_views">63 232 просмотров</p><?*/?>
 				</div>
 			<?}?>
+            <?=$navStr?>
 		</div>
 	</div>
 	<?
