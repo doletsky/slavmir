@@ -8090,6 +8090,9 @@ form[name="form_auth"]{
     margin: 50px auto;
     text-align: center;
 }
+.to_login form{
+    margin: auto;
+}
 form[name="form_auth"] input{
     width: 100%;
     border: none;
@@ -8139,6 +8142,9 @@ form[name="form_auth"] .login_btn{
     padding: 3px 20px;
     cursor: pointer;
     margin: 0 auto 20px;
+}
+.to_login form .login_btn{
+    margin: auto;
 }
 form[name="form_auth"] .unreg{
     margin-bottom: 15px;
