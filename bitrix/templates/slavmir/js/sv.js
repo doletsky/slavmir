@@ -2,6 +2,20 @@ var loading = false;
 
 $(document).ready(function(){
 
+	// detect IE8 and above, and Edge
+	if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+		$('body').on("mousewheel", function () {
+	        // remove default behavior
+	        event.preventDefault(); 
+
+	        //scroll without smoothing
+	        var wheelDelta = event.wheelDelta;
+	        var currentScrollPosition = window.pageYOffset;
+	        window.scrollTo(0, currentScrollPosition - wheelDelta);
+	    });
+	}
+
+
 	$(document).on('click',".register-enter",function(){
 		$(".register_popup_container").hide();
 		$("#header_bar").addClass("logging");
