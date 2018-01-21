@@ -34,7 +34,8 @@ $this->setFrameMode(true);
                 $countPagen=intval($countItem/$pagen);
                 if($curPage<$countPagen){
                     $navStr.="<span ";
-                    if($curPage>0) $navStr.="class='pagen_".$curPage."' style='display: none'";
+                    if($curPage>0) $navStr.="class='video_more pagen_".$curPage."' style='display: none' ";
+                    else $navStr.="class='video_more' ";
                     $navStr.="onclick=\"$('.pagen_".$countPagen."').css('display','block');$(this).css('display','none');\">Загрузить еще</span><br>";
                 }
                 $curPage=$countPagen;

@@ -192,7 +192,7 @@ html #music_bar_mobile .efir_mobile:after,html #music_bar_mobile .video_mobile:a
 	-webkit-transition: height 10s ease;
 	transition: height 10s ease;
 }
-.ajax-list .more{
+.ajax-list .more, .video_more{
 	color: #fff;
 	background-color: #F47B22;
 	border: none;
