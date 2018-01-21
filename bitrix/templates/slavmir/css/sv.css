@@ -4,9 +4,9 @@ body,html{
 .dn{
 	visibility: hidden !important;
 }
-a:hover,html body a:hover{
+/* a:hover,html body a:hover{
 	color: #ffcb94;
-}
+} */
 .index_video_efir{
 	
 }

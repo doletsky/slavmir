@@ -1,11 +1,13 @@
 html{
     height: 100%;
     width: 100%;
+    position: relative;
 }
 body{
     height: 100%;
     width: 100%;
     padding-top: 267px;
+    position: relative;
 }
 input, textarea {
     -webkit-appearance: none;
@@ -1815,7 +1817,10 @@ body.short_header #music_bar .music_played .played_info{
     display: block;
 }
 .index_music_container .item{
-    overflow: hidden;
+    text-decoration: none;
+}
+.index_music_container .item:hover{
+    background-color: #ececec;
 }
 .index_music_container ul li,.index_music_container .item{
     margin-bottom: 5px;
@@ -1829,11 +1834,23 @@ body.short_header #music_bar .music_played .played_info{
     margin-right: 10px;
 }
 .index_mus_info,.index_music_container .item .index_mus_info{
-    border-bottom: 2px solid #eaeaea;
-    float: left;
+    position: relative;
+    /* border-bottom: 2px solid #eaeaea; */
+    display: inline-block;
     padding: 0px 30px 0 5px;
     height: 42px;
     width: calc(100% - 52px);
+    display: flex;
+    align-items: center;
+}
+.index_music_container .item .index_mus_info:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #eaeaea;
 }
 .index_mus_info .index_music_name,
 .index_music_container .item .index_mus_info .index_music_name{
@@ -5364,7 +5381,8 @@ form.data_info .log_input_wrap p{
     padding-left: 78px;
 }
 .articles_slider .article_slide .news_box{
-    display: block;
+    display: flex;
+    align-items: flex-start;
     max-width: 1350px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -8124,10 +8142,6 @@ form[name="form_auth"] .login_btn{
 }
 form[name="form_auth"] .unreg{
     margin-bottom: 15px;
-}
-a:hover, html body a:hover{
-    color: #f47b22!important;
-    opacity: 0.8;
 }
 
 /***** ADAPTIVE *****/
