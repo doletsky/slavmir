@@ -75,9 +75,11 @@ $this->setFrameMode(true);
 </section>
 <section id="releases">
 	<div class="container">
-		<div class="rel_left">
+		<div class="rel_left ajax-list">
 			<h3>Выпуски</h3>
-			<div class="rel_list clearfix">
+            <?if($_REQUEST['AJAX']=='Y')
+                $APPLICATION->RestartBuffer();?>
+			<div class="rel_list clearfix" data-cnt="<?=$arResult["AUDIO_CNT"]?>">
 				<?
 				if( count($arResult["AUDIO"]) ){
 					foreach( $arResult["AUDIO"] as $arItem ){
@@ -118,6 +120,7 @@ $this->setFrameMode(true);
 					}
 				}
 				?>
+
 				<?
 				if( count($arResult["VIDEO"]) ){
 					foreach( $arResult["VIDEO"] as $arItem ){
@@ -179,6 +182,9 @@ $this->setFrameMode(true);
 				</div>
 				<?*/?>
 			</div>
+            <?if($arResult["AUDIO_CNT"]>18) echo $arResult['AUDIO_NAV_STRING'];?>
+            <?if($_REQUEST['AJAX']=='Y')
+                die();?>
 		</div>
 		<div class="rel_right">
 			<div class="rel_auth_desc">

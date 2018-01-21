@@ -20,8 +20,12 @@ $arResult["AV_ARTISTS"] = array();
 // AUDIO
 $arResult["AUDIO"]=array();
 $audioArtistIDs=array();
+$nPagen=1;
+if(isset($_REQUEST["PAGEN_1"]))$nPagen=$_REQUEST["PAGEN_1"];
 $arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "PROPERTY_PROGRAM"=>$arResult["ID"] );
-$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PREVIEW_TEXT","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PATH"));
+$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, Array("nPageSize"=>18, "iNumPage"=>$nPagen), array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PREVIEW_TEXT","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PATH"));
+$arResult["AUDIO_CNT"]=$dbList->SelectedRowsCount();
+$arResult['AUDIO_NAV_STRING'] = $dbList->GetPageNavString('');
 while($arItem = $dbList->GetNext()){
 	$arResult["AUDIO"][]=$arItem;
 	$audioArtistIDs[]=$arItem["PROPERTY_ARTIST_VALUE"];
