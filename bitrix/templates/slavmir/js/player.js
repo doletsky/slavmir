@@ -321,6 +321,7 @@ $(document).on("click",".pl-playlist-play",function(){
 			jw.setup({
 				playlist: data.playlist
 			})
+            .setVolume( jwVolume )
 			.play()
 			.on('time',function(obj){
 				setPlayerPosition( obj );
@@ -338,6 +339,56 @@ $(document).on("click",".pl-playlist-play",function(){
 	return false;
 });
 
+$(document).on("click",".pl-samelist-play",function(){
+    var $this = $(this),
+        $name = '',
+        $artist = '',
+        $picture = '';
+    if( $this.hasClass("block") ){
+        $(".subs_popup_container").show();
+        return false;
+    }
+    var curnam=$this.attr("data-cur-num");
+    $.ajax({
+        url: '/ajax/get-samelist.php?id='+$this.attr("data-pl-id"),
+        method: 'post',
+        success: function(data){
+            console.log("pl="+data);
+            window.playlist = data.playlist;
+
+            setPlayerIsPlaylist( true );
+            setPlayerStatus( 'playing' );
+            setSwitch( 'type_playlist' );
+
+            $(".playlist_played .play_list_name").text( data.info.name );
+            $(".playlist_played .play_list_image").attr( "src", data.info.pic );
+            $(".playlist_played .play_list_desc").text( data.info.artist );
+
+            jw.setup({
+                playlist: data.playlist
+            })
+                .setVolume( jwVolume )
+                .play()
+                .on('time',function(obj){
+                    setPlayerPosition( obj );
+                }).on('play',function(obj){
+                    setPlayerStatus( 'playing' );
+                    console.log('playlist: play');
+                    if(curnam>0){
+                        jw.playlistNext();
+                        curnam--;
+                    }
+                }).on('playlistItem',function( obj ){
+                    playlistUpdate( obj );
+                });
+
+        },
+        error: function(dat, stat){
+            console.log("er="+dat, "stat="+stat);
+        }
+    });
+    return false;
+});
 
 
 var updateRadioList = function(){

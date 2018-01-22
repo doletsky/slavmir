@@ -88,7 +88,8 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 				<?if( count( $arResult["SAME"] ) ){?>
 				<p class="same">Похожее</p>
 				<div class="tab_container index_music_container active">
-					<?foreach( $arResult["SAME"] as $arItem ){
+					<?$curNum=0;
+                    foreach( $arResult["SAME"] as $arItem ){
 						$artistID = $arItem["PROPERTY_ARTIST_VALUE"];
 						$artistName = '';
 						if(isset($arResult["ARTISTS"][$artistID])){
@@ -104,14 +105,14 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 						?>
 						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item">
 							<img src="<?=$image?>" alt="<?=$arItem["NAME"]?> - <?=$artistName?>" class="music_img">
-							<div class="index_mus_info">
+							<div class="index_mus_info pl-samelist-play" data-pl-id="<?=$arResult["ID"]?>" data-cur-num="<?=$curNum?>">
 								<span class="index_music_name"><?=$arItem["NAME"]?></span>
 								<span class="index_music_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></span>
 								<span class="index_music_duration"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><?=duration($arItem["PROPERTY_DURATION_VALUE"])?><?}?></span>
 								<?/*?><span class="audio_komp_plus"><img src="images/audio_plus.png" alt="audio_plus.png"></span><?*/?>
 							</div>
 						</a>
-					<?}?>
+					<?$curNum++;}?>
 				</div><!-- index_music_container -->
 				<?}?>
 			</div>
