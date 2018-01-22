@@ -7,7 +7,7 @@ while($enum_fields = $property_enums->GetNext()){
 
 $artistIDs=array();
 foreach( $arResult["ITEMS"] as &$arItem ){
-	#pre($arItem);
+
 	$arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "PROPERTY_PROGRAM"=>$arItem["ID"] );
 	$dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("IBLOCK_ID","ID"));
 	$arItem["AUDIO_COUNT"] = $dbList->SelectedRowsCount();
@@ -24,7 +24,7 @@ foreach( $arResult["ITEMS"] as &$arItem ){
 $arResult["ARTISTS"] = array();
 $arFilter = Array( "IBLOCK_ID"=>PROGRAM_ARTISTS_IBLOCK_ID, 'ACTIVE'=>'Y', "ID"=>$artistIDs );
 $dbList = CIBlockElement::GetList(array(), $arFilter, false, false, array("IBLOCK_ID","ID","NAME","PREVIEW_PICTURE"));
-while($arItem = $dbList->GetNext()){
-	$arResult["ARTISTS"][$arItem["ID"]]=$arItem;
+while($arItemAr = $dbList->GetNext()){
+	$arResult["ARTISTS"][$arItemAr["ID"]]=$arItemAr;
 }
 ?>

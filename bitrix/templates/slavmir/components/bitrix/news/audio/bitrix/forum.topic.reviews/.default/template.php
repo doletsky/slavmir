@@ -34,8 +34,8 @@ endif;
 <script>
     function rmPostForm(el){
         var ans=$('.what_you_think').html();
-        console.log($(el).parent('p').parent('div').children('.disscus_user').children('.answer').attr('class'));
-        $(el).parent('p').parent('div').children('.disscus_user').children('.answer').html('<div id="what_you_think_ans" class="what_you_think">'+ans+'</div>');
+        $('#what_you_think_ans').remove();
+        $(el).parent('p').parent('div').children('.disscus_user').children('.answer').prepend('<div id="what_you_think_ans" class="what_you_think">'+ans+'</div>');
     }
     function sbmForm(){
         if($('form.active').parent('div').parent('div').parent('.what_you_think').parent('div').hasClass('answer')){

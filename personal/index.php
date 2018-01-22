@@ -36,7 +36,6 @@ $APPLICATION->SetTitle("Личный кабинет");
 	</div>
     <?*/?>
 </section>
-<?/*?>
 <section class="current_subs">
 	<div class="container">
 		<div class="sub_info">
@@ -111,5 +110,4 @@ $APPLICATION->SetTitle("Личный кабинет");
         </div>
 
     </section>
-<?*/?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
