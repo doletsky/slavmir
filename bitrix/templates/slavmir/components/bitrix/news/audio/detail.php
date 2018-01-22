@@ -80,7 +80,7 @@ $this->setFrameMode(true);
 			),
 			$component
 		);?>
-        <?if($USER->GetID()==8 && IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
+        <?if($_GET['deb']==1 && IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:forum.topic.reviews",
                 "",

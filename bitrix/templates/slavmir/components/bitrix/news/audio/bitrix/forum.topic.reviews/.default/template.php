@@ -85,34 +85,34 @@ endif;
         </div>
 
      <?endforeach?>
-        <div class="what_you_think">
-            <div class="cur_user">
-                <div class="cur_user_img">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/images/rel_auth1.png" alt="disscus_user">
-                </div>
 
-                <div class="cur_user_info">
-                    <p><?=$res["AUTHOR_NAME"]?></p>
-                    <form name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform" method="POST" enctype="multipart/form-data" onsubmit="sbmForm();return false;">
-                        <input type="hidden" name="index" value="<?=htmlspecialcharsbx($arParams["form_index"])?>" />
-                        <input type="hidden" name="back_page" value="<?=$arResult["CURRENT_PAGE"]?>" />
-                        <input type="hidden" name="ELEMENT_ID" value="<?=$arParams["ELEMENT_ID"]?>" />
-                        <input type="hidden" name="SECTION_ID" value="<?=$arResult["ELEMENT_REAL"]["IBLOCK_SECTION_ID"]?>" />
-                        <input type="hidden" name="save_product_review" value="Y" />
-                        <input type="hidden" name="preview_comment" value="N" />
-                        <input type="hidden" name="AJAX_POST" value="<?=$arParams["AJAX_POST"]?>" />
-                        <?=bitrix_sessid_post()?>
-                        <input type="text" placeholder="Что вы думаете?" name="REVIEW_TEXT" id="REVIEW_TEXT">
-                    </form>
-                </div>
-<!--                    <input name="send_button" type="submit" value="--><?//=GetMessage("OPINIONS_SEND")?><!--" tabindex="" onclick="this.form.preview_comment.value = 'N';" />-->
-
-                <div class="clear"></div>
-            </div>
-        </div>
 
     </div>
+    <div class="what_you_think">
+        <div class="cur_user">
+            <div class="cur_user_img">
+                <img src="<?=SITE_TEMPLATE_PATH?>/images/rel_auth1.png" alt="disscus_user">
+            </div>
 
+            <div class="cur_user_info">
+                <p><?=$res["AUTHOR_NAME"]?></p>
+                <form name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform" method="POST" enctype="multipart/form-data" onsubmit="sbmForm();return false;">
+                    <input type="hidden" name="index" value="<?=htmlspecialcharsbx($arParams["form_index"])?>" />
+                    <input type="hidden" name="back_page" value="<?=$arResult["CURRENT_PAGE"]?>" />
+                    <input type="hidden" name="ELEMENT_ID" value="<?=$arParams["ELEMENT_ID"]?>" />
+                    <input type="hidden" name="SECTION_ID" value="<?=$arResult["ELEMENT_REAL"]["IBLOCK_SECTION_ID"]?>" />
+                    <input type="hidden" name="save_product_review" value="Y" />
+                    <input type="hidden" name="preview_comment" value="N" />
+                    <input type="hidden" name="AJAX_POST" value="<?=$arParams["AJAX_POST"]?>" />
+                    <?=bitrix_sessid_post()?>
+                    <input type="text" placeholder="Что вы думаете?" name="REVIEW_TEXT" id="REVIEW_TEXT">
+                </form>
+            </div>
+            <!--                    <input name="send_button" type="submit" value="--><?//=GetMessage("OPINIONS_SEND")?><!--" tabindex="" onclick="this.form.preview_comment.value = 'N';" />-->
+
+            <div class="clear"></div>
+        </div>
+    </div>
 
 <!--<div class="reviews-block-container reviews-reviews-block-container" id="--><?//=$arParams["FORM_ID"]?><!--container">-->
 <!--	<div class="reviews-block-outer">-->
