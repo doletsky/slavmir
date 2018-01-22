@@ -238,7 +238,7 @@ $(document).on('ready', function(){
 		$('.search_form').submit();
 	});
 
-	$('.likes_list ul, .register_popup_scroll, .scrolled').perfectScrollbar();
+	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container').perfectScrollbar();
 
 	$('.close_login_form').on('click', function(){
 		$('#header_bar').removeClass('logging');
@@ -431,7 +431,7 @@ $(document).on('ready', function(){
 
 	var vh = $(window).height();
 	$('.register_popup_scroll').css({'max-height': vh - 120});
-
+	$('.subs_container').css({'max-height': vh - 50});
 	$(window).on('scroll', function(){
 		var fromTop = $(this).scrollTop();
 		if(fromTop > 80){
