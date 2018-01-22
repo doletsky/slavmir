@@ -34,21 +34,20 @@ endif;
 <script>
     function rmPostForm(el){
         var ans=$('.what_you_think').html();
-        $('.what_you_think').remove();
         console.log($(el).parent('p').parent('div').children('.disscus_user').children('.answer').attr('class'));
-        $(el).parent('p').parent('div').children('.disscus_user').children('.answer').html('<div class="what_you_think">'+ans+'</div>');
+        $(el).parent('p').parent('div').children('.disscus_user').children('.answer').html('<div id="what_you_think_ans" class="what_you_think">'+ans+'</div>');
     }
     function sbmForm(){
-        if($('.what_you_think').parent('div').hasClass('answer')){
-            var msgText=$('#REVIEW_TEXT').val();
-            var prtMsgId=$('.what_you_think').parent('div').attr('id');
+        if($('form.active').parent('div').parent('div').parent('.what_you_think').parent('div').hasClass('answer')){
+            var msgText=$('form.active #REVIEW_TEXT').val();
+            var prtMsgId=$('form.active').parent('div').parent('div').parent('.what_you_think').parent('div').attr('id');
             var nVal=prtMsgId+'_::'+msgText;
             prtMsgId='';
-            $('#REVIEW_TEXT').val(nVal);
-            $('#REVIEW_TEXT').attr('type','hidden');
-            console.log($('#REVIEW_TEXT').val());
-            $('form#<?=$arParams["FORM_ID"]?>').removeAttr('onsubmit');
-            $('form#<?=$arParams["FORM_ID"]?>').submit();
+            $('form.active #REVIEW_TEXT').val(nVal);
+            $('form.active #REVIEW_TEXT').attr('type','hidden');
+            console.log($('form.active #REVIEW_TEXT').val());
+            $('form#<?=$arParams["FORM_ID"]?>.active').removeAttr('onsubmit');
+            $('form#<?=$arParams["FORM_ID"]?>.active').submit();
         }
     }
 </script>
@@ -88,7 +87,7 @@ endif;
 
 
     </div>
-    <div class="what_you_think">
+    <div class="what_you_think" onclick="$('#what_you_think_ans').remove();">
         <div class="cur_user">
             <div class="cur_user_img">
                 <img src="<?=SITE_TEMPLATE_PATH?>/images/rel_auth1.png" alt="disscus_user">
@@ -105,7 +104,7 @@ endif;
                     <input type="hidden" name="preview_comment" value="N" />
                     <input type="hidden" name="AJAX_POST" value="<?=$arParams["AJAX_POST"]?>" />
                     <?=bitrix_sessid_post()?>
-                    <input type="text" placeholder="Что вы думаете?" name="REVIEW_TEXT" id="REVIEW_TEXT">
+                    <input type="text" placeholder="Что вы думаете?" name="REVIEW_TEXT" id="REVIEW_TEXT" onfocus="$('form.active').removeClass('active');$(this).parent('form').addClass('active');">
                 </form>
             </div>
             <!--                    <input name="send_button" type="submit" value="--><?//=GetMessage("OPINIONS_SEND")?><!--" tabindex="" onclick="this.form.preview_comment.value = 'N';" />-->
