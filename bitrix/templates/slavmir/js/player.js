@@ -302,7 +302,7 @@ $(document).on("click",".pl-playlist-play",function(){
 		$(".subs_popup_container").show();
 		return false;
 	}
-	//setSwitch('type_audio');
+    var curnam=$this.attr("data-cur-num");
 	$.ajax({
 		url: '/ajax/get-playlist.php?id='+$this.attr("data-pl-id"),
 		method: 'post',
@@ -328,6 +328,10 @@ $(document).on("click",".pl-playlist-play",function(){
 			}).on('play',function(obj){
 				setPlayerStatus( 'playing' );
 				console.log('playlist: play');
+                    if(curnam>0){
+                        jw.playlistNext();
+                        curnam--;
+                    }
 			}).on('playlistItem',function( obj ){
 				playlistUpdate( obj );
 			});

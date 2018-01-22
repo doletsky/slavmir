@@ -19,7 +19,8 @@ $this->setFrameMode(true);
     <div class="tab_container index_music_container active">
         <?if( count( $arResult["AUDIOS"] ) ){?>
             <ul>
-                <?foreach( $arResult["AUDIOS"] as $arItem ){
+                <?$curNum=0;
+                foreach( $arResult["AUDIOS"] as $arItem ){
                     $artistID = $arItem["PROPERTY_ARTIST_VALUE"];
                     $artist='';
                     if( $artistID ){
@@ -51,8 +52,8 @@ $this->setFrameMode(true);
                             <div class="mus_img pl-audio-play <?if($needBlock){?>block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTY_PATH_VALUE"]?>" data-picture="<?=$playerImage?>">
                                 <div class="play_btn"></div>
                             </div>
-                            <div class="mus_info">
-                                <a class="mus_name" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a>
+                            <div class="mus_info pl-playlist-play" data-pl-id="<?=$arResult["ID"]?>" data-cur-num="<?=$curNum?>">
+                                <a class="mus_name" <?/*?>href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?*/?>><?=$arItem["NAME"]?></a>
                                 <div class="mus_group"><?if(strlen($programID)>0)echo $program["NAME"];elseif(strlen($artistID)>0) echo $artist["NAME"];?></div>
                                 <div class="mus_bar">
                                     <div class="list_img"></div>
@@ -64,7 +65,7 @@ $this->setFrameMode(true);
                             </div>
                         </div>
                     </li>
-                <?}?>
+                <?$curNum++;}?>
             </ul>
         <?}?>
     </div><!-- index_music_container -->
