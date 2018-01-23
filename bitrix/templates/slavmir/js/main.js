@@ -290,13 +290,13 @@ $(document).on('ready', function(){
 		$('#music_bar').fadeToggle(200);
 	});
 
-	$('#music_bar .music_right_settings .cross_music').on('click', function(){
-		$('.music_right_settings').toggleClass('cross_music_active');
-	});
+//	$('#music_bar .music_right_settings .cross_music').on('click', function(){
+//		$('.music_right_settings').toggleClass('cross_music_active');
+//	});
 
-	$('#music_bar .music_right_settings .loop_music').on('click', function(){
-		$('.music_right_settings').toggleClass('loop_music_active');
-	});
+//	$('#music_bar .music_right_settings .loop_music').on('click', function(){
+//		$('.music_right_settings').toggleClass('loop_music_active');
+//	});
 
 	$('#music_bar .music_right_settings .loudness_music').on('click', function(){
 		$('.music_right_settings').toggleClass('loudness_music_active');

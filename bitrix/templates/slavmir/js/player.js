@@ -302,6 +302,8 @@ $(document).on("click",".pl-playlist-play",function(){
 		$(".subs_popup_container").show();
 		return false;
 	}
+    $('#music_bar .music_right_settings .loop_music').removeClass('dn');
+    $('#music_bar .music_right_settings .cross_music').removeClass('dn');
     var curnam=$this.attr("data-cur-num");
 	$.ajax({
 		url: '/ajax/get-playlist.php?id='+$this.attr("data-pl-id"),
@@ -352,6 +354,8 @@ $(document).on("click",".pl-samelist-play",function(){
         $(".subs_popup_container").show();
         return false;
     }
+    $('#music_bar .music_right_settings .loop_music').removeClass('dn');
+    $('#music_bar .music_right_settings .cross_music').removeClass('dn');
     var curnam=$this.attr("data-cur-num");
     $.ajax({
         url: '/ajax/get-samelist.php?id='+$this.attr("data-pl-id"),
@@ -394,6 +398,28 @@ $(document).on("click",".pl-samelist-play",function(){
     return false;
 });
 
+$('#music_bar .music_right_settings').on('click','.loop_music', function(){
+    $('.music_right_settings').toggleClass('loop_music_active');
+    if($('.music_right_settings').hasClass('loop_music_active')){
+        jw.setConfig({repeat:true});
+        console.log('repeat:true');
+    }else{
+        jw.setConfig({repeat:false});
+        console.log('repeat:true');
+    }
+});
+
+$('#music_bar .music_right_settings').on('click', '.cross_music', function(){
+    $('.music_right_settings').toggleClass('cross_music_active');
+    if($('.music_right_settings').hasClass('cross_music_active')){
+        playListShuffle();
+        console.log('shuffle:true');
+    }else{
+        if($('.pl-samelist-play').length>0)$('.pl-samelist-play').eq(0).click();
+        else $('.pl-playlist-play').eq(0).click();
+        console.log('shuffle:false');
+    }
+});
 
 var updateRadioList = function(){
 	$.ajax({
@@ -631,6 +657,37 @@ function playAudioFile(file){
 function stopAudio(){
 	setPlayerStatus( 'stop' );
 	jw.stop();
+}
+/*  ======================================= P L A Y L I S T =========================================== */
+function playListShuffle(){
+    playListUpload(jw.getPlaylist().sort(function(){ return 0.5-Math.random() }));
+}
+function playListUpload(data){
+    console.log("pl="+data);
+    window.playlist = data;
+
+    setPlayerIsPlaylist( true );
+    setPlayerStatus( 'playing' );
+    setSwitch( 'type_playlist' );
+
+//    $(".playlist_played .play_list_name").text( data.info.name );
+//    $(".playlist_played .play_list_image").attr( "src", data.info.pic );
+//    $(".playlist_played .play_list_desc").text( data.info.artist );
+
+    jw.setup({
+        playlist: data
+    })
+        .setVolume( jwVolume )
+        .play()
+        .on('time',function(obj){
+            setPlayerPosition( obj );
+        }).on('play',function(obj){
+            setPlayerStatus( 'playing' );
+            console.log('playlist: play');
+        }).on('playlistItem',function( obj ){
+            playlistUpdate( obj );
+        });
+
 }
 /*  =================================================================================================== */
 function setPlayerPicture( path, auto ){

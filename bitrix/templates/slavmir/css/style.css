@@ -2679,7 +2679,7 @@ footer .roskom p{
 .interview p{
     font-family: 'PT Sans';
     font-size: 17.24px;
-    margin-bottom: 180px;
+    margin-bottom: 225px;
 }
 .interview a.opros_interview{
     color: #fff;
@@ -3995,11 +3995,6 @@ h1.page_name{
     z-index: 9999;
     right: 0;
     top: 40%;
-    -webkit-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -ms-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    -o-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
 }
 .right_soc ul a{
     text-decoration: none;
@@ -4010,6 +4005,11 @@ h1.page_name{
     padding: 30px 15px;
     text-align: center;
     background-color: #fff;
+    -webkit-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
+    -ms-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
+    -o-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.15);
 }
 .right_soc ul a:last-child li{
     border-bottom: 1px solid #797979;
@@ -5263,6 +5263,7 @@ form.data_info .log_input_wrap p{
     padding: 10px 5px 10px 14px;
     resize: none;
     margin-bottom: 20px;
+    overflow-y: scroll;
 }
 #contacts .write_us form.contacts_form button{
     color: #fff;
@@ -6971,6 +6972,14 @@ form.data_info .log_input_wrap p{
     width: 100%;
     padding-left: 57px;
 }
+#audio_item_text .container .right_col .disscus_user .answer .disscus_user p{
+    width: 100%;
+    display: block;
+}
+#audio_item_text .container .right_col .disscus_user .answer .disscus_user p:last-of-type{
+    width: auto;
+    display: inline-block;
+}
 #audio_item_text .container .right_col .what_you_think{
     background-color: #e6e6e6;
     padding: 15px 65px 22px 35px;
@@ -6999,16 +7008,25 @@ form.data_info .log_input_wrap p{
     width: 100%;
 }
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input{
-    width: 100%;
+    width: 300px;
     border: none;
     background-color: #fff;
     cursor: pointer;
     font-family: 'PT Sans';
     color: #000;
-    font-size: 26px;
+    font-size: 15px;
     padding: 3px 10px;
+    height: 39px;
 }
+#audio_item_text .container .right_col .what_you_think .cur_user_info form input::-webkit-input-placeholder {font-size: 26px;}
+#audio_item_text .container .right_col .what_you_think .cur_user_info form input::-moz-placeholder          {font-size: 26px;}/* Firefox 19+ */
+#audio_item_text .container .right_col .what_you_think .cur_user_info form input:-moz-placeholder           {font-size: 26px;}/* Firefox 18- */
+#audio_item_text .container .right_col .what_you_think .cur_user_info form input:-ms-input-placeholder      {font-size: 26px;}
 
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 /*** AUDIO PLAYLIST ***/
 #audio_playlist{
@@ -7059,6 +7077,27 @@ form.data_info .log_input_wrap p{
     padding: 0;
     max-width: 755px;
     margin: 0 auto 85px;
+}
+.audio_playlist_bottom .index_music_container{
+    max-height: 220px;
+    position: relative;
+}
+.audio_playlist_item_wrap{
+    position: relative;
+    width: 100%;
+    max-width: 755px;
+    margin: 0 auto;
+}
+.audio_playlist_bottom .audio_playlist_item_wrap:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    height: 50px;
+    bottom: -1px;
+    background: -moz-linear-gradient(bottom,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .pop_playlists_box h3{
     font-family: 'PT Serif';
@@ -7841,6 +7880,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     height: 1px;
     background-color: #ccc;
     bottom: -3px;
+    left: 0;
 }
 .mus_wrap:not(:last-child){
     margin: 2px 0 4px;
@@ -8742,6 +8782,9 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 1024px){
+    footer .footer_right_col .soc li:not(:last-child){
+        margin-right: 6px;
+    }
     #new_articles.news .popular_box .popular_list_wrap .popular_list{
         height: auto;
     }
@@ -9726,9 +9769,9 @@ form[name="form_auth"] .unreg{
     #music_bar .music_left_bar .music_left_bar_list .music_left_bar_item:last-child{
         display: none;
     }
-    #music_bar .music_right_settings .music_right_settings_list .right_settings_img:not(:last-child){
-        display: none;
-    }
+    /*#music_bar .music_right_settings .music_right_settings_list .right_settings_img:not(:last-child){*/
+        /*display: none;*/
+    /*}*/
     #music_bar .music_type_list ul li{
         font-size: 16px;
     }
@@ -12023,10 +12066,7 @@ form[name="form_auth"] .unreg{
         font-size: 19px;
     }
     footer .footer_right_col .soc li:not(:last-child){
-        margin-right: 6px;
-    }
-    .mobile_search input{
-        /*width: calc(100% - 53px);*/
+        margin-right: 3px;
     }
 }
 @media screen and (max-width: 320px){
