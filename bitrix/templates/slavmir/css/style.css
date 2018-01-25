@@ -854,7 +854,7 @@ header .header_top_menu .burger.active img.active{
     height: 21px;
 }
 body #header_bar.logging .search{
-    padding-top: 10px;
+    padding-top: 15px;
 }
 body.fixed_header #header_bar.logging .search{
     padding-top: 15px;
@@ -2676,10 +2676,13 @@ footer .roskom p{
     padding-top: 45px;
     padding-bottom: 40px;
 }
+#contacts .interview p{
+    margin-bottom: 220px;
+}
 .interview p{
     font-family: 'PT Sans';
     font-size: 17.24px;
-    margin-bottom: 225px;
+    margin-bottom: 205px;
 }
 .interview a.opros_interview{
     color: #fff;
@@ -3621,21 +3624,9 @@ body.pay_notice header .mobile_menu{
 }
 #lk_section{
     position: relative;
-    padding: 30px 0 120px;
+    padding: 30px 0 100px;
     background-color: #F2F2F2;
 }
-/*#lk_section:after{*/
-    /*content: '';*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*height: 40px;*/
-    /*background-image: url(../images/bottom_bg_triangles.png);*/
-    /*background-position: center top;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-/*}*/
 #lk_section .container{
     position: relative;
 }
@@ -4753,17 +4744,17 @@ form.data_info input{
     width: 100%;
     border: none;
     color: #000;
-    border-bottom: 2px solid #E9E9E8;
+    border-bottom: 2px solid #d2d2d2;
     background-color: transparent;
     font-family: 'PT Serif';
     font-size: 23.6px;
     margin-bottom: 35px;
     padding-bottom: 5px;
 }
-form.data_info input::-webkit-input-placeholder {color:#000;opacity: 0.18;}
-form.data_info input::-moz-placeholder          {color:#000;opacity: 0.18;}/* Firefox 19+ */
-form.data_info input:-moz-placeholder           {color:#000;opacity: 0.18;}/* Firefox 18- */
-form.data_info input:-ms-input-placeholder      {color:#000;opacity: 0.18;}
+form.data_info input::-webkit-input-placeholder {color:#000;opacity: 0.38;}
+form.data_info input::-moz-placeholder          {color:#000;opacity: 0.38;}/* Firefox 19+ */
+form.data_info input:-moz-placeholder           {color:#000;opacity: 0.38;}/* Firefox 18- */
+form.data_info input:-ms-input-placeholder      {color:#000;opacity: 0.38;}
 
 form.data_info .log_input_wrap{
     position: relative;
@@ -8189,6 +8180,23 @@ form[name="form_auth"] .login_btn{
 form[name="form_auth"] .unreg{
     margin-bottom: 15px;
 }
+.register_popup_scroll{
+    position: relative;
+}
+.log_out{
+    text-align: center;
+    margin-top: 30px;
+}
+.log_out a{
+    border: 1px solid #f47b22;
+    border-radius: 3px;
+    padding: 5px 16px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
 
 /***** ADAPTIVE *****/
 @media screen and (max-width: 1500px){
@@ -8200,10 +8208,10 @@ form[name="form_auth"] .unreg{
     #audio_page_top h1{
         margin-bottom: 40px;
     }
-    .register_popup{
+    /* .register_popup{
         top: 10px;
         transform: translate(-50%, 0);
-    }
+    } */
 }
 @media (max-height: 768px) and (max-width: 1024px){
     #audio_page_top h1{
@@ -8228,10 +8236,10 @@ form[name="form_auth"] .unreg{
     }
 }
 @media (max-height: 800px) and (min-width: 1025px){
-    .register_popup{
+    /* .register_popup{
         top: 10px;
         transform: translate(-50%, 0);
-    }
+    } */
     .opened_video_list{
         height: 295px!important;
     }
@@ -8769,6 +8777,9 @@ form[name="form_auth"] .unreg{
     .interview{
         padding-top: 25px;
     }
+    .interview p{
+        margin-bottom: 175px;
+    }
 }
 @media screen and (max-width: 1050px){
     .index_music .mus_wrap .mus_info .mus_group{
@@ -8782,6 +8793,31 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 1024px){
+    #contacts .interview p{
+        margin-bottom: 185px;
+    }
+    .register_popup_container .data_info p{
+        margin-bottom: 5px;
+    }
+    form.data_info input{
+        font-size: 18px;
+        margin-bottom: 24px;
+        border-bottom: 2px solid #d2d2d2;
+    }
+    .register_popup p.reg_info{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .register_popup .have_reg{
+        margin-bottom: 25px;
+    }
+    .register_popup h5{
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    .register_popup{
+        padding: 20px 15px 20px 20px;
+    }
     footer .footer_right_col .soc li:not(:last-child){
         margin-right: 6px;
     }
@@ -8942,12 +8978,13 @@ form[name="form_auth"] .unreg{
         padding-top: 25px;
     }
     .interview_menu{
-        padding-top: 0;
+        padding-top: 50px;
+        padding-left: 65px;
     }
     .interview{
         float: left;
         width: 100%;
-        max-width: 395px;
+        max-width: 327px;
         margin-right: 45px;
         padding-bottom: 35px;
     }
@@ -9769,9 +9806,9 @@ form[name="form_auth"] .unreg{
     #music_bar .music_left_bar .music_left_bar_list .music_left_bar_item:last-child{
         display: none;
     }
-    /*#music_bar .music_right_settings .music_right_settings_list .right_settings_img:not(:last-child){*/
-        /*display: none;*/
-    /*}*/
+    #music_bar .music_right_settings .music_right_settings_list .right_settings_img:not(:last-child){
+        display: none;
+    }
     #music_bar .music_type_list ul li{
         font-size: 16px;
     }
@@ -9857,6 +9894,9 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 800px){
+    .register_popup{
+        max-width: calc(100% - 40px);
+    }
     .pay_history_box .container{
         padding: 0 45px;
     }
@@ -9929,6 +9969,29 @@ form[name="form_auth"] .unreg{
     } 
 }
 @media screen and (max-width: 767px){
+    #contacts .interview p{
+        margin-bottom: 175px;
+    }
+    .register_popup .have_reg p{
+        font-size: 16px;
+    }
+    .reg_btn{
+        max-width: 225px;
+    }
+    .register_popup_container .data_info p{
+        font-size: 14px;
+    }
+    .reg_btn button b{
+        font-size: 16px;
+    }
+    .reg_btn.reg_free button{
+        padding: 9px 0 11px;
+        font-size: 14px;
+    }
+    .register_popup p.reg_info{
+        font-size: 14px;
+        line-height: 1.3;
+    }
     .tarif_top_list{
         padding-right: 15px;
     }
@@ -10064,6 +10127,7 @@ form[name="form_auth"] .unreg{
     .interview{
         float: none;
         margin: 0 auto 25px;
+        max-width: 305px;
     }
     .tarif_top_list .tarif_top_item{
         margin-bottom: 20px;
@@ -11882,7 +11946,25 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 420px){
-
+    .reg_btns_wrap{
+        padding-left: 0;
+    }
+    .reg_btn{
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .register_popup{
+        max-width: calc(100% - 10px);
+    }
+    .register_popup .have_reg{
+        margin-bottom: 15px;
+    }
+    .register_popup h5{
+        margin-bottom: 15px;
+    }
+    .register_popup .have_reg p{
+        font-size: 13px;
+    }
     #music_bar_mobile .music_info{
         padding-left: 40px;
         width: 130px;
@@ -11992,7 +12074,7 @@ form[name="form_auth"] .unreg{
         font-size: 11px;
     }
     #contacts .right_col .interview p{
-        margin-bottom: 140px;
+        margin-bottom: 133px;
     }
     .right_col .interview p{
         margin-bottom: 140px;
