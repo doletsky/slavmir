@@ -106,9 +106,9 @@ $this->setFrameMode(true);
         ),
         $component
     );?>
-</section>
+
 
 <?endif;?>
-
+</section>
 
 

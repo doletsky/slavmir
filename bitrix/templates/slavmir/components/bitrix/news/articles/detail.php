@@ -82,7 +82,31 @@ $this->setFrameMode(true);
 		$component
 	);?>
 </section>
-
+<section class="discuss">
+    <?
+    if($_GET['dev']==2 && IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:forum.topic.reviews",
+        "",
+        Array(
+            "CACHE_TYPE" => "N",
+            "CACHE_TIME" => 3600,
+            "MESSAGES_PER_PAGE" => 15,
+            "USE_CAPTCHA" => "N",
+            "PATH_TO_SMILE" => $arParams["PATH_TO_SMILE"],
+            "FORUM_ID" => 1,
+            "URL_TEMPLATES_READ" => $arParams["URL_TEMPLATES_READ"],
+            "SHOW_LINK_TO_FORUM" => $arParams["SHOW_LINK_TO_FORUM"],
+            "DATE_TIME_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
+            "ELEMENT_ID" => $ElementID,
+            "AJAX_POST" => "N",
+            "IBLOCK_ID" => 11,
+            "URL_TEMPLATES_DETAIL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
+        ),
+        $component
+    );?>
+    <?endif?>
+</section>
 
 
 <?if($arParams["USE_RATING"]=="Y" && $ElementID):?>
@@ -162,24 +186,4 @@ $this->setFrameMode(true);
 <?endif?>
 <?if($arParams["USE_REVIEW"]=="Y" && IsModuleInstalled("forum") && $ElementID):?>
 <hr />
-<?$APPLICATION->IncludeComponent(
-	"bitrix:forum.topic.reviews",
-	"",
-	Array(
-		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-		"CACHE_TIME" => $arParams["CACHE_TIME"],
-		"MESSAGES_PER_PAGE" => $arParams["MESSAGES_PER_PAGE"],
-		"USE_CAPTCHA" => $arParams["USE_CAPTCHA"],
-		"PATH_TO_SMILE" => $arParams["PATH_TO_SMILE"],
-		"FORUM_ID" => $arParams["FORUM_ID"],
-		"URL_TEMPLATES_READ" => $arParams["URL_TEMPLATES_READ"],
-		"SHOW_LINK_TO_FORUM" => $arParams["SHOW_LINK_TO_FORUM"],
-		"DATE_TIME_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
-		"ELEMENT_ID" => $ElementID,
-		"AJAX_POST" => $arParams["REVIEW_AJAX_POST"],
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"URL_TEMPLATES_DETAIL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-	),
-	$component
-);?>
 <?endif?>
