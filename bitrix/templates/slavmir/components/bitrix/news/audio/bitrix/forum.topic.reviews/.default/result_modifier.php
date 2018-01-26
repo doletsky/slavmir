@@ -13,6 +13,7 @@ $arParams["EDITOR_CODE_DEFAULT"] = ($arParams["EDITOR_CODE_DEFAULT"] == "Y" ? "Y
 $arResult["QUESTIONS"] = (is_array($arResult["QUESTIONS"]) ? array_values($arResult["QUESTIONS"]) : array());
 
 $arDel=array();
+$arResult["MESSAGES_COUNT"]=count($arResult["MESSAGES"]);
 foreach ($arResult["MESSAGES"] as $mid=>$res){
     if(substr_count($res["POST_MESSAGE"], "_::")==1){
         $arAns=explode("_::", $res["POST_MESSAGE"]);

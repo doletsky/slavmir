@@ -80,7 +80,8 @@ $this->setFrameMode(true);
 			),
 			$component
 		);?>
-        <?if($_GET['deb']==1 && IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
+        <?
+        if(IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:forum.topic.reviews",
                 "",
@@ -101,7 +102,7 @@ $this->setFrameMode(true);
                 ),
                 $component
             );?>
-        <?endif?>
+        <?endif;?>
     </div><?//   <div class="right_col"> in news.detail/template.php ?>
 
     <div class="clear"></div>

@@ -7009,10 +7009,19 @@ form.data_info .log_input_wrap p{
     padding: 3px 10px;
     height: 39px;
 }
+#audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input{
+    width: 100%;
+}
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input::-webkit-input-placeholder {font-size: 26px;}
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input::-moz-placeholder          {font-size: 26px;}/* Firefox 19+ */
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input:-moz-placeholder           {font-size: 26px;}/* Firefox 18- */
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input:-ms-input-placeholder      {font-size: 26px;}
+/*what_you_think_ans*/
+#audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input::-webkit-input-placeholder {font-size: 22px;}
+#audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input::-moz-placeholder          {font-size: 22px;}/* Firefox 19+ */
+#audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input:-moz-placeholder           {font-size: 22px;}/* Firefox 18- */
+#audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input:-ms-input-placeholder      {font-size: 22px;}
+
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
