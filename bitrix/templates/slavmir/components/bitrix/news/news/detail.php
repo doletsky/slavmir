@@ -85,7 +85,7 @@ $this->setFrameMode(true);
 </section>
 <section class="discuss">
     <?
-    if($_GET['dev']==2 && IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
+    if(IsModuleInstalled("forum") && $ElementID)://$arParams["USE_REVIEW"]=="Y"?>
     <?$APPLICATION->IncludeComponent(
         "bitrix:forum.topic.reviews",
         "",
