@@ -565,7 +565,7 @@ function startVideoStream(){
 
 }
 function stopVideoStream(){
-	jwVS.stop();
+	jwVS.pause();
 	$('.efir_bar .video_bar_play .play_btn').addClass("active");
 	console.log('tv: stop');
 }
