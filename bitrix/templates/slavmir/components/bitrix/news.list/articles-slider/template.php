@@ -17,7 +17,7 @@
 							$bg = GetConfig( "article_default_image" );
 							?>
 							<div class="rel_art_item">
-								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>">
+								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>" <?if( $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?>class="subs"<?}?>>
 									<span class="rel_art_name" style="background-image: url(<?=$bg?>);"><span class="name"><?=$arArticle["NAME"]?> <?if( $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?><span class="subs_read_only"></span><?}?></span></span>
 									<div class="text"><?=$arArticle["PREVIEW_TEXT"]?></div>
 								</a>
