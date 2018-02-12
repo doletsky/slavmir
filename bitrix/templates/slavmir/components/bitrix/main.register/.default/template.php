@@ -242,7 +242,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
 <div class="reg_privacy">
-    <input onload="this.setCustomValidity('Для продолжения вы должны принять условия Пользовательского соглашения');" type="checkbox" required="required" title="Для продолжения вы должны принять условия Пользовательского соглашения">
+    <input oninvalid="this.setCustomValidity('Для продолжения вы должны принять условия Пользовательского соглашения')" onload="this.setCustomValidity('Для продолжения вы должны принять условия Пользовательского соглашения');" type="checkbox" required="required" title="Для продолжения вы должны принять условия Пользовательского соглашения">
     <p>Я принимаю условия <a href="/include/users.pdf" target="_blank">Пользовательского соглашения</a> (о порядке пользования интернет-сайтом «Славянский мир») и даю своё согласие ООО «Славянский мир» на обработку моей персональной информации на условиях, определенных <a href="/include/politice.pdf" target="_blank">Политикой&nbsp;конфиденциальности</a>.</p>
 </div>
 
