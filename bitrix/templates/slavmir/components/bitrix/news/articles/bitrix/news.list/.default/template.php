@@ -50,7 +50,7 @@ $this->setFrameMode(true);
 				<article><?=$arItem["PREVIEW_TEXT"]?> <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="read_art">Читать</a>
 				</article>
 				<?*/?>
-                        <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+                        <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
                             <span class="article_name"><?=$arItem["NAME"]?> <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
                             <span class="article_text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_art">Читать</span></span>
                         </a>
@@ -93,7 +93,7 @@ $this->setFrameMode(true);
 				<article><?=$arItem["PREVIEW_TEXT"]?> <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="read_art">Читать</a>
 				</article>
 				<?*/?>
-				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
 					<span class="article_name"><?=$arItem["NAME"]?> <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
 					<span class="article_text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_art">Читать</span></span>
 				</a>
