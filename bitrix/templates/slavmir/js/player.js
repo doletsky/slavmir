@@ -220,7 +220,7 @@ $(document).on('ready', function(){
 });
 
 $(document).on("click",".pl-audio-play",function(){
-    if($(this).data('name')===$('#jw-current-play .music_right_bar_item .music_name').text()){
+    if($(this).data('name')===$('#jw-current-play .music_right_bar_item .music_name').text() || $(this).parent().find(".mus_name").text()===$('#jw-current-play .music_right_bar_item .music_name').text()){
         if( $(".music_status").hasClass("played") && $(".type_audio").hasClass("active")){
             pauseAudio();
         }else{
@@ -249,11 +249,12 @@ $(document).on("click",".pl-audio-play",function(){
                 else{
                     $artist = $this.parent().find(".mus_group").text();
                 }
-                $picture = $this.attr("data-picture");
-                setPlayerName( $name, $artist );
-                setMobileName( $name, $artist );
-                setPlayerPicture( $picture );
-                playAudioFile( $(this).attr("data-url") );
+                    $picture = $this.attr("data-picture");
+                    setPlayerName( $name, $artist );
+                    setMobileName( $name, $artist );
+                    setPlayerPicture( $picture );
+                    playAudioFile( $(this).attr("data-url") );
+
             }
 
 
