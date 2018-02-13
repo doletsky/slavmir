@@ -14,6 +14,10 @@ $lastArr = array();
 $currArr = array();
 $i = 0;
 while($el = $rsData->fetch()){
+    //убрать из UF_NAME символы х [ и ]
+    $healthy = array("[", "]");
+    $yummy   = array("");
+    $el["UF_NAME"]=str_replace($healthy, $yummy, $el["UF_NAME"]);
 	if($el["UF_DBID"]){
 		if( $i == 0 ){
 			$currArr=array(
