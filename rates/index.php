@@ -24,7 +24,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
             <p class="tarif_price new">99 ₽</p>
             <p class="tarif_price before">299 ₽</p>
             <p>3,19 руб. в день</p>
-            <a href="#">Купить</a>
+            <a href="/personal/">Купить</a>
             <div class="akcia_proc">67%</div>
         </div>
         <div class="tarif_top_item akcia small_mb" style="background-image: url(images/tarif_bg2.png);">
@@ -32,7 +32,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
             <p class="tarif_price new">269 ₽</p>
             <p class="tarif_price before">815 ₽</p>
             <p>2,9 руб. в день</p>
-            <a href="#">Купить</a>
+            <a href="/personal/">Купить</a>
             <div class="akcia_proc">67%</div>
         </div>
         <div class="tarif_top_item akcia small_mb" style="background-image: url(images/tarif_bg3.png);">
@@ -40,7 +40,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
             <p class="tarif_price new">519 ₽</p>
             <p class="tarif_price before">1 573 ₽</p>
             <p>2,8 руб. в день</p>
-            <a href="#">Купить</a>
+            <a href="/personal/">Купить</a>
             <div class="akcia_proc">67%</div>
         </div>
         <div class="tarif_top_item akcia" style="background-image: url(images/tarif_bg3.png);">
@@ -48,7 +48,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
             <p class="tarif_price new">899 ₽</p>
             <p class="tarif_price before">2 724 ₽</p>
             <p>2,46 руб. в день</p>
-            <a href="#">Купить</a>
+            <a href="/personal/">Купить</a>
             <div class="akcia_proc">67%</div>
         </div>
     </div>
@@ -63,7 +63,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
                     <p class="tarif_price new">6,60 ₽</p>
                     <p class="tarif_price before">20₽</p>
                     <p><br></p>
-                    <a href="#">Купить</a>
+                    <a href="/personal/">Купить</a>
                     <div class="akcia_proc">67%</div>
                 </div>
                 <div class="tarif_top_item akcia">
