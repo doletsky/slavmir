@@ -421,7 +421,8 @@ $(document).on('ready', function(){
 		/*$('#music_bar').removeClass('playlist_active');*/
 	});
 
-	$('.only_subs').on('click', function(){
+	$('.only_subs, .subs').on('click', function(e){
+        e.preventDefault();
 		$('.subs_popup_container').fadeIn(200);
 	});
 
