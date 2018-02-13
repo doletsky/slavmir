@@ -333,10 +333,12 @@ $(document).on('ready', function(){
 
 	$('.unreg_link').on('click', function(){
 		$('.register_popup_container').fadeIn(200);
+		$('body').css({'position':'fixed'});
 	});
 
 	$('.close_popup, .close_tnx_popup').on('click', function(){
 		$('.register_popup_container, .tnx_popup_container, .subs_popup_container, .paylk_popup_container, .failpay_popup_container').fadeOut(200);
+		$('body').css({'position':'relative'});
         $('form.opros_form').submit();
         console.log($(this).attr('class'));
 	});
