@@ -15,6 +15,7 @@ foreach( $arResult["SECTIONS"] as $arSection ){
 		<ul>
 			<?foreach( $sections["root"] as $arSection ){?>
 			<li>
+                <?if(count($sections[$arSection["ID"]])>0):?>
 				<?=$arSection["NAME"]?>
 				<div class="sub_type">
 					<ul>
@@ -23,6 +24,9 @@ foreach( $arResult["SECTIONS"] as $arSection ){
 						<?}?>
 					</ul>
 				</div>
+                <?else:?>
+                    <a style="text-decoration: none" href="<?=$arSection["SECTION_PAGE_URL"]?>"><?=$arSection["NAME"]?></a>
+                <?endif?>
 			</li>
 			<?}?>
 		</ul>
