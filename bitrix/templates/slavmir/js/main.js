@@ -25,15 +25,17 @@ $(document).on('ready', function(){
 	});
 
    var currentDate = new Date();
-   var futureDate = new Date(2018,00,29,24,00,00); // (yyyy,m,d) //
+   var futureDate = new Date(2018,01,29,24,00,00); // (yyyy,m,d) //
    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
 
+	if(diff < 0) {diff = 0;}
 
 	$('.clock').FlipClock(diff,{
 		clockFace: 'DailyCounter',
 		countdown: true,
 		showSeconds: false
 	});
+	
 	$('.flip-clock-divider.days .flip-clock-label').text('Дней');
 	$('.flip-clock-divider.hours .flip-clock-label').text('Часов');
 	$('.flip-clock-divider.minutes .flip-clock-label').text('Мин');
@@ -172,7 +174,8 @@ $(document).on('ready', function(){
 	$('.articles_slider').slick({
 		arrows: true,
 		dots: true,
-		autoplay: true
+		autoplay: true,
+		/*adaptiveHeight: true*/
 	});
 
 	$('.daily_video_slider').slick({
@@ -238,7 +241,9 @@ $(document).on('ready', function(){
 		$('.search_form').submit();
 	});
 
-	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container').perfectScrollbar();
+	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container, .tnx_container').perfectScrollbar({
+		suppressScrollX: true
+	});
 
 	$('.close_login_form').on('click', function(){
 		$('#header_bar').removeClass('logging');
@@ -432,6 +437,8 @@ $(document).on('ready', function(){
 	var vh = $(window).height();
 	$('.register_popup_scroll').css({'max-height': vh - 120});
 	$('.subs_container').css({'max-height': vh - 50});
+	$('.tnx_container').css({'max-height': vh - 220});
+
 	$(window).on('scroll', function(){
 		var fromTop = $(this).scrollTop();
 		if(fromTop > 80){
@@ -445,4 +452,14 @@ $(document).on('ready', function(){
 		}
 	});
 
+    $('div.right_soc a').click(function(e){
+//        e.preventDefault();
+//        console.log($(this).find('span.numb'));
+        var name=$(this).data('name')+'_'+$('div.right_soc').data('name');
+        $(this).find('span.numb').load(
+            "/ajax/set-soc-count.php",
+            {
+                name: name
+            });
+    });
 });

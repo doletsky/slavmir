@@ -357,11 +357,12 @@ use Bitrix\Main\Page\Asset;
 
 
 <? include( dirname(__FILE__).'/music_bar.php' );?>
-    <div class="right_soc">
+<?$strIdSocPage=str_replace("/", "_",trim($APPLICATION->GetCurPage(),"/"));?>
+    <div class="right_soc" data-name="<?=$strIdSocPage?>">
         <ul>
-            <a target="_blank" href="https://connect.ok.ru/offer?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
+            <a target="_blank" href="https://connect.ok.ru/offer?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>" data-name="ok">
                 <li>
-                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/ok_r_dark.png);"></span><span class="numb">6</span>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/ok_r_dark.png);"></span><span class="numb"><?=COption::GetOptionInt("socialservices", "ok_".$strIdSocPage)?></span>
                 </li>
             </a>
             <a href="#" style="display: none">
@@ -369,14 +370,14 @@ use Bitrix\Main\Page\Asset;
                     <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/twit_r_dark.png);"></span><span class="numb">3</span>
                 </li>
             </a>
-            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
+            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>" data-name="fb">
                 <li>
-                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/fb_r_dark.png);"></span><span class="numb">136</span>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/fb_r_dark.png);"></span><span class="numb"><?=COption::GetOptionInt("socialservices", "fb_".$strIdSocPage)?></span>
                 </li>
             </a>
-            <a target="_blank" href="https://vk.com/share.php?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>">
+            <a target="_blank" href="https://vk.com/share.php?url=http://<?=$_SERVER['SERVER_NAME']?><?=$APPLICATION->GetCurPage()?>" data-name="vk">
                 <li>
-                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/vk_r_dark.png);"></span><span class="numb">41</span>
+                    <span class="soc_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/vk_r_dark.png);"></span><span class="numb"><?=COption::GetOptionInt("socialservices", "vk_".$strIdSocPage)?></span>
                 </li>
             </a>
         </ul>
