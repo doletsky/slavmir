@@ -275,7 +275,7 @@ use Bitrix\Main\Page\Asset;
 					</div>
 					
 				</div>
-                <div class="login_box" onclick="location.href='?logout=yes'" style="display: none">
+                <div class="login_box" onclick="location.href='?logout=yes'">
                     <span>Выйти</span>
                 </div>
 			</div><!-- reg_bar -->

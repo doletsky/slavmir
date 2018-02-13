@@ -104,15 +104,15 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 						if($arItem["PREVIEW_PICTURE"]) $image = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>42,"h"=>42,"zc"=>1));
 						?>
 						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="item">
-							<img src="<?=$image?>" alt="<?=$arItem["NAME"]?> - <?=$artistName?>" class="music_img">
-							<div class="index_mus_info pl-samelist-play" data-pl-id="<?=$arResult["ID"]?>" data-cur-num="<?=$curNum?>">
+							<img src="<?=$image?>" alt="<?=$arItem["NAME"]?> - <?=$artistName?>" class="music_img pl-samelist-play" data-pl-id="<?=$arResult["ID"]?>" data-cur-num="<?=$curNum?>" >
+							<div class="index_mus_info">
 								<span class="index_music_name"><?=$arItem["NAME"]?></span>
 								<span class="index_music_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></span>
 								<span class="index_music_duration"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><?=duration($arItem["PROPERTY_DURATION_VALUE"])?><?}?></span>
 								<?/*?><span class="audio_komp_plus"><img src="images/audio_plus.png" alt="audio_plus.png"></span><?*/?>
 							</div>
 						</a>
-					<?$curNum++;}?>
+					<?if($arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]=="19" || $USER->IsAuthorized())$curNum++;}?>
 				</div><!-- index_music_container -->
 				<?}?>
 			</div>

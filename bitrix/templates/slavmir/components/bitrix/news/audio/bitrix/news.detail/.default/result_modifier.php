@@ -13,7 +13,7 @@ $artistIDs[]=$arResult["PROPERTIES"]["ARTIST"]["VALUE"];
 $arResult["SAME"]=array();
 if( $arResult["PROPERTIES"]["SAME"]["VALUE"] ){
 	$arFilter = Array( "IBLOCK_ID"=>AUDIO_IBLOCK_ID, 'ACTIVE'=>'Y', "ID"=>$arResult["PROPERTIES"]["SAME"]["VALUE"] );
-	$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PROGRAM"));
+	$dbList = CIBlockElement::GetList(array("PROPERTY_DT"=>"desc"), $arFilter, false, false, array("IBLOCK_ID","ID","PREVIEW_PICTURE","NAME","PROPERTY_DURATION","DETAIL_PAGE_URL","PROPERTY_ARTIST","PROPERTY_PROGRAM","PROPERTY_IS_NO_AUTH"));
 	while($arItem = $dbList->GetNext()){
 		$arResult["SAME"][]=$arItem;
 		$artistIDs[]=$arItem["PROPERTY_ARTIST_VALUE"];
