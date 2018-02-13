@@ -194,7 +194,7 @@
 		<? endif // CAPTCHA_CODE ?>
 
 		<div class="vote-form-box-buttons vote-vote-footer">
-			<span class="vote-form-box-button vote-form-box-button-first"><input onclick="$('.tnx_popup_container.opros').css('display','block');return false;" type="submit" name="vote" value="<?=GetMessage("VOTE_SUBMIT_BUTTON")?>" class="send_opros" /></span>
+			<span class="vote-form-box-button vote-form-box-button-first"><input onclick="return false;" type="submit" name="vote" value="<?=GetMessage("VOTE_SUBMIT_BUTTON")?>" class="send_opros" /></span>
 			<?/*?><span class="vote-form-box-button vote-form-box-button-last">
 				<a name="show_result" <?
 					?>href="<?=$arResult["URL"]["RESULT"]?>"><?=GetMessage("VOTE_RESULTS")?></a>

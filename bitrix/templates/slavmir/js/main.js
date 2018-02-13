@@ -463,4 +463,28 @@ $(document).on('ready', function(){
                 name: name
             });
     });
+
+    $('.send_opros').on('click', function(e){
+        e.preventDefault();
+        var noteError=0;
+        $('.note_req').remove();
+        $('.ask_block').each(function(){
+            if($(this).find('.starrequired').length>0){
+                if($(this).find('input').length>0){
+                    if($(this).find('input:checked').length<=0 && $(this).find('input[type="text"]').val().length<=0){
+                        $(this).css('position','relative');
+                        $(this).prepend('<div class="note_req" style="color: red;position: absolute;top:25px;left:90px">Необходимо ответить на этот вопрос.</div>');
+                        noteError=1;
+                    }
+                }
+            }
+
+        });
+        if(noteError==0){
+            $('.tnx_popup_container.opros').css('display','block');
+        }else{
+            var scrTop=$('.note_req:first').offset().top;
+            $(document).scrollTop(scrTop-200);
+        }
+    });
 });
