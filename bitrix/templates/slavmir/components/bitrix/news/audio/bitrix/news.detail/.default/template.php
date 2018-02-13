@@ -77,10 +77,10 @@ if( !$isNoAuth && !$USER->IsAuthorized() ){
 						<div class="audio_item_add">
 							<div class="audio_item_add_img"></div>
 						</div>
-						<?*/?>
+
 						<div class="audio_item_download">
 							<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arResult["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="audio_item_download_img"></span></a><?}?>
-						</div>
+						</div><?*/?>
 					</div>
 				</div>
 			</div><!-- left_box -->
