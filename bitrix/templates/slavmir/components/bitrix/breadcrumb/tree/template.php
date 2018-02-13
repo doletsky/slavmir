@@ -31,6 +31,14 @@ $prevPath=explode($_SERVER['HTTP_HOST'],$_SERVER['HTTP_REFERER']);
             )
 
         );
+    }elseif($arResult[0]["LINK"]=="/audio-playlist/"){
+        $arResult= array_merge(
+            array(
+                array(
+                    'TITLE'=> 'Аудио',
+                    'LINK' => '/audio/'
+                    )
+            ),$arResult);
     }
 
 //delayed function must return a string
