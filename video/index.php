@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Видео");
 		"COMPONENT_TEMPLATE" => "video",
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "3",
-		"NEWS_COUNT" => "60",
+		"NEWS_COUNT" => "999",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",

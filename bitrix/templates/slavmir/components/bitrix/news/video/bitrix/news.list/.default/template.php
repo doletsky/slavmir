@@ -29,14 +29,14 @@ $this->setFrameMode(true);
 	<?#pre($arResult["ITEMS"])?>
 	<div class="tab_container our_prog_list_container" data-attr="all" data-id="video_page_tabs">
 		<div class="video_page_list">
-            <?$countItem=0;$countPagen=0;$pagen=20;$curPage=0;$navStr='';?>
+            <?$countItem=0;$countPagen=0;$pagen=12;$curPage=0;$navStr='';?>
 			<?foreach( $arResult["ITEMS"] as $arItem ){
                 $countPagen=intval($countItem/$pagen);
                 if($curPage<$countPagen){
                     $navStr.="<span ";
-                    if($curPage>0) $navStr.="class='video_more pagen_".$curPage."' style='display: none' ";
+                    if($curPage>0) $navStr.="class='video_more pagen_".$curPage."' style='display: none; margin: 15px 100px;' ";
                     else $navStr.="class='video_more' ";
-                    $navStr.="onclick=\"$('.pagen_".$countPagen."').css('display','block');$(this).css('display','none');\">Загрузить еще</span><br>";
+                    $navStr.="onclick=\"$('.pagen_".$countPagen."').css('display','block');$(this).css('display','none');\"  style='margin: 15px 100px;'>Загрузить еще</span><br>";
                 }
                 $curPage=$countPagen;
                 $countItem++;
@@ -88,8 +88,18 @@ $this->setFrameMode(true);
 	foreach( $arResult["CATEGORY"] as $ID => $arCategory ){?>
 	<div class="tab_container our_prog_list_container <?if($i==0){?>active<?}?>" data-attr="<?=$ID?>" data-id="video_page_tabs">
 		<div class="video_page_list">
+            <?$countItem=0;$countPagen=0;$pagen=12;$curPage=0;$navStr='';?>
 			<?foreach( $arResult["ITEMS"] as $arItem ){
 				if( in_array( $ID, $arItem["PROPERTIES"]["CATEGORY"]["VALUE_ENUM_ID"] ) ){
+                    $countPagen=intval($countItem/$pagen);
+                    if($curPage<$countPagen){
+                        $navStr.="<span ";
+                        if($curPage>0) $navStr.="class='video_more pagen_".$ID."_".$curPage."' style='display: none; margin: 15px 100px;' ";
+                        else $navStr.="class='video_more' ";
+                        $navStr.="onclick=\"$('.pagen_".$ID."_".$countPagen."').css('display','block');$(this).css('display','none');\" style='margin: 15px 100px;'>Загрузить еще</span><br>";
+                    }
+                    $curPage=$countPagen;
+                    $countItem++;
 					if( isset($arItem["PREVIEW_PICTURE"]["SRC"]) && $arItem["PREVIEW_PICTURE"]["SRC"] ){
 						$image = MakeImage( $arItem["PREVIEW_PICTURE"]["SRC"], array("w"=>305,"h"=>225,"zc"=>1) );
 					}
@@ -113,7 +123,7 @@ $this->setFrameMode(true);
 					$url = $arItem["PROPERTIES"]["PATH"]["VALUE"];
 					$url = str_replace( "https://www.youtube.com/watch?v=", "", $url );
 				?>
-				<div class="video_page_item <?if(!$isNoAuth){?>top<?}?>">
+				<div class="video_page_item <?if(!$isNoAuth){?>top<?}?> pagen_<?=$ID?>_<?=$curPage?>" <?if($curPage>0) echo 'style="display:none"'?>>
 					<a href="" class="pl-video-play <?if($needBlock){?>block<?}?>" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artist?>" data-picture="<?=$image?>" data-url="<?=$url?>">
 						<span class="item_img" style="background-image: url(<?=$image?>);">
 							<span class="video_time"><img src="<?=SITE_TEMPLATE_PATH?>/images/play_btn_small.png" alt="<?=$arItem["NAME"]?>"><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?></span>
@@ -131,6 +141,7 @@ $this->setFrameMode(true);
 				</div>
 				<?}?>
 			<?}?>
+        <?=$navStr?>
 		</div>
 	</div>
 	<?$i++;?>
