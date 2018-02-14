@@ -75,6 +75,7 @@ $(document).on('ready', function(){
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar .music_type_list ul li').removeClass('active');
 		$('.type_radio').addClass('active');
+        $('.pleer_bg_slider').slick('reinit');
 	});
 
 	$('#music_bar_mobile .music_menu').on('click', function(){
