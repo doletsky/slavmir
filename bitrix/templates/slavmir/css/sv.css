@@ -188,6 +188,7 @@ html #music_bar_mobile .efir_mobile:after,html #music_bar_mobile .video_mobile:a
 	text-transform: uppercase;
 	margin-top: 15px;
 	display: inline-block;
+    margin-bottom: 50px;
 }
 #opros_page .opros_form input[type='submit'] {
     margin-left: 65px;
