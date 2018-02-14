@@ -101,7 +101,7 @@
 					</div><!-- opened_video_bar_info -->
 				</div><!-- opened_video_bar_main -->
 				<div class="opened_video_list_wrap">
-					<div class="opened_video_list">
+					<div class="opened_video_list slider-nav">
 						<div class="opened_list_item">
 							<div class="opened_list_item_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/video_bar_item_img.png);"></div>
 							<div class="opened_list_item_text" id="v-main">
@@ -111,8 +111,9 @@
 							<div class="clear"></div>
 						</div><!-- opened_list_item -->
 						
-						<div class="toggle_video_list"></div>
+
 					</div><!-- opened_video_list -->
+                    <div class="toggle_video_list"></div>
 				</div>
 				<div class="clear"></div>
 				<div class="right_bar">

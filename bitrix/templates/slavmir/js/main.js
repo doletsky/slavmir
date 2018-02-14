@@ -44,9 +44,9 @@ $(document).on('ready', function(){
 		$('.music_right_settings_list').toggleClass('loudness_music_active');
 	});
 
-	$('.video_bar_slider .video_bar_item').on('click', function(){
-		$('.opened_video_list.slider-nav').slick('refresh');
-	});
+//	$('.video_bar_slider .video_bar_item').on('click', function(){
+//		$('.opened_video_list.slider-nav').slick('refresh');
+//	});
 
 	$('#music_bar_mobile_scroll').on('click', function(){
 		$('body').addClass('mobile_bar_scroll');
@@ -378,23 +378,23 @@ $(document).on('ready', function(){
 	  asNavFor: '.slider-nav'
 	});
 
-	$('.slider-nav').slick({
-	  slidesToShow: 5,
-	  slidesToScroll: 1,
-	  asNavFor: '.slider-for',
-	  dots: false,
-	  arrows: false,
-	  centerMode: false,
-	  focusOnSelect: true,
-	  vertical: true,
-	  swipe: true
-	});
+//	$('.slider-nav').slick({
+//	  slidesToShow: 5,
+//	  slidesToScroll: 1,
+//	  asNavFor: '.slider-for',
+//	  dots: false,
+//	  arrows: false,
+//	  centerMode: false,
+//	  focusOnSelect: true,
+//	  vertical: true,
+//	  swipe: true
+//	});
 
 	$('.music_type_list ul li.type_tv').on('click', function(){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar').addClass('efir_bar_active');
-		$('.slider-nav').slick('refresh');
+//		$('.slider-nav').slick('refresh');
 		$('.efir_bar .slider-for').slick('refresh');
 		$('#music_bar_mobile').removeClass();
 		$('#music_bar_mobile').addClass('efir_bar_active');

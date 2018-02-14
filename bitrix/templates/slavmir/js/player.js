@@ -288,7 +288,50 @@ $(document).on("click",".pl-video-play",function(){
 	setVPlayerName( $name, $artist );
 	setMobileName( $name, $artist );
 	setVPlayerPicture( $picture );
-	playVideoFile( $(this).attr("data-url") );
+
+
+        var eList=$('.video_bar_container.active .video_bar_item.pl-video-play.slick-active'); //console.log(eList);
+        var cnt=eList.length;
+        var cur=eList.index($(this));
+        var eHtml='';
+        var vUrl="";
+        var vName="";
+        var vArtist="";
+        eList.each(function(){
+            console.log($(this).children('h6').html());
+            if(eList.index($(this))!=cur){
+                vUrl="'"+$(this).attr("data-url")+"'";
+                vName="'"+$(this).attr("data-name")+"'";
+                vArtist="'"+$(this).attr("data-artist")+"'";
+                eHtml='<div class="opened_list_item"><div class="opened_list_item_img" data-artist="'+$(this).attr("data-artist")+'" data-url="'+$(this).attr("data-url")+'" data-name="'+$(this).attr("data-name")+'" style="background-image: url('+$(this).attr("data-picture")+');"></div><div class="opened_list_item_text" id="v-main">';
+                    eHtml+='<h6>'+$(this).children('h6').html()+'</h6>';
+                    eHtml+='<p>'+$(this).children('p').html()+'</p></div><div class="clear"></div></div>';
+                $(".opened_video_list div.opened_list_item").filter( ':last' ).after(eHtml);
+            }
+                console.log('eHtml: '+eHtml);
+        });
+        $('.opened_video_list').addClass('.slider-nav');
+        	$('.slider-nav').slick({
+        	  slidesToShow: cnt,
+        	  slidesToScroll: 1,
+              centerPadding: '0',
+        	  dots: false,
+        	  arrows: false,
+        	  centerMode: true,
+        	  focusOnSelect: true,
+        	  vertical: true,
+        	  swipe: true
+        	});
+        $('.slider-nav').on('afterChange', function(event, slick, direction){
+            var slCur=$('.opened_list_item.slick-current .opened_list_item_img');
+            $('.video_bar_name h6').html( slCur.attr("data-name"));
+            $('.video_bar_name p').html( slCur.attr("data-artist") );
+            playVideoFile( slCur.attr("data-url") );
+        });
+//        $('.video_bar_slider .video_bar_item').on('click', function(){
+//            $('.opened_video_list.slider-nav').slick('refresh');
+//        });
+        playVideoFile( $(this).attr("data-url") );
     }
 
 	return false;
@@ -921,7 +964,7 @@ function setSwitch( typeCode ){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar efir_bar_active');
 		$(".music_left_bar,.music_menu,.music_right_bar_list .not-main").addClass("dn");
-		$('.slider-nav').slick('refresh');
+//		$('.slider-nav').slick('refresh');
 		//$('.efir_bar .slider-for').slick('refresh');
 		$('#music_bar_mobile').removeClass();
 		$('#music_bar_mobile').addClass('efir_bar_active');
