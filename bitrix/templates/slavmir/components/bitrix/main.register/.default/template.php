@@ -174,7 +174,7 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 			break;
 		default:
 			if ($FIELD == "PERSONAL_BIRTHDAY"):?><small><?=$arResult["DATE_FORMAT"]?></small><br /><?endif;
-			?><input placeholder="<?=GetMessage("REGISTER_FIELD_".$FIELD)?>" size="30" type="text" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" required="true" oninvalid="this.setCustomValidity('Пожалуйста, заполните это поле')" oninput="this.setCustomValidity('')" /><?
+			?><input placeholder="<?=GetMessage("REGISTER_FIELD_".$FIELD)?>" size="30" type="<?if($FIELD=='EMAIL') echo 'email'; else echo 'text';?>" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" required="true" oninvalid="this.setCustomValidity('Пожалуйста, заполните это поле')" oninput="this.setCustomValidity('')" /><?
 				if ($FIELD == "PERSONAL_BIRTHDAY")
 					$APPLICATION->IncludeComponent(
 						'bitrix:main.calendar',
