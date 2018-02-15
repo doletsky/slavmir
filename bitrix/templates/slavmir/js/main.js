@@ -70,7 +70,7 @@ $(document).on('ready', function(){
 		$('#music_bar').removeClass('login_opened');
 	});
 
-	$('.toggle_video_list').on('click', function(){
+    $('.opened_video_list_wrap').on('click','.toggle_video_list', function(){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar .music_type_list ul li').removeClass('active');
