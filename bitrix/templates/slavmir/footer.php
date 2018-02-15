@@ -166,6 +166,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 <script src="<?=SITE_TEMPLATE_PATH?>/js/slick.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/flipclock.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.tmpl.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/detect.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/player.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/sv.js"></script>
