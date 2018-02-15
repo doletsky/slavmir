@@ -34,7 +34,10 @@ $APPLICATION->SetTitle("Личный кабинет");
 		<a class="subs_add_pay" href="#">Доплатить</a>
 		<div class="clear"></div>
 	</div>
-    <?*/?>
+
+    <div class="log_out">
+    	<a href="/?logout=yes">Выйти</a>
+    </div><?*/?>
 </section>
 <section class="current_subs">
 	<div class="container">

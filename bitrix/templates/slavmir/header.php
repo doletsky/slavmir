@@ -270,7 +270,7 @@ use Bitrix\Main\Page\Asset;
 							<a href="">Тариф не выбран</a>
 							<a href="/rates/" class="prodlenie active">Тарифы и продление</a>
 							<a href="/personal/" class="pers_data">Персональные данные</a>
-							<a href="/?logout=yes" class="logOut">Выйти</a>
+							<?/*?><a href="/?logout=yes" class="logOut">Выйти</a><?*/?>
 						</div>
 					</div>
 					
