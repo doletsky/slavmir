@@ -430,6 +430,11 @@ $(document).on('ready', function(){
 		$('.subs_popup_container').fadeIn(200);
 	});
 
+	$('.news_slider_box .news_box .news_item a.subs').on('click', function(e){
+        e.preventDefault();
+		$('.subs_popup_container').fadeIn(200);
+	});
+
 	$('.opros_form,.data_info').on('submit', function(e){
 		var hid_in_val = $('#for_bots').val();
 		if(hid_in_val == ''){
