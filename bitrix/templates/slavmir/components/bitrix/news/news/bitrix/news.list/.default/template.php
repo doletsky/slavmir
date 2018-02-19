@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                     }
                     ?>
                 </div>
-                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>>
+                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if(!$USER->IsAuthorized() &&   $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>>
                     <span class="name"><?=$arItem["NAME"]?> <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
                     <div class="text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_more">Подробнее</span></div>
                 </a>
