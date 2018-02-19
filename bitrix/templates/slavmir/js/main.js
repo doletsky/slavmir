@@ -115,8 +115,27 @@ $(document).on('ready', function(){
 	    });
 	  });*/
 
-	$('input[type="tel"]').mask("+7(999)999-99-99"); //phone mask
-	$('input[name="REGISTER[PERSONAL_MOBILE]"]').mask("+9(999)999-99-99"); //phone mask
+	var inputNumb = $('input[name="REGISTER[PERSONAL_MOBILE]"]');
+
+	inputNumb.intlTelInput({
+		initialCountry: "ru",
+		autoPlaceholder: 'aggressive',
+		utilsScript: '/bitrix/templates/slavmir/js/util.js',
+	}); //phone mask
+
+
+	inputNumb.on("keyup change", function() {
+	  var isValid = $(this).intlTelInput("isValidNumber");
+	  if(isValid == true){
+	  	$('.errortext').text('');
+	  	console.log(1);
+	  } else{
+	  	$('.errortext').text('Введите правильный телефон');
+	  	$('.register_popup_container .data_info').on('submit', function(e){
+	  		e.preventDefault();
+	  	});
+	  }
+	});
 
 	$('.video_bar_slider').slick({
         infinite: true,
@@ -212,6 +231,7 @@ $(document).on('ready', function(){
 		$('#header_bar').removeClass('settings_active');
 		$('#header_bar').removeClass('likes_active');
 		$('#header_bar').removeClass('logging');
+		$('header').removeClass('log_opened');
 	});
 
 	$('body').on('click', function(e) {
@@ -243,7 +263,7 @@ $(document).on('ready', function(){
 		$('.search_form').submit();
 	});
 
-	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container, .tnx_container').perfectScrollbar({
+	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container, .tnx_container, .index_music .index_music_container ul').perfectScrollbar({
 		suppressScrollX: true
 	});
 
