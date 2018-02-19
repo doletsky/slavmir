@@ -67,7 +67,7 @@ elseif($arResult["USE_EMAIL_CONFIRMATION"] === "Y"):
 ?>
 <p><?echo GetMessage("REGISTER_EMAIL_WILL_BE_SENT")?></p>
 <?endif?>
-
+<div class="errortext"></div>
 <form method="post" action="<?=POST_FORM_ACTION_URI?>" name="regform" enctype="multipart/form-data" class="data_info">
 <?
 if($arResult["BACKURL"] <> ''):

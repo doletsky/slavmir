@@ -126,14 +126,17 @@ $(document).on('ready', function(){
 
 	inputNumb.on("keyup change", function() {
 	  var isValid = $(this).intlTelInput("isValidNumber");
+		console.log(isValid);
 	  if(isValid == true){
 	  	$('.errortext').text('');
-	  	console.log(1);
 	  } else{
 	  	$('.errortext').text('Введите правильный телефон');
-	  	$('.register_popup_container .data_info').on('submit', function(e){
+
+	  	//Тут нужно блокировать отправку формы
+
+	  	/*$('.register_popup_container .data_info').on('submit', function(e){
 	  		e.preventDefault();
-	  	});
+	  	});*/
 	  }
 	});
 
