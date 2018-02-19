@@ -34,7 +34,7 @@ $this->setFrameMode(true);
                 $countPagen=intval($countItem/$pagen);
                 if($curPage<$countPagen){
                     $navStr.="<span ";
-                    if($curPage>0) $navStr.="class='video_more pagen_".$curPage."' style='display: none; margin: 15px 100px;' ";
+                    if($curPage>0) $navStr.="class='video_more pagen_".$curPage."' style='display: none ! important; margin: 15px 100px;' ";
                     else $navStr.="class='video_more' ";
                     $navStr.="onclick=\"$('.pagen_".$countPagen."').css('display','block');$(this).css('display','none');\"  style='margin: 15px 100px;'>Загрузить еще</span><br>";
                 }
@@ -94,9 +94,9 @@ $this->setFrameMode(true);
                     $countPagen=intval($countItem/$pagen);
                     if($curPage<$countPagen){
                         $navStr.="<span ";
-                        if($curPage>0) $navStr.="class='video_more pagen_".$ID."_".$curPage."' style='display: none; margin: 15px 100px;' ";
+                        if($curPage>0) $navStr.="class='video_more pagen_".$ID."_".$curPage."' style='display: none ! important; margin: 15px 100px;' ";
                         else $navStr.="class='video_more' ";
-                        $navStr.="onclick=\"$('.pagen_".$ID."_".$countPagen."').css('display','block');$(this).css('display','none');\" style='margin: 15px 100px;'>Загрузить еще</span><br>";
+                        $navStr.="onclick=\"$('.pagen_".$ID."_".$countPagen."').css('display','block');$(this).remove();\" style='margin: 15px 100px;'>Загрузить еще</span><br>";
                     }
                     $curPage=$countPagen;
                     $countItem++;
