@@ -29,7 +29,7 @@ $this->setFrameMode(true);
             $image = GetConfig( "default_image" );
             if( isset($arItem["PREVIEW_PICTURE"]["SRC"]) && $arItem["PREVIEW_PICTURE"]["SRC"] ) $image = MakeImage( $arItem["PREVIEW_PICTURE"]["SRC"], array("w"=>171,"h"=>171,"zc"=>1) );
             ?>
-            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>><span class="news_img" style="background-image: url(<?=$image?>);"></span></a>
+            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?if($cMon!=0 && $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>><span class="news_img" style="background-image: url(<?=$image?>);"></span></a>
             <div class="news_text">
                 <div class="news_head">
                     <span class="news_date"><?=small_russian_date("j F Y",MakeTimeStamp($arItem["ACTIVE_FROM"],"DD.MM.YYYY"))?></span>
@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                     }
                     ?>
                 </div>
-                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if(!$USER->IsAuthorized() &&   $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>>
+                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if($cMon!=0 &&  $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?> class="subs"<?}?>>
                     <span class="name"><?=$arItem["NAME"]?> <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
                     <div class="text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_more">Подробнее</span></div>
                 </a>

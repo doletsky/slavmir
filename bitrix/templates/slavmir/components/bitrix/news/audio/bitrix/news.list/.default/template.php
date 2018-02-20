@@ -52,13 +52,13 @@ $this->setFrameMode(true);
 						$image = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>42,"h"=>42,"zc"=>1));
 						$playerImage = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>125,"h"=>125,"zc"=>1));
 					}
-					
+                    global $USER, $cMon;
 					$isNoAuth = false;
-					if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" ) $isNoAuth = true;
+					if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y"  || $cMon!=0 ) $isNoAuth = true;
 					
 					$needBlock = false;
-					global $USER;
-					if( !$isNoAuth && !$USER->IsAuthorized() ){
+
+					if( !$isNoAuth){
 						$needBlock = true;
 						$arItem["PROPERTIES"]["PATH"]["VALUE"] = '';
 					}
@@ -77,7 +77,7 @@ $this->setFrameMode(true);
 								<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="download"></span></a><?}?>
 							</div>
 							<div class="mus_time"><?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?><?}?></div>
-    <?if(!$isNoAuth){?><div class="mus_subs_img"></div><?}?>
+                            <?if($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y"){?><div class="mus_subs_img"></div><?}?>
 						</div>
 					</div>
                     </li>
@@ -108,12 +108,13 @@ $this->setFrameMode(true);
 							$image = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>42,"h"=>42,"zc"=>1));
 							$playerImage = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>125,"h"=>125,"zc"=>1));
 						}
+                        global $USER, $cMon;
 						$isNoAuth = false;
-						if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" ) $isNoAuth = true;
+						if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" || $cMon!=0 ) $isNoAuth = true;
 
 						$needBlock = false;
-						global $USER;
-						if( !$isNoAuth && !$USER->IsAuthorized() ){
+
+						if( !$isNoAuth ){
 							$needBlock = true;
 							$arItem["PROPERTIES"]["PATH"]["VALUE"] = '';
 						}

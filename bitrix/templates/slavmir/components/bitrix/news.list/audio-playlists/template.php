@@ -15,6 +15,7 @@ $this->setFrameMode(true);
 <?
 $count = count($arResult["ITEMS"]);
 if( $count ){
+    global $cMon;
 	?>
 	<section id="audio_playlists">
 		<div class="container">
@@ -46,7 +47,7 @@ if( $count ){
 						<?
 						$isNoAuth = ($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y")?true:false;
 						?>
-						<div class="pl_box_text <?if(!$isNoAuth){?>subs<?}?>">
+						<div class="pl_box_text <?if(!$isNoAuth && $cMon!=0){?>subs<?}?>">
 							<?
 							$authorID = $arItem["PROPERTIES"]["AUTHOR"]["VALUE"];
 							if( $authorID && isset( $arResult["AUTHORS"][$authorID] ) ){?>

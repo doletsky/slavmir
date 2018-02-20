@@ -61,19 +61,20 @@ global $USER;
 						$image = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>42,"h"=>42,"zc"=>1));
 						$playerImage = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>125,"h"=>125,"zc"=>1));
 					}
-					$isNoAuth = false;
-					if( $arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]==19 ) $isNoAuth = true;
+                    global $USER, $cMon;
+                    $isNoAuth = false;
+					if( $arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]==19 || $cMon!=0 ) $isNoAuth = true;
 
 
 					$needBlock = false;
-					global $USER;
-					if( !$isNoAuth && !$USER->IsAuthorized() ){
+
+					if( !$isNoAuth ){
 						$needBlock = true;
 						$arItem["PROPERTY_PATH_VALUE"] = '';
 					}
 					?>
 					<li>
-						<div class="item mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
+						<div data-prem="<?=$cMon?>" class="item mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
 							<div class="mus_img pl-audio-play <?if($needBlock){?>block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTY_PATH_VALUE"]?>" data-picture="<?=$playerImage?>">
 								<div class="play_btn"></div>
 							</div>
@@ -86,6 +87,7 @@ global $USER;
 									<?if($needBlock){?><span class="download dn"></span><?}else{?><a href="<?=$arItem["PROPERTY_PATH_VALUE"]?>" download><span class="download"></span></a><?}?>
 								</div>
 								<div class="mus_time"><?if($arItem["PROPERTY_DURATION_VALUE"]){?><?=duration($arItem["PROPERTY_DURATION_VALUE"])?><?}?></div>
+                                <?if($arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]!=19){?><div class="mus_subs_img"></div><?}?>
 							</div>
 						</div>
 

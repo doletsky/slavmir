@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+global $cMon;
 ?>
 <?#pre($arResult["ITEMS_NEW"]);?>
 <?if(!isset($_REQUEST["AJAX"]) || $_REQUEST["AJAX"]!="Y"){?>
@@ -50,7 +51,7 @@ $this->setFrameMode(true);
 				<article><?=$arItem["PREVIEW_TEXT"]?> <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="read_art">Читать</a>
 				</article>
 				<?*/?>
-                        <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( !$USER->IsAuthorized() && $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
+                        <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( $cMon!=0 && $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
                             <span class="article_name"><?=$arItem["NAME"]?> <?if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
                             <span class="article_text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_art">Читать</span></span>
                         </a>
@@ -93,7 +94,7 @@ $this->setFrameMode(true);
 				<article><?=$arItem["PREVIEW_TEXT"]?> <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="read_art">Читать</a>
 				</article>
 				<?*/?>
-				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( !$USER->IsAuthorized() &&  $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
+				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?if( $cMon!=0 &&  $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?>class="subs"<?}?>>
 					<span class="article_name"><?=$arItem["NAME"]?> <?if($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y" ){?><span class="subs_read_only"></span><?}?></span>
 					<span class="article_text"><?=$arItem["PREVIEW_TEXT"]?> <span class="read_art">Читать</span></span>
 				</a>

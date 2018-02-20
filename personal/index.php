@@ -43,12 +43,12 @@ $APPLICATION->SetTitle("Личный кабинет");
 	<div class="container">
 		<div class="sub_info">
 			<h5>Текущая подписка</h5>
-			<div class="sub_name">Мир-300</div>
+			<div class="sub_name"><?if(count($cDTemp)>0) echo "Промо"; else echo "Мир-300";?></div>
 			<div class="sub_act">
-				<p>Активирована <span>25.04.2017</span></p>
+				<p>Активирована <span><?if(count($cDTemp)>0) echo $cDTemp[0]; else echo "25.04.2017";?></span></p>
 			</div>
 			<div class="sub_deact">
-				<p>Дата отключения  <span>25.09.2017</span></p>
+				<p>Дата отключения  <span><?if(count($cDTemp)>0) echo $cDTemp[1]; else echo "25.09.2017";?></span></p>
 			</div>
 		</div>
 		<div class="sub_tarifs">
