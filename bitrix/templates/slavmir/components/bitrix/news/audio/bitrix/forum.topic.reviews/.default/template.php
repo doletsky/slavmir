@@ -91,6 +91,7 @@ endif;?>
                     <input type="hidden" name="AJAX_POST" value="<?=$arParams["AJAX_POST"]?>" />
                     <?=bitrix_sessid_post()?>
                     <input type="text" placeholder="Что вы думаете?" name="REVIEW_TEXT" id="REVIEW_TEXT" onfocus="$('form.active').removeClass('active');$(this).parent('form').addClass('active');">
+                    <button class="what_you_think_sbt" type="submit">Написать</button>
                 </form>
             </div>
             <!--                    <input name="send_button" type="submit" value="--><?//=GetMessage("OPINIONS_SEND")?><!--" tabindex="" onclick="this.form.preview_comment.value = 'N';" />-->
