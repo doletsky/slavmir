@@ -292,7 +292,7 @@ $(document).on("click",".pl-video-play",function(){
             initHtml+='<div class="opened_list_item_img"></div>';
             initHtml+='<div class="opened_list_item_text" id="v-main">';
             initHtml+='<h6>Загрузка...</h6>';
-            initHtml+='<p></p></div><div class="clear"></div></div><div></div></div><div class="toggle_video_list"></div>';
+            initHtml+='<p></p></div><div class="clear"></div></div><div></div></div><div></div>';
     $('.opened_video_bar div.opened_video_list_wrap').html(initHtml);
 	setVPlayerName( $name, $artist );
 	setMobileName( $name, $artist );
@@ -316,8 +316,29 @@ $(document).on("click",".pl-video-play",function(){
                     eHtml+='<h6>'+$(this).children('h6').html()+'</h6>';
                     eHtml+='<p>'+$(this).children('p').html()+'</p></div><div class="clear"></div></div>';
                 $(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").filter( ':last' ).after(eHtml);
+            }else{
+                var fEHtml=$(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").eq(0);
+                fEHtml.children('.opened_list_item_img').attr('data-url',$(this).attr("data-url"));
+                fEHtml.children('.opened_list_item_img').attr('data-name',$(this).attr("data-name"));
+                fEHtml.children('.opened_list_item_img').attr('data-artist',$(this).attr("data-artist"));
             }
                 console.log('eHtml: '+eHtml);
+        });
+        $('.opened_list_item').on('click','.opened_list_item_img', function(){
+            var slCur=$(this);
+                $('.opened_video_bar .video_bar_name h6').html( slCur.attr("data-name"));
+                $('.opened_video_bar .video_bar_name p').html( slCur.attr("data-artist") );
+            $('.opened_video_bar .next_btn').attr('eq', $('.opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item').index($(this).parent('.opened_list_item')));
+                playVideoFile( slCur.attr("data-url") );
+        });
+
+        $('.opened_video_bar .next_btn').on('click', function(){
+            var nextId=1+parseInt($(this).attr('eq'));
+            if(nextId==$(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").length) {
+                nextId=0;
+                $('.opened_video_bar .next_btn').removeAttr('eq');
+            }
+            $(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item .opened_list_item_img").eq(nextId).click();
         });
 //        if($('.opened_video_list').hasClass('slider-nav')){
 //            $('.slider-nav').slick('reinit');
@@ -337,9 +358,7 @@ $(document).on("click",".pl-video-play",function(){
 //                verticalSwiping: true
 //            });
 //        }
-//        $('.opened_video_bar .next_btn').on('click', function(){
-//            $('.slider-nav').slick('slickNext');
-//        });
+
 //        var tmBlock=0;
 //        var tmId;
 //        $('.opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item').on('mousedown touchstart','.opened_list_item_img', function(){

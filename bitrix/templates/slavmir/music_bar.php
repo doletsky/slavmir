@@ -111,10 +111,10 @@
 							<div class="clear"></div>
 						</div><!-- opened_list_item -->
 
-                        <div class="toggle_video_list"></div>
+                        <div class="trew"></div>
 					</div><!-- opened_video_list -->
-                    <div class="toggle_video_list"></div>
-				</div>
+
+				</div><div class="toggle_video_list"></div>
 				<div class="clear"></div>
 				<div class="right_bar">
 					<div class="music_right_bar">

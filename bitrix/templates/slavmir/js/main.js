@@ -70,7 +70,7 @@ $(document).on('ready', function(){
 		$('#music_bar').removeClass('login_opened');
 	});
 
-    $('.opened_video_list_wrap').on('click','.toggle_video_list', function(){
+    $('.opened_video_bar').on('click','.toggle_video_list', function(){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar .music_type_list ul li').removeClass('active');
@@ -114,31 +114,6 @@ $(document).on('ready', function(){
 	      }
 	    });
 	  });*/
-
-	var inputNumb = $('input[name="REGISTER[PERSONAL_MOBILE]"]');
-
-	inputNumb.intlTelInput({
-		initialCountry: "ru",
-		autoPlaceholder: 'aggressive',
-		utilsScript: '/bitrix/templates/slavmir/js/util.js',
-	}); //phone mask
-
-
-	inputNumb.on("keyup change", function() {
-	  var isValid = $(this).intlTelInput("isValidNumber");
-		console.log(isValid);
-	  if(isValid == true){
-	  	$('.errortext').text('');
-	  } else{
-	  	$('.errortext').text('Введите правильный телефон');
-
-	  	//Тут нужно блокировать отправку формы
-
-	  	/*$('.register_popup_container .data_info').on('submit', function(e){
-	  		e.preventDefault();
-	  	});*/
-	  }
-	});
 
 	$('.video_bar_slider').slick({
         infinite: true,
@@ -266,7 +241,7 @@ $(document).on('ready', function(){
 		$('.search_form').submit();
 	});
 
-	$('.likes_list ul, .register_popup_scroll, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container, .tnx_container, .index_music .index_music_container ul').perfectScrollbar({
+	$('.likes_list ul, .scrolled, .subs_container, .audio_playlist_bottom .index_music_container, .tnx_container, .index_music .index_music_container ul, #audio_item .audio_item_top .index_music_container, .opened_video_list_wrap').perfectScrollbar({
 		suppressScrollX: true
 	});
 
@@ -356,8 +331,35 @@ $(document).on('ready', function(){
 		}
 	});
 
+	
+	
+
 	$('.unreg_link').on('click', function(){
 		$('.register_popup_container').fadeIn(200);
+		var inputNumb = $('input[name="REGISTER[PERSONAL_MOBILE]"]');
+
+		inputNumb.intlTelInput({
+			initialCountry: "ru",
+			autoPlaceholder: 'aggressive',
+			utilsScript: '/bitrix/templates/slavmir/js/util.js',
+		}); //phone mask
+
+
+		inputNumb.on("keyup change", function() {
+		  var isValid = $(this).intlTelInput("isValidNumber");
+			console.log(isValid);
+		  if(isValid == true){
+		  	$('.errortext').text('');
+		  } else{
+		  	$('.errortext').text('Введите правильный телефон');
+
+		  	//Тут нужно блокировать отправку формы
+
+		  	/*$('.register_popup_container .data_info').on('submit', function(e){
+		  		e.preventDefault();
+		  	});*/
+		  }
+		});
 		$('body').css({'position':'fixed'});
 	});
 
