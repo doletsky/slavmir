@@ -339,34 +339,15 @@ $(document).on('ready', function(){
 	});
 
 	
-	
+	$('input[name="REGISTER[PERSONAL_MOBILE]"]').keyup(function(e){
+	  if (/\D/g.test(this.value))
+	  {
+	    this.value = this.value.replace(/\D/g, '');
+	  }
+	});
 
 	$('.unreg_link').on('click', function(){
 		$('.register_popup_container').fadeIn(200);
-		var inputNumb = $('input[name="REGISTER[PERSONAL_MOBILE]"]');
-
-		inputNumb.intlTelInput({
-			initialCountry: "ru",
-			autoPlaceholder: 'aggressive',
-			utilsScript: '/bitrix/templates/slavmir/js/util.js',
-		}); //phone mask
-
-
-		inputNumb.on("keyup change", function() {
-		  var isValid = $(this).intlTelInput("isValidNumber");
-			console.log(isValid);
-		  if(isValid == true){
-		  	$('.errortext').text('');
-		  } else{
-		  	$('.errortext').text('Введите правильный телефон');
-
-		  	//Тут нужно блокировать отправку формы
-
-		  	/*$('.register_popup_container .data_info').on('submit', function(e){
-		  		e.preventDefault();
-		  	});*/
-		  }
-		});
 		$('body').css({'position':'fixed'});
 	});
 

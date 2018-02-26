@@ -29,7 +29,7 @@ use Bitrix\Main\Page\Asset;
 	?>
 	
 	<?$APPLICATION->ShowHead();?>
-	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/intlTelInput.css">
+	<!-- <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/intlTelInput.css"> -->
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/style.css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/sv.css">
 </head>
@@ -458,5 +458,5 @@ if ($USER->IsAuthorized()){
     }
 
 }
-
+echo "<!-- ".$cMon." -->";
 ?>

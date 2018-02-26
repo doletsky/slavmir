@@ -161,13 +161,14 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 <script src="<?=SITE_TEMPLATE_PATH?>/js/clappr-youtube-plugin.min.js"></script>
 
 <script src="<?=SITE_TEMPLATE_PATH?>/js/perfect-scrollbar.jquery.min.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/maskedInput.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-ui.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/slick.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/flipclock.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.tmpl.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/detect.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/player.js"></script>
+<!-- <script src="<?=SITE_TEMPLATE_PATH?>/js/intlTelInput.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/util.js"></script> -->
 <script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/sv.js"></script>
 <? include( dirname(__FILE__).'/jq-templates.php' );?>
