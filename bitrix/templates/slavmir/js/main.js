@@ -77,11 +77,11 @@ $(document).on('ready', function(){
 		$('.type_radio').addClass('active');
         $('.pleer_bg_slider').slick('reinit');
 	});
-    $('.opened_video_bar').on('click','.loop_music', function(){
+    $('.opened_video_bar .music_right_settings_list').on('click','.loop_music', function(){
         $('.opened_video_bar .music_right_settings').toggleClass('loop_music_active');
     });
 
-    $('.opened_video_bar').on('click','.cross_music', function(){
+    $('.opened_video_bar .music_right_settings_list').on('click','.cross_music', function(){
         $('.opened_video_bar .music_right_settings').toggleClass('cross_music_active');
     });
 
@@ -302,13 +302,12 @@ $(document).on('ready', function(){
 		$('#music_bar').fadeToggle(200);
 	});
 
-//	$('#music_bar .music_right_settings .cross_music').on('click', function(){
-//		$('.music_right_settings').toggleClass('cross_music_active');
-//	});
-
-//	$('#music_bar .music_right_settings .loop_music').on('click', function(){
-//		$('.music_right_settings').toggleClass('loop_music_active');
-//	});
+    $('.right_bar .music_right_settings .music_right_settings_list .cross_music').on('click', function(){
+        if($(this).parents('#music_bar').hasClass('playlist_active'))$('#music_bar.playlist_active .container .right_bar .music_right_settings').toggleClass('cross_music_active');
+    });
+	$('.right_bar .music_right_settings .music_right_settings_list .loop_music').on('click', function(){
+		if($(this).parents('#music_bar').hasClass('playlist_active'))$('#music_bar.playlist_active .container .right_bar .music_right_settings').toggleClass('loop_music_active');
+	});
 
 	$('#music_bar .music_right_settings .loudness_music').on('click', function(){
 		$('.music_right_settings').toggleClass('loudness_music_active');

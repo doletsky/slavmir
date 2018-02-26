@@ -340,6 +340,9 @@ $(document).on("click",".pl-video-play",function(){
             if(tmBlock==1){
                 tmBlock=0;
                 setTimeout(function(){tmBlock=1}, 2000);
+                if($('.opened_video_bar .music_right_settings').hasClass('cross_music_active')){
+					shuffleVideoList();
+				}
                 var nextId=1+parseInt($(this).attr('eq'));console.log('nextId: ',nextId);
                 if(nextId==$(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").length) {
                     if(!$('.opened_video_bar .music_right_settings').hasClass('loop_music_active')){ //mode loop
@@ -648,6 +651,17 @@ function stopVideoStream(){
 }
 
 /*  ================================ S I M P L E    V I D E O ========================================= */
+var videoList=[];
+function shuffleVideoList() {
+	var cntVFl=$(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").length;
+	if(cntVFl>1){
+		for(var cvf=0;cvf<cntVFl;cvf++){
+			videoList[cvf]=cvf;
+		}
+		videoList.sort(function(){ return 0.5-Math.random() });
+		console.log(videoList);
+	}
+}
 function playVideoFile(file){
 	/*
 	jwV = jwplayer("video-container").setup({
