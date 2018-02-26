@@ -77,6 +77,13 @@ $(document).on('ready', function(){
 		$('.type_radio').addClass('active');
         $('.pleer_bg_slider').slick('reinit');
 	});
+    $('.opened_video_bar').on('click','.loop_music', function(){
+        $('.opened_video_bar .music_right_settings').toggleClass('loop_music_active');
+    });
+
+    $('.opened_video_bar').on('click','.cross_music', function(){
+        $('.opened_video_bar .music_right_settings').toggleClass('cross_music_active');
+    });
 
 	$('#music_bar_mobile .music_menu').on('click', function(){
 		$('#music_bar_mobile').toggleClass('menu_active');

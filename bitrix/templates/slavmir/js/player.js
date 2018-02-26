@@ -342,9 +342,13 @@ $(document).on("click",".pl-video-play",function(){
                 setTimeout(function(){tmBlock=1}, 2000);
                 var nextId=1+parseInt($(this).attr('eq'));console.log('nextId: ',nextId);
                 if(nextId==$(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").length) {
+                    if(!$('.opened_video_bar .music_right_settings').hasClass('loop_music_active')){
+                        return false;
+                    }
                     nextId=0;
                     $('.opened_video_bar .next_btn').attr('eq',0);
                 }
+
                 $(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item .opened_list_item_img").eq(nextId).click();
             }
 
