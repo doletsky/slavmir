@@ -15,17 +15,21 @@ foreach( $arResult["SECTIONS"] as $arSection ){
 		<ul>
 			<?foreach( $sections["root"] as $arSection ){?>
 			<li>
-                <?if(count($sections[$arSection["ID"]])>0):?>
-				<?=$arSection["NAME"]?>
-				<div class="sub_type">
-					<ul>
-						<?foreach( $sections[$arSection["ID"]] as $arSection1 ){?>
-						<li><a href="<?=$arSection1["SECTION_PAGE_URL"]?>"><?=$arSection1["NAME"]?></a></li>
-						<?}?>
-					</ul>
-				</div>
+                <?if($arSection["ID"]==14):?>
+                    <a style="text-decoration: none" href="/o-nas/"><?=$arSection["NAME"]?></a>
                 <?else:?>
-                    <a style="text-decoration: none" href="<?=$arSection["SECTION_PAGE_URL"]?>"><?=$arSection["NAME"]?></a>
+                    <?if(count($sections[$arSection["ID"]])>0):?>
+                    <?=$arSection["NAME"]?>
+                    <div class="sub_type">
+                        <ul>
+                            <?foreach( $sections[$arSection["ID"]] as $arSection1 ){?>
+                            <li><a href="<?=$arSection1["SECTION_PAGE_URL"]?>"><?=$arSection1["NAME"]?></a></li>
+                            <?}?>
+                        </ul>
+                    </div>
+                    <?else:?>
+                        <a style="text-decoration: none" href="<?=$arSection["SECTION_PAGE_URL"]?>"><?=$arSection["NAME"]?></a>
+                    <?endif?>
                 <?endif?>
 			</li>
 			<?}?>
