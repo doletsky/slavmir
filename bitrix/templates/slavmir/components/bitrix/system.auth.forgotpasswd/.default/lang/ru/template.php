@@ -1,5 +1,5 @@
 <?
-$MESS ['AUTH_FORGOT_PASSWORD_1'] = "Если вы забыли пароль, введите логин или E-Mail.<br />Ссылка для смены пароля будет выслана вам по E-Mail.";
+$MESS ['AUTH_FORGOT_PASSWORD_1'] = "Если вы забыли пароль, введите E-Mail.<br />Ссылка для смены пароля будет выслана вам по E-Mail.";
 $MESS ['AUTH_GET_CHECK_STRING'] = "Выслать контрольную строку";
 $MESS ['AUTH_SEND'] = "Выслать";
 $MESS ['AUTH_AUTH'] = "Авторизация";
