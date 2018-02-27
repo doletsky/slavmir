@@ -25,7 +25,7 @@
 					else{
 						$image = GetConfig("video_default_image");
 					}
-					$isNoAuth = ($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y")?true:false;
+					if($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" || $arResult["cMon"]!=0)$isNoAuth = true; else $isNoAuth = false;
 					$artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
 					$artist = '';
 					if($artistID && isset($arResult["ARTISTS"][$artistID])){
@@ -34,7 +34,7 @@
 					$url = $arItem["PROPERTIES"]["PATH"]["VALUE"];
 					$url = str_replace( "https://www.youtube.com/watch?v=", "", $url );
 				?>
-				<div class="video_bar_item pl-video-play" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artist?>" data-picture="<?=$image?>" data-url="<?=$url?>">
+				<div class="video_bar_item pl-video-play<?if(!$isNoAuth){?> subs <?echo $cMon;}?>" data-name="<?=$arItem["NAME"]?>" data-artist="<?=$artist?>" data-picture="<?=$image?>" data-url="<?=$url?>">
 					<div class="video_bar_item_img" style="background-image: url(<?=$image?>);">
 						<div class="time"></div>
 					</div>

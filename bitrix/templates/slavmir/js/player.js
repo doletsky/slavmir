@@ -264,6 +264,7 @@ $(document).on("click",".pl-audio-play",function(){
 });
 
 $(document).on("click",".pl-video-play",function(){
+    if($(this).hasClass('subs')){return false;}
     if(tmScrl==1){
 	var $this = $(this),
 			$name = '',
@@ -306,13 +307,15 @@ $(document).on("click",".pl-video-play",function(){
         var vUrl="";
         var vName="";
         var vArtist="";
+        var vSubs="";
         eList.each(function(){
             console.log($(this).children('h6').html());
             if(eList.index($(this))!=cur){
                 vUrl="'"+$(this).attr("data-url")+"'";
                 vName="'"+$(this).attr("data-name")+"'";
                 vArtist="'"+$(this).attr("data-artist")+"'";
-                eHtml='<div class="opened_list_item"><div class="opened_list_item_img" data-artist="'+$(this).attr("data-artist")+'" data-url="'+$(this).attr("data-url")+'" data-name="'+$(this).attr("data-name")+'" style="background-image: url('+$(this).attr("data-picture")+');"></div><div class="opened_list_item_text" id="v-main">';
+                if($(this).hasClass('subs')){vSubs=' subs';}
+                eHtml='<div class="opened_list_item"><div class="opened_list_item_img'+vSubs+'" data-artist="'+$(this).attr("data-artist")+'" data-url="'+$(this).attr("data-url")+'" data-name="'+$(this).attr("data-name")+'" style="background-image: url('+$(this).attr("data-picture")+');"></div><div class="opened_list_item_text" id="v-main">';
                     eHtml+='<h6>'+$(this).children('h6').html()+'</h6>';
                     eHtml+='<p>'+$(this).children('p').html()+'</p></div><div class="clear"></div></div>';
                 $(".opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item").filter( ':last' ).after(eHtml);
@@ -330,10 +333,15 @@ $(document).on("click",".pl-video-play",function(){
         }
         $('.opened_list_item').on('click','.opened_list_item_img', function(){
             var slCur=$(this);
+            $('.opened_video_bar .next_btn').attr('eq', $('.opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item').index($(this).parent('.opened_list_item')));
+            if(slCur.hasClass('subs')){
+                $('.opened_video_bar .next_btn').click();
+            }else{
                 $('.opened_video_bar .video_bar_name h6').html( slCur.attr("data-name"));
                 $('.opened_video_bar .video_bar_name p').html( slCur.attr("data-artist") );
-            $('.opened_video_bar .next_btn').attr('eq', $('.opened_video_bar div.opened_video_list_wrap .opened_video_list div.opened_list_item').index($(this).parent('.opened_list_item')));
                 playVideoFile( slCur.attr("data-url") );
+            }
+
         });
         var tmBlock=1;
         var shufFlag=-1;

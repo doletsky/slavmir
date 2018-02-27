@@ -158,6 +158,7 @@ $(document).on('ready', function(){
 	});
 
 	$('.video_bar_slider .video_bar_item').on('click', function(){
+        if($(this).hasClass('subs')){return false;}
         if(tmScrl==1){
 		$('#music_bar').removeClass('video_bar_active');
 		$('#music_bar').addClass('opened_video');
