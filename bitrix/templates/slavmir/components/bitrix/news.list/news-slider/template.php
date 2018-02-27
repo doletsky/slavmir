@@ -1,6 +1,5 @@
 <?
 #pre($arResult);
-global $cMon;
 ?>
 <section class="articles_slider_box news_slider_box">
 	<div class="articles_slider">
@@ -19,7 +18,7 @@ global $cMon;
 							?>
 							<div class="news_item">
 								<p class="item_date"><?=small_russian_date("j F",MakeTimeStamp($arNews["ACTIVE_FROM"],"DD.MM.YYYY"))?></p>
-								<a href="<?=$arNews["DETAIL_PAGE_URL"]?>" <?if($cMon!=0 &&   $arNews["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="49" ){?>class="subs"<?}?>>
+								<a href="<?=$arNews["DETAIL_PAGE_URL"]?>" <?if($arResult["cMon"]===0 &&   $arNews["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="49" ){?>class="subs"<?}?>>
 									<span class="name"><?=$arNews["NAME"]?> <?if( $arNews["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="49" ){?><span class="subs_read_only"></span><?}?></span>
 									<div class="text"><?=$arNews["PREVIEW_TEXT"]?></div>
 								</a>
@@ -41,7 +40,7 @@ global $cMon;
 								}
 								*/
 								?>
-								<a href="<?=$arNews["DETAIL_PAGE_URL"]?>" class="read_article<?if($cMon!=0 &&   $arNews["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="49" ){?> subs<?}?>">Подробнее</a>
+								<a href="<?=$arNews["DETAIL_PAGE_URL"]?>" class="read_article<?if($arResult["cMon"]===0 &&   $arNews["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="49" ){?> subs<?}?>">Подробнее</a>
 							</div>
 							<?
 						}

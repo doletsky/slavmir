@@ -1,6 +1,5 @@
 <?
 #pre($arResult);
-global $cMon;
 ?>
 <section class="articles_slider_box">
 	<div class="articles_slider">
@@ -18,7 +17,7 @@ global $cMon;
 							$bg = GetConfig( "article_default_image" );
 							?>
 							<div class="rel_art_item">
-								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>" <?if($cMon!=0 &&  $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?>class="subs"<?}?>>
+								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>" <?if($arResult["cMon"]===0 &&  $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?>class="subs"<?}?>>
 									<span class="rel_art_name" style="background-image: url(<?=$bg?>);"><span class="name"><?=$arArticle["NAME"]?> <?if( $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?><span class="subs_read_only"></span><?}?></span></span>
 									<div class="text"><?=$arArticle["PREVIEW_TEXT"]?></div>
 								</a>
@@ -38,7 +37,7 @@ global $cMon;
 									<?
 								}
 								?>
-								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>" class="read_article<?if($cMon!=0 &&  $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?> subs<?}?>">Читать статью</a>
+								<a href="<?=$arArticle["DETAIL_PAGE_URL"]?>" class="read_article<?if($arResult["cMon"]===0 &&  $arArticle["PROPERTY_IS_NO_AUTH_ENUM_ID"]!="50" ){?> subs<?}?>">Читать статью</a>
 							</div>
 							<?
 						}
