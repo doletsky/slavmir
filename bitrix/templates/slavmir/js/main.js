@@ -457,6 +457,30 @@ $(document).on('ready', function(){
 		}
 	});
 
+    // $('.opros_form,.data_info').on('submit', function(e){
+    //     e.preventDefault();
+    //     console.log('submit data_info');
+    //     var hid_in_val = $('#for_bots').val();
+    //     if(hid_in_val == ''){
+    //         if($(this).children('[type="email"]').length>0){
+    //             var vMail=$(this).children('[type="email"]').val();
+    //             var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    //             if(reg.test(vMail) == false){
+    //
+    //                 $(this).children('[type="email"]').attr('oninvalid','setCustomValidity("Не верный формат email")');
+    //                 $(this).children('[type="email"]').attr('id','email');
+    //                 document.getElementById('email').setCustomValidity("Не верный формат email");
+    //                 $(this).children('button').click();
+    //                 return false;
+    //             }
+    //         }
+    //         $(this).submit();
+    //     } else{
+    //         return false;
+    //     }
+    //
+    // });
+
 	var vh = $(window).height();
 	$('.register_popup_scroll').css({'max-height': vh - 120});
 	$('.subs_container').css({'max-height': vh - 50});
