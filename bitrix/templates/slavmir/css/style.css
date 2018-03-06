@@ -90,6 +90,7 @@ body.fixed_header .logo_mobile{
     display: block;
     animation: logoMobileShow 0.4s linear forwards;
 }
+.iti-flag {background-image: url("../images/flags.png");}
 .logo_desktop{
     display: block;
     animation: logoMobileShow 0.4s linear forwards;
@@ -398,11 +399,17 @@ header .header_top_menu .burger.active img.active{
 #header_bar.search_active .search{
     background-color: rgba(255,255,255,.53);
     border-radius: 30px;
-    width: 200px;
+    width: 211.5px;
     padding-top: 2px;
     padding-bottom: 2px;
     margin-top: 14px;
     margin-bottom: 3px;
+}
+#header_bar.logged.search_active .search{
+    width: 136px;
+}
+#header_bar.logged.search_active .search form input{
+    width: 106px;
 }
 #header_bar.search_active .settings span{
     display: none;
@@ -443,7 +450,7 @@ header .header_top_menu .burger.active img.active{
     display: none;
 }
 #header_bar.logged .reg_bar{
-    display: block;
+    display: flex;
 }
 #header_bar.likes_active .likes{
     background-color: #f7e0c3;
@@ -514,6 +521,13 @@ header .header_top_menu .burger.active img.active{
     opacity: 1;
     visibility: visible;
     padding-top: 10px;
+}
+#header_bar.logged .login_box{
+    float: left;
+    padding-top: 8px;
+}
+#header_bar.logged .settings_logged_bar{
+    float: left;
 }
 #header_bar .login_box .log_in{
     display: inline-block;
@@ -834,6 +848,7 @@ header .header_top_menu .burger.active img.active{
     background-color: transparent;
     z-index: 999;
     cursor: pointer;
+    padding: 0;
 }
 #header_bar .search form input{
     background-color: transparent;
@@ -843,7 +858,13 @@ header .header_top_menu .burger.active img.active{
     font-family:'PT Sans';
     padding-left: 13px;
     float: left;
-    width: 170px;
+    width: 180px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+#header_bar.search_active .unreg{
+    padding-top: 10px;
 }
 #header_bar .search .search_img{
     display: block;
@@ -854,7 +875,7 @@ header .header_top_menu .burger.active img.active{
     height: 21px;
 }
 body #header_bar.logging .search{
-    padding-top: 15px;
+    padding-top: 10px;
 }
 body.fixed_header #header_bar.logging .search{
     padding-top: 15px;
@@ -873,7 +894,7 @@ body.fixed_header header.log_opened .logo{
     display: none;
     position: absolute;
     right: 20px;
-    top: 0;
+    top: -4px;
     width: 255px;
 }
 #header_bar .to_login form{
@@ -897,6 +918,8 @@ body.fixed_header header.log_opened .logo{
     font-size: 15px;
     background-color: transparent;
     margin-bottom: 10px;
+    border-radius: 0!important;
+    -webkit-appearance: none;
 }
 #header_bar .to_login form input:first-of-type{
     margin-bottom: 20px;
@@ -1366,8 +1389,14 @@ body.short_header #music_bar .music_played .played_info{
 #music_bar .music_right_settings{
     float: right;
     margin-left: 15px;
-    position: absolute;
+    /* position: absolute;
     right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 .music_right_settings_list{
     display: flex;
@@ -2087,6 +2116,7 @@ body.short_header #music_bar .music_played .played_info{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
 }
 .index_prog_container a:after{
     content: '';
@@ -2167,6 +2197,11 @@ body.short_header #music_bar .music_played .played_info{
 #index_content .index_news p{
     font-size: 15px;
     line-height: 19px;
+}
+#index_content .index_news p .yellow{
+    color: #f47b22;
+    font-family: 'PT Sans';
+    text-decoration: underline;
 }
 .index_news_list .index_news_item{
     width: 100%;
@@ -2573,6 +2608,10 @@ footer .roskom p{
 }
 #our_prog_top .breadcrumbs ul li .vert_line:after{
     background-color: #d1cfcb;
+}
+#prog_item_top h1.page_name{
+    margin-bottom: 0;
+    padding-top: 55px;
 }
 #prog_item_top .breadcrumbs ul li a{
     color: #7d7c79;
@@ -3980,12 +4019,12 @@ h1.page_name{
     right: 0;
     z-index: 99;
     height: auto;
-}
-.right_soc ul{
-    position: fixed;
-    z-index: 9999;
-    right: 0;
-    top: 40%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 .right_soc ul a{
     text-decoration: none;
@@ -4027,16 +4066,15 @@ h1.page_name{
     width: calc(100% - 300px);
     padding-top: 20px;
 }
+#releases .rel_list{
+    text-align: cen
+}
 #releases .container .rel_left h3{
     text-align: center;
     color: #000;
     font-size: 44px;
     font-family: 'PT Serif';
     margin-bottom: 30px;
-}
-#releases .container .rel_left .rel_list{
-    display: flex;
-    flex-wrap: wrap;
 }
 #releases .container .rel_left .rel_list .rel_item.audio .play{
     background-image: url(../images/headphones.png);
@@ -4052,7 +4090,7 @@ h1.page_name{
 #releases .container .rel_left .rel_list .rel_item,#releases .container .rel_left .item{
     position: relative;
     display: inline-block;
-    float: left;
+    vertical-align: text-top;
     width: 100%;
     max-width: 305px;
     margin-right: 35px;
@@ -4644,6 +4682,7 @@ h1.page_name{
     margin-bottom: 19px;
 }
 .subs_container .license{
+    display: none;
     color: #8f8e8d;
     font-size: 18px;
     font-family: 'PT Sans';
@@ -4655,7 +4694,7 @@ h1.page_name{
 /*** REGISTER POPUP ***/
 .register_popup_container{
     display: none;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
@@ -4750,6 +4789,7 @@ form.data_info input{
     font-size: 23.6px;
     margin-bottom: 35px;
     padding-bottom: 5px;
+    border-radius: 0;
 }
 form.data_info input::-webkit-input-placeholder {color:#000;opacity: 0.38;}
 form.data_info input::-moz-placeholder          {color:#000;opacity: 0.38;}/* Firefox 19+ */
@@ -6386,11 +6426,12 @@ form.data_info .log_input_wrap p{
 }
 .comments_body .answer .img_box{
     float: left;
+    max-width: 60px;
 }
 .comments_body .answer .img_box .name{
     font-family: 'PT Sans';
-    font-size: 14px;
-    padding-left: 2px;
+    font-size: 12px;
+    padding-left: 0px;
     margin-bottom: 7px;
 }
 .comments_body .answer .img_box .user_img{
@@ -6440,6 +6481,9 @@ form.data_info .log_input_wrap p{
 .comments_body .answer .answer_text .date_box{
     font-size: 12px;
     color: #8a8a8a;
+}
+.comments_body .answer .answer_text .date_box .time{
+    margin-right: 10px;
 }
 .comments_body .answer.sub{
     padding-left: 60px;
@@ -6820,7 +6864,28 @@ form.data_info .log_input_wrap p{
     margin-bottom: 15px;
 }
 #audio_item .audio_item_top .index_music_container{
+    position: relative;
+    max-height: 230px;
     padding-left: 10px;
+}
+#audio_item .audio_item_top .index_music_container:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    bottom: -5px;
+    left: 0;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(242,242,242,1) 80%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(242,242,242,1) 80%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(242,242,242,1) 80%);
+}
+#audio_item .audio_item_top .index_music_container:hover:after{
+    display: none;
 }
 #audio_item .audio_item_top .index_music_container ul li .index_mus_info .index_music_name{
     width: 55%;
@@ -6973,7 +7038,7 @@ form.data_info .log_input_wrap p{
 }
 #audio_item_text .container .right_col .what_you_think{
     background-color: #e6e6e6;
-    padding: 15px 65px 22px 35px;
+    padding: 15px 5px 22px 35px;
 }
 #audio_item_text .container .right_col .what_you_think .cur_user_img{
     width: 45px;
@@ -6999,7 +7064,7 @@ form.data_info .log_input_wrap p{
     width: 100%;
 }
 #audio_item_text .container .right_col .what_you_think .cur_user_info form input{
-    width: 300px;
+    width: 280px;
     border: none;
     background-color: #fff;
     cursor: pointer;
@@ -7008,6 +7073,7 @@ form.data_info .log_input_wrap p{
     font-size: 15px;
     padding: 3px 10px;
     height: 39px;
+    margin-right: 15px;
 }
 #audio_item_text .container .right_col #what_you_think_ans.what_you_think .cur_user_info form input{
     width: 100%;
@@ -7087,6 +7153,9 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     width: 100%;
     max-width: 755px;
     margin: 0 auto;
+}
+.audio_playlist_bottom .audio_playlist_item_wrap:hover:after{
+    display: none;
 }
 .audio_playlist_bottom .audio_playlist_item_wrap:after{
     position: absolute;
@@ -7219,14 +7288,16 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 .opened_video_list{
     position: relative;
-    height: 560px;
-    overflow: hidden;
+    /* height: 560px; */
+    /* overflow: hidden; */
 }
 .opened_video_list_wrap{
     position: relative;
     float: right;
     width: 100%;
     max-width: 420px;
+    height: 100%;
+    max-height: 560px;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
@@ -7322,7 +7393,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 92%;
+    max-width: 90%;
 }
 .opened_video_bar_info .left .time{
     display: inline-block;
@@ -7408,7 +7479,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     cursor: pointer;
 }
 .video_bar_name{
-    max-width: 60%;
+    max-width: 40%;
 }
 .video_bar_name h6{
     display: inline-block;
@@ -7551,6 +7622,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     left: 50%;
     top: 50%;
     width: 100%;
+    height: 100%;
     max-width: 775px;
     padding: 125px 305px 115px 210px;
     -webkit-transform: translate(-50%,-50%);
@@ -7897,6 +7969,8 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     font-family: 'PT Sans';
     width: 40%;
     text-decoration: none;
+    max-height: 46px;
+    overflow: hidden;
 }
 .mus_wrap .mus_info .mus_group{
     color: #7d7c79;
@@ -7945,6 +8019,13 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
 }
 .mus_wrap .mus_info:hover .mus_bar .likes{
     opacity: 1;
+}
+.download{
+    visibility: hidden;
+}
+[data-player].fullscreen .media-control[data-media-control]{
+    bottom: 0;
+    left: 0;
 }
 .mus_wrap .mus_info .mus_bar .download{
     display: inline-block;
@@ -8012,10 +8093,10 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
 .count_text{
     text-align: center;
     margin: 0 auto;
+    overflow: hidden;
 }
 .count_text p{
     float: left;
-    display: inline-block;
     font-family: 'PT Serif';
     font-size: 32px;
     color: #fff;
@@ -8026,7 +8107,7 @@ body #music_bar_mobile_scroll .mobile_bar_name p{
     font-weight: bold;
 }
 .flip-clock-wrapper{
-    display: inline-block;
+    float: right;
     width: auto;
     margin: 0;
     padding-top: 5px;
@@ -8191,6 +8272,7 @@ form[name="form_auth"] .unreg{
 }
 .register_popup_scroll{
     position: relative;
+    overflow: scroll;
 }
 .log_out{
     text-align: center;
@@ -8202,6 +8284,29 @@ form[name="form_auth"] .unreg{
     padding: 5px 16px;
     display: inline-block;
     text-decoration: none;
+}
+.intl-tel-input{
+    width: 100%;
+    margin-bottom: 35px;
+}
+.index_music .index_music_container ul{
+    position: relative;
+    max-height: 300px;
+}
+.errortext{
+    color: red;
+}
+.what_you_think_sbt{
+    background-color: #f47b22;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'PT Sans';
+    font-weight: 100;
+    border-radius: 10px;
+    line-height: 41px;
+    cursor: pointer;
+    padding: 0 19px;
 }
 
 
@@ -8217,10 +8322,6 @@ form[name="form_auth"] .unreg{
     #audio_page_top h1{
         margin-bottom: 40px;
     }
-    /* .register_popup{
-        top: 10px;
-        transform: translate(-50%, 0);
-    } */
 }
 @media (max-height: 768px) and (max-width: 1024px){
     #audio_page_top h1{
@@ -8368,9 +8469,12 @@ form[name="form_auth"] .unreg{
     #index_content{
         padding-top: 30px;
     }
-    .right_soc ul{
-        top: inherit;
-        bottom: 90px;
+    .right_soc{
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
     }
     body.fixed_header .right_soc ul{
         top: 50%;
@@ -8802,6 +8906,9 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 1024px){
+    .mobile_menu .logged_bar a{
+        display: table-row;
+    }
     #contacts .interview p{
         margin-bottom: 185px;
     }
@@ -9086,6 +9193,7 @@ form[name="form_auth"] .unreg{
     .count_text p{
         font-size: 18px;
         padding-top: 25px;
+        width: 260px;
     }
     .index_music .mus_wrap .mus_info .mus_name{
         width: 35%;
@@ -9104,9 +9212,9 @@ form[name="form_auth"] .unreg{
         margin-left: 0;
         margin-bottom: 30px;
     }
-    .article_types_box{
+    /* .article_types_box{
         display: none;
-    }
+    } */
     .article_types_box.mobile{
         display: block;
         margin-bottom: 0;
@@ -9158,7 +9266,6 @@ form[name="form_auth"] .unreg{
         padding: 15px 0;
     }
     body.fixed_header header .logo{
-        max-width: inherit;
         padding-top: 0;
     }
     #audio_playlist{
@@ -9267,7 +9374,7 @@ form[name="form_auth"] .unreg{
         z-index: 1000;
     }
     body #header_bar.logging .search{
-        padding-top: 10px;
+        padding-top: 8px;
     }
     #header_bar .search{
         padding-top: 8px;
@@ -9353,24 +9460,11 @@ form[name="form_auth"] .unreg{
     .opened_video_list_wrap{
         max-width: 250px;
     }
-    .opened_video_bar_info .right{
-        position: absolute;
-        right: -160px;
-    }
     .breadcrumbs ul li .vert_line{
         margin: 0px 5px -5px 5px;
     }
     #music_bar{
         top: 60px;
-    }
-    .right_soc{
-        bottom: 100px;
-        top: 0;
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
     }
     #news_item h1{
         font-size: 32px;
@@ -9840,6 +9934,24 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 875px){
+    .opened_video_bar_info .left .time{
+        display: none;
+    }
+    .opened_video_bar_info .left{
+        width: 100%;
+        max-width: 188px;
+    }
+    .video_bar_name{
+        width: 100%;
+        max-width: 85px;
+    }
+    .tnx_container{
+        padding: 0 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     .comments_body .my_answer .my_comment input{
         width: calc(100% - 60px);
     }
@@ -9978,6 +10090,30 @@ form[name="form_auth"] .unreg{
     } 
 }
 @media screen and (max-width: 767px){
+    .ajax-list .more, .video_more{
+        display: block!important;
+        width: 100%;
+        max-width: 225px;
+        margin: 0 auto 20px;
+    }
+    #new_articles{
+        padding-bottom: 0;
+    }
+    #new_articles .new_articles_list .new_article{
+        margin-bottom: 15px;
+    }
+    #new_articles .new_article .new_article_text .article_text p{
+        display: inline;
+    }
+    .tnx_container .close_tnx_popup span{
+        font-size: 16px;
+    }
+    .tnx_container p{
+        font-size: 16px;
+    }
+    .tnx_container h4{
+        font-size: 18px;
+    }
     #contacts .interview p{
         margin-bottom: 175px;
     }
@@ -10142,7 +10278,7 @@ form[name="form_auth"] .unreg{
         margin-bottom: 20px;
     }
     .flip-clock-wrapper{
-        float: left;
+        float: right;
     }
     .breadcrumbs{
         left: 0!important;
@@ -10176,6 +10312,7 @@ form[name="form_auth"] .unreg{
     .count_text p{
         text-align: left;
         font-size: 13px;
+        width: 185px;
     }
     .article_item_auth{
         padding-right: 0;
@@ -10310,17 +10447,11 @@ form[name="form_auth"] .unreg{
     }
     body .right_soc{
         display: block;
-        right: inherit;
-        top: inherit;
-        bottom: 75px;
+        right: initial!important;
+        top: initial!important;
+        bottom: 62px!important;
+        position: fixed;
         left: 0;
-        width: 100%;
-    }
-    body .right_soc ul{
-        right: inherit;
-        top: inherit;
-        left: 0;
-        bottom: 0;
         width: 100%;
     }
     body .right_soc ul a{
@@ -11214,6 +11345,10 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 710px){
+    #releases .container .rel_left .rel_list .rel_item{
+        display: block;
+        margin: 0 auto 20px;
+    }
     .index_music .mus_wrap .mus_info .mus_name{
         width: 30%;
     }
@@ -11394,9 +11529,6 @@ form[name="form_auth"] .unreg{
     .news_page_list .news_page_item .news_text .text{
         font-size: 14px;
     }
-    #releases .container .rel_left .rel_list .rel_item{
-        margin-right: 0;
-    }
     footer .mobile_copy{
         display: block;
         margin-top: 45px;
@@ -11500,7 +11632,8 @@ form[name="form_auth"] .unreg{
         display: block;
     }
     #index_content .index_prog .index_prog_container a.index_prog_item  .prog_name_container .prog_desc{
-        font-size: 15px;
+        font-size: 13px;
+        line-height: 1.2;
     }
     #index_content .index_prog .index_prog_container a.index_prog_item  .prog_name_container .prog_name{
         font-size: 15px;
@@ -11668,6 +11801,18 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 480px){
+    .article_item_info .left_col p img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #new_articles #new_art_tabs ul li:not(:last-child){
+        margin-right: 15px;
+    }
+    #new_articles #new_art_tabs ul li{
+        font-size: 20px;
+    }
     .tabs ul li:not(:last-child){
         margin-right: 5px;
     }
@@ -11688,7 +11833,7 @@ form[name="form_auth"] .unreg{
         font-size: 12.59px;
     }
     body .right_soc {
-        bottom: 49px;
+        bottom: 35px!important;
     }
     #our_prog_list_box .our_prog_list_container .prog_item{
         margin-bottom: 25px;
@@ -11955,6 +12100,11 @@ form[name="form_auth"] .unreg{
     }
 }
 @media screen and (max-width: 420px){
+    .mob_reg_btn{
+        font-size: 10px;
+        padding: 3px 2px;
+        margin-left: 4px;
+    }
     .reg_btns_wrap{
         padding-left: 0;
     }
@@ -11991,7 +12141,8 @@ form[name="form_auth"] .unreg{
         margin-right: 5px;
     }
     .count_text p{
-        font-size: 9px;
+        width: 135px;
+        font-size: 8px;
         padding-top: 14px;
     }
     .index_music .mus_wrap .mus_info .mus_name{
@@ -12166,10 +12317,6 @@ form[name="form_auth"] .unreg{
     }
     #music_bar_mobile .music_name{
         font-size: 12px;
-    }
-    .mob_reg_btn{
-        font-size: 10px;
-        padding: 3px 2px;
     }
     #tarifs h2{
         font-size: 24px;
