@@ -1,8 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 $APPLICATION->SetTitle("Аудио");
-$APPLICATION->SetPageProperty("header_bg", "/upload/medialibrary/102/102a1f9acca2440e6da9f76148e18dea.jpg");
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+$APPLICATION->SetPageProperty("header_bg", "/upload/medialibrary/102/102a1f9acca2440e6da9f76148e18dea.jpg");?>
+<?
+if($_REQUEST['ajax_mode']!=1)require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
 ?><?$APPLICATION->IncludeComponent("bitrix:news", "audio", Array(
 	"COMPONENT_TEMPLATE" => "programs",
 		"IBLOCK_TYPE" => "catalog",	// Тип инфоблока
@@ -91,4 +92,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?if($_REQUEST['ajax_mode']!=1)require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
