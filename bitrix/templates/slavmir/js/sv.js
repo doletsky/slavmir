@@ -15,11 +15,20 @@ $(document).ready(function(){
 	    });
 	}
 
+	$('.related_art_box .rel_art_item a').on('click', function(e){
+		if($(this).hasClass('subs')){
+			e.preventDefault();
+			$('.subs_popup_container').fadeIn(300);
+		}
+	});
 
 	$(document).on('click',".register-enter",function(){
-		$(".register_popup_container").hide();
-		$("#header_bar").addClass("logging");
-		return false;
+        if(!isMobile){
+            $(".register_popup_container").hide();
+            $("#header_bar").addClass("logging");
+            return false;
+        }
+
 	});
 	$(document).on('click',".auth-registr-form",function(){
 		$(".register_popup_container").show();
