@@ -10126,6 +10126,11 @@ form[name="form_auth"] .unreg{
     .register_popup_container .data_info p{
         font-size: 14px;
     }
+    .reg_privacy p{
+        margin-left: 33px;
+        text-align: justify;
+        margin-right: 15px;
+    }
     .reg_btn button b{
         font-size: 16px;
     }
