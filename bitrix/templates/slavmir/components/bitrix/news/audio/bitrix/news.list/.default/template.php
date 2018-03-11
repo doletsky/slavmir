@@ -121,7 +121,7 @@ $this->setFrameMode(true);
 						?>
                         <li>
                             <div class="mus_wrap <?if(!$isNoAuth){?>subs<?}?>">
-                                <div class="mus_img" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
+                                <div class="mus_img pl-audio-play" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
                                     <div class="play_btn"></div>
                                 </div>
                                 <div class="mus_info">
