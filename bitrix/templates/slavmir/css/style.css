@@ -8291,7 +8291,7 @@ form[name="form_auth"] .unreg{
 }
 .index_music .index_music_container ul{
     position: relative;
-    max-height: 300px;
+    max-height: 350px;
 }
 .errortext{
     color: red;
