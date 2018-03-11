@@ -604,7 +604,7 @@ function stopRadio(){
 /*  ================================ T V ========================================= */
 function initVideoStream(){
 	if( isMobile ){
-		/*
+
 		$("#"+TV_PLAYER_ID).html('');
 		jwVS = new Clappr.Player({
 			width: '100%',
@@ -627,7 +627,7 @@ function initVideoStream(){
 			//setVPlayerStatus( 'stop' );
 			$('.efir_bar .video_bar_play .play_btn').addClass("active");
 		});
-		*/
+		/*
 		jwVS = jwplayer(TV_PLAYER_ID).setup({
 			"file": TV_URL,
 			"controls": true,
@@ -644,7 +644,7 @@ function initVideoStream(){
 			console.log('tv: play');
 		}).on('time',function(obj){
 			setVSPlayerPosition( obj );
-		});
+		});*/
 	}
 	else{
 		jwVS = jwplayer(TV_PLAYER_ID).setup({
