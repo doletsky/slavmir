@@ -11,7 +11,7 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 	<div class="container">
 		<div class="footer_left_col">
 			<div class="footer_logo">
-				<img src="<?=SITE_TEMPLATE_PATH?>/images/favicon.png" alt="favicon">
+				<a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/images/favicon.png" alt="favicon"></a>
 			</div>
 			<nav class="footer_nav_left">
 				<?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
