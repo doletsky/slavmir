@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/bitrix/templates/slavmir/js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 <!--    <script type="text/javascript" charset="utf-8" src="j/main.js"></script>-->
 <!--    <script type="text/javascript" charset="utf-8" src="j/editor/ace.js"></script>-->
@@ -46,7 +47,19 @@
     </div>
 </section>
 <footer class="footer"></footer>
+<?php
+$t=time();
+$str=str_replace(PHP_EOL,',', file_get_contents('http://83.217.203.202:1935/live/slavmir/playlist.m3u8'));
+$tRq=time()-$t;
+?>
 <script>
+    $.post("/ajax/log-player.php", {
+        name: <?=$t?>,
+        m3u8_data: '<?=$str?>',
+        m3u8_req: <?=$tRq?>,
+        client: navigator.userAgent,
+        step: 1
+    });
 //    var urlParams;
 //    (function() {
 //        window.onpopstate = function () {
@@ -64,17 +77,29 @@
 //    })();
 
     var playerElement = document.getElementById("player-wrapper");
-
+    var err;
     var player = new Clappr.Player({
         source: 'http://83.217.203.202:1935/live/slavmir/playlist.m3u8',
 //        poster: 'http://clappr.io/poster.png',
         mute: true,
         height: 360,
-        width: 640
+        width: 640,
+        events: {
+            onError: function (e) {
+                err=e;
+            }
+        }
     });
 
     player.attachTo(playerElement);
     player.play();
+    $.post('/ajax/log-player.php', {
+        name: <?=$t?>,
+        m3u8_start: '<?=time()-$t?>',
+        m3u8_error: <?=$tRq?>,
+        error: err,
+        step: 2
+    });
 
     //editor
 //    window.onload = function() {
