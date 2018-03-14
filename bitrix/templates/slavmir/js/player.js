@@ -254,7 +254,7 @@ $(document).on("click",".pl-audio-play",function(){
                     $picture = $this.attr("data-picture");
                     setPlayerName( $name, $artist );
                     setMobileName( $name, $artist );
-                    setPlayerPicture( $picture );
+                    setPlayerPicture( $picture, true );
                     playAudioFile( $(this).attr("data-url") );
 
             }
