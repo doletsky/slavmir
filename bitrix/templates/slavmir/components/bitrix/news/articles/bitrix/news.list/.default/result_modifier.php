@@ -1,4 +1,11 @@
 <?
+$rs_cMon=0;//нет доступа, =1 есть доступ
+$cDTemp=array();
+if ($USER->IsAuthorized()) {
+    $rs_cMon = 1;
+}
+$arResult["cMon"]=$rs_cMon;
+
 $arResult["ITEMS_NEW"]=array();
 $arFilter = Array(
     "IBLOCK_ID"=>$arResult["IBLOCK_ID"],

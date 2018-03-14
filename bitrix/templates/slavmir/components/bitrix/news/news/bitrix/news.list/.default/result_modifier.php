@@ -1,4 +1,11 @@
 <?
+$rs_cMon=0;//нет доступа, =1 есть доступ
+$cDTemp=array();
+if ($USER->IsAuthorized()) {
+    $rs_cMon = 1;
+}
+$arResult["cMon"]=$rs_cMon;
+
 $authorIDs = array();
 foreach( $arResult["ITEMS"] as $arItem ){
 	if( $arItem["PROPERTIES"]["AUTHOR"]["VALUE"] ) $artistIDs[] = $arItem["PROPERTIES"]["AUTHOR"]["VALUE"];
