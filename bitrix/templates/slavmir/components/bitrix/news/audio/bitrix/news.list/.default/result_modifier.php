@@ -1,4 +1,11 @@
 <?
+$rs_cMon=0;//нет доступа, =1 есть доступ
+$cDTemp=array();
+if ($USER->IsAuthorized()) {
+    $rs_cMon = 1;
+}
+$arResult["cMon"]=$rs_cMon;
+
 $property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC"), Array("IBLOCK_ID"=>$arParams["IBLOCK_ID"], "CODE"=>"GENRE"));
 while($enum_fields = $property_enums->GetNext()){
 	$arResult["GENRE"][$enum_fields["ID"]]=array( "NAME" => $enum_fields["VALUE"] );

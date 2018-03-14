@@ -1,7 +1,11 @@
 <?
 if(!CModule::IncludeModule("iblock")) throw new \Bitrix\Main\LoaderException("Ошибка загрузки модуля iblock");
 
-
+$rs_cMon=0;//нет доступа, =1 есть доступ
+if ($USER->IsAuthorized()) {
+    $rs_cMon = 1;
+}
+$arResult["cMon"]=$rs_cMon;
 $artistIDs=array();
 
 /*

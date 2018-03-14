@@ -54,7 +54,7 @@ $this->setFrameMode(true);
 					}
                     global $USER, $cMon;
 					$isNoAuth = false;
-					if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y"  || $cMon!=0 ) $isNoAuth = true;
+					if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y"  || $arResult["cMon"]!=0 ) $isNoAuth = true;
 					
 					$needBlock = false;
 
@@ -110,7 +110,7 @@ $this->setFrameMode(true);
 						}
                         global $USER, $cMon;
 						$isNoAuth = false;
-						if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" || $cMon!=0 ) $isNoAuth = true;
+						if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y" || $arResult["cMon"]!=0 ) $isNoAuth = true;
 
 						$needBlock = false;
 
