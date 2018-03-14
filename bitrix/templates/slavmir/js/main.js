@@ -523,7 +523,14 @@ $(document).on('ready', function(){
                         noteError=1;
                     }
                 }
+            }else{
+                if($('.ask_block').find('input:checked').length<=0 && $('.ask_block').find('input[type="text"]').val().length<=0){
+                    $('.ask_block:first').css('position','relative');
+                    $('.ask_block:first').prepend('<div class="note_req" style="color: red;position: absolute;top:25px;left:90px">Необходимо ответить хотя бы на один вопрос.</div>');
+                    noteError=1;
+                }
             }
+
 
         });
         if(noteError==0){
