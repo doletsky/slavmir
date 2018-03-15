@@ -1089,6 +1089,9 @@ body.fixed_header header.log_opened .logo{
     left: -20px;
     top: calc(100% + 2px);
 }
+#music_bar.bar_list_active .all_song_category{
+    display: block;
+}
 #music_bar .music_played{
     position: absolute;
     left: 50%;
@@ -1669,13 +1672,13 @@ body.short_header #music_bar .music_played .played_info{
 #music_bar .all_song_category{
     display: none;
     position: absolute;
-    left: 85px;
+    left: 55px;
     top: 0;
     max-width: 488px;
     text-align: justify;
     z-index: 999;
     padding: 0 10px 0px 0px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 #music_bar .all_song_category .one_song_tabs ul li{
     color: #000;
