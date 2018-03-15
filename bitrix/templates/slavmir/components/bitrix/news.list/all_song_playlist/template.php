@@ -31,166 +31,60 @@ $this->setFrameMode(true);
     </div>
     <div class="likes_list">
         <ul>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
+            <?foreach( $arResult["ITEMS"] as $arItem ){
+                if(strlen($arItem["PROPERTIES"]["PATH"]["VALUE"])<=0) continue;
+                $artistID = $arItem["PROPERTIES"]["ARTIST"]["VALUE"];
+                $artistName = '';
+                if(isset($arResult["ARTISTS"][$artistID])){
+                    $artistName = $arResult["ARTISTS"][$artistID]["NAME"];
+                }
+                $programID = $arItem["PROPERTIES"]["PROGRAM"]["VALUE"];
+                $programName = '';
+                if(isset($arResult["PROGRAM"][$programID])){
+                    $programName = $arResult["PROGRAM"][$programID]["NAME"];
+                }
+                $image = GetConfig("audio_default_image");
+                $playerImage = $image;
+                if($arItem["PREVIEW_PICTURE"]["SRC"]){
+                    $image = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>42,"h"=>42,"zc"=>1));
+                    $playerImage = MakeImage($arItem["PREVIEW_PICTURE"]["SRC"],array("w"=>125,"h"=>125,"zc"=>1));
+                }
+                global $USER, $cMon;
+                $isNoAuth = false;
+                if( $arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]=="Y"  || $arResult["cMon"]!=0 ) $isNoAuth = true;
+
+                $needBlock = false;
+
+                if( !$isNoAuth){
+                    $needBlock = true;
+                    $arItem["PROPERTIES"]["PATH"]["VALUE"] = '';
+                }
+                $addClassIdTab='';
+                $genreIDs = $arItem["PROPERTIES"]["GENRE"]["VALUE_ENUM_ID"];
+                if( is_array( $genreIDs ) && count( $genreIDs) ){
+                    foreach( $genreIDs as $genreID ){
+                        $addClassIdTab.=" tab_".$genreID;
+                    }
+                }
+                ?>
+            <li class="<?=$addClassIdTab?>">
+                <div class="likes_img<?if(!$isNoAuth){?> subs<?}?> pl-audio-play<?if($needBlock){?> block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
                     <div class="play_btn"></div>
                 </div>
                 <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
+                    <div class="likes_mus_name"><?=$arItem["NAME"]?></div>
+                    <div class="likes_mus_group"><?if(strlen($programName)>0)echo $programName;else echo $artistName;?></div>
                     <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
+                        <a href="#"><span class="likes_list_img likes_list_img dn"></span></a>
+                        <a href="#"><span class="likes_list_img likes_like dn"></span></a>
+                        <?if(!$needBlock){?><a href="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" download><span class="likes_list_img likes_download"></span></a><?}?>
                     </div>
-                    <div class="likes_mus_time">4:30</div>
+                    <?if($arItem["PROPERTIES"]["DURATION"]["VALUE"]){?><div class="likes_mus_time"><?=duration($arItem["PROPERTIES"]["DURATION"]["VALUE"])?></div><?}else{?><div class="likes_mus_time" style="width: 40px"></div><?}?>
+                    <?if($arItem["PROPERTIES"]["IS_NO_AUTH"]["VALUE_XML_ID"]!="Y"){?><div class="mus_subs_img"></div><?}?>
                 </div>
                 <div class="clear"></div>
             </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="likes_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/verbovoy.png);">
-                    <div class="play_btn"></div>
-                </div>
-                <div class="likes_mus_info">
-                    <div class="likes_mus_name">Вербовой</div>
-                    <div class="likes_mus_group">Русская доблесть</div>
-                    <div class="likes_mus_bar">
-                        <a href="#"><span class="likes_list_img likes_list_img"></span></a>
-                        <a href="#"><span class="likes_list_img likes_like"></span></a>
-                        <a href="#"><span class="likes_list_img likes_download"></span></a>
-                    </div>
-                    <div class="likes_mus_time">4:30</div>
-                </div>
-                <div class="clear"></div>
-            </li>
+            <?}?>
         </ul>
     </div>
 <?/*?>

@@ -79,10 +79,33 @@ $(document).ready(function(){
 	$('.tabs ul li').on('click', function(){
 		var this_attr = $(this).attr('data-id');
 		var this_id = $(this).parent().parent().attr('id');
-		$('.tab_container[data-id="'+ this_id +'"]').removeClass('active');
-		$('#'+ this_id +'.tabs ul li').removeClass('active');
-		$(this).addClass('active');
-		$('.tab_container[data-attr="'+ this_attr +'"][data-id="'+ this_id +'"]').addClass('active');
+		if($(this).parent().parent().parent().hasClass('all_song_category')){
+		    if(this_attr==="all"){
+                $('#'+ this_id +'.tabs ul li').not('[data-id="all"]').removeClass('active');
+                $(this).addClass('active');
+                $('.likes_list ul li').css('display', 'block');
+            }else{
+                $('.likes_list ul li').css('display', 'none');
+                $('#'+ this_id +'.tabs ul li[data-id="all"]').removeClass('active');
+                $(this).toggleClass('active');
+                if($('#'+ this_id +'.tabs ul li.active').not('[data-id="all"]').length<=0) {
+                    $('#'+ this_id +'.tabs ul li[data-id="all"]').addClass('active');
+                    $('.likes_list ul li').css('display', 'block');
+                }else{
+                    $('#'+ this_id +'.tabs ul li.active').each(function(){
+                        $('.likes_list ul li.tab_'+$(this).attr('data-id')).css('display', 'block');
+                    });
+
+                }
+            }
+            $('.likes_list ul').slick('slickGoTo',1);
+        }else{
+            $('.tab_container[data-id="'+ this_id +'"]').removeClass('active');
+            $('#'+ this_id +'.tabs ul li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab_container[data-attr="'+ this_attr +'"][data-id="'+ this_id +'"]').addClass('active');
+        }
+
 		// custom
 		if( this_id == 'video_bar_tabs' ) $('.tab_container.active .video_bar_slider').slick('refresh');
 	});
