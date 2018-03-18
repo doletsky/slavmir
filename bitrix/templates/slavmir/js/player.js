@@ -893,7 +893,7 @@ function playListUpload(data){
 }
 /*  =================================================================================================== */
 function setPlayerPicture( path, auto ){
-//	$(".music_bg").css("background-image","url("+path+")");
+	$("#music_bar_mobile").find(".music_bg").css("background-image","url("+path+")");
     $(".pleer_bg_slider .slick-slide:not(.slick-current):not(.slick-cloned)").children('img').attr('src',path);
     if(auto==true) $(".pleer_bg_slider").slick('slickNext');
 }
