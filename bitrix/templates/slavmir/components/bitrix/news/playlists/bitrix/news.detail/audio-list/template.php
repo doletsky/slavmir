@@ -37,9 +37,9 @@ $this->setFrameMode(true);
                         $image = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>42,"h"=>42,"zc"=>1));
                         $playerImage = MakeImage($arItem["PREVIEW_PICTURE"],array("w"=>125,"h"=>125,"zc"=>1));
                     }
-                    global $USER, $cMon;
+                    global $USER;
                     $isNoAuth = false;
-                    if( $arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]=="19" || $cMon!=0 ) $isNoAuth = true;
+                    if( $arItem["PROPERTY_IS_NO_AUTH_ENUM_ID"]=="19" || $arResult["cMon"]!=0 ) $isNoAuth = true;
 
                     $needBlock = false;
 
