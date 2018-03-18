@@ -511,6 +511,63 @@ $(document).on("click",".pl-samelist-play",function(){
     return false;
 });
 
+$(document).on("click",".pl-playlist-all-song",function(){
+    var $this = $(this),
+        $name = '',
+        $artist = '',
+        $picture = '';
+    if( $this.hasClass("block") ){
+        $(".subs_popup_container").show();
+        return false;
+    }
+    $('#music_bar.playlist_active .music_right_settings .loop_music').removeClass('dn');
+    $('#music_bar.playlist_active .music_right_settings .cross_music').removeClass('dn');
+    //var curnam=$this.attr("data-cur-num");
+    var ids='';
+    $('.likes_list ul li:visible').each(function() {
+        ids=ids+'ids[]='+$(this).attr('data-id')+'&';
+    });
+    console.log(ids);
+    $.ajax({
+        url: '/ajax/get-playlist-all-song.php?'+ids,
+        method: 'post',
+        success: function(data){
+            console.log("pl="+data);
+            window.playlist = data.playlist;
+
+            setPlayerIsPlaylist( true );
+            setPlayerStatus( 'playing' );
+            setSwitch( 'type_playlist' );
+
+            $(".playlist_played .play_list_name").text( data.info.name );
+            $(".playlist_played .play_list_image").attr( "src", data.info.pic );
+            $(".playlist_played .play_list_desc").text( data.info.artist );
+
+            jw.setup({
+                playlist: data.playlist
+            })
+                .setVolume( jwVolume )
+                .play()
+                .on('time',function(obj){
+                    setPlayerPosition( obj );
+                }).on('play',function(obj){
+                setPlayerStatus( 'playing' );
+                console.log('playlist: play');
+                if(curnam>0){
+                    jw.playlistNext();
+                    curnam--;
+                }
+            }).on('playlistItem',function( obj ){
+                playlistUpdate( obj );
+            });
+        },
+        error: function(dat, stat){
+            console.log("er="+dat, "stat="+stat);
+        }
+    });
+    return false;
+});
+
 $('#music_bar.playlist_active .music_right_settings').on('click','.loop_music', function(){
     $('.music_right_settings').toggleClass('loop_music_active');
     if($('.music_right_settings').hasClass('loop_music_active')){

@@ -1,4 +1,6 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+
+<?
+//if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -10,8 +12,10 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-$this->setFrameMode(true);
+//$this->setFrameMode(true);
 ?>
+
+<?/*?>
     <div class="all_song_category">
         <div class="tabs one_song_tabs" id="one_song_tabs">
             <ul>
@@ -67,8 +71,8 @@ $this->setFrameMode(true);
                     }
                 }
                 ?>
-            <li class="<?=$addClassIdTab?>" data-id="<?=$arItem["ID"]?>">
-                <div class="likes_img<?if(!$isNoAuth){?> subs<?}?> pl-playlist-all-song<?if($needBlock){?> block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
+            <li class="<?=$addClassIdTab?>">
+                <div class="likes_img<?if(!$isNoAuth){?> subs<?}?> pl-audio-play<?if($needBlock){?> block<?}?>" style="background-image: url(<?=$image?>);" data-url="<?=$arItem["PROPERTIES"]["PATH"]["VALUE"]?>" data-picture="<?=$playerImage?>">
                     <div class="play_btn"></div>
                 </div>
                 <div class="likes_mus_info">
@@ -87,7 +91,7 @@ $this->setFrameMode(true);
             <?}?>
         </ul>
     </div>
-<?/*?>
+
 <li data-id="1">Все <span class="num">312</span></li>
                 <li data-id="2">Популярное <span class="num">12</span></li>
                 <li data-id="3">Новинки <span class="num">51</span></li>
