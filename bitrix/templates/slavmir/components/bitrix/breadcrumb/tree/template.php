@@ -40,6 +40,14 @@ $prevPath=explode($_SERVER['HTTP_HOST'],$_SERVER['HTTP_REFERER']);
                     )
             ),$arResult);
     }
+    elseif($arResult[0]["LINK"]=="/stati/"){
+        foreach ($arResult as $id=>$ar){
+            if(substr_count($_SERVER['HTTP_REFERER'],$arResult[$id]['LINK'])<=0 && $id+1<count($arResult)){
+                unset($arResult[$id]);
+            }
+            $arResult=array_values($arResult);
+        }
+    }
 
 //delayed function must return a string
 if(empty($arResult))
