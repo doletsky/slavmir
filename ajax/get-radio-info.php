@@ -14,10 +14,12 @@ $lastArr = array();
 $currArr = array();
 $i = 0;
 while($el = $rsData->fetch()){
-    //убрать из UF_NAME символы  [ и ]
-    $tmp1=explode("[",$el["UF_NAME"]);
-    $tmp2=explode("]",$tmp1[1]);
-    $el["UF_NAME"]=$tmp2[0];
+    if(substr_count($el["UF_NAME"], "[")>0){
+        //убрать из UF_NAME символы  [ и ]
+        $tmp1=explode("[",$el["UF_NAME"]);
+        $tmp2=explode("]",$tmp1[1]);
+        $el["UF_NAME"]=$tmp2[0];
+    }
 	if($el["UF_DBID"]){
 		if( $i == 0 ){
 			$currArr=array(
