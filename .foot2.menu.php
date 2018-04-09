@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"О нас", 
-		"/o-nas/project/",
+		"/o-nas/",
 		Array(), 
 		Array(), 
 		"" 
@@ -13,13 +13,14 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
-	),
-	Array(
-		"Наша команда", 
-		"/o-nas/our-team/",
-		Array(), 
-		Array(), 
-		"" 
 	)
+//,
+//	Array(
+//		"Наша команда",
+//		"/o-nas/our-team/",
+//		Array(),
+//		Array(),
+//		""
+//	)
 );
 ?>

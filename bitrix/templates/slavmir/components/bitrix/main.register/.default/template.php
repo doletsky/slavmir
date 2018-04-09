@@ -262,7 +262,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
         <div class="reg_btn reg_pay">
 			<button><b>Оформить <br> платную подписку</b></button>
 			<div class="reg_tarifs">
-				<a href="/rates/" target="_blank">Тарифы и условия</a>
+				<a href="/tarify/" target="_blank">Тарифы и условия</a>
 				<p>Всего за 99 ₽ в месяц вы получите полный доступ ко всем <br> материалам сайта, включая <br> ТВ-канал, музыку и видео.</p>
 			</div>
 		</div>

@@ -52,8 +52,8 @@ $APPLICATION->SetTitle("Личный кабинет");
 			</div>
 		</div>
 		<div class="sub_tarifs">
-			<a href="/rates/" class="change_tarif">Сменить тариф</a>
-			<a href="/rates/" class="tarif">Тарифы и условия</a>
+			<a href="/tarify/" class="change_tarif">Сменить тариф</a>
+			<a href="/tarify/" class="tarif">Тарифы и условия</a>
 		</div>
 		<div class="own_balance_box">
 			<p>Ваш баланс</p>

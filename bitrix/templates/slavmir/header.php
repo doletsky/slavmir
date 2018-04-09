@@ -66,7 +66,7 @@ use Bitrix\Main\Page\Asset;
 						<div class="unreg_img"></div>
 						<span>Зарегистрироватся</span>
 					</div>
-					<a href="/rates/" class="tarif">Тарифы</a>
+					<a href="/tarify/" class="tarif">Тарифы</a>
 				</div>
 				<div class="login_box">
 					<div class="log_in"></div>
@@ -269,7 +269,7 @@ use Bitrix\Main\Page\Asset;
 						</div>
 						<div class="settings_list">
 							<a href="">Тариф не выбран</a>
-							<a href="/rates/" class="prodlenie active">Тарифы и продление</a>
+							<a href="/tarify/" class="prodlenie active">Тарифы и продление</a>
 							<a href="/personal/" class="pers_data">Персональные данные</a>
 							<a href="/?logout=yes" class="logOut">Выйти</a>
 						</div>
@@ -400,7 +400,7 @@ use Bitrix\Main\Page\Asset;
 	if( CSite::inDir("/novosti/") && $APPLICATION->GetCurPage()!='/novosti/' ) $showSection=false;
 	if( CSite::inDir("/video/") ) $showSection=false;
 	if( CSite::inDir("/polls/") ) $showSection=false;
-	if( CSite::inDir("/rates/") ) $showSection=false;
+	if( CSite::inDir("/tarify/") ) $showSection=false;
 	if( CSite::inDir("/personal/") ) $showSection=false;
 
 	// h1
