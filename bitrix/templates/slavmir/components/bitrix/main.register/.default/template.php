@@ -39,7 +39,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 <!--<p>--><?//echo GetMessage("MAIN_REGISTER_AUTH")?><!--</p>-->
 <!--<p>&nbsp;</p>-->
 <!--<div class="have_reg">-->
-<!--	<p>Пожалуйста, переходите в свой <a href="/personal/">личный кабинет</a></p>-->
+<!--	<p>Пожалуйста, переходите в свой <a href="/lichnoe/">личный кабинет</a></p>-->
 <!--</div>-->
 
 <?else:?>
@@ -49,7 +49,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 <div class="close_popup"></div>
 <h5>Регистрация в Славянском Мире</h5>
 	<div class="have_reg">
-		<p>У меня уже есть регистрация. <a href="/personal/" class="register-enter">Войти</a></p>
+		<p>У меня уже есть регистрация. <a href="/lichnoe/" class="register-enter">Войти</a></p>
 	</div>
 	<p class="reg_info">Зарегистрированным друзьям Славянского Мира доступны тысячи материалов, ежедневные обновления. Вы будете первым узнавать обо всех мероприятиях, станете нашим особым гостем.</p>
 

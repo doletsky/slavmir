@@ -54,7 +54,7 @@ use Bitrix\Main\Page\Asset;
 			<div class="unreg_container">
 				<div class="to_login">
 					<?$APPLICATION->IncludeComponent("bitrix:system.auth.authorize","",array(
-						"PROFILE_URL"=>"/personal/",
+						"PROFILE_URL"=>"/lichnoe/",
 						"SHOW_ERRORS" => "Y"
 					),false);?>
 					<div class="close_login_form">
@@ -270,7 +270,7 @@ use Bitrix\Main\Page\Asset;
 						<div class="settings_list">
 							<a href="">Тариф не выбран</a>
 							<a href="/tarify/" class="prodlenie active">Тарифы и продление</a>
-							<a href="/personal/" class="pers_data">Персональные данные</a>
+							<a href="/lichnoe/" class="pers_data">Персональные данные</a>
 							<a href="/?logout=yes" class="logOut">Выйти</a>
 						</div>
 					</div>
@@ -323,12 +323,12 @@ use Bitrix\Main\Page\Asset;
 					<span class="user_name"><?=$USER->GetFullName()?></span>
 					<span class="likes dn">14</span>
                     <a href="?logout=yes" class="mob_reg_btn">Выйти</a>
-					<a class="settings" href="/personal/"></a>
+					<a class="settings" href="/lichnoe/"></a>
 					<span class="clear"></span>
 				</div>
 				<?}else{?>
                     <a href="javascript:void(0);" class="unreg_link mob_reg_btn">Регистрация</a>
-                    <a href="/personal/" class="mob_reg_btn">Войти</a>
+                    <a href="/lichnoe/" class="mob_reg_btn">Войти</a>
                 <?}?>
 			</div>
 			<nav>
@@ -401,7 +401,7 @@ use Bitrix\Main\Page\Asset;
 	if( CSite::inDir("/video/") ) $showSection=false;
 	if( CSite::inDir("/polls/") ) $showSection=false;
 	if( CSite::inDir("/tarify/") ) $showSection=false;
-	if( CSite::inDir("/personal/") ) $showSection=false;
+	if( CSite::inDir("/lichnoe/") ) $showSection=false;
 
 	// h1
 	$isShowH1=true;
