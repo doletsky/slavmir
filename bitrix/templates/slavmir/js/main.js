@@ -540,4 +540,19 @@ $(document).on('ready', function(){
             $(document).scrollTop(scrTop-200);
         }
     });
+
+//player ajax
+    $('#player_ajax a').click(function(d){
+        d.preventDefault();
+        var link=$(this).attr('href');
+        $.ajax({
+            type: "POST",
+            url: link,
+            data: "PLAYER_AJAX=Y",
+            success: function(page){
+                $('.right_soc').nextUntil("footer").remove();
+                $('footer').before(page);
+            }
+        });
+    });
 });
