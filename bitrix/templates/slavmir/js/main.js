@@ -605,6 +605,24 @@ $(document).on('ready', function(){
                     dots: true,
                     autoplay: true
                 });
+
+                /*stati page*/
+                $('.articles_slider').slick({
+                    arrows: false,
+                    dots: true,
+                    autoplay: true
+                });
+                $('.article_types_box .art_type_list ul li').on('click', function(){
+                    if($(this).hasClass('active') == true){
+                        $(this).find('.sub_type').slideUp(300);
+                        $(this).removeClass('active');
+                    } else{
+                        $('.article_types_box .art_type_list ul li').removeClass('active');
+                        $('.article_types_box .art_type_list ul li').find('.sub_type').slideUp(300);
+                        $(this).addClass('active');
+                        $(this).find('.sub_type').slideDown(300);
+                    }
+                });
             }
         });
     });
