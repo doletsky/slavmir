@@ -110,6 +110,6 @@ $(document).ready(function(){
 		if( this_id == 'video_bar_tabs' ) $('.tab_container.active .video_bar_slider').slick('refresh');
 	});
 
-    //активирует popup благодарности за опрос
+    //Р°РєС‚РёРІРёСЂСѓРµС‚ popup Р±Р»Р°РіРѕРґР°СЂРЅРѕСЃС‚Рё Р·Р° РѕРїСЂРѕСЃ
     if($('ol.voting-result-box').data('result')==1) $('.tnx_popup_container.opros').css('display','block');
 });

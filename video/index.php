@@ -3,6 +3,7 @@ if($_REQUEST["PLAYER_AJAX"]=="Y"):
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 ?><script>
     var pageTitle='Видео';
+    var headerBg='';
 </script><?
 else:
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
