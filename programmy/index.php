@@ -1,7 +1,31 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("header_id", "our_prog_top");
-$APPLICATION->SetTitle("Программы");
+if($_REQUEST["PLAYER_AJAX"]=="Y"):
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    ?><script>
+    var pageTitle='Программы';
+    var headerBg='';
+</script>
+    <section id="our_prog_top" class="page_top_bg">
+        <div class="container">
+            <div class="breadcrumbs">
+                <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "tree", Array(
+                    "COMPONENT_TEMPLATE" => ".default",
+                    "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+                    "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                    "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                ),
+                    false
+                );?>
+            </div>
+            <h1 class="page_name">Программы</h1>
+        </div>
+    </section>
+    <?
+else:
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("header_id", "our_prog_top");
+    $APPLICATION->SetTitle("Программы");
+endif;
 ?><?$APPLICATION->IncludeComponent("bitrix:news", "programs", Array(
 	"COMPONENT_TEMPLATE" => "programs",
 		"IBLOCK_TYPE" => "program",	// Тип инфоблока
@@ -90,4 +114,4 @@ $APPLICATION->SetTitle("Программы");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?if($_REQUEST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

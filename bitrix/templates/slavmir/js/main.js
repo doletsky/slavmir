@@ -598,6 +598,13 @@ $(document).on('ready', function(){
                     // custom
                     if( this_id == 'video_bar_tabs' ) $('.tab_container.active .video_bar_slider').slick('refresh');
                 });
+
+                /*programm page*/
+                $('.index_video_slider, #our_prog_slider_box .our_prog_slider').slick({
+                    arrows: false,
+                    dots: true,
+                    autoplay: true
+                });
             }
         });
     });
