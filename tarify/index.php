@@ -1,8 +1,18 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-$APPLICATION->SetPageProperty("header_bg", "/upload/medialibrary/325/3255041644f12fe27a672a5a4b6c6802.jpg");
-$APPLICATION->SetTitle("Тарифы");
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+    if($_REQUEST["PLAYER_AJAX"]=="Y"){
+        ?><script>
+            var pageTitle='Тарифы';
+            var headerBg='/upload/medialibrary/325/3255041644f12fe27a672a5a4b6c6802.jpg';
+        </script>
+        <?
+    }
+    else{
+        $APPLICATION->SetPageProperty("header_bg", "/upload/medialibrary/325/3255041644f12fe27a672a5a4b6c6802.jpg");
+        $APPLICATION->SetTitle("Тарифы");
+        require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+    }
+
 ?>
     <section id="tarifs" <?$APPLICATION->ShowProperty("bg_dop")?> >
         <div class="container">
@@ -151,4 +161,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 	</div>
 </section>
 <?endif?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?if($_REQUEST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

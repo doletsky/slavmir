@@ -1,6 +1,16 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Славянский Мир");
+if($_REQUEST["PLAYER_AJAX"]=="Y"){
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    ?><script>
+        var pageTitle='Славянский Мир';
+        var headerBg='';
+    </script><?
+}
+else{
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetTitle("Славянский Мир");
+}
+
 ?>
 
 <div id="index_content" class="index_content">	
@@ -268,4 +278,4 @@ $APPLICATION->SetTitle("Славянский Мир");
 	</div><!-- index_about -->
 </div><!-- index_content -->
 
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?if($_REQUEST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

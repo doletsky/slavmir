@@ -541,8 +541,8 @@ $(document).on('ready', function(){
         }
     });
 
-//player ajax
-    $('#player_ajax a').click(function(d){
+//player ajax $('#player_ajax a')
+    $(document).on('click', 'a', function(d){
         d.preventDefault();
         var link=$(this).attr('href');
         $.ajax({
@@ -554,7 +554,26 @@ $(document).on('ready', function(){
                 $('footer').before(page);
                 document.title = pageTitle;
                 history.pushState({"html":link, "pageTitle":pageTitle}, '', link);
+                /*active menu point*/
+                var arLink=link.split('/');
                 if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
+                $('.header_top_menu li.selected').removeClass('selected');
+                $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
+
+                /*index page*/
+                if( $("#index-tv-container").length ) {
+                    jwIVS = jwplayer(INDEX_TV_PLAYER_ID).setup({
+                        "file": TV_URL,
+                        "controls": true,
+                        "aspectratio": '16:9',
+                        "width": '100%',
+                        "height": '265',
+                        "volume": jwVSVolume
+                    }).play();
+                }
+                $('.index_music_container ul').perfectScrollbar({
+                    suppressScrollX: true
+                });
 
                 /*video page*/
                 $('.daily_video_slider').slick({
