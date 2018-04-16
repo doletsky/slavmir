@@ -37,7 +37,7 @@ ShowMessage($arResult['ERROR_MESSAGE']);
 			<span class="auth-registr-form">Зарегистрироватся</span>
 		</div>
 		<div class="lost_pass">
-			<a href="/personal/?forgot_password=yes<?#=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>">Забыли пароль?</a>
+			<a href="/lichnoe/?vosstanovlenie_parolya=da<?#=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>">Забыли пароль?</a>
 		</div>
 		<div class="clear"></div>
 </form>
