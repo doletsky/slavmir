@@ -552,6 +552,16 @@ $(document).on('ready', function(){
             success: function(page){
                 $('.right_soc').nextUntil("footer").remove();
                 $('footer').before(page);
+                document.title = pageTitle;
+                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);
+
+                /*video page*/
+                $('.daily_video_slider').slick({
+                    arrows: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 4000
+                });
             }
         });
     });

@@ -1,8 +1,17 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("header_id", "video_page");
-$APPLICATION->SetTitle("Видео");
-?><?$APPLICATION->IncludeComponent(
+if($_REQUEST["PLAYER_AJAX"]=="Y"):
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+?><script>
+    var pageTitle='Видео';
+</script><?
+else:
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("header_id", "video_page");
+    $APPLICATION->SetTitle("Видео");
+endif;
+?>
+
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"video", 
 	array(
@@ -94,4 +103,4 @@ $APPLICATION->SetTitle("Видео");
 	),
 	false
 );?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?if($_REQUEST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
