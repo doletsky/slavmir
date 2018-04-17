@@ -552,6 +552,9 @@ $(document).on('ready', function(){
             success: function(page){
                 $('.right_soc').nextUntil("footer").remove();
                 $('footer').before(page);
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 100);
                 document.title = pageTitle;
                 history.pushState({"html":link, "pageTitle":pageTitle}, '', link);
                 /*active menu point*/
