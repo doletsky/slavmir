@@ -556,7 +556,7 @@ $(document).on('ready', function(){
                     scrollTop: 0
                 }, 100);
                 document.title = pageTitle;
-                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);
+                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);console.log(link);
                 /*active menu point*/
                 var arLink=link.split('/');
                 if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');

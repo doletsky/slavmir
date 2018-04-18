@@ -39,6 +39,6 @@
 		<div class="clear"></div>
 	</div>
 </section>
-<script type="text/javascript">
-document.bform.USER_LOGIN.focus();
-</script>
+<!--<script type="text/javascript">-->
+<!--document.bform.USER_LOGIN.focus();-->
+<!--</script>-->

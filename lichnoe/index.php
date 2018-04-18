@@ -1,12 +1,10 @@
 <?
-
-
-//if(key_exists("vosstanovlenie_parolya", $_GET)){
-//    $_GET["forgot_password"]="yes";
-//}
-var_dump($_POST);echo ($_POST["PLAYER_AJAX"]=="Y");
+if(key_exists("vosstanovlenie_parolya", $_GET)){
+    $_GET["forgot_password"]="yes";
+}
+//var_dump($_POST);echo ($_POST["PLAYER_AJAX"]=="Y");
 if($_POST["PLAYER_AJAX"]=="Y"):
-echo '$_POST["PLAYER_AJAX"]=="Y"';
+//echo '$_POST["PLAYER_AJAX"]=="Y"';
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
     ?><script>
     var pageTitle='Личный кабинет';
@@ -14,7 +12,7 @@ echo '$_POST["PLAYER_AJAX"]=="Y"';
 </script><?
 else:
     define("NEED_AUTH", true);
-    echo '$_POST["PLAYER_AJAX"]!="Y"';
+//    echo '$_POST["PLAYER_AJAX"]!="Y"';
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     $APPLICATION->SetTitle("Личный кабинет");
 endif;
@@ -31,7 +29,9 @@ endif;
 				false
 			);?>
 		</div>
+        <?if($_GET["forgot_password"]!="yes"):?>
 		<h1 class="page_name">Настройки и оплата</h1>
+        <?endif;?>
 		<?$APPLICATION->IncludeComponent("bitrix:main.profile", "lk-profile", Array(
 				"COMPONENT_TEMPLATE" => ".default",
 				"SET_TITLE" => "N",	// Устанавливать заголовок страницы
@@ -55,6 +55,7 @@ endif;
     	<a href="/?logout=yes">Выйти</a>
     </div><?*/?>
 </section>
+<?if($_GET["forgot_password"]!="yes"):?>
 <section class="current_subs">
 	<div class="container">
 		<div class="sub_info">
@@ -129,4 +130,5 @@ endif;
         </div>
 
     </section>
+<?endif?>
 <?if($_POST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
