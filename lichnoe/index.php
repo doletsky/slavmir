@@ -1,11 +1,23 @@
 <?
-define("NEED_AUTH", true);
-if(key_exists("vosstanovlenie_parolya", $_GET)){
-    $_GET["forgot_password"]="yes";
-}
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$APPLICATION->SetTitle("Личный кабинет");
+
+//if(key_exists("vosstanovlenie_parolya", $_GET)){
+//    $_GET["forgot_password"]="yes";
+//}
+var_dump($_POST);echo ($_POST["PLAYER_AJAX"]=="Y");
+if($_POST["PLAYER_AJAX"]=="Y"):
+echo '$_POST["PLAYER_AJAX"]=="Y"';
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    ?><script>
+    var pageTitle='Личный кабинет';
+    var headerBg='';
+</script><?
+else:
+    define("NEED_AUTH", true);
+    echo '$_POST["PLAYER_AJAX"]!="Y"';
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetTitle("Личный кабинет");
+endif;
 ?>
 <section id="lk_section" class="alert">
 	<div class="container">
@@ -117,4 +129,4 @@ $APPLICATION->SetTitle("Личный кабинет");
         </div>
 
     </section>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?if($_POST["PLAYER_AJAX"]!="Y")require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
