@@ -70,7 +70,7 @@ $(document).on('ready', function(){
 		$('#music_bar').removeClass('login_opened');
 	});
 
-    $('.opened_video_bar').on('click','.toggle_video_list', function(){
+    $('.opened_video_bar').on('mouseup','.toggle_video_list', function(){
 		$('#music_bar').removeClass();
 		$('#music_bar').addClass('music_bar');
 		$('#music_bar .music_type_list ul li').removeClass('active');
@@ -202,7 +202,7 @@ $(document).on('ready', function(){
 		$(this).addClass('active');
 	});
 
-	$('.login_box').on('click', function(){
+	$('.login_box').on('click', 'span', function(){
 		$('#music_bar').toggleClass('login_opened');
 		$('header').toggleClass('log_opened');
 		$('#header_bar').toggleClass('logging');
@@ -253,13 +253,13 @@ $(document).on('ready', function(){
 		suppressScrollX: true
 	});
 
-	$('.close_login_form').on('click', function(){
+	$(document).on('click','.close_login_form', function(){
 		$('#header_bar').removeClass('logging');
 		$('header').removeClass('log_opened');
 		$('#music_bar').removeClass('login_opened');
 	});
 
-	$('#header_bar .settings').on('click', function(e){
+	$('#header_bar').on('mouseup', '.settings', function(e){
 		$('#header_bar').toggleClass('settings_active');
 		$('#header_bar').removeClass('search_active');
 		$('#header_bar').removeClass('likes_active');
@@ -542,7 +542,7 @@ $(document).on('ready', function(){
     });
 
 //player ajax $('#player_ajax a')
-    $(document).on('click', 'a', function(d){
+    $(document).on('click', 'a:not(.logOut)', function(d){
         d.preventDefault();
         var link=$(this).attr('href');
         $.ajax({
@@ -645,6 +645,72 @@ $(document).on('ready', function(){
                         $(this).find('.sub_type').slideDown(300);
                     }
                 });
+            }
+        });
+    });
+    $(document).on('click', 'a.logOut', function(d) {
+        d.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: '/ajax/get-to-login.php',
+            data: 'logout=yes&PLAYER_AJAX=Y',
+            success: function (el) {
+                $('#header_bar .reg_bar').remove();
+                $('#header_bar .search').before(el);
+                $('.logo a:visible').click();
+
+            }
+        });
+    });
+
+    $('form[name="form_auth"]').submit(function () {
+        $('form[name="form_auth"] button').click();
+    });
+    $('form[name="form_auth"] button').click(function(e){
+        e.preventDefault();
+        var strData='';
+        $(this).parent('form').children('input').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $.ajax({
+            type: "POST",
+            url: '/ajax/get-to-login.php',
+            data: strData+'PLAYER_AJAX=Y',
+            success: function (el) {
+                $('.unreg_container').remove();
+                $('#header_bar .search').before(el);
+                $('#header_bar .reg_bar').css('display','block');
+                $('.logo a:visible').click();
+            }
+        });
+    });
+
+    $('form.search_form').submit(function () {
+        $('form[name="form_auth"] button').click();
+    });
+    $('form.search_form button').click(function(e){
+        e.preventDefault();
+        var strData='';
+        $(this).parent('form').children('input').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $.ajax({
+            type: "POST",
+            url: '/search/',
+            data: strData+'PLAYER_AJAX=Y',
+            success: function (page) {
+                $('.right_soc').nextUntil("footer").remove();
+                $('footer').before(page);
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 100);
+                document.title = pageTitle;
+                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);console.log(link);
+                /*active menu point*/
+                var arLink=link.split('/');
+                if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
+                $('.header_top_menu li.selected').removeClass('selected');
+                $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
             }
         });
     });
