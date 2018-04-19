@@ -543,8 +543,8 @@ $(document).on('ready', function(){
         }
     });
 
-//player ajax $('#player_ajax a')
-    $(document).on('click', 'a:not(.logOut)', function(d){
+//player ajax $('#player_ajax a')pl-audio-play
+    $(document).on('click', 'a:not(.logOut):not(.pl-audio-play)', function(d){
         d.preventDefault();
         var link=$(this).attr('href');
         $.ajax({

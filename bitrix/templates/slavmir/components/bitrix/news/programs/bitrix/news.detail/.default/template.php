@@ -13,6 +13,11 @@
 $this->setFrameMode(true);
 //file_put_contents($_SERVER["DOCUMENT_ROOT"]."/upload/arResult_programm.txt", print_r($arResult,true));
 ?>
+<script>
+    var pageTitle='<?=$arResult["NAME"]?>';
+    $('h1.page_name').text(pageTitle);
+    var headerBg='';
+</script>
 <section id="prog_item_info" <?if($arResult["DETAIL_PICTURE"]["SRC"]){?>style="background-image:url(<?=$arResult["DETAIL_PICTURE"]["SRC"]?>)"<?}?>  >
 	<div class="container">
 		<div class="title">Программы</div>
