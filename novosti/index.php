@@ -2,7 +2,8 @@
 if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y" || $_REQUEST["PLAYER_AJAX"]=="Y"){
 	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
     if($_REQUEST["PLAYER_AJAX"]=="Y"){
-        ?><script>
+        ?>
+        <script>
             var pageTitle='Новости';
             var headerBg='';
         </script>

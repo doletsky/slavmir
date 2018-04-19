@@ -23,6 +23,10 @@ if( $authorID ){
 $bg = GetConfig( "article_default_detail_image" );
 if( isset( $arResult["DETAIL_PICTURE"]["SRC"] ) && $arResult["DETAIL_PICTURE"]["SRC"] ) $bg = $arResult["DETAIL_PICTURE"]["SRC"];
 ?>
+<script>
+    var pageTitle='<?=$arResult["NAME"]?>';
+    var headerBg='';
+</script>
 	<?if( $authorID ){
 		$image = GetConfig( "author_default_image" );
 		if( $author["PREVIEW_PICTURE"] ) $image = MakeImage( $author["PREVIEW_PICTURE"], array("w"=>120,"h"=>120,"zc"=>1) );

@@ -22,6 +22,9 @@ if( $authorID ){
 $bg='';
 if( isset( $arResult["DETAIL_PICTURE"]["SRC"] ) && $arResult["DETAIL_PICTURE"]["SRC"] ) $bg = $arResult["DETAIL_PICTURE"]["SRC"];
 ?>
+<?if($_POST['PLAYER_AJAX'] == 'Y'):?>
+<script>$('section#articles').remove();</script>
+<?endif?>
 		<div class="news_item_bg" style="background-image: url(<?=$bg?>);">
 			<p class="news_name">Новости</p>
 			<h1><?=$arResult["NAME"]?></h1>
