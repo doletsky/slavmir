@@ -26,6 +26,7 @@ $(document).ready(function(){
         if(!isMobile){
             $(".register_popup_container").hide();
             $("#header_bar").addClass("logging");
+            $('body').css({'position':'relative'});
             return false;
         }
 
