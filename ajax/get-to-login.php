@@ -59,7 +59,7 @@ if( !$isAuthorized ) {
                     <a href="">Тариф не выбран</a>
                     <a href="/tarify/" class="prodlenie active">Тарифы и продление</a>
                     <a href="/lichnoe/" class="pers_data">Персональные данные</a>
-                    <a href="/?logout=yes" class="logOut">Выйти</a>
+                    <a href="http://83.217.203.194:49202/?logout=yes" class="logOut">Выйти</a>
                 </div>
             </div>
 

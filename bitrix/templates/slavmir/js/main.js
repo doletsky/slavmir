@@ -296,6 +296,16 @@ $(document).on('ready', function(){
 		$('.tab_container[data-attr="'+ this_attr +'"][data-id="'+ this_id +'"]').addClass('active');
 	});*/
 
+	$('.mobile_menu').on('click', 'li', function () {
+        $('header .header_top_menu .burger').click();
+    });
+    $('.mobile_menu').on('click', '.mob_reg_btn', function () {
+        $('header .header_top_menu .burger').click();
+    });
+    $('.mobile_menu').on('click', '.mobile_search>button', function () {
+        $('header .header_top_menu .burger').click();
+    });
+
 	$('header .header_top_menu .burger').on('click', function(){
 		$(this).toggleClass('active');
 		$('header .mobile_menu').slideToggle(200);
@@ -654,25 +664,28 @@ $(document).on('ready', function(){
             }
         });
     });
-    $(document).on('click', 'a.logOut', function(d) {
-        d.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: '/ajax/get-to-login.php',
-            data: 'logout=yes&PLAYER_AJAX=Y',
-            success: function (el) {
-                $('#header_bar .reg_bar').remove();
-                $('#header_bar .search').before(el);
-                $('.logo a:visible').click();
+    // $(document).on('click', 'a.logOut', function(d) {
+    //     d.preventDefault();
+    //     $.ajax({
+    //         type: "GET",
+    //         url: '/ajax/get-to-login.php?logout=yes&PLAYER_AJAX=Y',
+    //         // data: 'logout=yes&PLAYER_AJAX=Y',
+    //         success: function (el) {console.log('logout', el);
+    //             $('#header_bar .reg_bar').remove();
+    //             $('#header_bar .search').before(el);
+    //             $('.logo a:visible').click();
+    //
+    //         },
+    //         error: function (msg) {
+    //             console.log(msg);
+    //         }
+    //     });
+    // });
 
-            }
-        });
-    });
-
-    $('form[name="form_auth"]').submit(function () {
+    $(document).on('submit', 'form[name="form_auth"]', function () {
         $('form[name="form_auth"] button').click();
     });
-    $('form[name="form_auth"] button').click(function(e){
+    $('#header_bar').on('click', 'form[name="form_auth"]> button', function(e){
         e.preventDefault();
         var strData='';
         $(this).parent('form').children('input').each(function () {
@@ -686,15 +699,24 @@ $(document).on('ready', function(){
                 $('.unreg_container').remove();
                 $('#header_bar .search').before(el);
                 $('#header_bar .reg_bar').css('display','block');
+                $('.mobile_search').nextAll().remove();
+                var lgn='<div class="logged_bar">';
+                    lgn+='<span class="user_img" style="background-image: url(/bitrix/templates/slavmir/images/mobile_menu_user.png);"></span>';
+                    lgn+='<span class="user_name">'+$('#header_bar').find('.user_name').text()+'</span>';
+                    lgn+='<span class="likes dn">14</span>';
+                    lgn+='<a href="?logout=yes" class="mob_reg_btn">Выйти</a>';
+                    lgn+='<a class="settings" href="/lichnoe/"></a>';
+                    lgn+='<span class="clear"></span></div>';
+                $('.mobile_search').append(lgn);
                 $('.logo a:visible').click();
             }
         });
     });
 
     $('form.search_form').submit(function () {
-        $('form[name="form_auth"] button').click();
+        $('form.search_form button').click();
     });
-    $('form.search_form button').click(function(e){
+    $('form.mobile_search button, form.search_form button').click(function(e){
         e.preventDefault();
         var strData='';
         $(this).parent('form').children('input').each(function () {
@@ -711,15 +733,57 @@ $(document).on('ready', function(){
                     scrollTop: 0
                 }, 100);
                 document.title = pageTitle;
-                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);console.log(link);
+                history.pushState({"html":'/search/?'+strData, "pageTitle":pageTitle}, '', '/search/?'+strData);
+                /*active menu point*/
+                if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
+            }
+        });
+    });
+
+    $(document).on('click', 'form.contacts_form>button', function (e) {
+        e.preventDefault();
+        var strData='';
+        var link=$('form.contacts_form').attr('action');
+        $('form.contacts_form input').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $('form.contacts_form textarea').each(function () {
+            var lines = $(this).val().split(/[\n\r]+/);
+            var name=$(this).attr('name');
+            var ta='';
+            for(var ln in lines){
+                if(lines[ln].length>0)
+                    ta+=lines[ln]+'_';
+            }
+            strData+=name+'='+ta+'&';
+        });
+        var reqHdr;
+        reqHdr=$.ajax({
+            type: "POST",
+            url: link,
+            data: strData+'PLAYER_AJAX=Y',
+            timeout: 1000,
+            success: function (page) {
+                console.log(reqHdr.getAllResponseHeaders());
+                $('.right_soc').nextUntil("footer").remove();
+                $('footer').before(page);
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 100);
+                document.title = pageTitle;
                 /*active menu point*/
                 var arLink=link.split('/');
                 if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
                 $('.header_top_menu li.selected').removeClass('selected');
                 $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
+            },
+            error: function (x) {
+                console.log('contacts error');
+                console.log(reqHdr.getAllResponseHeaders);
+                console.log(x.getAllResponseHeaders);
             }
         });
-    });
+    })
 
     function opros_form_submit(){
         // e.preventDefault();
@@ -745,7 +809,6 @@ $(document).on('ready', function(){
                     scrollTop: 0
                 }, 100);
                 document.title = pageTitle;
-                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);console.log(link);
                 /*active menu point*/
                 var arLink=link.split('/');
                 if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
