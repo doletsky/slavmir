@@ -544,7 +544,8 @@ $(document).on('ready', function(){
     });
 
 //player ajax $('#player_ajax a')pl-audio-play
-    $(document).on('click', 'a:not(.logOut):not(.pl-audio-play)', function(d){
+    $(document).on('click', 'a:not(.logOut):not(.pl-audio-play):not(.social-menu-link)', function(d){
+        if($(this).parents(".right_soc").length>0)return true;
         d.preventDefault();
         if($(this).hasClass('register-enter')) return false;
         var link=$(this).attr('href');
