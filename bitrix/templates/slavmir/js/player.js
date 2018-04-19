@@ -219,8 +219,8 @@ $(document).on('ready', function(){
 	}
 });
 
-$(document).on("click",".pl-audio-play",function(){
-
+$(document).on("click",".pl-audio-play",function(event){
+    if($(event.target).hasClass('lockpl')) return false;
     if($(this).data('name')===$('#jw-current-play .music_right_bar_item .music_name').text() || ($(this).parent().find(".mus_name").length>0 && $(this).parent().find(".mus_name").text()===$('#jw-current-play .music_right_bar_item .music_name').text())){
         console.log("run: ",$(this).parent().find(".mus_name").text(),"===",$('#jw-current-play .music_right_bar_item .music_name').text());
         if( $(".music_status").hasClass("played") && $(".type_audio").hasClass("active")){

@@ -118,9 +118,10 @@ $this->setFrameMode(true);
 								<div class="play"></div>
 							</div>
 							<span class="rel_title"><?=$arResult["NAME"]?></span>
-                            <span class="rel_name" onclick="location.href='<?=$arItem["DETAIL_PAGE_URL"]?>'"><?=$arItem["NAME"]?></span>
+                            <span class="rel_name lockpl" onclick="$('#goto<?=$arItem["ID"]?>').click();"><?=$arItem["NAME"]?></span>
 							<span class="rel_desc"><?=$arItem["PREVIEW_TEXT"]?></span>
 						</a>
+                        <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" id="goto<?=$arItem["ID"]?>" style="display: none"></a>
 					<?
 					}
 				}
