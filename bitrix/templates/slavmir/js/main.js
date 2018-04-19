@@ -351,11 +351,13 @@ $(document).on('ready', function(){
 		$('body').css({'position':'fixed'});
 	});
 
-	$('.close_popup, .close_tnx_popup').on('click', function(){
+	$(document).on('click','.close_popup', function () {
+        $('.close_tnx_popup').click();
+    });
+	$(document).on('click','.close_tnx_popup', function(){
 		$('.register_popup_container, .tnx_popup_container, .subs_popup_container, .paylk_popup_container, .failpay_popup_container').fadeOut(200);
 		$('body').css({'position':'relative'});
-        $('form.opros_form').submit();
-        console.log($(this).attr('class'));
+        opros_form_submit();
 	});
 
     $('.add_balance').on('click', function(){
@@ -510,7 +512,7 @@ $(document).on('ready', function(){
             });
     });
 
-    $('.send_opros').on('click', function(e){
+    $(document).on('click', '.send_opros', function(e){
         e.preventDefault();
         var noteError=0;
         $('.note_req').remove();
@@ -714,4 +716,38 @@ $(document).on('ready', function(){
             }
         });
     });
+
+    function opros_form_submit(){
+        // e.preventDefault();
+        var strData='';
+        var link=$('form.opros_form').attr('action');console.log(link);
+        $('form.opros_form').children('input[type="hidden"]').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $('form.opros_form').find('input[type="text"]').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $('form.opros_form').find('input:checked').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $.ajax({
+            type: "POST",
+            url: link,
+            data: strData+'PLAYER_AJAX=Y',
+            success: function (page) {
+                $('.right_soc').nextUntil("footer").remove();
+                $('footer').before(page);
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 100);
+                document.title = pageTitle;
+                history.pushState({"html":link, "pageTitle":pageTitle}, '', link);console.log(link);
+                /*active menu point*/
+                var arLink=link.split('/');
+                if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
+                $('.header_top_menu li.selected').removeClass('selected');
+                $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
+            }
+        });
+    }
 });
