@@ -1,6 +1,12 @@
 <?
 if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y"){
 	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+}elseif($_REQUEST["PLAYER_AJAX"]=="Y"){
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    ?><script>
+    var pageTitle='Плейлисты';
+    var headerBg="";
+</script><?
 }
 else{
 	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
@@ -97,7 +103,7 @@ else{
 	),
 	false
 );?><?
-if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y"){
+if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y" || $_REQUEST["PLAYER_AJAX"]=="Y"){
 	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
 }
 else{
