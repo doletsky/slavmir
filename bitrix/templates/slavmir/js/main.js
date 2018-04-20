@@ -745,43 +745,45 @@ $(document).on('ready', function(){
         var strData='';
         var link=$('form.contacts_form').attr('action');
         $('form.contacts_form input').each(function () {
+            if($(this))
             strData+=$(this).attr('name')+'='+$(this).val()+'&';
         });
         $('form.contacts_form textarea').each(function () {
-            var lines = $(this).val().split(/[\n\r]+/);
+            var lines = $(this).val();
             var name=$(this).attr('name');
-            var ta='';
-            for(var ln in lines){
-                if(lines[ln].length>0)
-                    ta+=lines[ln]+'_';
-            }
-            strData+=name+'='+ta+'&';
+            // var ta='';
+            // for(var ln in lines){
+            //     if(lines[ln].length>0)
+            //         ta+=lines[ln]+' ';
+            // }
+            strData+=name+'='+lines+'&';
         });
         var reqHdr;
         reqHdr=$.ajax({
             type: "POST",
-            url: link,
+            url: '/ajax/get-feedback.php',
             data: strData+'PLAYER_AJAX=Y',
             timeout: 1000,
             success: function (page) {
-                console.log(reqHdr.getAllResponseHeaders());
-                $('.right_soc').nextUntil("footer").remove();
-                $('footer').before(page);
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 100);
-                document.title = pageTitle;
-                /*active menu point*/
-                var arLink=link.split('/');
-                if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
-                $('.header_top_menu li.selected').removeClass('selected');
-                $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
-            },
-            error: function (x) {
-                console.log('contacts error');
-                console.log(reqHdr.getAllResponseHeaders);
-                console.log(x.getAllResponseHeaders);
+                console.log($.parseJSON(page).error.length);
+                // $('.right_soc').nextUntil("footer").remove();
+                // $('footer').before(page);
+                // $('body,html').animate({
+                //     scrollTop: 0
+                // }, 100);
+                // document.title = pageTitle;
+                // /*active menu point*/
+                // var arLink=link.split('/');
+                // if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
+                // $('.header_top_menu li.selected').removeClass('selected');
+                // $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
             }
+            // ,
+            // error: function (x) {
+            //     console.log('contacts error');
+            //     console.log(reqHdr.getAllResponseHeaders);
+            //     console.log(x.getAllResponseHeaders);
+            // }
         });
     })
 
