@@ -763,27 +763,21 @@ $(document).on('ready', function(){
             type: "POST",
             url: '/ajax/get-feedback.php',
             data: strData+'PLAYER_AJAX=Y',
-            timeout: 1000,
-            success: function (page) {
-                console.log($.parseJSON(page).error.length);
-                // $('.right_soc').nextUntil("footer").remove();
-                // $('footer').before(page);
-                // $('body,html').animate({
-                //     scrollTop: 0
-                // }, 100);
-                // document.title = pageTitle;
-                // /*active menu point*/
-                // var arLink=link.split('/');
-                // if(headerBg.length>0)$('.page_top_bg').css('background-image','url('+headerBg+')');
-                // $('.header_top_menu li.selected').removeClass('selected');
-                // $('.header_top_menu').find('a[href="/'+arLink[1]+'/"]').parent('li').addClass('selected');
+            success: function (ans) {
+                if($.parseJSON(ans).error.length==0){
+                    $.ajax({
+                        type: "POST",
+                        url: '/kontakty/',
+                        data: $.parseJSON(ans).success + '&PLAYER_AJAX=Y',
+                        success: function (page) {
+                            $('.right_soc').nextUntil("footer").remove();
+                            $('footer').before(page);
+                        }
+                    });
+                }
+
             }
-            // ,
-            // error: function (x) {
-            //     console.log('contacts error');
-            //     console.log(reqHdr.getAllResponseHeaders);
-            //     console.log(x.getAllResponseHeaders);
-            // }
+
         });
     })
 
