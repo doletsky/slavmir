@@ -5,9 +5,9 @@ if( !$isAuthorized ) {
     $res = $USER->Login(strip_tags($_POST['USER_LOGIN']), strip_tags($_POST['USER_PASSWORD']));
     if (empty($res['MESSAGE'])) $unreg = false;
 }else{
-    if($_POST['logout']=='yes'){
+        global $USER;
         $USER->Logout();
-    }
+        $unreg=false;
 }
 
     if($unreg){

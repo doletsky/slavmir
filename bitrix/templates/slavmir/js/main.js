@@ -664,23 +664,26 @@ $(document).on('ready', function(){
             }
         });
     });
-    // $(document).on('click', 'a.logOut', function(d) {
-    //     d.preventDefault();
-    //     $.ajax({
-    //         type: "GET",
-    //         url: '/ajax/get-to-login.php?logout=yes&PLAYER_AJAX=Y',
-    //         // data: 'logout=yes&PLAYER_AJAX=Y',
-    //         success: function (el) {console.log('logout', el);
-    //             $('#header_bar .reg_bar').remove();
-    //             $('#header_bar .search').before(el);
-    //             $('.logo a:visible').click();
-    //
-    //         },
-    //         error: function (msg) {
-    //             console.log(msg);
-    //         }
-    //     });
-    // });
+    $(document).on('click', 'a.logOut', function(d) {
+        location.href=$(this).attr('href');
+        // d.preventDefault();
+        // $.ajax({
+        //     type: "POST",
+        //     url: '/ajax/get-to-login.php',
+        //     data: 'PLAYER_AJAX=Y',
+        //     success: function (el) {console.log('logout', el);
+        //         $('#header_bar .reg_bar').remove();
+        //         $('#header_bar .search').before(el);
+        //         $('#header_bar.logged .unreg_container').css('display','flex');
+        //         document.cookie = 'PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        //         $('.logo a:visible').click();
+        //
+        //     },
+        //     error: function (msg) {
+        //         console.log(msg);
+        //     }
+        // });
+    });
 
     $(document).on('submit', 'form[name="form_auth"]', function () {
         $('form[name="form_auth"] button').click();
