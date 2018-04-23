@@ -322,7 +322,7 @@ use Bitrix\Main\Page\Asset;
 					<span class="user_img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>images/mobile_menu_user.png);"></span>
 					<span class="user_name"><?=$USER->GetFullName()?></span>
 					<span class="likes dn">14</span>
-                    <a href="?logout=yes" class="mob_reg_btn">Выйти</a>
+                    <a href="/?logout=yes" class="mob_reg_btn mob_logOut">Выйти</a>
 					<a class="settings" href="/lichnoe/"></a>
 					<span class="clear"></span>
 				</div>

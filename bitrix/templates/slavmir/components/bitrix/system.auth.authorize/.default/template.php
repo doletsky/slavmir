@@ -42,10 +42,3 @@ ShowMessage($arResult['ERROR_MESSAGE']);
 		<div class="clear"></div>
 </form>
 
-<script type="text/javascript">
-<?if (strlen($arResult["LAST_LOGIN"])>0):?>
-try{document.form_auth.USER_PASSWORD.focus();}catch(e){}
-<?else:?>
-try{document.form_auth.USER_LOGIN.focus();}catch(e){}
-<?endif?>
-</script>

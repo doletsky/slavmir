@@ -299,7 +299,7 @@ $(document).on('ready', function(){
 	$('.mobile_menu').on('click', 'li', function () {
         $('header .header_top_menu .burger').click();
     });
-    $('.mobile_menu').on('click', '.mob_reg_btn', function () {
+    $('.mobile_menu').on('click', '.mob_reg_btn:not(.unreg_link)', function () {
         $('header .header_top_menu .burger').click();
     });
     $('.mobile_menu').on('click', '.mobile_search>button', function () {
@@ -554,10 +554,10 @@ $(document).on('ready', function(){
     });
 
 //player ajax $('#player_ajax a')pl-audio-play
-    $(document).on('click', 'a:not(.logOut):not(.pl-audio-play):not(.social-menu-link)', function(d){
+    $(document).on('click', 'a:not(.logOut):not(.pl-audio-play):not(.social-menu-link):not(.mob_logOut)', function(d){
         if($(this).parents(".right_soc").length>0)return true;
         d.preventDefault();
-        if($(this).hasClass('register-enter')) return false;
+        // if($(this).hasClass('register-enter')) return false;
         var link=$(this).attr('href');
         var historyGo=$(this).hasClass('historyGo');
         $.ajax({
@@ -665,24 +665,12 @@ $(document).on('ready', function(){
         });
     });
     $(document).on('click', 'a.logOut', function(d) {
-        location.href=$(this).attr('href');
-        // d.preventDefault();
-        // $.ajax({
-        //     type: "POST",
-        //     url: '/ajax/get-to-login.php',
-        //     data: 'PLAYER_AJAX=Y',
-        //     success: function (el) {console.log('logout', el);
-        //         $('#header_bar .reg_bar').remove();
-        //         $('#header_bar .search').before(el);
-        //         $('#header_bar.logged .unreg_container').css('display','flex');
-        //         document.cookie = 'PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        //         $('.logo a:visible').click();
-        //
-        //     },
-        //     error: function (msg) {
-        //         console.log(msg);
-        //     }
-        // });
+        d.preventDefault();
+        $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
+    });
+    $(document).on('click', 'a.mob_logOut', function(d) {
+        d.preventDefault();
+        $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
     });
 
     $(document).on('submit', 'form[name="form_auth"]', function () {
