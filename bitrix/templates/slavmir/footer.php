@@ -110,11 +110,11 @@ $prefix=str_replace("/","_",$APPLICATION->GetCurDir());
 
 <div class="tnx_popup_container opros">
 	<div class="tnx_container">
-		<div class="close_popup"></div>
+		<div class="close_popup s_opros"></div>
 		<div class="popup_bg"></div>
 		<h4>Благодарим за ваше мнение!</h4>
 		<p>Нам очень важны ваши мысли по поводу развития проекта. <br>Мы постараемся учесть ваши пожелания и, при необходимости, свяжемся с вами!</p>
-		<div class="close_tnx_popup">
+		<div class="close_tnx_popup s_opros">
 			<img src="<?=SITE_TEMPLATE_PATH?>/images/close_popup.png" alt="close_popup"><span>Закрыть</span>
 		</div>
 	</div>

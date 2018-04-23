@@ -29,7 +29,7 @@ endif;
 				false
 			);?>
 		</div>
-        <?if($_GET["forgot_password"]!="yes"):?>
+        <?if($USER->IsAuthorized()):?>
 		<h1 class="page_name">Настройки и оплата</h1>
         <?endif;?>
 		<?$APPLICATION->IncludeComponent("bitrix:main.profile", "lk-profile", Array(
@@ -55,7 +55,7 @@ endif;
     	<a href="/?logout=yes">Выйти</a>
     </div><?*/?>
 </section>
-<?if($_GET["forgot_password"]!="yes"):?>
+<?if($USER->IsAuthorized()):?>
 <section class="current_subs">
 	<div class="container">
 		<div class="sub_info">
