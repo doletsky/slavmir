@@ -1,6 +1,7 @@
 <?
 if(isset($_REQUEST["AJAX"]) && $_REQUEST["AJAX"]=="Y" || $_REQUEST["PLAYER_AJAX"]=="Y"){
 	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    CJSCore::Init(array("window"));
 	$arUri=explode('/',trim($_SERVER['REQUEST_URI'],'/'));
     if($_REQUEST["PLAYER_AJAX"]=="Y" && count($arUri)<2){
         ?>
