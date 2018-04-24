@@ -566,6 +566,7 @@ $(document).on('ready', function(){
 //player ajax $('#player_ajax a')pl-audio-play
     $(document).on('click', 'a:not(.logOut):not(.pl-audio-play):not(.social-menu-link):not(.mob_logOut)', function(d){
         if($(this).parents(".right_soc").length>0)return true;
+        if($(this).parents(".answer_text").length>0)return false;
         d.preventDefault();
         if($(this).hasClass('register-enter')) {
             if($('.unreg_container:visible').length>0){
@@ -784,7 +785,43 @@ $(document).on('ready', function(){
             }
 
         });
-    })
+    });
+
+    $(document).on('click', 'form.my_comment.active>button', function (e) {
+        e.preventDefault();
+        var link=$(this).parent('form.my_comment.active').attr('action');
+        var strData='';
+        $(this).parent('form.my_comment.active').children('input').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $.ajax({
+            type: "POST",
+            url: '/ajax/get-add-message.php',
+            data: strData+'PLAYER_AJAX=Y',
+            success: function (p) {
+                console.log(p);
+                $.ajax({
+                    type: "POST",
+                    url: link,
+                    data: 'PLAYER_AJAX=Y',
+                    success: function (page) {
+                        $('.right_soc').nextUntil("footer").remove();
+                        $('footer').before(page);
+                        $('body,html').animate({
+                            scrollTop: 0
+                        }, 100);
+                        document.title = pageTitle;
+                        // history.pushState({
+                        //     "html": '/search/?' + strData,
+                        //     "pageTitle": pageTitle
+                        // }, '', '/search/?' + strData);
+                        /*active menu point*/
+                        if (headerBg.length > 0) $('.page_top_bg').css('background-image', 'url(' + headerBg + ')');
+                    }
+                });
+            }
+        });
+    });
 
     function opros_form_submit(){
         // e.preventDefault();
