@@ -789,6 +789,7 @@ $(document).on('ready', function(){
 
     $(document).on('click', 'form.my_comment.active>button', function (e) {
         e.preventDefault();
+        var thisTop=$(this).offset().top;
         var link=$(this).parent('form.my_comment.active').attr('action');
         var strData='';
         $(this).parent('form.my_comment.active').children('input').each(function () {
@@ -808,7 +809,44 @@ $(document).on('ready', function(){
                         $('.right_soc').nextUntil("footer").remove();
                         $('footer').before(page);
                         $('body,html').animate({
-                            scrollTop: 0
+                            scrollTop: thisTop-350
+                        }, 100);
+                        document.title = pageTitle;
+                        // history.pushState({
+                        //     "html": '/search/?' + strData,
+                        //     "pageTitle": pageTitle
+                        // }, '', '/search/?' + strData);
+                        /*active menu point*/
+                        if (headerBg.length > 0) $('.page_top_bg').css('background-image', 'url(' + headerBg + ')');
+                    }
+                });
+            }
+        });
+    });
+
+    $(document).on('click', 'button.what_you_think_sbt', function (e) {
+        e.preventDefault();
+        var thisTop=$(this).offset().top;
+        var link=$(this).parent('form.active').attr('action');
+        var strData='';
+        $(this).parent('form.active').children('input').each(function () {
+            strData+=$(this).attr('name')+'='+$(this).val()+'&';
+        });
+        $.ajax({
+            type: "POST",
+            url: '/ajax/get-add-message.php',
+            data: strData+'PLAYER_AJAX=Y',
+            success: function (p) {
+                console.log(p);
+                $.ajax({
+                    type: "POST",
+                    url: link,
+                    data: 'PLAYER_AJAX=Y',
+                    success: function (page) {
+                        $('.right_soc').nextUntil("footer").remove();
+                        $('footer').before(page);
+                        $('body,html').animate({
+                            scrollTop: thisTop-350
                         }, 100);
                         document.title = pageTitle;
                         // history.pushState({
