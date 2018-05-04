@@ -202,7 +202,7 @@ $(document).on('ready', function(){
 		$(this).addClass('active');
 	});
 
-	$('.login_box').on('click', 'span', function(){
+	$(document).on('click', '.login_box>span', function(){
 		$('#music_bar').toggleClass('login_opened');
 		$('header').toggleClass('log_opened');
 		$('#header_bar').toggleClass('logging');
