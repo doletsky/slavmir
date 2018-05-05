@@ -692,31 +692,41 @@ $(document).on('ready', function(){
         $('form[name="form_auth"] button').click();
     });
     $('#header_bar').on('click', 'form[name="form_auth"]> button', function(e){
-        e.preventDefault();
+        var fValid=true;
         var strData='';
         $(this).parent('form').children('input').each(function () {
+            if($(this).attr('required')=='required' && $(this).val().length<=0) {
+                console.log('required val=0');
+                fValid=false;
+                $(this).attr('oninvalid',"this.setCustomValidity('Пожалуйста, заполните это поле')");
+                return false;
+            }
             strData+=$(this).attr('name')+'='+$(this).val()+'&';
         });
-        $.ajax({
-            type: "POST",
-            url: '/ajax/get-to-login.php',
-            data: strData+'PLAYER_AJAX=Y',
-            success: function (el) {
-                $('.unreg_container').remove();
-                $('#header_bar .search').before(el);
-                $('#header_bar .reg_bar').css('display','block');
-                $('.mobile_search').nextAll().remove();
-                var lgn='<div class="logged_bar">';
+        if(fValid){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '/ajax/get-to-login.php',
+                data: strData+'PLAYER_AJAX=Y',
+                success: function (el) {
+                    $('.unreg_container').remove();
+                    $('#header_bar .search').before(el);
+                    $('#header_bar .reg_bar').css('display','block');
+                    $('.mobile_search').nextAll().remove();
+                    var lgn='<div class="logged_bar">';
                     lgn+='<span class="user_img" style="background-image: url(/bitrix/templates/slavmir/images/mobile_menu_user.png);"></span>';
                     lgn+='<span class="user_name">'+$('#header_bar').find('.user_name').text()+'</span>';
                     lgn+='<span class="likes dn">14</span>';
                     lgn+='<a href="?logout=yes" class="mob_reg_btn">Выйти</a>';
                     lgn+='<a class="settings" href="/lichnoe/"></a>';
                     lgn+='<span class="clear"></span></div>';
-                $('.mobile_search').append(lgn);
-                $('.logo a:visible').click();
-            }
-        });
+                    $('.mobile_search').append(lgn);
+                    $('.logo a:visible').click();
+                }
+            });
+        }
+
     });
 
     $('form.search_form').submit(function () {
