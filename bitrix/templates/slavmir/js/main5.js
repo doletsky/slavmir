@@ -789,15 +789,15 @@ $(document).on('ready', function(){
         });
     });
 
-    $(document).on('click', 'a.logOut', function(d) {
-        d.preventDefault();
-        $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
-    });
-
-    $(document).on('click', 'a.mob_logOut', function(d) {
-        d.preventDefault();
-        $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
-    });
+    // $(document).on('click', 'a.logOut', function(d) {
+    //     d.preventDefault();
+    //     $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
+    // });
+    //
+    // $(document).on('click', 'a.mob_logOut', function(d) {
+    //     d.preventDefault();
+    //     $.ajax({type:"POST", url:"/ajax/get-logout.php", success:function(){location.href="/";}});
+    // });
 
     $(document).on('submit', 'form[name="form_auth"]', function () {
         $('form[name="form_auth"] button').click();
