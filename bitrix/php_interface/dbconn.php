@@ -1,11 +1,11 @@
-<?
+<?define("BX_CRONTAB_SUPPORT", true);?><?define("BX_CRONTAB_SUPPORT", true);?><?
 define("BX_USE_MYSQLI", true);
 define("DBPersistent", false);
 $DBType = "mysql";
 $DBHost = "localhost";
-$DBLogin = "slavmir";
-$DBPassword = "4Rf6R004fed8gOVL";
-$DBName = "slavmir";
+$DBLogin = "bitrix0";
+$DBPassword = "YE%}YIVK?Tpn[pxNK&OX";
+$DBName = "sitemanager";
 $DBDebug = false;
 $DBDebugToFile = false;
 define("MYSQL_TABLE_TYPE", "INNODB");
